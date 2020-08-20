@@ -1,10 +1,12 @@
 import React from 'react'
 import Event from './Event'
 
+
 const EventList = ({events, loading}) => {
     
     return (
         <>
+       
          <h1 style= {{fontSize:"1.3rem", textTransform:"uppercase",color:"white"}} className= "text-center mb-4">Upcoming Events</h1><hr/>
         {!events && !loading? (<h1>Events not found</h1>)
         :(
@@ -13,6 +15,7 @@ const EventList = ({events, loading}) => {
 
             ))
         )}
+       
         {/* <h1 style= {{fontSize:"1rem", textTransform:"uppercase",color:"white"}}>Upcoming Events</h1>
         
         <div>

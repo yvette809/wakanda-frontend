@@ -15,7 +15,7 @@ import '../../src/App.css'
       <Link to="/" className = "nav-link">Home</Link>
       <Link to="/mission"  className = "nav-link">Mission</Link>
       <Link to="/membership"  className = "nav-link">Membership</Link>
-      <Link to="/events"  className = "nav-link">Events</Link>
+      <Link to="/news"  className = "nav-link">News</Link>
       <Link to="/faq"  className = "nav-link">FAQ</Link>
     </Nav>
     <Form inline>

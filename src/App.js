@@ -8,7 +8,7 @@ import Footer from '../src/pages/Footer'
 import Mission from '../src/pages/Mission'
 import Donate from '../src/pages/Donate'
 import  Membership from './pages/Membership'
-//import  Events from '../src/pages/Events'
+import News from '../src/pages/News'
 import  Testimonials from '../src/pages/Testimonials'
 import  Faqs from './pages/Faqs'
 import EventDetails from './pages/EventDetails'
@@ -24,7 +24,7 @@ class App extends React.Component{
         <Route path="/" exact component = {Home}></Route>
         <Route path="/mission" component={Mission}></Route>
         <Route path="/membership" component={Membership}></Route>
-        {/* <Route path="/events" component={Events}></Route> */}
+         <Route path="/news" component={News}></Route> 
         <Route path="/faqs" component={Faqs}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
