@@ -19,14 +19,22 @@ const NewsList = ({news,loading}) =>{
     return (
         
  <>  
-     <h1 style= {{fontSize:"1.3rem", textTransform:"uppercase",color:"white"}} className= "text-center mb-4">Headlines</h1><hr/>
+     <h1 style= {{fontSize:"1.3rem", textTransform:"uppercase"}} className= "text-center mb-4">Headlines</h1><hr/>
       {!news && !loading? (<h1>News not found</h1>)
       :(
          news.map(n =>
           
-         <SingleNews news={n} key ={n.source.id}/>    
+         <SingleNews news={n} key ={n.source.id}/>   
+        
          ))
       }
+
+         <div className="d-flex justify-content-center align-content-center mb-3 mr-5">
+         <span className= "mr-2">previous</span>
+         <button className= "mr-2">1</button>
+         <button className= "mr-2">2</button>
+         <span className= "mr-2">Next</span>
+         </div> 
  </>
 
             

@@ -103,3 +103,14 @@ footer{
     object-fit: cover;
     
 }
+
+event_div{
+  position: relative;
+
+}
+
+event_button{
+  position: absolute;
+  top: 0;
+  
+}

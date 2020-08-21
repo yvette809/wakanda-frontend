@@ -4,11 +4,15 @@ import NewsList from '../components/NewsList'
 const News= ()=> {
     const [news, setNews] = useState([])
     const[loading, setLoading]= useState(false)
+    let countries = ['sweden', 'USA', 'Germany']
+   
+   
 
     useEffect(()=>{
        const getNews= async ()=>{
            setLoading(true)
            try{
+               
             const response = await fetch(`http://newsapi.org/v2/top-headlines?country=se&category=sports&apiKey=8e61a71b96ab40f5a70934daa426d498`)
             if (response.ok){
                 const news = await response.json()

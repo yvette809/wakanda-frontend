@@ -1,13 +1,35 @@
 import React, {useState, useEffect} from 'react';
-import {Jumbotron, Container, Button,Row,Col, Card} from 'react-bootstrap';
+import {Jumbotron, Container, Button,Row,Col, Card, Modal,Form, FormControl} from 'react-bootstrap';
 import EventList from '../components/EventList';
 import {Link} from 'react-router-dom';
+
 //import EventList from '../components/Event';
 
  const Home = () => {
-
+  const initialEvent = {
+    title:"",
+    description:"",
+    image:"",
+    time:"",
+    location:"",
+    date: ""
+  }
   const[events, setEvents] = useState([])
+  const [newEvent, setnewEvent] = useState(initialEvent)
+  //const {title,description,image,time,location,date} = initialEvent
+  // const [newEvent,setnewEvent] = useState({
+  //   title:"",
+  //   description:"",
+  //   image:"",
+  //   time:"",
+  //   location:"",
+  //   date: ""
+
+  // })
   const [loading, setLoading] = useState(false)
+  const [showModal, setshowModal] = useState(false)
+
+  // get Events
 
   useEffect(()=>{
 
@@ -33,6 +55,44 @@ import {Link} from 'react-router-dom';
 
   },[])
 
+  // Add Events
+  const addEvent =async (e)=>{
+   // e.preventDefault();
+    setLoading (true)
+
+    var data = {
+
+        title:newEvent.title,
+        description:newEvent.description,
+        image:newEvent.image,
+        time:newEvent.time,
+        location:newEvent.location,
+        date: newEvent.date
+
+    }
+    // const timeStamp = Date.now()
+    const response = await fetch ("http://localhost:4000/events", {
+      method:"POST",
+      body: JSON.stringify(data),
+      "Content-Type": "application/json"
+    })
+
+    if (response.ok){
+     alert("event added")
+      setnewEvent(initialEvent)
+      setLoading(false)
+    
+    }else{
+      alert("something went wrong")
+    }
+
+  }
+
+
+  useEffect(()=>{
+    addEvent()
+  },[])
+
     return (
 <>
 
@@ -51,20 +111,77 @@ import {Link} from 'react-router-dom';
  <Col lg={2}>
      <div >
      <p className= "mb-4">Click below for details</p>
-     <Link to="/membership"><button className="join  text-center" >JOIN</button></Link>
-     {/* <hr/> */}
-     {/* <h1 style= {{fontSize:"1rem", textTransform:"uppercase",color:"white"}}>Upcoming Events</h1>
-        <div>
-          <p>August 15th, Training Alidhem Pitch</p>
-          <p>10.30 - 12.30</p>
-          <hr className= "event_divider"/>
-        </div>
-        <div>
-          <p>August 15th, Training Alidhem Pitch</p>
-          <p>10.30 - 12.30</p>
-          <hr className= "event_divider"/>
-        </div>         */}
+      <div>
         <EventList events={events} loading={loading}/>
+    <Modal show ={showModal}>
+        <Modal.Header closeButton onClick= {()=> setshowModal(false)}>
+    <Modal.Title>Add Event</Modal.Title>
+  </Modal.Header>
+
+  <Modal.Body>
+    <Form onSubmit = {addEvent}>
+      <FormControl
+          type= "text" 
+          value = {newEvent.title}
+          name = "title"
+          placeholder = "Add Title"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+      <FormControl
+          type= "text" 
+          value = {newEvent.description}
+          name = "description"
+          placeholder = "Add description"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+      <FormControl
+          type= "text" 
+          value = {newEvent.image}
+          name = "image"
+          placeholder = "Add Image"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+          required
+      />
+      <FormControl
+          type= "text" 
+          value = {newEvent.time}
+          name = "time"
+          placeholder = "Add Time"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+      <FormControl
+          type= "text" 
+          value = {newEvent.location}
+          name = "location"
+          placeholder = "Add Location"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+      <FormControl
+          type= "date" 
+          value = {newEvent.date}
+          name = "date"
+          placeholder = "Add Date"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+     
+        <FormControl
+          type= "file" 
+          value = {newEvent.image}
+          name = "file"
+          placeholder = "Add file"
+          onChange = {(e)=> setnewEvent(e.currentTarget.value)}
+      />
+
+    </Form>
+  </Modal.Body>
+
+  <Modal.Footer>
+    <Button variant="secondary" onClick = {()=>setshowModal(false)}>Close</Button>
+    <Button variant="primary" onClick= {addEvent}>Add Event</Button>
+  </Modal.Footer>
+  </Modal>
+        <button className="btn-primary" onClick = {()=>setshowModal(true)}>Open Modal</button>
+        </div>
  </div>
  </Col>
 </Row>

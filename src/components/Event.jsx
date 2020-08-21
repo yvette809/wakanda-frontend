@@ -5,14 +5,11 @@ import {Link} from 'react-router-dom'
 const EventList = ({key, event}) => {
     const {title, description,image,Date,Time, _id,createdAt} = event;
 
-    setTimeout((events)=>{
-        return events
-    },60)
-    
+   
     return (
         <>
-          <div >
-          <Link to={`/eventdetails/${_id}`}><img src = {image} alt = "events"/></Link>
+          <div style={{ boxShadow:"5px 5px 5px 5px  grey"}} >
+          <Link to={`/eventdetails/${_id}`}><img src = {image} alt = "events"  style={{height:"80%", width:"80%",objectFit:"cover"}}/></Link>
           <div>
           <Link to={`/eventdetails/${_id}`}><p>{title}</p></Link>
           {/* <p>{Time}</p> */}
