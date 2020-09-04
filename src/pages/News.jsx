@@ -4,8 +4,6 @@ import NewsList from '../components/NewsList'
 const News= ()=> {
     const [news, setNews] = useState([])
     const[loading, setLoading]= useState(false)
-    let countries = ['sweden', 'USA', 'Germany']
-   
    
 
     useEffect(()=>{

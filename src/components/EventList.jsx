@@ -2,7 +2,7 @@ import React from 'react'
 import Event from './Event'
 
 
-const EventList = ({events, loading}) => {
+const EventList = ({events, loading,deleteEvent}) => {
     
     return (
         <div  className= "event_div">
@@ -10,16 +10,15 @@ const EventList = ({events, loading}) => {
          <h1 style= {{fontSize:"1.3rem", textTransform:"uppercase",color:"white"}} className= "text-center mb-4">Upcoming Events</h1><hr/>
         {!events && !loading? (<h1>Events not found</h1>)
         :(
-          
+        
+           
             events.map(event => (
         <>
-          <button className = "py-0 event_button ">...</button>  
+          <button className = "py-0 event_button " onClick = {()=>deleteEvent(event._id)}>x</button>  
           <Event key= {event.id} event = {event} />
          
         </>
          
-         
-
             ))
         )}
               

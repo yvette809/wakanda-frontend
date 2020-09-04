@@ -18,7 +18,7 @@ class App extends React.Component{
   render(){
     return (
      
-      <Container fluid>
+     
       <Router>
         <Navigation/>
         <Route path="/" exact component = {Home}></Route>
@@ -28,11 +28,11 @@ class App extends React.Component{
         <Route path="/faqs" component={Faqs}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
-        <Route path="/eventdetails/:id" component={EventDetails}></Route>
+        <Route path="/eventdetails/:_id" component={EventDetails}></Route>
         <Footer/>
       </Router>
       
-       </Container>
+     
     );
   }
 

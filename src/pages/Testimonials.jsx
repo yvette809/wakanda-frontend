@@ -12,9 +12,10 @@ import pic7 from '../images/pic7.jpg'
 const Testimonials = () => {
     return (
  <Container>
-        <h2>At WSK, we Make people Happy</h2>
+        <div  className= "text center">
+        <h2>At WSK, We Make Sports lovers Happy</h2>
         <p>These are some of our exciting stories</p>
-        <div>
+        </div>
    <Carousel className="mb-4 ">
      <Carousel.Item>
       <img
@@ -23,8 +24,11 @@ const Testimonials = () => {
       alt="First slide "
       />
      <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <div  className= "test">
+       <h3>Jacky, Mukumu,Thomas</h3>
+      <p>We look forward to every saturday to Train at WSK</p>
+       </div>
+      
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -35,8 +39,11 @@ const Testimonials = () => {
     />
 
     <Carousel.Caption>
-      <h3>Second slide label</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div  className= "test">
+      <h3>Babies Corner</h3>
+      <p>We love to come here and train with our friends. Love Terrel,Eliora</p>
+
+      </div> 
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -47,8 +54,11 @@ const Testimonials = () => {
     />
 
      <Carousel.Caption>
-      <h3>Third slide label</h3>
-      <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+       <div  className= "test">
+       <h3>Jacky</h3>
+      <p>WSK gives me confidence.I see the game well-ahead of time</p>
+       </div>
+     
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -58,8 +68,10 @@ const Testimonials = () => {
       alt="Fourth slide "
       />
      <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <div  className= "test">
+       <h3>George</h3>
+      <p>I am the king of WSK.</p>
+       </div>   
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -69,8 +81,11 @@ const Testimonials = () => {
       alt="Fifthslide "
       />
      <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <div  className= "test">
+       <h3>Bernard, Raymond,Festus & OJ</h3>
+      <p>We make Wsk what it is. At wsk, we have maximum fun</p>
+       </div>
+      
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -80,8 +95,11 @@ const Testimonials = () => {
       alt="sixth slide "
       />
      <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <div  className= "test">
+        <h3>Anselm,Abang</h3>
+      <p>We want more of this.</p>
+      </div>
+      
     </Carousel.Caption>
     </Carousel.Item>
     <Carousel.Item>
@@ -91,12 +109,15 @@ const Testimonials = () => {
       alt="seventh slide "
       />
      <Carousel.Caption>
-      <h3>First slide label</h3>
-      <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+       <div className= "test">
+       <h3>Goal Medal</h3>
+      <p>We want more of these gold medals. we make WSk proud</p>
+       </div>
+     
     </Carousel.Caption>
     </Carousel.Item>  
 </Carousel>
-  </div>
+  
     </Container>
     )
 }
