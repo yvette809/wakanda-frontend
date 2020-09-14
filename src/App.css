@@ -1,34 +1,39 @@
-
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
-  background-image: linear-gradient(-90deg,  #2374ab, #ffffff,white);
-  
+  background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);
 }
 
-.jumbo{
-
+.jumbo {
   /* background-image: linear-gradient(red,blue); */
-  background-image: url('./bg.jpg');
+  background-image: url("./bg.jpg");
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61JL1J+6btL.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
-  position: relative;
-   
+  height: 100vh;
+  /* position: relative; */
 }
 
-.jumbos{
-  background-image: url('./images/about.jpg');
+.about_us_img {
+  background-image: url("./images/about.jpg");
+}
+.about_us {
+  background-color: yellowgreen;
+  opacity: 0.9;
+  font-weight: bold;
+}
+.jumbos {
+  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61JL1J+6btL.jpg");
+  background-image: url("./bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
-  position: relative;
-
+  height: 100vh;
+  opacity: 0.5;
 }
-.join{
+.join {
   border: 2px solid white;
   border-radius: 50%;
   padding: 40px 17px;
@@ -37,108 +42,122 @@ body {
   font-size: 1.2rem;
 }
 
-hr{
+hr {
   border: 1px solid white;
   margin-bottom: 40px;
 }
 
-.event_divider{
-  box-shadow:0 12px 12px -12px rgba(0,0,0,0) ;
+.event_divider {
+  box-shadow: 0 12px 12px -12px rgba(0, 0, 0, 0);
 }
 
-ul li{
+ul li {
   list-style-type: none;
 }
 
-.group_img{
+.group_img {
   width: 100%;
   height: 100%;
   overflow: hidden;
   box-sizing: border-box;
 }
 
-footer{
-  background-color:#095b92;
+.wak_intro {
+  justify-content: center;
+  align-content: space-between;
 }
 
-.first_button{
-  position: absolute;
-  bottom: 0px;
-  left: 600px;
+.first_button {
+  margin-top: 350px;
 }
 
-.update,.register, .donate, .membership{
+.update,
+.register,
+.donate,
+.membership {
   background-color: aqua;
   color: #ffffff;
   border-color: #095b92;
   border-radius: 50px;
 }
-.update,.register,.donate:hover{
+
+.team {
+  box-shadow: seagreen;
+}
+
+.membership {
+  margin-top: 610px;
+}
+.update,
+.register,
+.donate:hover {
   background-color: rgba(165, 42, 42, 0.192);
   transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
 }
-.first_card{
-  height:100%;
+.first_card {
+  height: 100%;
   width: 100%;
   color: #ffffff;
   /* transform: rotate(-20deg); */
   transform: matrix(1, -0.3, 0, 1, 0, 0);
 }
-.values{
+.values {
   overflow: hidden;
   object-fit: contain;
   position: relative;
 }
-.register, .donate{
+.register,
+.donate {
   position: absolute;
   bottom: 5px;
   left: 50px;
 }
 
-.navigation{
-      background-image: linear-gradient(-90deg,  #2374ab, #ffffff,white);
+.navigation {
+  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
+  background-color:rgba(1, 1, 15, 0.157);
+  border: 1px solid rgba(1, 1, 15, 0.157);
 }
 
-.img-carousel{
-    width:40%;
-    height:500px;
-    object-fit: cover;
-    
+.img-carousel {
+  width: 40%;
+  height: 500px;
+  object-fit: cover;
 }
 
-event_div{
+event_div {
   position: relative;
-
 }
 
-event_button{
+event_button {
   position: absolute;
   top: 0;
-  
 }
 
-.event_title{
-  color: red ;
+.event_title {
+  color: red;
   text-decoration: none;
-
 }
 
-.event_title:hover{
-  text-decoration:none;
+.event_title:hover {
+  text-decoration: none;
   color: rgb(158, 255, 215);
   font-size: 1.3rem;
-  
-
 }
-#main_img :hover{
+#main_img :hover {
   width: 100%;
   height: 100%;
   background-color: red !important;
   transition: width 2s linear 1s;
-
 }
 
-.test{
+.test {
   color: aqua;
-  text-shadow:0 12px 12px -12px yellow;
+  text-shadow: 0 12px 12px -12px yellow;
+}
+
+footer {
+  /* background-color: #095b92; */
+  background-color: rgba(1, 1, 15, 0.157);
+  border: 1px solid rgba(1, 1, 15, 0.157);
 }

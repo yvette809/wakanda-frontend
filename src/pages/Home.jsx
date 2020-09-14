@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from 'axios'
+import axios from "axios";
 import {
   Jumbotron,
   Container,
@@ -56,11 +56,11 @@ const Home = () => {
     getEvents();
   }, []);
 
-   // Add Events
+  // Add Events
   const addEvent = async (e) => {
     // e.preventDefault();
     setLoading(true);
-    
+
     const response = await fetch("http://localhost:4000/events", {
       method: "POST",
       body: JSON.stringify(newEvent),
@@ -68,7 +68,6 @@ const Home = () => {
     });
 
     if (response.ok) {
-      
       setnewEvent({
         title: "",
         description: "",
@@ -76,10 +75,9 @@ const Home = () => {
         time: "",
         location: "",
         date: "",
-  
-       })
+      });
       alert("event added");
-    
+
       setLoading(false);
     } else {
       alert("something went wrong");
@@ -88,7 +86,7 @@ const Home = () => {
 
   // const addEvent = async e => {
   //   //e.preventDefault();
-  
+
   //     try{
   //       const config={
   //           headers:{
@@ -96,7 +94,6 @@ const Home = () => {
   //           }
   //       }
 
-       
   //       const body = JSON.stringify(newEvent)
   //       const res = await axios.post('http://localhost:4000/events', body, config)
   //       console.log(res.data)
@@ -106,9 +103,6 @@ const Home = () => {
   //       console.log(error)
   //   }
   //   }
-
-   
-  
 
   // delete Event
 
@@ -167,20 +161,22 @@ const Home = () => {
     <Container fluid>
       <Row className="">
         <Col lg={10}>
-          <Jumbotron className="jumbo">
-            <h1 className="text-white text-center">
-              Welcome to Wakanda Sports Klub (WSK)
-            </h1>
-            <p className="text-white font-weight-bolder text-center">
-              A Home of Champions
-            </p>
-            <p>
-              <Link to="/mission">
-                <Button variant="primary" className="first_button">
-                  Descover more
-                </Button>
-              </Link>
-            </p>
+          <Jumbotron className="jumbo d-flex-inline text-center">
+            <div className="wak_intro">
+              <h1 className="text-white text-center">
+                Welcome to Wakanda Sports Klub (WSK)
+              </h1>
+              <p className="text-white font-weight-bolder text-center">
+                A Home of Champions
+              </p>
+              <p>
+                <Link to="/mission">
+                  <Button variant="primary" className="first_button">
+                    About Us
+                  </Button>
+                </Link>
+              </p>
+            </div>
           </Jumbotron>
         </Col>
         <Col lg={2}>
@@ -284,7 +280,9 @@ const Home = () => {
               style={{ backgroundColor: "#008bcc" }}
             >
               <Card.Body>
-                <Card.Title>OUR VALUES</Card.Title>
+                <Card.Title>
+                  <i className="fa fa-heart mr-2 text-danger"></i>OUR VALUES
+                </Card.Title>
                 <hr style={{ border: "1px solid red" }} />
                 <Card.Text>
                   <p>RESPECT</p>
@@ -298,7 +296,7 @@ const Home = () => {
           <Col className="col col-lg-2">
             <Card className="first_card" style={{ backgroundColor: "#00a13a" }}>
               <Card.Body>
-                <Card.Title>WHERE WE OPERATE</Card.Title>
+                <Card.Title><i class="fa fa-map mr-2"></i>WHERE WE OPERATE</Card.Title>
                 <hr style={{ border: "1px solid red" }} />
                 <Card.Text>
                   <p>
@@ -311,7 +309,10 @@ const Home = () => {
           <Col className="col col-lg-2">
             <Card className="first_card" style={{ backgroundColor: "#d40075" }}>
               <Card.Body>
-                <Card.Title>JOIN US</Card.Title>
+                <Card.Title>
+                  <i className="fa fa-user mr-2 text-primary" />
+                  JOIN US
+                </Card.Title>
                 <hr style={{ border: "1px solid red" }} />
                 <Card.Text>
                   <p>Come and Experience the magic of WSK aka Wakanda</p>
@@ -325,7 +326,9 @@ const Home = () => {
           <Col className="col col-lg-2">
             <Card className="first_card" style={{ backgroundColor: "#fbba00" }}>
               <Card.Body>
-                <Card.Title>SUPPORT US</Card.Title>
+                <Card.Title>
+                  <i className="fa fa-support mr-2 text-danger"></i>SUPPORT US
+                </Card.Title>
                 <hr style={{ border: "1px solid red" }} />
                 <Card.Text>
                   <p>If you like what we do, please support us</p>
@@ -340,6 +343,6 @@ const Home = () => {
       </Container>
     </Container>
   );
-  }
+};
 
 export default Home;
