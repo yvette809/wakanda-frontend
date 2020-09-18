@@ -265,7 +265,15 @@ event_button {
   background-attachment: fixed;
   min-height: 700px;
   position: relative;
+  background-position: top left;
+  animation: mymove 5s infinite 
 }
+
+@keyframes mymove {
+  50% {background-position: center;};
+  
+}
+
 #values_section .dark_overlay {
   position: absolute;
   top: 0;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaAd, FaBiking, FaEdge, FaMedal } from "react-icons/fa";
+import { FaAd, FaBiking, FaEdge, FaMedal, FaResolving } from "react-icons/fa";
 
 import {
   Jumbotron,
@@ -443,32 +443,52 @@ const Home = () => {
 
       <Container>
         <div className="text-center my-4">
+          <FaResolving
+            className="fa_about bg-danger mb-4"
+            style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
+          />
           <h1>The Driving Force</h1>
         </div>
-        <Row className="text-center text-white no-gutters ">
+        <Row className=" text-white no-gutters ">
           <Col lg={6}>
-            <div classname="card " id="staff_1" style={{ minWidth: "30rem" }}>
-              <p>Emmanuel Mukumu</p>
+            <div
+              classname="card "
+              id="staff_1"
+              style={{ minWidth: "30rem", lineHeight: "1rem" }}
+            >
+              <h5>Emmanuel Mukumu</h5>
               <p>Chairman WSK</p>
             </div>
           </Col>
           <Col lg={6}>
-            <div classname="card " id="staff_2" style={{ minWidth: "30rem" }}>
-              <p>Ngwa McDonald</p>
+            <div
+              classname="card  "
+              id="staff_2"
+              style={{ minWidth: "30rem", lineHeight: "1rem" }}
+            >
+              <h5>Ngwa McDonald</h5>
               <p>Team Manager</p>
             </div>
           </Col>
         </Row>
-        <Row className="text-center mb-3 no-gutters text-white">
+        <Row className="mb-3 no-gutters text-white">
           <Col>
-            <div classname="card" id="staff_3" style={{ minWidth: "30rem" }}>
-              <p>Ojong Roland</p>
+            <div
+              classname="card"
+              id="staff_3"
+              style={{ minWidth: "30rem", lineHeight: "1rem" }}
+            >
+              <h5>Ojong Roland</h5>
               <p>Head Coach</p>
             </div>
           </Col>
-          <Col classname="card" id="staff_4" style={{ minWidth: "30rem" }}>
-            <div>
-              <p>Sidibe Michael</p>
+          <Col
+            classname="card "
+            id="staff_4"
+            style={{ minWidth: "30rem", lineHeight: "1rem" }}
+          >
+            <div classname="align-content-end ">
+              <h5>Sidibe Michael</h5>
               <p>Assistant Coach</p>
             </div>
           </Col>
