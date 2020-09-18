@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { FaAd, FaBiking, FaEdge, FaMedal } from "react-icons/fa";
+
 import {
   Jumbotron,
   Container,
@@ -158,190 +160,287 @@ const Home = () => {
   }, []);
 
   return (
-    <Container fluid>
-      <Row className="">
-        <Col lg={10}>
-          <Jumbotron className="jumbo d-flex-inline text-center">
-            <div className="wak_intro">
-              <h1 className="text-white text-center">
-                Welcome to Wakanda Sports Klub (WSK)
-              </h1>
-              <p className="text-white font-weight-bolder text-center">
-                A Home of Champions
-              </p>
-              <p>
-                <Link to="/mission">
-                  <Button variant="primary" className="first_button">
-                    About Us
-                  </Button>
-                </Link>
-              </p>
-            </div>
-          </Jumbotron>
-        </Col>
-        <Col lg={2}>
-          <div>
-            <p className="mb-4">Click below for details</p>
-            <SearchForm searchValue={setSearch} />
+    <>
+      <Container fluid>
+        <Row className="">
+          <Col lg={10} style={{ paddingLeft: "0" }}>
+            <Jumbotron className="jumbo d-flex-inline text-center">
+              <div className="wak_intro">
+                <h1 className="text-white text-center">
+                  Welcome to Wakanda Sports Klub (WSK)
+                </h1>
+                <p className="text-white font-weight-bolder text-center">
+                  A Home of Champions
+                </p>
+                <p>
+                  <Link to="/mission">
+                    <Button variant="primary" className="first_button">
+                      About Us
+                    </Button>
+                  </Link>
+                </p>
+              </div>
+            </Jumbotron>
+          </Col>
+          <Col lg={2}>
             <div>
-              <EventList
-                events={events}
-                loading={loading}
-                deleteEvent={deleteEvent}
-              />
-              <Modal show={showModal}>
-                <Modal.Header closeButton onClick={() => setshowModal(false)}>
-                  <Modal.Title>Add Event</Modal.Title>
-                </Modal.Header>
+              <p className="mb-4">Click below for details</p>
+              <SearchForm searchValue={setSearch} />
+              <div>
+                <EventList
+                  events={events}
+                  loading={loading}
+                  deleteEvent={deleteEvent}
+                />
+                <Modal show={showModal}>
+                  <Modal.Header closeButton onClick={() => setshowModal(false)}>
+                    <Modal.Title>Add Event</Modal.Title>
+                  </Modal.Header>
 
-                <Modal.Body>
-                  <Form onSubmit={addEvent}>
-                    <FormControl
-                      type="text"
-                      value={title}
-                      name="title"
-                      placeholder="Add Title"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
-                    <FormControl
-                      type="text"
-                      value={description}
-                      name="description"
-                      placeholder="Add description"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
-                    <FormControl
-                      type="text"
-                      value={image}
-                      name="image"
-                      placeholder="Add Image"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      required
-                    />
-                    <FormControl
-                      type="text"
-                      value={time}
-                      name="time"
-                      placeholder="Add Time"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
-                    <FormControl
-                      type="text"
-                      value={location}
-                      name="location"
-                      placeholder="Add Location"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
-                    <FormControl
-                      type="date"
-                      value={date}
-                      name="date"
-                      placeholder="Add Date"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
+                  <Modal.Body>
+                    <Form onSubmit={addEvent}>
+                      <FormControl
+                        type="text"
+                        value={title}
+                        name="title"
+                        placeholder="Add Title"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
+                      <FormControl
+                        type="text"
+                        value={description}
+                        name="description"
+                        placeholder="Add description"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
+                      <FormControl
+                        type="text"
+                        value={image}
+                        name="image"
+                        placeholder="Add Image"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                        required
+                      />
+                      <FormControl
+                        type="text"
+                        value={time}
+                        name="time"
+                        placeholder="Add Time"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
+                      <FormControl
+                        type="text"
+                        value={location}
+                        name="location"
+                        placeholder="Add Location"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
+                      <FormControl
+                        type="date"
+                        value={date}
+                        name="date"
+                        placeholder="Add Date"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
 
-                    <FormControl
-                      type="file"
-                      value={image}
-                      name="file"
-                      placeholder="Add file"
-                      onChange={(e) => setnewEvent(e.currentTarget.value)}
-                    />
-                  </Form>
-                </Modal.Body>
+                      <FormControl
+                        type="file"
+                        value={image}
+                        name="file"
+                        placeholder="Add file"
+                        onChange={(e) => setnewEvent(e.currentTarget.value)}
+                      />
+                    </Form>
+                  </Modal.Body>
 
-                <Modal.Footer>
-                  <Button
-                    variant="secondary"
-                    onClick={() => setshowModal(false)}
-                  >
-                    Close
-                  </Button>
-                  <Button variant="primary" onClick={addEvent}>
-                    Add Event
-                  </Button>
-                </Modal.Footer>
-              </Modal>
-              <button
-                className="btn-primary"
-                onClick={() => setshowModal(true)}
-              >
-                Open Modal
-              </button>
+                  <Modal.Footer>
+                    <Button
+                      variant="secondary"
+                      onClick={() => setshowModal(false)}
+                    >
+                      Close
+                    </Button>
+                    <Button variant="primary" onClick={addEvent}>
+                      Add Event
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+                <button
+                  className="btn-primary"
+                  onClick={() => setshowModal(true)}
+                >
+                  Open Modal
+                </button>
+              </div>
             </div>
-          </div>
-        </Col>
-      </Row>
-      <Container className="values">
-        <Row className="text-center my-4">
-          <Col className="col col-lg-2">
-            <Card
-              className="mb-5 first_card"
-              style={{ backgroundColor: "#008bcc" }}
-            >
-              <Card.Body>
-                <Card.Title>
-                  <i className="fa fa-heart mr-2 text-danger"></i>OUR VALUES
-                </Card.Title>
-                <hr style={{ border: "1px solid red" }} />
-                <Card.Text>
-                  <p>RESPECT</p>
-                  <p>PASSION</p>
-                  <p>COMMITMENT</p>
-                  <p>TEAMWORK</p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col className="col col-lg-2">
-            <Card className="first_card" style={{ backgroundColor: "#00a13a" }}>
-              <Card.Body>
-                <Card.Title><i class="fa fa-map mr-2"></i>WHERE WE OPERATE</Card.Title>
-                <hr style={{ border: "1px solid red" }} />
-                <Card.Text>
-                  <p>
-                    We use sports in changing Lives of immigrants all over Umeå
-                  </p>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col className="col col-lg-2">
-            <Card className="first_card" style={{ backgroundColor: "#d40075" }}>
-              <Card.Body>
-                <Card.Title>
-                  <i className="fa fa-user mr-2 text-primary" />
-                  JOIN US
-                </Card.Title>
-                <hr style={{ border: "1px solid red" }} />
-                <Card.Text>
-                  <p>Come and Experience the magic of WSK aka Wakanda</p>
-                  <Link to="/register">
-                    <button className="register">Register</button>
-                  </Link>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col className="col col-lg-2">
-            <Card className="first_card" style={{ backgroundColor: "#fbba00" }}>
-              <Card.Body>
-                <Card.Title>
-                  <i className="fa fa-support mr-2 text-danger"></i>SUPPORT US
-                </Card.Title>
-                <hr style={{ border: "1px solid red" }} />
-                <Card.Text>
-                  <p>If you like what we do, please support us</p>
-                  <Link to="/donate">
-                    <button className="donate">DONATE</button>
-                  </Link>
-                </Card.Text>
-              </Card.Body>
-            </Card>
           </Col>
         </Row>
       </Container>
-    </Container>
+      <Container>
+        <div className="text-center">
+          <FaAd
+            className="fa_about  mt-4"
+            style={{
+              fontSize: "5rem",
+              padding: "15px",
+              color: "red",
+              borderRadius: "50%",
+            }}
+          />
+        </div>
+        <div>
+          <h1 className="text-center ">About WSK</h1>
+        </div>
+
+        <Row className="text-center my-5">
+          <Col lg={3}>
+            <FaBiking
+              className="fa_about bg-danger mb-4"
+              style={{ fontSize: "5rem", padding: "15px" }}
+            />
+            <h4>AMAZING EXPERIENCE</h4>
+            <p>We lay emphasis on members-satisfaction and well-being</p>
+          </Col>
+
+          <Col lg={3}>
+            <FaBiking
+              className="fa_about bg-danger mb-4"
+              style={{ fontSize: "5rem", padding: "15px" }}
+            />
+            <h4>SKILLED LEADERSHIP</h4>
+            <p>
+              We have two of the finest sports coaches <br />
+              in Umeå.
+            </p>
+          </Col>
+
+          <Col lg={3}>
+            <FaMedal
+              className="fa_about bg-danger mb-4"
+              style={{ fontSize: "5rem", padding: "15px" }}
+            />
+            <h4>MEDALS WON</h4>
+            <p>
+              Present Gold Medalists at the
+              <br /> last Umeå Kommun competition @2019
+            </p>
+          </Col>
+
+          <Col lg={3}>
+            <FaEdge
+              className="fa_about bg-danger mb-4"
+              style={{ fontSize: "5rem", padding: "15px" }}
+            />
+            <Link to="/register"></Link>
+            <h4>COMMITMENT</h4>
+            <p>We are commited to make you smile even in the darkest winter</p>
+          </Col>
+        </Row>
+      </Container>
+      <div id="values_section">
+        <div className="dark_overlay">
+          <Container className="values" id="wak_values">
+            <Row className="text-center my-4 ">
+              <Col className="col col-lg-2">
+                <Card
+                  className="mb-5 first_card bg-outline"
+                  style={{
+                    backgroundColor: "transparent",
+                    outlineColor: "white",
+                    outlineStyle: "solid",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      <i className="fa fa-heart mr-2 text-danger"></i>OUR VALUES
+                    </Card.Title>
+                    <hr style={{ border: "1px solid red" }} />
+                    <Card.Text>
+                      <p>RESPECT</p>
+                      <p>PASSION</p>
+                      <p>COMMITMENT</p>
+                      <p>TEAMWORK</p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col className="col col-lg-2">
+                <Card
+                  className="second_card"
+                  style={{
+                    backgroundColor: "transparent",
+                    outlineColor: "white",
+                    outlineStyle: "solid",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      <i class="fa fa-map mr-2"></i>
+                      <span>ACHIEVEMENTS</span>
+                    </Card.Title>
+                    <hr style={{ border: "1px solid red" }} />
+                    <Card.Text>
+                      <p>
+                        We use sports in changing Lives of immigrants all over
+                        Umeå
+                      </p>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col className="col col-lg-2">
+                <Card
+                  className="third_card"
+                  style={{
+                    backgroundColor: "transparent",
+                    outlineColor: "white",
+                    outlineStyle: "solid",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      <i className="fa fa-user mr-2 text-primary" />
+                      JOIN US
+                    </Card.Title>
+                    <hr style={{ border: "1px solid red" }} />
+                    <Card.Text>
+                      <p>Come and Experience the magic of WSK aka Wakanda</p>
+                      <Link to="/register">
+                        <button className="register">Register</button>
+                      </Link>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+              <Col className="col col-lg-2">
+                <Card
+                  className="fourth_card bg-midnight"
+                  style={{
+                    backgroundColor: "transparent",
+                    outlineColor: "white",
+                    outlineStyle: "solid",
+                  }}
+                >
+                  <Card.Body>
+                    <Card.Title>
+                      <i className="fa fa-support mr-2 text-danger"></i>SUPPORT
+                      US
+                    </Card.Title>
+                    <hr style={{ border: "1px solid red" }} />
+                    <Card.Text>
+                      <p>If you like what we do, please support us</p>
+                      <Link to="/donate">
+                        <button className="donate">DONATE</button>
+                      </Link>
+                    </Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
+    </>
   );
 };
 

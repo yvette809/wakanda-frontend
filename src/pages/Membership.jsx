@@ -4,32 +4,23 @@ import { Link } from "react-router-dom";
 
 const Membership = () => {
   return (
-    <Container fluid>
-      <Row className="mb-2">
-        <Col>
-          <Jumbotron className="jumbos">
+    <Container fluid className=" jumbos">
             <div className="registration_info text-center align-content-between">
               <h1 className="text-white text-center">
                 Meet our Team
               </h1>
               <div>
                 <Link to="/register"><button className="membership btn-lg justify-content-center align-items-center">
-                  Register
+                  Join Us
                 </button></Link>
               </div>
             </div>
-          </Jumbotron>
-        </Col>
-      </Row>
-      <div>
-        <h1> Join US!</h1>
-      </div>
-      <Row className="mb-5 d-flex justify-content-center">
-        <Col className="col col-lg-10">
-          <p>
+          
+     
+          {/* <p>
             At WSK, we take things seriously.It is for this reason we welcome
             only registered members
-          </p>
+      </p> 
           <p>Annula membership fees : 300kr</p>
           <h3>The benefits of registration include:</h3>
           <ul className="d-inline-flex mr-5">
@@ -64,9 +55,10 @@ const Membership = () => {
               <li>Opportunity to meet other sports lovers</li>
             </span>
           </ul>
-        </Col>
-      </Row>
+       */}
+         
       
+     
     </Container>
   );
 };

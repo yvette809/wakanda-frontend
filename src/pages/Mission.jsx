@@ -1,5 +1,6 @@
 import React from "react";
-import pic from "../../src/images/about.jpg";
+import { FaConfluence } from "react-icons/fa";
+import { FaFighterJet } from "react-icons/fa";
 
 const Mission = () => {
   return (
@@ -11,7 +12,7 @@ const Mission = () => {
         </div>
         <div className="row mb-4 about_us">
           <div className="col col-md-8 about_us_img"></div>
-          <div className="col col-md-4 text-secondary">
+          <div className="col col-md-4 text-dark">
             <p>
               Wakanda Sports Klub is a sports organsation founded by a group of
               like-minded individuals to help combat depression. Emmanuel Mukumu
@@ -40,58 +41,46 @@ const Mission = () => {
 
         <div
           className="text-center container my-4 "
-          style={{ backgroundColor: "grey", fontSize: "1.6rem" , width:"100%"}}
+          style={{ backgroundColor: "grey", fontSize: "1.6rem", width: "100%" }}
         >
           Our Vision
         </div>
 
         <div className="row  ml-4 mb-2">
-          <div className="col col-lg-6">
-            <span>
-              <i className="fa fa-2x fa-angle-double-right mr-2"></i>
-            </span>
+          <div className="col col-lg-6 vision_1">
+            <i className="fa fa-2x fa-angle-double-right mr-2" style={{color:"pink"}}></i>
             <span>Promote Intergration of immigrants through Sports</span>
           </div>
-          <div className="col col-lg-6">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
+          <div className="col col-lg-6 vision_2">
+          <i class="fa fa-2x fa-fire-extinguisher mr-2" style={{color:"pink"}}></i>
             <span>Combat Depression amongst Immigrants</span>
           </div>
         </div>
-        <div className="row ml-4 mb-2">
-          <div className="col col-lg-6">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
+        <div className="row ml-4 mb-2 ">
+          <div className="col col-lg-6 vision_3">
+            <FaConfluence  style={{color:"pink", marginRight:"14px",fontSize:"2rem"}}/>
             <span>
               Promote equality through the intergration of both Men and women in
               to WSK
             </span>
           </div>
-          <div className="col col-lg-6">
+          <div className="col col-lg-6 vision_4">
+            <FaFighterJet  style={{color:"pink", marginRight:"14px",fontSize:"2rem", color:"pink"}}/>
             <span>
-              <i className="fa  fa-2x fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              Fight against Racial prejudice by admittin people of all races
+              Fight against Racial prejudice by admitting people of all races
               into WSK
             </span>
           </div>
         </div>
-        <div className="row ml-4 mb-2">
+        <div className="row ml-4 mb-2 vision_5">
           <div className="col col-lg-6">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
+          <i className="fa fa-2x fa-book-reader mr-2 " style={{color:"pink"}}></i>
             <span>
               Sensitize our kids on the importance of Physical Exercise
             </span>
           </div>
-          <div className="col col-lg-6">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
+          <div className="col col-lg-6 vision_6 ">
+            <i className="fa  fa-2x  fa-angle-double-right mr-2 " style={{color:"pink"}}></i>
             <span>
               Sensitize our kids on the importance of Physical Exercise
             </span>

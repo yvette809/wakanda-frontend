@@ -10,7 +10,11 @@ class Navigation extends Component {
       <Navbar bg="" expand="lg" className="navigation ">
         <Link to="/">
           <Navbar.Brand href="#home">
-            <img src={logo} alt="wakanda logo" style={{ width: "12%" }} />
+            <img
+              src={logo}
+              alt="wakanda logo"
+              style={{ width: "12%" }}
+            />
           </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,7 +37,9 @@ class Navigation extends Component {
             </Link>
           </Nav>
           <Form inline>
-            <Link to="register"><Button variant="outline-success">Register</Button></Link>
+            <Link to="register">
+              <Button variant="outline-success">Register</Button>
+            </Link>
           </Form>
         </Navbar.Collapse>
       </Navbar>

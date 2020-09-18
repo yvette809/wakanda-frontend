@@ -4,26 +4,30 @@
 
 body {
   margin: 0;
-  background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);
+  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
 
 .jumbo {
   /* background-image: linear-gradient(red,blue); */
+
   background-image: url("./bg.jpg");
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61JL1J+6btL.jpg");
+  background-image: url("https://www.burnleyfootballclub.com/siteassets/image/matches/2019-20/1st-team/bournemouth-h/screen-hand-ball-decision.jpg");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
-  /* position: relative; */
+  height: 100%;
 }
 
 .about_us_img {
   background-image: url("./images/about.jpg");
 }
 .about_us {
-  background-color: yellowgreen;
-  opacity: 0.9;
+  background-color: rgba(255, 192, 203, 0.068);
+  /* opacity: 0.9; */
   font-weight: bold;
+  color: teal !important;
+  box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue;
+  border-radius: 7%;
 }
 .jumbos {
   background-image: url("https://images-na.ssl-images-amazon.com/images/I/61JL1J+6btL.jpg");
@@ -97,10 +101,59 @@ ul li {
 .first_card {
   height: 100%;
   width: 100%;
+  position: relative;
   color: #ffffff;
+  transform: translateY(-1200px);
+  animation: animate1 1s forwards ease-in 2s;
+
   /* transform: rotate(-20deg); */
-  transform: matrix(1, -0.3, 0, 1, 0, 0);
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
+.second_card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: #ffffff;
+  transform: translateY(-1200px);
+  animation: animate1 1s forwards ease-in 3s;
+  /* transform: rotate(-20deg); */
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
+}
+.third_card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: #ffffff;
+  transform: translateY(-1200px);
+  animation: animate1 1s forwards ease-in 4s;
+  /* transform: rotate(-20deg); */
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
+}
+
+.fourth_card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: #ffffff;
+  transform: translateY(-1200px);
+  animation: animate1 1s forwards ease-in 5s;
+  /* transform: rotate(-20deg); */
+  /* transform: matrix(1, -0.3, 0, 1, 0, 0);  */
+}
+@keyframes animate1 {
+  to {
+    transform: translateY(0);
+    transform: matrix(1, -0.3, 0, 1, 0, 0);
+  }
+}
+
+.fourth_card,
+.first_card,
+.second_card,
+.third_card :hover {
+  background-color: springgreen;
+}
+
 .values {
   overflow: hidden;
   object-fit: contain;
@@ -114,8 +167,7 @@ ul li {
 }
 
 .navigation {
-  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
-  background-color:rgba(1, 1, 15, 0.157);
+  background-color: rgba(1, 1, 15, 0.157);
   border: 1px solid rgba(1, 1, 15, 0.157);
 }
 
@@ -139,16 +191,17 @@ event_button {
   text-decoration: none;
 }
 
-.event_title:hover {
+/* .event_title:hover {
   text-decoration: none;
   color: rgb(158, 255, 215);
   font-size: 1.3rem;
+} */
+#main_img {
+  transition: width 2s ease-in-out 1s;
 }
-#main_img :hover {
-  width: 100%;
+#main_img:hover {
+  width: 300px;
   height: 100%;
-  background-color: red !important;
-  transition: width 2s linear 1s;
 }
 
 .test {
@@ -156,8 +209,75 @@ event_button {
   text-shadow: 0 12px 12px -12px yellow;
 }
 
+.vision_1 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 1s;
+  font-weight: 800;
+  color: teal;
+}
+
+.vision_2 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 2s;
+  font-weight: 800;
+  color: teal;
+}
+.vision_3 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 3s;
+  font-weight: 800;
+  color: teal;
+}
+.vision_4 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 4s;
+  font-weight: 800;
+  color: teal;
+}
+.vision_5 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 5s;
+  font-weight: 800;
+  color: teal;
+}
+.vision_6 {
+  transform: translateY(-1200px);
+  animation: animate2 1s forwards ease-in 6s;
+  font-weight: 800;
+  color: teal;
+}
+
+@keyframes animate2 {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  color: #ffffff !important;
+  font-size: 1.2rem;
+}
+
+#values_section {
+  background-image: url("https://i.pinimg.com/originals/51/d8/1f/51d81f3597b1f29fede758245ba87101.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 700px;
+  position: relative;
+}
+#values_section .dark_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 150px 0 150px 150px;
+}
+
 footer {
-  /* background-color: #095b92; */
   background-color: rgba(1, 1, 15, 0.157);
+  /* background-color:teal; */
   border: 1px solid rgba(1, 1, 15, 0.157);
 }
