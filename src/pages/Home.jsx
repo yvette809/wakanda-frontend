@@ -296,7 +296,7 @@ const Home = () => {
           <Col lg={3}>
             <FaBiking
               className="fa_about bg-danger mb-4"
-              style={{ fontSize: "5rem", padding: "15px" }}
+              style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
             />
             <h4>AMAZING EXPERIENCE</h4>
             <p>We lay emphasis on members-satisfaction and well-being</p>
@@ -305,7 +305,7 @@ const Home = () => {
           <Col lg={3}>
             <FaBiking
               className="fa_about bg-danger mb-4"
-              style={{ fontSize: "5rem", padding: "15px" }}
+              style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
             />
             <h4>SKILLED LEADERSHIP</h4>
             <p>
@@ -317,7 +317,7 @@ const Home = () => {
           <Col lg={3}>
             <FaMedal
               className="fa_about bg-danger mb-4"
-              style={{ fontSize: "5rem", padding: "15px" }}
+              style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
             />
             <h4>MEDALS WON</h4>
             <p>
@@ -329,7 +329,7 @@ const Home = () => {
           <Col lg={3}>
             <FaEdge
               className="fa_about bg-danger mb-4"
-              style={{ fontSize: "5rem", padding: "15px" }}
+              style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
             />
             <Link to="/register"></Link>
             <h4>COMMITMENT</h4>
@@ -354,8 +354,8 @@ const Home = () => {
                     <Card.Title>
                       <i className="fa fa-heart mr-2 text-danger"></i>OUR VALUES
                     </Card.Title>
-                    <hr style={{ border: "1px solid red" }} />
-                    <Card.Text>
+                    <hr style={{ border: "1px solid white" }} />
+                    <Card.Text className="text-danger">
                       <p>RESPECT</p>
                       <p>PASSION</p>
                       <p>COMMITMENT</p>
@@ -402,8 +402,8 @@ const Home = () => {
                       <i className="fa fa-user mr-2 text-primary" />
                       JOIN US
                     </Card.Title>
-                    <hr style={{ border: "1px solid red" }} />
-                    <Card.Text>
+                    <hr style={{ border: "1px solid white" }} />
+                    <Card.Text className="text-danger">
                       <p>Come and Experience the magic of WSK aka Wakanda</p>
                       <Link to="/register">
                         <button className="register">Register</button>
@@ -440,6 +440,40 @@ const Home = () => {
           </Container>
         </div>
       </div>
+
+      <Container>
+        <div className="text-center my-4">
+          <h1>The Driving Force</h1>
+        </div>
+        <Row className="text-center text-white no-gutters ">
+          <Col lg={6}>
+            <div classname="card " id="staff_1" style={{ minWidth: "30rem" }}>
+              <p>Emmanuel Mukumu</p>
+              <p>Chairman WSK</p>
+            </div>
+          </Col>
+          <Col lg={6}>
+            <div classname="card " id="staff_2" style={{ minWidth: "30rem" }}>
+              <p>Ngwa McDonald</p>
+              <p>Team Manager</p>
+            </div>
+          </Col>
+        </Row>
+        <Row className="text-center mb-3 no-gutters text-white">
+          <Col>
+            <div classname="card" id="staff_3" style={{ minWidth: "30rem" }}>
+              <p>Ojong Roland</p>
+              <p>Head Coach</p>
+            </div>
+          </Col>
+          <Col classname="card" id="staff_4" style={{ minWidth: "30rem" }}>
+            <div>
+              <p>Sidibe Michael</p>
+              <p>Assistant Coach</p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

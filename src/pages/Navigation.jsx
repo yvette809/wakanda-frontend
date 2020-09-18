@@ -13,7 +13,9 @@ class Navigation extends Component {
             <img
               src={logo}
               alt="wakanda logo"
-              style={{ width: "12%" }}
+              style={{
+                width: "12%",
+              }}
             />
           </Navbar.Brand>
         </Link>
