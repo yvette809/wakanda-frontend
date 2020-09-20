@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { FaAd, FaBiking, FaEdge, FaMedal, FaResolving } from "react-icons/fa";
+import {
+  FaAd,
+  FaBiking,
+  FaEdge,
+  FaMedal,
+  FaResolving,
+  FaMdContactMail,
+} from "react-icons/fa";
 
 import {
   Jumbotron,
@@ -30,6 +37,15 @@ const Home = () => {
     location: "",
     date: "",
   });
+
+  const [message, setNewMessage] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    textArea: "",
+  });
+
+  const { name, email, phone, textArea } = message;
 
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
@@ -441,7 +457,7 @@ const Home = () => {
         </div>
       </div>
 
-      <Container>
+      <Container className="mb-4">
         <div className="text-center my-4">
           <FaResolving
             className="fa_about bg-danger mb-4"
@@ -494,6 +510,101 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
+      <div id="contact_img_section" style={{ padding: "150px" }}>
+        <div class="img_overlay">
+          <Container>
+            <div>
+              <i
+                className="fa fa-3x fa-address-card text-center text-white d-block"
+                style={{
+                  padding: "15px",
+                  borderRadius: "50%",
+                  textAlign: "center",
+                }}
+              ></i>
+            </div>
+            <h1 className="text-center text-white">CONTACT US</h1>
+            <p
+              className="text-center text-white"
+              style={{ fontSize: "1.4rem" }}
+            >
+              For any type of enquiry, send us a message below. We usually
+              respond within 24hours
+            </p>
+            <Row>
+              <Col lg={3}>
+                <Form>
+                  <Form.Control
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="YOUR NAME*"
+                    value={name}
+                    onChange={(e) => setNewMessage(e.currentTarget.value)}
+                    className="mb-4"
+                    style={{ padding: "20px" }}
+                  />
+
+                  <Form.Control
+                    type="email"
+                    id="email"
+                    placeholder="YOUR EMAIL*"
+                    value={email}
+                    onChange={(e) => setNewMessage(e.currentTarget.value)}
+                    className="mb-4"
+                    style={{ padding: "20px" }}
+                  />
+                  <Form.Control
+                    type="tel"
+                    id="phone"
+                    placeholder="YOUR PHONE*"
+                    value={phone}
+                    onChange={(e) => setNewMessage(e.currentTarget.value)}
+                    className="mb-4"
+                    style={{ padding: "20px" }}
+                  />
+                </Form>
+              </Col>
+              <Col lg={6}>
+                <Form.Group>
+                  <Form.Control
+                    name="textArea"
+                    id="message"
+                    placeholder="YOUR MESSAGE *"
+                    value={textArea}
+                    as="textarea"
+                    Cols="30"
+                    rows={3}
+                    onChange={(e) => setNewMessage(e.currentTarget.value)}
+                    className="mb-4 h-100"
+                    style={{ padding: "20px" }}
+                  />
+                </Form.Group>
+                <Button variant="danger" size="lg" style={{ width: "100%" }}>
+                  {" "}
+                  SEND MESSAGE
+                </Button>
+              </Col>
+              <Col lg={3}>
+                <div className="mb-2">
+                  <i className="fa fa-map-marker mr-2 fa_icon"></i>
+                  <span className="text-white">
+                    Språkgränd 29,90733 <br /> Umeå, Sweden
+                  </span>
+                </div>
+                <div className="mb-2">
+                  <i className="fa fa-2x fa-envelope-square mr-2 fa_icon"></i>
+                  <span className="text-white">info@wsk@gmail.com</span>
+                </div>
+                <div className="mb-2">
+                  <i className="fa fa-2x fa-phone-square mr-2 fa_icon"></i>
+                  <span className="text-white">0046760726885</span>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
     </>
   );
 };

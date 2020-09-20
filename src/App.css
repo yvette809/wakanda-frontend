@@ -11,9 +11,9 @@ body {
   /* background-image: linear-gradient(red,blue); */
 
   background-image: url("./bg.jpg");
-  background-image: url("https://www.desktopbackground.org/p/2013/03/25/550672_cool-backgrounds-that-move-around_1488x1091_h.jpg");
+  background-image: url("./images/front.jpg");
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /* background-attachment: fixed; */
   background-size: cover;
   height: 100%;
 }
@@ -266,12 +266,13 @@ event_button {
   min-height: 700px;
   position: relative;
   background-position: top left;
-  animation: mymove 5s infinite 
+  animation: mymove 5s infinite;
 }
 
 @keyframes mymove {
-  50% {background-position: center;};
-  
+  50% {
+    background-position: center;
+  }
 }
 
 #values_section .dark_overlay {
@@ -323,4 +324,32 @@ footer {
   background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);
   /* background-color:teal; */
   border: 1px solid rgba(1, 1, 15, 0.157);
+}
+
+#contact_img_section {
+  background-image: url("./images/contact.JPG");
+  background-image: url("./images/contact2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* background-attachment: fixed; */
+  min-height: 700px;
+  position: relative;
+}
+
+#contact_img_section.img_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.fa_icon {
+  font-size: 1.5rem;
+  color: #ffffff;
+  padding: 10px;
+  background-color: black;
+  border-radius: 100%;
+  border: 2px solid red;
 }
