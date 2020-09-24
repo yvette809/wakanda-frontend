@@ -166,8 +166,9 @@ ul li {
 }
 
 .navigation {
-  background-color: rgba(1, 1, 15, 0.157);
-  background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);
+ 
+  background-color: teal;
+  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);  */
   border: 1px solid rgba(1, 1, 15, 0.157);
 }
 
@@ -321,9 +322,10 @@ event_button {
   background-color: red;
 }
 footer {
-  background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);
-  /* background-color:teal; */
+  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
+  
   border: 1px solid rgba(1, 1, 15, 0.157);
+  background-color: teal;
 }
 
 #contact_img_section {
@@ -352,4 +354,37 @@ footer {
   background-color: black;
   border-radius: 100%;
   border: 2px solid red;
+}
+
+.sponsor_img {
+  max-height: 20%;
+  max-width: 18%;
+  cursor: pointer;
+  object-fit: contain;
+}
+
+.kids_profile img {
+  width: 100%;
+  height: 50vh;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+.foot_img img {
+  width: 100%;
+  height: 50vh;
+  object-fit: contain;
+  overflow: auto;
+}
+.basket_img {
+  width: 20vw;
+  height: 50vh;
+  object-fit: contain;
+  overflow: hidden;
+}
+
+#activities_section {
+  /* box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue; */
+  background-color: teal;
+  border-radius: 20px;
 }

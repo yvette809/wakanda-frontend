@@ -6,8 +6,16 @@ import {
   FaEdge,
   FaMedal,
   FaResolving,
-  FaMdContactMail,
+  ioMdFootball,
 } from "react-icons/fa";
+import ica from "../images/ica.png";
+import kommun from "../images/kommun.png";
+import peab from "../images/peab.jpg";
+import bostaden from "../images/bostaden.jpg";
+import UE from "../images/UE.png";
+import coop from "../images/coop.png";
+import activity from "../images/activity.jpg";
+import kids from "../images/kids.jpg";
 
 import {
   Jumbotron,
@@ -42,10 +50,10 @@ const Home = () => {
     name: "",
     email: "",
     phone: "",
-    textArea: "",
+    text: "",
   });
 
-  const { name, email, phone, textArea } = message;
+  const { name, email, phone, text } = message;
 
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
@@ -86,22 +94,56 @@ const Home = () => {
     });
 
     if (response.ok) {
-      setnewEvent({
-        title: "",
-        description: "",
-        image: "",
-        time: "",
-        location: "",
-        date: "",
-      });
+      setnewEvent(response.data);
       alert("event added");
 
       setLoading(false);
     } else {
       alert("something went wrong");
     }
+    setnewEvent();
   };
 
+  // submit messase
+
+  const submitMessage = async (e) => {
+    e.preventDefault();
+    if (name === "" || email === "" || phone === "" || text === "") {
+      alert("fields cannot be empty");
+    } else {
+      const newMessage = {
+        name,
+        email,
+        phone,
+        text,
+      };
+
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        const body = JSON.stringify(newMessage);
+        const res = await axios.post(
+          "http://localhost:4000/email",
+          body,
+          config
+        );
+        console.log(res.data);
+        alert("message received");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    setLoading(false);
+    setNewMessage({
+      name: "",
+      email: "",
+      phone: "",
+      text: "",
+    });
+  };
   // const addEvent = async e => {
   //   //e.preventDefault();
 
@@ -149,7 +191,6 @@ const Home = () => {
   };
 
   useEffect(() => {
-    addEvent();
     deleteEvent();
   }, []);
 
@@ -179,7 +220,7 @@ const Home = () => {
     <>
       <Container fluid>
         <Row className="">
-          <Col lg={10} style={{ paddingLeft: "0" }}>
+          <Col lg={10} xs={12} style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
                 <h1 className="text-white text-center">
@@ -353,7 +394,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <div id="values_section">
+      <div id="values_section" className="">
         <div className="dark_overlay">
           <Container className="values" id="wak_values">
             <Row className="text-center my-4 ">
@@ -456,6 +497,79 @@ const Home = () => {
           </Container>
         </div>
       </div>
+      <div className="text-center mb-4">
+        <ioMdFootball />
+        <i
+          className=" fa fa-baseball-ball mb-2 mt-4 bg-danger"
+          style={{ fontSize: "6rem", padding: "15px", borderRadius: "50%" }}
+        ></i>
+        <h2>Our Activities</h2>
+      </div>
+      <Container id="activities_section">
+        <Row className="text-white">
+          <Col  className="mb-3">
+            <div className="kids_profile">
+              <img src={kids} alt="kidsimage" />
+            </div>
+          </Col>
+          <Col className="mb-3">
+            <div>
+              <h1 className="text-danger">Kids Corner</h1>
+              <p style={{ fontSize: "1.3rem" }}>
+                At WSK, we specialise in the well-being of kids.We have trained
+                coaches that take kids from all ages.We train them to become
+                professionals.All kids are welcome it desn't matter on the
+                skill-level.
+              </p>
+              <Link to="/kids">
+                <button>Read More</button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+        <Row className="mb-4 text-white">
+          <Col  >
+            <div>
+              <h1 className="text-danger">Football</h1>
+              <p style={{ fontSize: "1.3rem" }}>
+                Football is our passion. We train twice every week to keep the
+                spirit alive. At WSK, we believe in equality and mutual respect
+              </p>
+              <Link to="/activies">
+                <button>Read More</button>
+              </Link>
+            </div>
+          </Col>
+          <Col>
+            <div className="foot_img">
+              <img src={activity} alt="kidsimage" />
+            </div>
+          </Col>
+        </Row>
+        <Row className="text-white">
+          <Col className="mb-5 " >
+            <div className="basket_img">
+              <img
+                src="https://pmcvariety.files.wordpress.com/2019/10/lakers-nba-china-criticism.jpg?w=1000"
+                alt="kidsimage"
+              />
+            </div>
+          </Col>
+          <Col>
+            <div>
+              <h1 className="text-danger">Basketball</h1>
+              <p style={{ fontSize: "1.3rem" }}>
+                We recently diversified in to the field of Basketball. During
+                our basketball trainings, we have the opportunity to train a
+                team of 15 to 20 persons.
+              </p>
+              <Link to="/basketball">
+                <button>Read More</button>
+              </Link>
+            </div>
+          </Col>
+        </Row>
+      </Container>
 
       <Container className="mb-4">
         <div className="text-center my-4">
@@ -465,51 +579,71 @@ const Home = () => {
           />
           <h1>The Driving Force</h1>
         </div>
-        <Row className=" text-white no-gutters ">
-          <Col lg={6}>
-            <div
+        <div style={{ borderRadius: "20px" }}>
+          <Row className=" text-white no-gutters ">
+            <Col lg={6}>
+              <div
+                classname="card "
+                id="staff_1"
+                style={{ minWidth: "30rem", lineHeight: "1rem" }}
+              >
+                <h5>Emmanuel Mukumu</h5>
+                <p>Chairman WSK</p>
+              </div>
+            </Col>
+            <Col lg={6}>
+              <div
+                classname="card  "
+                id="staff_2"
+                style={{ minWidth: "30rem", lineHeight: "1rem" }}
+              >
+                <h5>Ngwa McDonald</h5>
+                <p>Team Manager</p>
+              </div>
+            </Col>
+          </Row>
+          <Row className="mb-3 no-gutters text-white">
+            <Col>
+              <div
+                classname="card"
+                id="staff_3"
+                style={{ minWidth: "30rem", lineHeight: "1rem" }}
+              >
+                <h5>Ojong Roland</h5>
+                <p>Head Coach</p>
+              </div>
+            </Col>
+            <Col
               classname="card "
-              id="staff_1"
+              id="staff_4"
               style={{ minWidth: "30rem", lineHeight: "1rem" }}
             >
-              <h5>Emmanuel Mukumu</h5>
-              <p>Chairman WSK</p>
-            </div>
-          </Col>
-          <Col lg={6}>
-            <div
-              classname="card  "
-              id="staff_2"
-              style={{ minWidth: "30rem", lineHeight: "1rem" }}
-            >
-              <h5>Ngwa McDonald</h5>
-              <p>Team Manager</p>
-            </div>
-          </Col>
-        </Row>
-        <Row className="mb-3 no-gutters text-white">
-          <Col>
-            <div
-              classname="card"
-              id="staff_3"
-              style={{ minWidth: "30rem", lineHeight: "1rem" }}
-            >
-              <h5>Ojong Roland</h5>
-              <p>Head Coach</p>
-            </div>
-          </Col>
-          <Col
-            classname="card "
-            id="staff_4"
-            style={{ minWidth: "30rem", lineHeight: "1rem" }}
-          >
-            <div classname="align-content-end ">
-              <h5>Sidibe Michael</h5>
-              <p>Assistant Coach</p>
-            </div>
-          </Col>
-        </Row>
+              <div classname="align-content-end ">
+                <h5>Sidibe Michael</h5>
+                <p>Assistant Coach</p>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </Container>
+      <div className="text-center">
+        <i
+          className="fa fa-bullseye mb-2 mt-4 bg-danger"
+          style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%" }}
+        ></i>
+        <h2>Our Prospective Sponsors</h2>
+      </div>
+      <Container className="mb-3">
+        <div className="sponsor d-flex justify-content-between align-content-lg-centermb-3">
+          <img src={ica} alt="" className="sponsor_img" />
+          <img src={kommun} alt="" className="sponsor_img" />
+          <img src={peab} alt="" className="sponsor_img" />
+          <img src={bostaden} alt="" className="sponsor_img" />
+          <img src={UE} alt="" className="sponsor_img" />
+          <img src={coop} alt="" className="sponsor_img" />
+        </div>
+      </Container>
+
       <div id="contact_img_section" style={{ padding: "150px" }}>
         <div class="img_overlay">
           <Container>
@@ -533,7 +667,7 @@ const Home = () => {
             </p>
             <Row>
               <Col lg={3}>
-                <Form>
+                <Form onSubmit={submitMessage}>
                   <Form.Control
                     type="text"
                     name="name"
@@ -543,6 +677,7 @@ const Home = () => {
                     onChange={(e) => setNewMessage(e.currentTarget.value)}
                     className="mb-4"
                     style={{ padding: "20px" }}
+                    required
                   />
 
                   <Form.Control
@@ -553,6 +688,7 @@ const Home = () => {
                     onChange={(e) => setNewMessage(e.currentTarget.value)}
                     className="mb-4"
                     style={{ padding: "20px" }}
+                    required
                   />
                   <Form.Control
                     type="tel"
@@ -562,6 +698,7 @@ const Home = () => {
                     onChange={(e) => setNewMessage(e.currentTarget.value)}
                     className="mb-4"
                     style={{ padding: "20px" }}
+                    required
                   />
                 </Form>
               </Col>
@@ -571,16 +708,22 @@ const Home = () => {
                     name="textArea"
                     id="message"
                     placeholder="YOUR MESSAGE *"
-                    value={textArea}
+                    value={text}
                     as="textarea"
                     Cols="30"
                     rows={3}
                     onChange={(e) => setNewMessage(e.currentTarget.value)}
                     className="mb-4 h-100"
                     style={{ padding: "20px" }}
+                    required
                   />
                 </Form.Group>
-                <Button variant="danger" size="lg" style={{ width: "100%" }}>
+                <Button
+                  variant="danger"
+                  size="lg"
+                  onClick={submitMessage}
+                  style={{ width: "100%" }}
+                >
                   {" "}
                   SEND MESSAGE
                 </Button>
