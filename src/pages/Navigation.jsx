@@ -39,7 +39,7 @@ class Navigation extends Component {
             </Link>
           </Nav>
           <Form inline>
-            <Link to="register">
+            <Link to="/register">
               <Button variant="outline-success">Register</Button>
             </Link>
           </Form>
