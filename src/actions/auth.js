@@ -1,6 +1,11 @@
 import axios from "axios";
-import { Alert } from "react-bootstrap";
-import { REGISTER_SUCCESS, REGISTER_FAIL, LOGIN_SUCCESS, LOGIN_FAIL, AUTH_ERROR } from "./types";
+import {
+  REGISTER_SUCCESS,
+  REGISTER_FAIL,
+  LOGIN_SUCCESS,
+  LOGIN_FAIL,
+  LOGOUT,
+} from "./types";
 
 // Register User
 
@@ -18,34 +23,29 @@ export const register = ({ name, email, password }) => async (dispatch) => {
       body,
       config
     );
-    
-      dispatch({
-        type: REGISTER_SUCCESS,
-        payload: res.data,
-      });
-    
-      dispatch({
-        type: REGISTER_FAIL
-      })
-    
-   
+
+    dispatch({
+      type: REGISTER_SUCCESS,
+      payload: res.data,
+    });
+
   } catch (error) {
     console.log(error);
+    dispatch({
+      type: REGISTER_FAIL,
+    });
   }
- 
 };
 
 //Login user
 
-// Register User
-
-export const login = ({  email, password }) => async (dispatch) => {
+export const login = (email, password) => async (dispatch) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  const body = JSON.stringify({email, password});
+  const body = JSON.stringify({ email, password });
 
   try {
     const res = await axios.post(
@@ -53,17 +53,20 @@ export const login = ({  email, password }) => async (dispatch) => {
       body,
       config
     );
-    
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: res.data,
-      });  
-  
+
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
   } catch (error) {
     console.log(error);
+    dispatch({
+      type: LOGIN_FAIL,
+    });
   }
-  dispatch({
-    type: LOGIN_FAIL
-  })
- 
+};
+
+// Logout user
+export const logout = () => (dispatch) => {
+  dispatch({ type: LOGOUT });
 };

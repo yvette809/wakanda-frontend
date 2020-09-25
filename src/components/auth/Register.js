@@ -1,10 +1,11 @@
 import React, { useState } from "react";
+import { Container, Form, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 
-const Register = ({ setAlert,register, isAuthenticated }) => {
+const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -27,16 +28,16 @@ const Register = ({ setAlert,register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/" />;
+    return <Redirect to="/home" />;
   }
 
   return (
-    <>
+    <Container id="login_section">
       <h1 className="large text-primary">Sign Up</h1>
       <p className="lead">
         <i className="fas fa-user" /> Create Your Account
       </p>
-      <form className="form" onSubmit={onSubmit}>
+      {/* <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="text"
@@ -78,11 +79,53 @@ const Register = ({ setAlert,register, isAuthenticated }) => {
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
-      </form>
+      </form> */}
+
+      <Form onSubmit={onSubmit}>
+        <FormControl
+          type="text"
+          value={name}
+          name="name"
+          placeholder="Name"
+          onChange={onChange}
+          className="mb-4 py-3"
+        />
+        <FormControl
+          type="email"
+          value={email}
+          name="email"
+          placeholder="Email Address"
+          onChange={onChange}
+          className="mb-4 py-3"
+        />
+        <FormControl
+          type="password"
+          value={password}
+          name="password"
+          placeholder="password"
+          className="mb-4 py-3"
+          onChange={onChange}
+          required
+        />
+        <FormControl
+          type="password"
+          value={password2}
+          name="password2"
+          placeholder="confirm password"
+          className="mb-4 py-3"
+          onChange={onChange}
+        />
+        <input
+          type="submit"
+          className="btn btn-primary"
+          value="Register"
+          onClick={onSubmit}
+        />
+      </Form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
-    </>
+    </Container>
   );
 };
 

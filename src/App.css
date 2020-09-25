@@ -16,8 +16,16 @@ body {
   /* background-attachment: fixed; */
   background-size: cover;
   height: 100%;
+  position: relative;
 }
 
+.first_button {
+  position: absolute;
+  bottom: 20px;
+  width: 150px;
+  margin-right: 150px;
+  padding: 10px 0;
+}
 .about_us_img {
   background-image: url("./images/about.jpg");
 }
@@ -71,9 +79,7 @@ ul li {
   align-content: space-between;
 }
 
-.first_button {
-  margin-top: 350px;
-}
+
 
 .update,
 .register,
@@ -166,7 +172,6 @@ ul li {
 }
 
 .navigation {
- 
   background-color: teal;
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);  */
   border: 1px solid rgba(1, 1, 15, 0.157);
@@ -323,7 +328,7 @@ event_button {
 }
 footer {
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
-  
+
   border: 1px solid rgba(1, 1, 15, 0.157);
   background-color: teal;
 }
@@ -387,4 +392,11 @@ footer {
   /* box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue; */
   background-color: teal;
   border-radius: 20px;
+}
+
+#login_section{
+  margin-top: 300px;
+  margin-bottom: 150px;
+  width: 50%;
+
 }

@@ -13,8 +13,8 @@ import Testimonials from "../src/pages/Testimonials";
 import Faqs from "./pages/Faqs";
 import EventDetails from "./pages/EventDetails";
 import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
 
 class App extends React.Component {
   render() {
@@ -29,6 +29,7 @@ class App extends React.Component {
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/register" component={Register}></Route>
+        <Route path="/login" component={Login}></Route>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
         <Footer />
       </Router>

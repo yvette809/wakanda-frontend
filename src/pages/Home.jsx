@@ -231,7 +231,7 @@ const Home = () => {
                 </p>
                 <p>
                   <Link to="/mission">
-                    <Button variant="primary" className="first_button">
+                    <Button variant="primary" className="first_button font-bold" style={{fontSize:"1.2rem"}}>
                       About Us
                     </Button>
                   </Link>

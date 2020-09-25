@@ -5,10 +5,10 @@ import { FaFighterJet } from "react-icons/fa";
 const Mission = () => {
   return (
     <>
-      <div className="container mb-5 team">
+      <div className="container mb-5 team" style={{marginTop:"200px"}}>
         <div>
           {" "}
-          <h2>About Us</h2>
+          <h2 className="text-center mb-3">About Us</h2>
         </div>
         <div className="row mb-4 about_us">
           <div className="col col-md-8 about_us_img"></div>
