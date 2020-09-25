@@ -21,7 +21,7 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/news" />;
+    return <Redirect to="/dashboard"/>;
   }
 
   return (

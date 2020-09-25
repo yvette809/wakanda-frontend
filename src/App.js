@@ -14,13 +14,19 @@ import Faqs from "./pages/Faqs";
 import EventDetails from "./pages/EventDetails";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import Dashboard from "./components/dashboard/Dashboard";
+import Alert from "./components/Alert"
+import PrivateRoute from "./components/routing/PrivateRoute";
 import { BrowserRouter as Router, Route } from "react-router-dom";
+import Switch from "react-bootstrap/esm/Switch";
 
 class App extends React.Component {
   render() {
     return (
       <Router>
         <Navigation />
+        <Alert/>
+        <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/mission" component={Mission}></Route>
         <Route path="/membership" component={Membership}></Route>
@@ -30,7 +36,9 @@ class App extends React.Component {
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
+        <PrivateRoute exact path="/dashboard" component={Dashboard}></PrivateRoute>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
+        </Switch>
         <Footer />
       </Router>
     );
