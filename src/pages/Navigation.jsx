@@ -76,7 +76,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
 
   console.log("==>", isAuthenticated);
   return (
-    <Navbar bg="" expand="lg" className="navigation fixed-top">
+    <Navbar bg="" expand="lg" className="navigation ">
       <>{isAuthenticated ? authLinks : guestLinks}</>
     </Navbar>
   );

@@ -7,12 +7,22 @@ const initialState = {};
 
 const middleware = [thunk];
 
-export default function configureStore() {
-  return createStore(
-    rootReducer,
-    initialState,
-    composeWithDevTools(applyMiddleware(...middleware))
+ const store = createStore(
+  rootReducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
 
-  );
-}
+export default store;
+
+
+
+// export default function configureStore() {
+//   return createStore(
+//     rootReducer,
+//     initialState,
+//     composeWithDevTools(applyMiddleware(...middleware))
+
+//   );
+//}
 

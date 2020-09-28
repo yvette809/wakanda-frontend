@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Container } from "react-bootstrap";
@@ -14,19 +14,34 @@ import Faqs from "./pages/Faqs";
 import EventDetails from "./pages/EventDetails";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
+import { LOGOUT } from "./actions/types";
 import Dashboard from "./components/dashboard/Dashboard";
-import Alert from "./components/Alert"
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./components/utils/setAuthToken";
+import  store from "./store";
+import Alert from "./components/Alert";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Switch from "react-bootstrap/esm/Switch";
 
-class App extends React.Component {
-  render() {
-    return (
-      <Router>
-        <Navigation />
-        <Alert/>
-        <Switch>
+const App = () => {
+  if (localStorage.token) {
+    setAuthToken(localStorage.token);
+  }
+  useEffect(() => {
+    store.dispatch(loadUser());
+
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener("storage", () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
+  }, []);
+
+  return (
+    <Router>
+      <Navigation />
+      <Alert />
+      <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/mission" component={Mission}></Route>
         <Route path="/membership" component={Membership}></Route>
@@ -36,13 +51,16 @@ class App extends React.Component {
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
-        <PrivateRoute exact path="/dashboard" component={Dashboard}></PrivateRoute>
+        <PrivateRoute
+          exact
+          path="/dashboard"
+          component={Dashboard}
+        ></PrivateRoute>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
-        </Switch>
-        <Footer />
-      </Router>
-    );
-  }
-}
+      </Switch>
+      <Footer />
+    </Router>
+  );
+};
 
 export default App;

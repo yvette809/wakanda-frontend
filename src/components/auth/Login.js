@@ -18,7 +18,9 @@ const Login = ({ login, isAuthenticated }) => {
   const onSubmit = (e) => {
     e.preventDefault();
     login(email, password);
+  
   };
+
 
   if (isAuthenticated) {
     return <Redirect to="/dashboard"/>;
