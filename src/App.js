@@ -16,13 +16,14 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import { LOGOUT } from "./actions/types";
 import Dashboard from "./components/dashboard/Dashboard";
+import CreateProfile from "./components/profile-form/CreateProfile";
+import EditProfile from "./components/profile-form/EditProfile";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
-import  store from "./store";
+import store from "./store";
 import Alert from "./components/Alert";
 import PrivateRoute from "./components/routing/PrivateRoute";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import Switch from "react-bootstrap/esm/Switch";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 const App = () => {
   if (localStorage.token) {
@@ -55,6 +56,16 @@ const App = () => {
           exact
           path="/dashboard"
           component={Dashboard}
+        ></PrivateRoute>
+        <PrivateRoute
+          exact
+          path="/create-profile"
+          component={CreateProfile}
+        ></PrivateRoute>
+         <PrivateRoute
+          exact
+          path="/edit-profile"
+          component={EditProfile}
         ></PrivateRoute>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
       </Switch>

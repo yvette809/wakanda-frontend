@@ -13,12 +13,12 @@ import {
 
 // load user
 export const loadUser = () => async (dispatch) => {
-  if(localStorage.token){
-    setAuthToken(localStorage.token)
-  }
+  // if (localStorage.token) {
+  //   setAuthToken(localStorage.token);
+  // }
   try {
     const res = await axios.get("http://localhost:4000/auth");
-    console.log("user response", res.data)
+    console.log("user response", res.data);
 
     dispatch({
       type: USER_LOADED,
