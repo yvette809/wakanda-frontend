@@ -18,6 +18,7 @@ import { LOGOUT } from "./actions/types";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
+import AddExperience from "./components/profile-form/AddExperience"
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
 import store from "./store";
@@ -66,6 +67,11 @@ const App = () => {
           exact
           path="/edit-profile"
           component={EditProfile}
+        ></PrivateRoute>
+         <PrivateRoute
+          exact
+          path="/add-experience"
+          component={AddExperience}
         ></PrivateRoute>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
       </Switch>
