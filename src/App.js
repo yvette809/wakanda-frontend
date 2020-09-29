@@ -18,7 +18,9 @@ import { LOGOUT } from "./actions/types";
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
-import AddExperience from "./components/profile-form/AddExperience"
+import AddExperience from "./components/profile-form/AddExperience";
+import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
 import store from "./store";
@@ -53,6 +55,8 @@ const App = () => {
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
+        <Route path="/profiles" component={Profiles}></Route>
+        <Route path="/profiles/:_id" component={Profile}></Route>
         <PrivateRoute
           exact
           path="/dashboard"
@@ -63,12 +67,12 @@ const App = () => {
           path="/create-profile"
           component={CreateProfile}
         ></PrivateRoute>
-         <PrivateRoute
+        <PrivateRoute
           exact
           path="/edit-profile"
           component={EditProfile}
         ></PrivateRoute>
-         <PrivateRoute
+        <PrivateRoute
           exact
           path="/add-experience"
           component={AddExperience}

@@ -22,6 +22,9 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
               }}
             />
           </Navbar.Brand>
+          <Link to="/profiles" className="nav-link">
+            Players
+          </Link>
         </Link>
         <Nav className="mr-auto d-flex justify-content-start align-items-start">
           <Link to="/news" className="nav-link">
@@ -53,6 +56,9 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
         <Nav className="mr-auto d-flex justify-content-start align-items-start">
           <Link to="/" className="nav-link">
             Home
+          </Link>
+          <Link to="/profiles" className="nav-link">
+            Players
           </Link>
           <Link to="/mission" className="nav-link">
             Mission

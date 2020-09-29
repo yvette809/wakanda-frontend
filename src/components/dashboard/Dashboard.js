@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Spinner } from "react-bootstrap";
+import { Spinner, Container } from "react-bootstrap";
 import {
   getCurrentProfile,
   createProfile,
@@ -13,20 +13,25 @@ import Experience from "./Experience";
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
-  auth: { user },
+  auth: { user, isAuthenticated },
   profile: { profile, loading },
 }) => {
+  console.log("the auth is", user);
+
   useEffect(() => {
     getCurrentProfile();
   }, []);
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <>
-      <h1 className="large text-primary">Dashboard</h1>
+    <Container>
+      <div className="large text-primary">
+        <h1>Welcome {user && user.name} !! You are now an official WSK Member </h1>
+      </div>
+{/* 
       <p className="lead">
         <i className="fa fa-user mr-2"></i>Welcome {user && user.name}
-      </p>
+      </p> */}
       {profile !== null ? (
         <>
           <DashboardActions />
@@ -34,19 +39,19 @@ const Dashboard = ({
 
           <div className="my-2">
             <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i className="fas fa-user-minus"></i>Delete My Account
+              <i className="fa fa-user-minus"></i>Delete My Account
             </button>
           </div>
         </>
       ) : (
         <>
-          <p>You have not yet setup a profile. Please add some info</p>
+          <p>You have not yet setup a profile. Please add some info to enjoy the full-benefits of WSK membership</p>
           <Link to="/create-profile" className="btn btn-primary my-1">
             Create profile
           </Link>
         </>
       )}
-    </>
+    </Container>
   );
 };
 
