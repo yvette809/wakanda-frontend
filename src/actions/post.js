@@ -22,7 +22,7 @@ export const getPosts = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -30,7 +30,7 @@ export const getPosts = () => async (dispatch) => {
 // Add like
 export const addLike = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(`api/posts/like/${postId}`);
+    const res = await axios.put(`http://localhost:4000/posts/like/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -47,7 +47,7 @@ export const addLike = (postId) => async (dispatch) => {
 // Remove like
 export const removeLike = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(`/posts/unlike/${postId}`);
+    const res = await axios.put(`http://localhost:4000/posts/unlike/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -65,7 +65,7 @@ export const removeLike = (postId) => async (dispatch) => {
 // id = postID
 export const deletePost = (id) => async (dispatch) => {
   try {
-    await axios.delete(`/posts/${id}`);
+    await axios.delete(`http://localhost:4000/posts/${id}`);
 
     dispatch({
       type: DELETE_POST,
@@ -89,26 +89,33 @@ export const addPost = (formData) => async (dispatch) => {
     },
   };
   try {
-    const res = await axios.post("api/posts", formData, config);
+    const res = await axios.post(
+      "http://localhost:4000/posts",
+      formData,
+      config
+    );
+    if (res.ok) {
+      dispatch({
+        type: ADD_POST,
+        payload: res.data,
+      });
 
-    dispatch({
-      type: ADD_POST,
-      payload: res.data,
-    });
-
-    dispatch(setAlert("Post Created", "success"));
+      dispatch(setAlert("Post Created", "success"));
+    } else {
+      dispatch({
+        type: POST_ERROR,
+        // payload: { msg: err.response.statusText, status: err.response.status },
+      });
+    }
   } catch (err) {
-    dispatch({
-      type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
+    console.log(err);
   }
 };
 
 // Get post
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`api/posts/${id}`);
+    const res = await axios.get(`http://localhost:4000/posts/${id}`);
 
     dispatch({
       type: GET_POST,

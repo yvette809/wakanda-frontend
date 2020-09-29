@@ -25,3 +25,7 @@
 [0919/002923.194:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
 [0919/222540.234:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
 [0919/222540.397:ERROR:exception_snapshot_win.cc(99)] thread ID 4084 not found in process
+[0929/181759.923:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0929/181800.161:ERROR:exception_snapshot_win.cc(99)] thread ID 9620 not found in process
+[0929/181800.276:ERROR:process_reader_win.cc(123)] NtOpenThread: {Access Denied} A process has requested access to an object, but has not been granted those access rights. (0xc0000022)
+[0929/181800.277:ERROR:exception_snapshot_win.cc(99)] thread ID 15716 not found in process

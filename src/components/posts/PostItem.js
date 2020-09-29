@@ -12,8 +12,6 @@ const PostItem = ({
   post: { _id, text, name, avatar, user, likes, comments, date },
   showActions
 }) => (
-
-
   <div className='post bg-white p-1 my-1'>
     <div>
       <Link to={`/profile/${user}`}>
@@ -34,7 +32,7 @@ const PostItem = ({
             type='button'
             className='btn btn-light'
           >
-            <i className='fas fa-thumbs-up' />{' '}
+            <i className='fa fa-thumbs-up' />{' '}
             <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
           <button
@@ -42,7 +40,7 @@ const PostItem = ({
             type='button'
             className='btn btn-light'
           >
-            <i className='fas fa-thumbs-down' />
+            <i className='fa fa-thumbs-down' />
           </button>
           <Link to={`/posts/${_id}`} className='btn btn-primary'>
             Discussion{' '}
@@ -68,7 +66,6 @@ const PostItem = ({
 PostItem.defaultProps = {
   showActions: true
 };
-
 
 const mapStateToProps = state => ({
   auth: state.auth
