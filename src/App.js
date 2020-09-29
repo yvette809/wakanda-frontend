@@ -21,6 +21,7 @@ import EditProfile from "./components/profile-form/EditProfile";
 import AddExperience from "./components/profile-form/AddExperience";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
+import Posts from "./components/posts/posts";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
 import store from "./store";
@@ -53,10 +54,11 @@ const App = () => {
         <Route path="/faqs" component={Faqs}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
+        <Route path="/eventdetails/:_id" component={EventDetails}></Route>
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/profiles" component={Profiles}></Route>
-        <Route path="/profiles/:_id" component={Profile}></Route>
+        <Route path="/profile/:_id" exact component={Profile}></Route>
         <PrivateRoute
           exact
           path="/dashboard"
@@ -77,7 +79,11 @@ const App = () => {
           path="/add-experience"
           component={AddExperience}
         ></PrivateRoute>
-        <Route path="/eventdetails/:_id" component={EventDetails}></Route>
+         <PrivateRoute
+          exact
+          path="/posts"
+          component={Posts}
+        ></PrivateRoute>
       </Switch>
       <Footer />
     </Router>

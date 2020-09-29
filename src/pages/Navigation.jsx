@@ -22,13 +22,16 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
               }}
             />
           </Navbar.Brand>
-          <Link to="/profiles" className="nav-link">
-            Players
           </Link>
-        </Link>
         <Nav className="mr-auto d-flex justify-content-start align-items-start">
           <Link to="/news" className="nav-link">
             News
+          </Link>
+          <Link to="/profiles" className="nav-link">
+            Players
+          </Link>
+          <Link to="/posts" className="nav-link">
+            Posts
           </Link>
           <Link to="/" onClick={logout} className="nav-link">
             <i className="fa fa-sign-out">Logout</i>
