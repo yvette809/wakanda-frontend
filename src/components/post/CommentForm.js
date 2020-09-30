@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import {Form, FormControl} from "react-bootstrap";
 import { connect } from "react-redux";
 import { addComment } from "../../actions/post";
 
@@ -11,7 +11,7 @@ const CommentForm = ({ postId, addComment }) => {
       <div className="bg-primary p">
         <h3>Leave a Comment</h3>
       </div>
-      <form
+      <Form
         className="form my-1"
         onSubmit={(e) => {
           e.preventDefault();
@@ -19,7 +19,9 @@ const CommentForm = ({ postId, addComment }) => {
           setText("");
         }}
       >
-        <textarea
+
+        <FormControl
+          as= "textarea"
           name="text"
           cols="30"
           rows="5"
@@ -29,13 +31,10 @@ const CommentForm = ({ postId, addComment }) => {
           required
         />
         <input type="submit" className="btn btn-dark my-1" value="Submit" />
-      </form>
+      </Form>
     </div>
   );
 };
 
-CommentForm.propTypes = {
-  addComment: PropTypes.func.isRequired,
-};
 
 export default connect(null, { addComment })(CommentForm);

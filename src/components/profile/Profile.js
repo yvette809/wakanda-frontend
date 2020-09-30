@@ -1,11 +1,11 @@
-import React, {useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
-import {Spinner} from 'react-bootstrap';
-import ProfileTop from './ProfileTop';
-import ProfileAbout from './ProfileAbout';
-import ProfileExperience from './ProfileExperience';
-import { getProfileById } from '../../actions/profile';
+import React, { useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
+import { connect } from "react-redux";
+import { Spinner } from "react-bootstrap";
+import ProfileTop from "./ProfileTop";
+import ProfileAbout from "./ProfileAbout";
+import ProfileExperience from "./ProfileExperience";
+import { getProfileById } from "../../actions/profile";
 
 const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   useEffect(() => {
@@ -46,7 +46,6 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
                 <h4>No experience credentials</h4>
               )}
             </div>
-
           </div>
         </>
       )}
@@ -56,7 +55,9 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
-  auth: state.auth
+  auth: state.auth,
 });
 
-export default connect(mapStateToProps, { getProfileById })(Profile);
+export default withRouter(
+  connect(mapStateToProps, { getProfileById })(Profile)
+);

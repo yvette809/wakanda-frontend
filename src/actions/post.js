@@ -20,6 +20,7 @@ export const getPosts = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
+    console.log(err);
     dispatch({
       type: POST_ERROR,
       // payload: { msg: err.response.statusText, status: err.response.status },
@@ -138,7 +139,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
   };
   try {
     const res = await axios.post(
-      `api/posts/comment/${postId}`,
+      `http://localhost:4000/posts/comment/${postId}`,
       formData,
       config
     );
@@ -152,7 +153,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: POST_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -160,7 +161,9 @@ export const addComment = (postId, formData) => async (dispatch) => {
 // Delete comment
 export const deleteComment = (postId, commentId) => async (dispatch) => {
   try {
-    await axios.delete(`api/posts/comment/${postId}/${commentId}`);
+    await axios.delete(
+      `http://localhost:4000/posts/comment/${postId}/${commentId}`
+    );
 
     dispatch({
       type: REMOVE_COMMENT,

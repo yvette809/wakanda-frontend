@@ -59,7 +59,7 @@ const App = () => {
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/profiles" component={Profiles}></Route>
-        <Route path="/profile/:_id" exact component={Profile}></Route>
+        <Route path="/profile/:id" exact component={Profile}></Route>
         <PrivateRoute
           exact
           path="/dashboard"
@@ -80,16 +80,8 @@ const App = () => {
           path="/add-experience"
           component={AddExperience}
         ></PrivateRoute>
-         <PrivateRoute
-          exact
-          path="/posts"
-          component={Posts}
-        ></PrivateRoute>
-         <PrivateRoute
-          exact
-          path="/posts/:id"
-          component={Post}
-        ></PrivateRoute>
+        <PrivateRoute exact path="/posts" component={Posts}></PrivateRoute>
+        <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
       </Switch>
       <Footer />
     </Router>
