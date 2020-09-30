@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {Form, FormControl} from "react-bootstrap";
+import { Form, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import { addComment } from "../../actions/post";
 
@@ -12,16 +12,15 @@ const CommentForm = ({ postId, addComment }) => {
         <h3>Leave a Comment</h3>
       </div>
       <Form
-        className="form my-1"
+        className="form my-2"
         onSubmit={(e) => {
           e.preventDefault();
           addComment(postId, { text });
           setText("");
         }}
       >
-
         <FormControl
-          as= "textarea"
+          as="textarea"
           name="text"
           cols="30"
           rows="5"
@@ -35,6 +34,5 @@ const CommentForm = ({ postId, addComment }) => {
     </div>
   );
 };
-
 
 export default connect(null, { addComment })(CommentForm);

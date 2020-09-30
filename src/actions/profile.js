@@ -46,12 +46,10 @@ export const getProfiles = () => async (dispatch) => {
   }
 };
 
-
 //get profile by id
 export const getProfileById = (userId) => async (dispatch) => {
-
   try {
-    const res = await axios.get(`http://localhost:4000/profile/${userId}`);
+    const res = await axios.get(`http://localhost:4000/profile/user/${userId}`);
     dispatch({
       type: GET_PROFILE,
       payload: res.data,
@@ -59,7 +57,7 @@ export const getProfileById = (userId) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -85,7 +83,7 @@ export const createProfile = (formData, history, edit = false) => async (
       type: GET_PROFILE,
       payload: res.data,
     });
-    dispatch(setAlert(edit ? "profile updated" : "profile created"));
+    dispatch(setAlert(edit ? "profile updated" : "profile created", "success"));
     if (!edit) {
       history.push("/dashboard");
     }
@@ -163,7 +161,9 @@ export const deleteAccount = () => async (dispatch) => {
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
 
-      dispatch(setAlert(" Your account has been permanently deleted"));
+      dispatch(
+        setAlert(" Your account has been permanently deleted", "danger")
+      );
     } catch (err) {
       dispatch({
         type: PROFILE_ERROR,
@@ -172,3 +172,23 @@ export const deleteAccount = () => async (dispatch) => {
     }
   }
 };
+
+// // delete profile
+// export const deleteProfile = (id) => async (dispatch) => {
+
+//     try {
+//       const res = await axios.delete(`http://localhost:4000/profile/${id}`);
+//       dispatch({
+//         type: DELETE_PROFILE,
+//         payload:res.data
+//       });
+
+//       dispatch(setAlert(" profile deleted", "danger"));
+//     } catch (err) {
+//       dispatch({
+//         type: PROFILE_ERROR,
+//         payload: { msg: err.response.statusText, status: err.response.status },
+//       });
+
+//   }
+// };

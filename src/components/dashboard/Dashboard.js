@@ -26,15 +26,15 @@ const Dashboard = ({
   ) : (
     <Container>
       <div className="large text-primary">
-        <h1>Welcome {user && user.name} !! You are now an official WSK Member </h1>
+        <h1>
+          Welcome {isAuthenticated && user && user.name} !! You are now an
+          official WSK Member{" "}
+        </h1>
       </div>
-{/* 
-      <p className="lead">
-        <i className="fa fa-user mr-2"></i>Welcome {user && user.name}
-      </p> */}
+     
       {profile !== null ? (
         <>
-          <DashboardActions />
+          <DashboardActions  />
           <Experience experience={profile.experience} />
 
           <div className="my-2">
@@ -45,7 +45,10 @@ const Dashboard = ({
         </>
       ) : (
         <>
-          <p>You have not yet setup a profile. Please add some info to enjoy the full-benefits of WSK membership</p>
+          <p>
+            You have not yet setup a profile. Please add some info to enjoy the
+            full-benefits of WSK membership
+          </p>
           <Link to="/create-profile" className="btn btn-primary my-1">
             Create profile
           </Link>

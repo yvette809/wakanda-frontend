@@ -13,12 +13,12 @@ const ProfileTop = ({
   return (
     <div className='profile-top bg-primary p-2'>
       <img className='round-img my-1' src={avatar} alt='' />
-      <h1 className='large'>{name}</h1>
+      <h1 className=''>{name}</h1>
       <p className='lead'>
-        {nationality && <span> at {nationality}</span>}
+        {nationality && <span>{nationality}</span>}
       </p>
       <p className='lead'>
-        {gender && <span>  {gender}</span>}
+        {gender && <span> {gender}</span>}
       </p>
       <p className='lead'>
         {dateOfBirth && <span>  {dateOfBirth}</span>}

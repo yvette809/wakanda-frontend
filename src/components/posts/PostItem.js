@@ -15,7 +15,7 @@ const PostItem = ({
   console.log("the id is", _id);
 
   return (
-    <div className=" post bg-white p-1 my-1 bg-danger">
+    <div className=" post bg-white p-1 my-1">
       <div className="row  ">
         <div className="col-lg-4 text-center mb-2">
           <Link to={`/profile/${user}`}>
@@ -29,7 +29,7 @@ const PostItem = ({
         </div>
         <div className="col-lg-8">
           <div>
-            <h4>{name}</h4>
+            <h4 className="text-primary">{name}</h4>
             <p className="my-1">{text}</p>
             <p className="post-date">
               Posted on <Moment format="YYYY/MM/DD">{date}</Moment>

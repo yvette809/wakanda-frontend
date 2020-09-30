@@ -13,7 +13,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   }, [getProfileById, match.params.id]);
 
   return (
-    <>
+    <div className="container">
       {profile === null ? (
         <Spinner animation="border" />
       ) : (
@@ -22,12 +22,13 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&
-            auth.loading === false &&
+            auth.loading === false && auth.user&&
             auth.user._id === profile.user._id && (
               <Link to="/edit-profile" className="btn btn-dark">
                 Edit Profile
               </Link>
             )}
+            
           <div className="profile-grid my-1">
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
@@ -49,7 +50,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
           </div>
         </>
       )}
-    </>
+    </div>
   );
 };
 

@@ -29,12 +29,14 @@ export default function (state = initialState, action) {
         error: action.payload,
         loading: false,
       };
+      
     case CLEAR_PROFILE:
       return{
         ...state,
         profile:null,
         loading:false,
       }
+
 
     default:
       return state;
