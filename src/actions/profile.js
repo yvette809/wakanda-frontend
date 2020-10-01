@@ -28,10 +28,11 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
-//  Get all profiles
+// Get all profiles
 
 export const getProfiles = () => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
+
+  dispatch({type: CLEAR_PROFILE});
   try {
     const res = await axios.get("http://localhost:4000/profile");
     dispatch({
@@ -173,22 +174,3 @@ export const deleteAccount = () => async (dispatch) => {
   }
 };
 
-// // delete profile
-// export const deleteProfile = (id) => async (dispatch) => {
-
-//     try {
-//       const res = await axios.delete(`http://localhost:4000/profile/${id}`);
-//       dispatch({
-//         type: DELETE_PROFILE,
-//         payload:res.data
-//       });
-
-//       dispatch(setAlert(" profile deleted", "danger"));
-//     } catch (err) {
-//       dispatch({
-//         type: PROFILE_ERROR,
-//         payload: { msg: err.response.statusText, status: err.response.status },
-//       });
-
-//   }
-// };

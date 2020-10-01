@@ -20,7 +20,7 @@ const Dashboard = ({
 
   useEffect(() => {
     getCurrentProfile();
-  }, []);
+  }, [getCurrentProfile]);
   return loading && profile === null ? (
     <Spinner />
   ) : (
@@ -34,7 +34,7 @@ const Dashboard = ({
      
       {profile !== null ? (
         <>
-          <DashboardActions  />
+          <DashboardActions/>
           <Experience experience={profile.experience} />
 
           <div className="my-2">
