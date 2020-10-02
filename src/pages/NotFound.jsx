@@ -2,7 +2,7 @@ import React from 'react'
 
 const NotFound = () => {
     return (
-        <div className= "text-center mt-3">
+        <div className= "text-center not_found">
         <h1 className= "text-large text-primary ">
             <i className= "fa fa-exclamation-triangle mr-2"></i>Page Not Found
         </h1>

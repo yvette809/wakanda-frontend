@@ -220,10 +220,10 @@ const Home = ({ setAlert }) => {
           <Col lg={10} xs={12} style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
-                <h1 className="text-white text-center">
+                <h1 className="text-dark text-center ">
                   Welcome to Wakanda Sports Klub (WSK)
                 </h1>
-                <p className="text-white font-weight-bolder text-center">
+                <p className="text-dark font-weight-bolder text-center" style={{fontSize:"1.6rem"}}>
                   A Home of Champions
                 </p>
                 <p>

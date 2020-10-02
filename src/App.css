@@ -28,6 +28,7 @@ body {
   width: 150px;
   margin-right: 150px;
   padding: 10px 0;
+  border-radius: 50px;
 }
 .about_us_img {
   background-image: url("./images/about.jpg");
@@ -332,10 +333,9 @@ event_button {
   background-color: red;
 }
 footer {
-  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
-
   border: 1px solid rgba(1, 1, 15, 0.157);
   background-color: teal;
+  font-size: 1.8 rem;
 }
 
 #contact_img_section {
@@ -416,9 +416,19 @@ footer {
   border-radius: 50%;
   justify-content: center;
   align-items: center;
- 
 }
-.register_input{
+.register_input {
   border-radius: 10%;
 }
 
+.not_found {
+  background-image: url("https://image.freepik.com/free-vector/blue-smoke-isolated-dark-transparent-background-realistic-blue-magic-mist-cloud-chemical-toxic-gas-steam-waves-realistic-illustration_119445-264.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 1200px;
+}
+
+ul li {
+  color: white;
+}
