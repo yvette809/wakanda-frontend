@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { setAlert } from "../actions/alert";
+import { connect } from "react-redux";
 import {
   FaAd,
   FaBiking,
@@ -27,6 +29,7 @@ import {
   Modal,
   Form,
   FormControl,
+  Alert,
 } from "react-bootstrap";
 import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
@@ -34,17 +37,18 @@ import { Link, useParams } from "react-router-dom";
 
 //import EventList from '../components/Event';
 
-const Home = () => {
+const Home = ({ setAlert }) => {
   const [events, setEvents] = useState([]);
-
-  const [newEvent, setnewEvent] = useState({
+  const evenp = {
     title: "",
     description: "",
     image: "",
     time: "",
     location: "",
     date: "",
-  });
+  };
+
+  const [newEvent, setnewEvent] = useState(evenp);
 
   const [message, setNewMessage] = useState({
     name: "",
@@ -72,7 +76,7 @@ const Home = () => {
           console.log("events are", events);
           setEvents(events.data);
         } else {
-          console.log("something went wrong");
+          setAlert("something went wrong", "danger");
         }
       } catch (err) {
         console.log(err);
@@ -82,26 +86,37 @@ const Home = () => {
     getEvents();
   }, []);
 
-  // Add Events
+  //Add Events
   const addEvent = async (e) => {
     // e.preventDefault();
+
     setLoading(true);
 
     const response = await fetch("http://localhost:4000/events", {
       method: "POST",
-      body: JSON.stringify(newEvent),
+      body: JSON.stringify(evenp),
       "Content-Type": "application/json",
     });
 
     if (response.ok) {
-      setnewEvent(response.data);
+      const responseEvent = await response.json();
+      console.log(responseEvent);
+      setnewEvent(responseEvent.data);
+
       alert("event added");
 
       setLoading(false);
     } else {
       alert("something went wrong");
     }
-    setnewEvent();
+    setnewEvent({
+      title: "",
+      description: "",
+      image: "",
+      time: "",
+      location: "",
+      date: "",
+    });
   };
 
   // submit messase
@@ -144,25 +159,7 @@ const Home = () => {
       text: "",
     });
   };
-  // const addEvent = async e => {
-  //   //e.preventDefault();
-
-  //     try{
-  //       const config={
-  //           headers:{
-  //               'Content-Type':'application/json'
-  //           }
-  //       }
-
-  //       const body = JSON.stringify(newEvent)
-  //       const res = await axios.post('http://localhost:4000/events', body, config)
-  //       console.log(res.data)
-  //       setnewEvent(res.data)
-
-  //   }catch(error){
-  //       console.log(error)
-  //   }
-  //   }
+ 
 
   // delete Event
 
@@ -231,7 +228,11 @@ const Home = () => {
                 </p>
                 <p>
                   <Link to="/mission">
-                    <Button variant="primary" className="first_button font-bold" style={{fontSize:"1.2rem"}}>
+                    <Button
+                      variant="primary"
+                      className="first_button font-bold"
+                      style={{ fontSize: "1.2rem" }}
+                    >
                       About Us
                     </Button>
                   </Link>
@@ -507,7 +508,7 @@ const Home = () => {
       </div>
       <Container id="activities_section">
         <Row className="text-white">
-          <Col  className="mb-3">
+          <Col className="mb-3">
             <div className="kids_profile">
               <img src={kids} alt="kidsimage" />
             </div>
@@ -528,7 +529,7 @@ const Home = () => {
           </Col>
         </Row>
         <Row className="mb-4 text-white">
-          <Col  >
+          <Col>
             <div>
               <h1 className="text-danger">Football</h1>
               <p style={{ fontSize: "1.3rem" }}>
@@ -547,7 +548,7 @@ const Home = () => {
           </Col>
         </Row>
         <Row className="text-white">
-          <Col className="mb-5 " >
+          <Col className="mb-5 ">
             <div className="basket_img">
               <img
                 src="https://pmcvariety.files.wordpress.com/2019/10/lakers-nba-china-criticism.jpg?w=1000"
@@ -752,4 +753,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default connect(null, { setAlert })(Home);

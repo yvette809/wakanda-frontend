@@ -4,6 +4,9 @@
 
 body {
   margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
 
@@ -43,7 +46,6 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  opacity: 0.5;
 }
 .join {
   border: 2px solid white;
@@ -79,8 +81,6 @@ ul li {
   align-content: space-between;
 }
 
-
-
 .update,
 .register,
 .donate,
@@ -97,6 +97,10 @@ ul li {
 
 .membership {
   margin-top: 610px;
+  width: 20%;
+  font-weight: 600;
+  font-size: 2rem;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .update,
 .register,
@@ -193,7 +197,8 @@ event_button {
 }
 
 .event_title {
-  color: red;
+  color: green;
+  font-weight: 900;
   text-decoration: none;
 }
 
@@ -394,9 +399,26 @@ footer {
   border-radius: 20px;
 }
 
-#login_section{
-  margin-top: 300px;
+#register_section {
+  /* margin-top: 300px; */
   margin-bottom: 150px;
-  width: 50%;
-
+  width: 50% !important;
+  background-image: linear-gradient(teal, white) !important;
+  border-radius: 5%;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  flex-direction: column;
+  padding: 50px 150px;
 }
+
+.register_form {
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+ 
+}
+.register_input{
+  border-radius: 10%;
+}
+

@@ -5,19 +5,18 @@ import { Link } from "react-router-dom";
 const Membership = () => {
   return (
     <Container fluid className=" jumbos">
-            <div className="registration_info text-center align-content-between">
-              <h1 className="text-white text-center">
-                Meet our Team
-              </h1>
-              <div>
-                <Link to="/register"><button className="membership btn-lg justify-content-center align-items-center">
-                  Join Us
-                </button></Link>
-              </div>
-            </div>
-          
-     
-          {/* <p>
+      <div className="registration_info text-center align-content-between">
+        <h1 className="text-white text-center">Meet our Team</h1>
+        <div>
+          <Link to="/login">
+            <button className="membership btn-lg justify-content-center align-items-center">
+              Login
+            </button>
+          </Link>
+        </div>
+      </div>
+
+      {/* <p>
             At WSK, we take things seriously.It is for this reason we welcome
             only registered members
       </p> 
@@ -54,11 +53,7 @@ const Membership = () => {
             <span>
               <li>Opportunity to meet other sports lovers</li>
             </span>
-          </ul>
-       */}
-         
-      
-     
+          </ul> */}
     </Container>
   );
 };

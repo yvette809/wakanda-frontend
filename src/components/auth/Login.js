@@ -27,7 +27,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
 
   return (
-    <Container className="mb-5" style={{ marginTop: "200px" }}>
+    <Container className="mb-5 d-flex-inline flex-column justify-content-center align-content-center" >
       <h1 className="large text-primary">Sign In</h1>
       <p className="lead">
         <i className="fa fa-user" /> Sign Into Your Account
@@ -50,11 +50,12 @@ const Login = ({ login, isAuthenticated }) => {
           style={{ width: "50%" }}
           className="mb-4"
         />
-        <input type="submit" className="btn btn-primary" value="Login" />
+        <input type="submit" className="btn btn-primary mb-2" value="Login" />
       </Form>
       <p className="my-1">
         Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
+      <button className= "btn btn-primary mt-2" >Login With Facebook </button>
     </Container>
   );
 };

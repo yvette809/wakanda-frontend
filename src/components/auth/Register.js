@@ -28,24 +28,24 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/Membership" />;
   }
 
   return (
-    <Container id="login_section">
-      <h1 className="large text-primary">Sign Up</h1>
+    <Container id="register_section" className="mt-4">
+      <h1 className="large text-white py-3">Sign Up</h1>
       <p className="lead">
         <i className="fa fa-user" /> Create Your Account
       </p>
-     
-      <Form onSubmit={onSubmit}>
+
+      <Form onSubmit={onSubmit} className="register_form">
         <FormControl
           type="text"
           value={name}
           name="name"
           placeholder="Name"
           onChange={onChange}
-          className="mb-4 py-3"
+          className="mb-4 py-3 register_input"
         />
         <FormControl
           type="email"
@@ -53,14 +53,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           name="email"
           placeholder="Email Address"
           onChange={onChange}
-          className="mb-4 py-3"
+          className="mb-4 py-3 register_input"
         />
         <FormControl
           type="password"
           value={password}
           name="password"
           placeholder="password"
-          className="mb-4 py-3"
+          className="mb-4 py-3 register_input"
           onChange={onChange}
           required
         />
@@ -69,7 +69,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           value={password2}
           name="password2"
           placeholder="confirm password"
-          className="mb-4 py-3"
+          className="mb-4 py-3 register_input"
           onChange={onChange}
         />
         <input

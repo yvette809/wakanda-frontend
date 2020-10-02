@@ -10,7 +10,7 @@ import Donate from "../src/pages/Donate";
 import Membership from "./pages/Membership";
 import News from "../src/pages/News";
 import Testimonials from "../src/pages/Testimonials";
-import Faqs from "./pages/Faqs";
+import NotFound from "./pages/NotFound";
 import EventDetails from "./pages/EventDetails";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
@@ -52,7 +52,6 @@ const App = () => {
         <Route path="/mission" component={Mission}></Route>
         <Route path="/membership" component={Membership}></Route>
         <Route path="/news" component={News}></Route>
-        <Route path="/faqs" component={Faqs}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
@@ -82,6 +81,7 @@ const App = () => {
         ></PrivateRoute>
         <PrivateRoute exact path="/posts" component={Posts}></PrivateRoute>
         <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
+        <Route component={NotFound}></Route>
       </Switch>
       <Footer />
     </Router>

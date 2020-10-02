@@ -76,7 +76,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
         </Nav>
         <Form inline>
           <Link to="/register">
-            <Button variant="outline-success">Register</Button>
+            <Button variant="outline-primary">Register</Button>
           </Link>
         </Form>
       </Navbar.Collapse>
