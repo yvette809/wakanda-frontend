@@ -6,8 +6,8 @@ const Footer = () => {
   return (
     <footer>
       <div className=" container py-3">
-        <div className="row d-flex-inline text-white">
-          <div className="col-sm-3">
+        <div className="row d-flex-inline text-white footer">
+          <div className="col-sm-3 footer_item">
             <h3 className="text-white">Contact Us</h3>
             <p className="contact-link text-white">Tel:(0046) 760726885</p>
             <div className=" footer-social">
@@ -24,7 +24,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div className="col-sm-3">
+          <div className="col-sm-3  footer_item">
             <div className=" footer-social">
               <ul>
                 <Link to="/">
@@ -39,7 +39,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col-sm-3">
+          <div className="col-sm-3  footer_item">
             <div className=" footer-social">
               <ul>
                 <Link to="/membership">
@@ -56,7 +56,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col col-sm-3">
+          <div className="col col-sm-3  footer_item">
             <Link to="/">
               <img
                 src={logo}

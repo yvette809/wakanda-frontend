@@ -29,7 +29,6 @@ import {
   Modal,
   Form,
   FormControl,
-  Alert,
 } from "react-bootstrap";
 import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
@@ -159,7 +158,6 @@ const Home = ({ setAlert }) => {
       text: "",
     });
   };
- 
 
   // delete Event
 
@@ -217,20 +215,23 @@ const Home = ({ setAlert }) => {
     <>
       <Container fluid>
         <Row className="">
-          <Col lg={10} xs={12} style={{ paddingLeft: "0" }}>
+          <Col lg={10} xs={12} md={8} style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
                 <h1 className="text-dark text-center ">
                   Welcome to Wakanda Sports Klub (WSK)
                 </h1>
-                <p className="text-dark font-weight-bolder text-center" style={{fontSize:"1.6rem"}}>
+                <p
+                  className="text-dark font-weight-bolder text-center"
+                  style={{ fontSize: "1.6rem" }}
+                >
                   A Home of Champions
                 </p>
                 <p>
                   <Link to="/mission">
                     <Button
                       variant="primary"
-                      className="first_button font-bold"
+                      className="first_button font-bold text-center"
                       style={{ fontSize: "1.2rem" }}
                     >
                       About Us
@@ -240,9 +241,8 @@ const Home = ({ setAlert }) => {
               </div>
             </Jumbotron>
           </Col>
-          <Col lg={2}>
+          <Col lg={2} md={4}>
             <div>
-              <p className="mb-4">Click below for details</p>
               <SearchForm searchValue={setSearch} />
               <div>
                 <EventList
@@ -399,7 +399,7 @@ const Home = ({ setAlert }) => {
         <div className="dark_overlay">
           <Container className="values" id="wak_values">
             <Row className="text-center my-4 ">
-              <Col className="col col-lg-2">
+              <Col className="col col-lg-2 col-xs-3">
                 <Card
                   className="mb-5 first_card bg-outline"
                   style={{
@@ -422,7 +422,7 @@ const Home = ({ setAlert }) => {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col className="col col-lg-2">
+              <Col className="col col-lg-2 col-xs-3">
                 <Card
                   className="second_card"
                   style={{
@@ -446,7 +446,7 @@ const Home = ({ setAlert }) => {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col className="col col-lg-2">
+              <Col className="col col-lg-2 col-xs-3">
                 <Card
                   className="third_card"
                   style={{
@@ -470,7 +470,7 @@ const Home = ({ setAlert }) => {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col className="col col-lg-2">
+              <Col className="col col-lg-2 col-xs-3">
                 <Card
                   className="fourth_card bg-midnight"
                   style={{
@@ -508,22 +508,22 @@ const Home = ({ setAlert }) => {
       </div>
       <Container id="activities_section">
         <Row className="text-white">
-          <Col className="mb-3">
+          <Col className="mb-3" lg={6} xs={12}>
             <div className="kids_profile">
               <img src={kids} alt="kidsimage" />
             </div>
           </Col>
-          <Col className="mb-3">
+          <Col className="mb-3" lg={6}>
             <div>
-              <h1 className="text-danger">Kids Corner</h1>
-              <p style={{ fontSize: "1.3rem" }}>
+              <h1 className="text-danger activities_heading">Kids Corner</h1>
+              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
                 At WSK, we specialise in the well-being of kids.We have trained
                 coaches that take kids from all ages.We train them to become
                 professionals.All kids are welcome it desn't matter on the
                 skill-level.
               </p>
               <Link to="/kids">
-                <button>Read More</button>
+                <button className="read_more">Read More</button>
               </Link>
             </div>
           </Col>
@@ -531,41 +531,41 @@ const Home = ({ setAlert }) => {
         <Row className="mb-4 text-white">
           <Col>
             <div>
-              <h1 className="text-danger">Football</h1>
-              <p style={{ fontSize: "1.3rem" }}>
+              <h1 className="text-danger activities_heading">Football</h1>
+              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
                 Football is our passion. We train twice every week to keep the
                 spirit alive. At WSK, we believe in equality and mutual respect
               </p>
               <Link to="/activies">
-                <button>Read More</button>
+                <button className="read_more">Read More</button>
               </Link>
             </div>
           </Col>
-          <Col>
+          <Col xs={12}>
             <div className="foot_img">
               <img src={activity} alt="kidsimage" />
             </div>
           </Col>
         </Row>
         <Row className="text-white">
-          <Col className="mb-5 ">
+          <Col className="mb-5 xs={12}">
             <div className="basket_img">
               <img
-                src="https://pmcvariety.files.wordpress.com/2019/10/lakers-nba-china-criticism.jpg?w=1000"
-                alt="kidsimage"
+                src="https://www.clickorlando.com/resizer/E3jnPkPmr7WH3l_jgOq0y-JdzY8=/1600x1066/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/QNBNH7TXVBFWPEH3SMMV7O25BU.jpg"
+                alt="basketballimage"
               />
             </div>
           </Col>
-          <Col>
+          <Col xs={12}>
             <div>
-              <h1 className="text-danger">Basketball</h1>
-              <p style={{ fontSize: "1.3rem" }}>
+              <h1 className="text-danger activities_heading">Basketball</h1>
+              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
                 We recently diversified in to the field of Basketball. During
                 our basketball trainings, we have the opportunity to train a
                 team of 15 to 20 persons.
               </p>
               <Link to="/basketball">
-                <button>Read More</button>
+                <button className="read_more">Read More</button>
               </Link>
             </div>
           </Col>
@@ -582,7 +582,7 @@ const Home = ({ setAlert }) => {
         </div>
         <div style={{ borderRadius: "20px" }}>
           <Row className=" text-white no-gutters ">
-            <Col lg={6}>
+            <Col xs={12} lg={6}>
               <div
                 classname="card "
                 id="staff_1"
@@ -592,7 +592,7 @@ const Home = ({ setAlert }) => {
                 <p>Chairman WSK</p>
               </div>
             </Col>
-            <Col lg={6}>
+            <Col xs={12} lg={6}>
               <div
                 classname="card  "
                 id="staff_2"
@@ -604,7 +604,7 @@ const Home = ({ setAlert }) => {
             </Col>
           </Row>
           <Row className="mb-3 no-gutters text-white">
-            <Col>
+            <Col xs={12} lg={6}>
               <div
                 classname="card"
                 id="staff_3"
@@ -615,6 +615,8 @@ const Home = ({ setAlert }) => {
               </div>
             </Col>
             <Col
+              xs={12}
+              lg={6}
               classname="card "
               id="staff_4"
               style={{ minWidth: "30rem", lineHeight: "1rem" }}
@@ -659,15 +661,15 @@ const Home = ({ setAlert }) => {
               ></i>
             </div>
             <h1 className="text-center text-white">CONTACT US</h1>
-            <p
-              className="text-center text-white"
+            <div
+              className="text-center text-white mb-2"
               style={{ fontSize: "1.4rem" }}
             >
               For any type of enquiry, send us a message below. We usually
               respond within 24hours
-            </p>
+            </div>
             <Row>
-              <Col lg={3}>
+              <Col lg={3} xs={4}>
                 <Form onSubmit={submitMessage}>
                   <Form.Control
                     type="text"
@@ -703,7 +705,7 @@ const Home = ({ setAlert }) => {
                   />
                 </Form>
               </Col>
-              <Col lg={6}>
+              <Col lg={6} xs={4}>
                 <Form.Group>
                   <Form.Control
                     name="textArea"
@@ -729,7 +731,7 @@ const Home = ({ setAlert }) => {
                   SEND MESSAGE
                 </Button>
               </Col>
-              <Col lg={3}>
+              <Col lg={3} xs={4}>
                 <div className="mb-2">
                   <i className="fa fa-map-marker mr-2 fa_icon"></i>
                   <span className="text-white">

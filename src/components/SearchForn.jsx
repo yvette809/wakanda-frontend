@@ -22,7 +22,7 @@ function SearchForn({searchValue}) {
         }
     return (
         <form onSubmit = {onSubmit}>
-            <input type="search" ref = {searchTerm} placeholder = "search Events" onChange= {searchEvents}/>
+            <input type="search" ref = {searchTerm} placeholder = "search Events" onChange= {searchEvents} className="mt-3 event_form"/>
         </form>
     )
 }

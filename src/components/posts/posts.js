@@ -12,7 +12,7 @@ const Posts = ({ getPosts, post: { posts } }) => {
   console.log("the posts", posts);
 
   return (
-    <div className="container">
+    <div className="container" id="post">
       <h1 className="large text-primary">Posts</h1>
       <p className="lead">
         <i className="fa fa-user" /> Welcome to the community.

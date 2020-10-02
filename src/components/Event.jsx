@@ -12,7 +12,7 @@ const Event = ({ key, event }) => {
           <img
             src={image}
             alt="events"
-            style={{ height: "80%", width: "80%", objectFit: "cover" }}
+            style={{ height: "80%", width: "100%", objectFit: "cover" }}
          
           />
         </Link>
@@ -20,9 +20,6 @@ const Event = ({ key, event }) => {
           <Link to={`/eventdetails/${_id}`}>
             <p className="event_title">{title}</p>
           </Link>
-          {/* <p>{Time}</p> */}
-          {/* <p>{description}</p> */}
-          {/* <small>{moment( Date).format("YYYY-MM-DD hh:mm:ss")}</small> */}
           <small className="text-left">
             {" "}
             Date posted: <Moment format="YYYY/MM/DD">{createdAt}</Moment>
