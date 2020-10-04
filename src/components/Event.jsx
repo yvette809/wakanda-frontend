@@ -20,7 +20,7 @@ const Event = ({ key, event }) => {
           <Link to={`/eventdetails/${_id}`}>
             <p className="event_title">{title}</p>
           </Link>
-          <small className="text-left">
+          <small className="text-left event_date">
             {" "}
             Date posted: <Moment format="YYYY/MM/DD">{createdAt}</Moment>
           </small>

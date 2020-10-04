@@ -215,7 +215,7 @@ const Home = ({ setAlert }) => {
     <>
       <Container fluid>
         <Row className="">
-          <Col lg={10} xs={12} md={8} style={{ paddingLeft: "0" }}>
+          <Col lg={10} xs={12}  style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
                 <h1 className="text-dark text-center ">
@@ -241,7 +241,7 @@ const Home = ({ setAlert }) => {
               </div>
             </Jumbotron>
           </Col>
-          <Col lg={2} md={4}>
+          <Col lg={2} >
             <div>
               <SearchForm searchValue={setSearch} />
               <div>
@@ -334,7 +334,7 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
       </Container>
-      <Container>
+      <Container className= "justify-content-sm-center text-sm-center">
         <div className="text-center">
           <FaAd
             className="fa_about  mt-4"
@@ -634,10 +634,10 @@ const Home = ({ setAlert }) => {
           className="fa fa-bullseye mb-2 mt-4 bg-danger"
           style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%" }}
         ></i>
-        <h2>Our Prospective Sponsors</h2>
+        <h2 className = "sponsors">Our Prospective Sponsors</h2>
       </div>
       <Container className="mb-3">
-        <div className="sponsor d-flex justify-content-between align-content-lg-centermb-3">
+        <div className="sponsor d-flex justify-content-between align-content-lg-center mb-3">
           <img src={ica} alt="" className="sponsor_img" />
           <img src={kommun} alt="" className="sponsor_img" />
           <img src={peab} alt="" className="sponsor_img" />
@@ -662,7 +662,7 @@ const Home = ({ setAlert }) => {
             </div>
             <h1 className="text-center text-white">CONTACT US</h1>
             <div
-              className="text-center text-white mb-2"
+              className="text-center text-white mb-2 enquiry"
               style={{ fontSize: "1.4rem" }}
             >
               For any type of enquiry, send us a message below. We usually
@@ -742,7 +742,7 @@ const Home = ({ setAlert }) => {
                   <i className="fa fa-2x fa-envelope-square mr-2 fa_icon"></i>
                   <span className="text-white">info@wsk@gmail.com</span>
                 </div>
-                <div className="mb-2">
+                <div className="mb-2  tel">
                   <i className="fa fa-2x fa-phone-square mr-2 fa_icon"></i>
                   <span className="text-white">0046760726885</span>
                 </div>

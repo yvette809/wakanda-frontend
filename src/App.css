@@ -201,11 +201,11 @@ event_button {
   text-decoration: none;
 }
 
-/* .event_title:hover {
-  text-decoration: none;
-  color: rgb(158, 255, 215);
-  font-size: 1.3rem;
-} */
+.event_img img {
+  width: 80%;
+  height: 80%;
+}
+
 #main_img {
   transition: width 2s ease-in-out 1s;
 }
@@ -467,12 +467,17 @@ ul li {
   .first_button {
     width: 100px;
     padding: 0;
-    border-radius: 1px;
-    background-color: transparent;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgba(255, 0, 0, 1)
+    );
     bottom: 0;
     border: 0;
     text-align: center;
     margin-bottom: 40px;
+    margin-right: 90px;
   }
 
   input.event_form {
@@ -515,6 +520,16 @@ ul li {
     margin-bottom: 40px;
     width: 80%;
   }
+  .sponsors {
+    font-size: 1.5rem;
+  }
+
+  .sponsor_img {
+    max-height: 12%;
+    max-width: 15%;
+    cursor: pointer;
+    object-fit: contain;
+  }
   .img_overlay {
     display: none;
     height: 10vh;
@@ -522,5 +537,181 @@ ul li {
 
   div.footer_item {
     margin-left: 75px;
+  }
+  /* .contact-link::after {
+    content: evebabe2006 @yahoo.com;
+  } */
+  body {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgba(255, 0, 0, 1)
+    );
+  }
+
+  .event_description {
+    font-size: 0.8rem !important;
+    color: black !important;
+  }
+  .event_img img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  h1.evt_title {
+    font-size: 1.5 rem !important;
+  }
+}
+
+/* tablets */
+@media (min-width: 501px) and (max-width: 768px) {
+  .wak_intro > h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: green !important;
+  }
+  div.wak_intro p {
+    font-size: 0.9rem !important;
+  }
+
+  .jumbo {
+    height: 48vh;
+    max-width: 80vw;
+    object-fit: cover;
+  }
+
+  Button.first_button {
+    width: 250px;
+    padding: 20px;
+    border-radius: 1px;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgba(255, 0, 0, 1)
+    );
+    bottom: 0;
+    border: 0;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+  }
+  /* .first_button:hover{
+    background-color: red !important;
+    transform: scaleX(1);
+  } */
+
+  .event_title {
+    font-size: 1.5rem;
+  }
+  .event_date {
+    font-size: 1.2rem;
+  }
+  .fourth_card {
+    display: none;
+  }
+  .first_card,
+  .second_card,
+  .third_card {
+    max-width: 8rem;
+  }
+
+  input.event_form {
+    text-align: center;
+  }
+  #values_section {
+    display: block;
+  }
+  div.kids_profile img {
+    min-width: 100%;
+    object-fit: cover;
+    z-index: 10;
+  }
+  div.foot_img img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  .basket_img {
+    min-width: 100%;
+    object-fit: cover;
+  }
+
+  #activities_section {
+    /* margin-right: -80px; */
+    justify-content: center;
+  }
+  .activities_corner {
+    font-size: 1rem !important;
+  }
+
+  .activities_heading {
+    font-size: 1.6rem;
+  }
+
+  #staff_1,
+  #staff_2,
+  #staff_3,
+  #staff_4 {
+    margin-bottom: 40px;
+    width: 80%;
+  }
+  .sponsors {
+    font-size: 1.5rem;
+  }
+
+  .sponsor_img {
+    max-height: 12%;
+    max-width: 15%;
+    cursor: pointer;
+    object-fit: contain;
+  }
+  .img_overlay {
+    height: 10vh;
+  }
+
+  /* .contact-link::after {
+    content: evebabe2006 @yahoo.com;
+  } */
+  body {
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 0, 0, 0),
+      rgba(255, 0, 0, 1)
+    );
+  }
+
+  .event_description {
+    font-size: 1.5rem !important;
+    color: black !important;
+  }
+  .event_img img {
+    width: 100vw;
+    height: 50vh;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  h1.evt_title {
+    font-size: 1.5 rem !important;
+  }
+  div.evt_des  {
+    margin-bottom: 40px;
+  }
+
+  div.evt_des p{
+    font-size: 1.5rem;
+   
+  }
+
+  .enquiry {
+    font-size: 1rem;
+  }
+  /* input[value=textArea]{
+    padding: 0;
+    background-color: black;
+  } */
+  .tel {
+    display: none;
+   
   }
 }
