@@ -69,7 +69,7 @@ const Home = ({ setAlert }) => {
     const getEvents = async () => {
       setLoading(true);
       try {
-        const response = await fetch("http://localhost:4000/events");
+        const response = await fetch("https://vast-bayou-47622.herokuapp.com/events");
         if (response.ok) {
           const events = await response.json();
           console.log("events are", events);
