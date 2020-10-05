@@ -7,7 +7,7 @@ import Home from "../src/pages/Home";
 import Footer from "../src/pages/Footer";
 import Mission from "../src/pages/Mission";
 import Donate from "../src/pages/Donate";
-import Membership from "./pages/Membership";
+import Members from "./pages/Members";
 import News from "../src/pages/News";
 import Testimonials from "../src/pages/Testimonials";
 import NotFound from "./pages/NotFound";
@@ -50,7 +50,7 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={Home}></Route>
         <Route path="/mission" component={Mission}></Route>
-        <Route path="/membership" component={Membership}></Route>
+        <Route path="/members" component={Members}></Route>
         <Route path="/news" component={News}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>

@@ -12,10 +12,10 @@ const Posts = ({ getPosts, post: { posts } }) => {
   console.log("the posts", posts);
 
   return (
-    <div className="container" id="post">
-      <h1 className="large text-primary">Posts</h1>
-      <p className="lead">
-        <i className="fa fa-user" /> Welcome to the community.
+    <div className="container-fluid " id="post">
+      <h1 className="large text-primary mt-3 pt-2" >Posts</h1>
+      <p className="text-white" style={{fontSize:"1.5rem"}}>
+        <i className="fa-2x fa fa-user mr-2" /> Welcome to the community.
         <br />
         Please remember to be respectful!!
       </p>

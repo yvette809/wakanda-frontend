@@ -508,12 +508,12 @@ const Home = ({ setAlert }) => {
       </div>
       <Container id="activities_section">
         <Row className="text-white">
-          <Col className="mb-3" lg={6} xs={12}>
+          <Col className="mb-3" xs={12} lg={6} >
             <div className="kids_profile">
               <img src={kids} alt="kidsimage" />
             </div>
           </Col>
-          <Col className="mb-3" lg={6}>
+          <Col className="mb-3" xs={12} lg={6}>
             <div>
               <h1 className="text-danger activities_heading">Kids Corner</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
@@ -529,7 +529,7 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
         <Row className="mb-4 text-white">
-          <Col>
+          <Col xs={12} lg={6}>
             <div>
               <h1 className="text-danger activities_heading">Football</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
@@ -541,7 +541,7 @@ const Home = ({ setAlert }) => {
               </Link>
             </div>
           </Col>
-          <Col xs={12}>
+          <Col xs={12} lg={6}>
             <div className="foot_img">
               <img src={activity} alt="kidsimage" />
             </div>
@@ -556,7 +556,7 @@ const Home = ({ setAlert }) => {
               />
             </div>
           </Col>
-          <Col xs={12}>
+          <Col xs={12} lg={6}>
             <div>
               <h1 className="text-danger activities_heading">Basketball</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">

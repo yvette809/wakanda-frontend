@@ -14,7 +14,7 @@ import {
 // Get posts
 export const getPosts = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:4000/posts");
+    const res = await axios.get("https://vast-bayou-47622.herokuapp.com/posts");
     dispatch({
       type: GET_POSTS,
       payload: res.data,
@@ -31,7 +31,7 @@ export const getPosts = () => async (dispatch) => {
 // Add like
 export const addLike = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(`http://localhost:4000/posts/like/${postId}`);
+    const res = await axios.put(`https://vast-bayou-47622.herokuapp.com/posts/like/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -48,7 +48,7 @@ export const addLike = (postId) => async (dispatch) => {
 // Remove like
 export const removeLike = (postId) => async (dispatch) => {
   try {
-    const res = await axios.put(`http://localhost:4000/posts/unlike/${postId}`);
+    const res = await axios.put(`https://vast-bayou-47622.herokuapp.com/posts/unlike/${postId}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -66,7 +66,7 @@ export const removeLike = (postId) => async (dispatch) => {
 // id = postID
 export const deletePost = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:4000/posts/${id}`);
+    await axios.delete(`https://vast-bayou-47622.herokuapp.com/posts/${id}`);
 
     dispatch({
       type: DELETE_POST,
@@ -91,7 +91,7 @@ export const addPost = (formData) => async (dispatch) => {
   };
   try {
     const res = await axios.post(
-      "http://localhost:4000/posts",
+      "https://vast-bayou-47622.herokuapp.com/posts",
       formData,
       config
     );
@@ -116,7 +116,7 @@ export const addPost = (formData) => async (dispatch) => {
 // Get post
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`http://localhost:4000/posts/${id}`);
+    const res = await axios.get(`https://vast-bayou-47622.herokuapp.com/posts/${id}`);
 
     dispatch({
       type: GET_POST,
@@ -139,7 +139,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
   };
   try {
     const res = await axios.post(
-      `http://localhost:4000/posts/comment/${postId}`,
+      `https://vast-bayou-47622.herokuapp.com/posts/comment/${postId}`,
       formData,
       config
     );
@@ -162,7 +162,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
 export const deleteComment = (postId, commentId) => async (dispatch) => {
   try {
     await axios.delete(
-      `http://localhost:4000/posts/comment/${postId}/${commentId}`
+      `https://vast-bayou-47622.herokuapp.com/posts/comment/${postId}/${commentId}`
     );
 
     dispatch({

@@ -11,8 +11,8 @@ const ProfileTop = ({
   }
 }) => {
   return (
-    <div className='profile-top bg-primary p-2'>
-      <img className='round-img my-1' src={avatar} alt='' />
+    <div className='profile-top bg-info p-2'>
+      <img className='round-img my-1' src={avatar} alt='' /><hr style={{border:"1px dashed white"}}/>
       <h1 className=''>{name}</h1>
       <p className='lead'>
         {nationality && <span>{nationality}</span>}

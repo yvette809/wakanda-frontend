@@ -18,7 +18,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
         <Spinner animation="border" />
       ) : (
         <>
-          <Link to="/profiles" className="btn btn-light">
+          <Link to="/profiles" className="btn btn-light my-2">
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&

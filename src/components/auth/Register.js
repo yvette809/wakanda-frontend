@@ -28,12 +28,12 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/Membership" />;
+    return <Redirect to="/login"/>;
   }
 
   return (
     <Container id="register_section" className="mt-4">
-      <h1 className="large text-white py-3">Sign Up</h1>
+      <h1 className=" text-white py-3">Sign Up</h1>
       <p className="lead">
         <i className="fa fa-user" /> Create Your Account
       </p>

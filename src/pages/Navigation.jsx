@@ -22,7 +22,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
               }}
             />
           </Navbar.Brand>
-          </Link>
+        </Link>
         <Nav className="mr-auto d-flex justify-content-start align-items-start">
           <Link to="/news" className="nav-link">
             News
@@ -66,8 +66,8 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
           <Link to="/mission" className="nav-link">
             Mission
           </Link>
-          <Link to="/membership" className="nav-link">
-            Membership
+          <Link to="/members" className="nav-link">
+            Members
           </Link>
 
           <Link to="/login" className="nav-link">

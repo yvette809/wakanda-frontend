@@ -13,7 +13,9 @@ import {
 // GET curent user's profile
 export const getCurrentProfile = () => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost:4000/profiles/me");
+    const res = await axios.get(
+      "https://vast-bayou-47622.herokuapp.com/profiles/me"
+    );
     console.log("profile response", res);
 
     dispatch({
@@ -33,7 +35,9 @@ export const getCurrentProfile = () => async (dispatch) => {
 export const getProfiles = () => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
   try {
-    const res = await axios.get("http://localhost:4000/profiles");
+    const res = await axios.get(
+      "https://vast-bayou-47622.herokuapp.com/profiles"
+    );
     dispatch({
       type: GET_PROFILES,
       payload: res.data,
@@ -50,7 +54,7 @@ export const getProfiles = () => async (dispatch) => {
 export const getProfileById = (userId) => async (dispatch) => {
   try {
     const res = await axios.get(
-      `http://localhost:4000/profiles/user/${userId}`
+      `https://vast-bayou-47622.herokuapp.com/profiles/user/${userId}`
     );
     dispatch({
       type: GET_PROFILE,
@@ -77,7 +81,7 @@ export const createProfile = (formData, history, edit = false) => async (
     };
 
     const res = await axios.post(
-      "http://localhost:4000/profiles",
+      "https://vast-bayou-47622.herokuapp.com/profiles",
       formData,
       config
     );
@@ -112,7 +116,7 @@ export const addExperience = (formData, history) => async (dispatch) => {
     };
 
     const res = await axios.put(
-      "http://localhost:4000/profiles/experience",
+      "https://vast-bayou-47622.herokuapp.com/profiles/experience",
       formData,
       config
     );
@@ -139,7 +143,7 @@ export const addExperience = (formData, history) => async (dispatch) => {
 export const deleteExperience = (id) => async (dispatch) => {
   try {
     const res = await axios.delete(
-      `http://localhost:4000/profiles/experience/${id}`
+      `https://vast-bayou-47622.herokuapp.com/profiles/experience/${id}`
     );
     dispatch({
       type: UPDATE_PROFILE,
@@ -159,7 +163,9 @@ export const deleteExperience = (id) => async (dispatch) => {
 export const deleteAccount = () => async (dispatch) => {
   if (window.confirm("Are you sure? This cannot be undone!")) {
     try {
-      const res = await axios.delete(`http://localhost:4000/profiles`);
+      const res = await axios.delete(
+        `https://vast-bayou-47622.herokuapp.com/profiles`
+      );
       dispatch({ type: CLEAR_PROFILE });
       dispatch({ type: ACCOUNT_DELETED });
 
