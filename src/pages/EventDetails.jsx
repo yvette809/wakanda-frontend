@@ -28,7 +28,9 @@ const EventDetails = ({ setAlert }) => {
     const getSingleEvent = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`https://vast-bayou-47622.herokuapp.com/events/${_id}`);
+        const response = await fetch(
+          `https://vast-bayou-47622.herokuapp.com/events/${_id}`
+        );
         if (response.ok) {
           const event = await response.json();
           setEvent(event);
@@ -100,14 +102,10 @@ const EventDetails = ({ setAlert }) => {
               <div className="col col-lg-6 col-xs-8">
                 <h2 className="evt_title font-weight-bolder">{event.title}</h2>
                 <div className="event_img">
-                  <img
-                    src={event.image}
-                    alt="single event"
-                    
-                  />
+                  <img src={event.image} alt="single event" />
                 </div>
                 <br />
-                <div className= "evt_des">
+                <div className="evt_des">
                   <p>
                     Location: <strong>{event.location}</strong>
                   </p>

@@ -9,6 +9,8 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     getProfiles();
   }, [getProfiles]);
 
+  console.log("The profiles are", profiles)
+
   return (
     <>
       {loading ? (

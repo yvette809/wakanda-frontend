@@ -114,9 +114,6 @@ ul li {
   color: #ffffff;
   transform: translateY(-1200px);
   animation: animate1 1s forwards ease-in 2s;
-
-  /* transform: rotate(-20deg); */
-  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
 .second_card {
   height: 100%;
@@ -125,8 +122,6 @@ ul li {
   color: #ffffff;
   transform: translateY(-1200px);
   animation: animate1 1s forwards ease-in 3s;
-  /* transform: rotate(-20deg); */
-  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
 .third_card {
   height: 100%;
@@ -135,8 +130,6 @@ ul li {
   color: #ffffff;
   transform: translateY(-1200px);
   animation: animate1 1s forwards ease-in 4s;
-  /* transform: rotate(-20deg); */
-  /* transform: matrix(1, -0.3, 0, 1, 0, 0); */
 }
 
 .fourth_card {
@@ -146,8 +139,6 @@ ul li {
   color: #ffffff;
   transform: translateY(-1200px);
   animation: animate1 1s forwards ease-in 5s;
-  /* transform: rotate(-20deg); */
-  /* transform: matrix(1, -0.3, 0, 1, 0, 0);  */
 }
 @keyframes animate1 {
   to {
@@ -295,41 +286,6 @@ event_button {
   padding: 150px 0 150px 150px;
 }
 
-#staff_1 {
-  background: url("https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/904757_10152024235558996_327888442_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=DIByOw8FMxcAX9Kftul&_nc_ht=scontent.fume1-1.fna&oh=80a1a34a08ca50878a0078a771f2341d&oe=5F8935C2");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fixed;
-  object-fit: contain;
-  min-height: 400px;
-}
-#staff_2 {
-  background: url("https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/920723_286412858160540_1399172526_o.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=wnM_n-uve8MAX8AqN4x&_nc_oc=AQm_1KnSD4g8NyvM15Dm2inIimSCqtmXXYZyaxRh0-qgPE0R7un7JiljsOCVte9Klr4&_nc_ht=scontent.fume1-1.fna&oh=e696a9606927dee5aa300831671db0e4&oe=5F8B233A");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fixed;
-  object-fit: cover;
-  min-height: 400px;
-}
-#staff_3 {
-  background: url("https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/244222_217198188310878_2538104_o.jpg?_nc_cat=108&_nc_sid=de6eea&_nc_ohc=o0fwlJsXVzYAX_q-QPY&_nc_ht=scontent.fume1-1.fna&oh=51daab79f2c6ba425c69f4f9862f3290&oe=5F8A42F5");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fixed;
-  object-fit: cover;
-  overflow: hidden;
-  min-height: 400px;
-}
-#staff_4 {
-  background: url("https://scontent.fume1-1.fna.fbcdn.net/v/t1.0-9/50272027_237792143806248_3059270458655375360_o.jpg?_nc_cat=105&_nc_sid=174925&_nc_ohc=PEjDohSk2j0AX8B1KlS&_nc_ht=scontent.fume1-1.fna&oh=51d591a34551d9319e9cbc87ab53f918&oe=5F8C8D91");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: fixed;
-  object-fit: cover;
-  overflow: hidden;
-  min-height: 400px;
-  background-color: red;
-}
 footer {
   border: 1px solid rgba(1, 1, 15, 0.157);
   background-color: teal;
@@ -341,9 +297,51 @@ footer {
   background-image: url("./images/contact2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-attachment: fixed; */
+  background-position: right;
   min-height: 700px;
   position: relative;
+  transition: 5s;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation: contact1 20s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+@keyframes contact1 {
+  0% {
+    background-image: url("./images/about.jpg");
+  }
+  10% {
+    background-image: url("./bg.jpg");
+  }
+  20% {
+    background-image: url("./images/pic4.jpg");
+  }
+  30% {
+    background-image: url("./images/contact.JPG");
+  }
+  40% {
+    background-image: url("./images/coach.jpg");
+  }
+  50% {
+    background-image: url("./images/medal.jpg");
+  }
+
+  60% {
+    background-image: url("./images/crew.jpg");
+  }
+  70% {
+    background-image: url("./images/team.jpg");
+  }
+  80% {
+    background-image: url("./images/training.jpg");
+  }
+  90% {
+    background-image: url("./images/training2.jpg");
+  }
+  100% {
+    background-image: url("./images/training3.jpg");
+  }
 }
 
 #contact_img_section.img_overlay {
@@ -371,28 +369,22 @@ footer {
   object-fit: contain;
 }
 
-.kids_profile img {
-  width: 100%;
-  height: 50vh;
-  object-fit: contain;
-  overflow: hidden;
+.kids_profile, .foot_img,.basket_img{
+  height: 400px;
+ width: 400px;
+ overflow: hidden
 }
 
-.foot_img img {
-  width: 100%;
-  height: 50vh;
-  object-fit: contain;
-  overflow: auto;
-}
-.basket_img {
-  width: 20vw;
-  height: 50vh;
-  object-fit: contain;
-  overflow: hidden;
+.kids_profile img, .foot_img img .basket_img img{
+  cursor: pointer;
+  width: 30rem;
+  height: auto;
+  object-fit: cover;
+
 }
 
 .read_more {
-  padding: 8px 5px;
+  padding: 10px 25px;
   border-radius: 5px;
   opacity: 0.9;
   color: gold;
@@ -403,9 +395,53 @@ footer {
   opacity: 0.5;
   transform: scalez(0.5);
 }
+.staff_section {
+  min-height: 1200px;
+  overflow: hidden;
+}
+
+#staff_1, #staff_2,#staff_3, #staff_4{
+height: 400px;
+ width: 400px;
+ overflow: hidden
+}
+
+#staff_1 img,
+#staff_2 img,
+#staff_3 img,
+#staff_4 img {
+  cursor: pointer;
+  width: 30rem;
+  height: auto;
+  object-fit: cover;
+}
+#staff_1 img:hover {
+  width: 100%;
+  transform: scale(0.5);
+}
+#staff_2 img:hover {
+  width: 100%;
+  transform: scale(0.5);
+}
+#staff_3 img:hover {
+  width: 100%;
+  transform: scale(0.5);
+}
+#staff_4 img:hover {
+  width: 100%;
+  transform: scale(0.5);
+  
+}
+.staff_row {
+  margin-left: 200px;
+}
+
 #activities_section {
-  /* box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue; */
-  background-color: teal;
+  /* background-color: teal; */
+  background-color: gray;
+  opacity: 0.9;
+
+  color: black;
   border-radius: 20px;
 }
 
@@ -444,8 +480,6 @@ ul li {
 }
 
 #post {
- 
-  
   background: rgb(2, 0, 36);
   background: linear-gradient(
     90deg,
@@ -454,8 +488,12 @@ ul li {
     rgba(0, 212, 255, 1) 100%
   );
 
-  background: rgb(63,94,251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }
 
 /* media queries */

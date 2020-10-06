@@ -1,15 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { setAlert } from "../actions/alert";
 import { connect } from "react-redux";
-import {
-  FaAd,
-  FaBiking,
-  FaEdge,
-  FaMedal,
-  FaResolving,
-  ioMdFootball,
-} from "react-icons/fa";
+import Staff from "../components/Staff";
+import { FaAd, FaBiking, FaEdge, FaMedal, ioMdFootball } from "react-icons/fa";
+
 import ica from "../images/ica.png";
 import kommun from "../images/kommun.png";
 import peab from "../images/peab.jpg";
@@ -18,6 +15,7 @@ import UE from "../images/UE.png";
 import coop from "../images/coop.png";
 import activity from "../images/activity.jpg";
 import kids from "../images/kids.jpg";
+import coach from "../images/coach.jpg";
 
 import {
   Jumbotron,
@@ -34,9 +32,11 @@ import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
 import { Link, useParams } from "react-router-dom";
 
-//import EventList from '../components/Event';
-
 const Home = ({ setAlert }) => {
+  // scroll animations
+  useEffect(() => {
+    AOS.init();
+  });
   const [events, setEvents] = useState([]);
   const evenp = {
     title: "",
@@ -57,11 +57,18 @@ const Home = ({ setAlert }) => {
   });
 
   const { name, email, phone, text } = message;
-
+  const [disabled, setDisabled] = useState(false);
+  const [emailSent, setEmailSent] = useState(null);
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
   const [showModal, setshowModal] = useState(false);
   const [search, setSearch] = useState("text");
+  const [openButton, toggleOpenButton] = useState(false);
+
+  // set time out for button
+  setTimeout(() => {
+    toggleOpenButton();
+  }, 7000);
 
   // get Events
 
@@ -69,7 +76,9 @@ const Home = ({ setAlert }) => {
     const getEvents = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://vast-bayou-47622.herokuapp.com/events");
+        const response = await fetch(
+          "https://vast-bayou-47622.herokuapp.com/events"
+        );
         if (response.ok) {
           const events = await response.json();
           console.log("events are", events);
@@ -133,8 +142,11 @@ const Home = ({ setAlert }) => {
       };
 
       try {
+        const apikey =
+          "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";
         const config = {
           headers: {
+            Authorizatiion: "Bearer" + apikey,
             "Content-Type": "application/json",
           },
         };
@@ -144,8 +156,14 @@ const Home = ({ setAlert }) => {
           body,
           config
         );
-        console.log(res.data);
-        alert("message received");
+        if (res.ok) {
+          console.log(res.data);
+          setDisabled(false);
+          setEmailSent(true);
+        } else {
+          setDisabled(false);
+          setEmailSent(false);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -215,7 +233,7 @@ const Home = ({ setAlert }) => {
     <>
       <Container fluid>
         <Row className="">
-          <Col lg={10} xs={12}  style={{ paddingLeft: "0" }}>
+          <Col lg={10} xs={12} style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
                 <h1 className="text-dark text-center ">
@@ -241,7 +259,7 @@ const Home = ({ setAlert }) => {
               </div>
             </Jumbotron>
           </Col>
-          <Col lg={2} >
+          <Col lg={2}>
             <div>
               <SearchForm searchValue={setSearch} />
               <div>
@@ -334,7 +352,7 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
       </Container>
-      <Container className= "justify-content-sm-center text-sm-center">
+      <Container className="justify-content-sm-center text-sm-center">
         <div className="text-center">
           <FaAd
             className="fa_about  mt-4"
@@ -399,7 +417,7 @@ const Home = ({ setAlert }) => {
         <div className="dark_overlay">
           <Container className="values" id="wak_values">
             <Row className="text-center my-4 ">
-              <Col className="col col-lg-2 col-xs-3">
+              <Col className="col col-lg-2 col-xs-3 ">
                 <Card
                   className="mb-5 first_card bg-outline"
                   style={{
@@ -422,7 +440,7 @@ const Home = ({ setAlert }) => {
                   </Card.Body>
                 </Card>
               </Col>
-              <Col className="col col-lg-2 col-xs-3">
+              <Col className="col col-lg-2 col-xs-3 ">
                 <Card
                   className="second_card"
                   style={{
@@ -501,20 +519,20 @@ const Home = ({ setAlert }) => {
       <div className="text-center mb-4">
         <ioMdFootball />
         <i
-          className=" fa fa-baseball-ball mb-2 mt-4 bg-danger"
+          className=" fa fa-baseball-ball mb-2 mt-5 bg-danger"
           style={{ fontSize: "6rem", padding: "15px", borderRadius: "50%" }}
         ></i>
         <h2>Our Activities</h2>
       </div>
-      <Container id="activities_section">
-        <Row className="text-white">
-          <Col className="mb-3" xs={12} lg={6} >
-            <div className="kids_profile">
+      <Container id="activities_section py-5">
+        <Row className="text-dark my-5">
+          <Col className="" xs={12} lg={6}>
+            <div className="kids_profile" data-aos="fade-in">
               <img src={kids} alt="kidsimage" />
             </div>
           </Col>
           <Col className="mb-3" xs={12} lg={6}>
-            <div>
+            <div data-aos="zoom-in">
               <h1 className="text-danger activities_heading">Kids Corner</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
                 At WSK, we specialise in the well-being of kids.We have trained
@@ -528,7 +546,7 @@ const Home = ({ setAlert }) => {
             </div>
           </Col>
         </Row>
-        <Row className="mb-4 text-white">
+        <Row className="mb-4 text-dark my-5 py-5">
           <Col xs={12} lg={6}>
             <div>
               <h1 className="text-danger activities_heading">Football</h1>
@@ -541,13 +559,13 @@ const Home = ({ setAlert }) => {
               </Link>
             </div>
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} data-aos="fade-in">
             <div className="foot_img">
-              <img src={activity} alt="kidsimage" />
+              <img src={activity} alt="footimage" />
             </div>
           </Col>
         </Row>
-        <Row className="text-white">
+        <Row className="text-dark">
           <Col className="mb-5 xs={12}">
             <div className="basket_img">
               <img
@@ -556,7 +574,7 @@ const Home = ({ setAlert }) => {
               />
             </div>
           </Col>
-          <Col xs={12} lg={6}>
+          <Col xs={12} lg={6} data-aos="zoom-in">
             <div>
               <h1 className="text-danger activities_heading">Basketball</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
@@ -571,70 +589,15 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
       </Container>
+      <Staff/>
 
-      <Container className="mb-4">
-        <div className="text-center my-4">
-          <FaResolving
-            className="fa_about bg-danger mb-4"
-            style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
-          />
-          <h1>The Driving Force</h1>
-        </div>
-        <div style={{ borderRadius: "20px" }}>
-          <Row className=" text-white no-gutters ">
-            <Col xs={12} lg={6}>
-              <div
-                classname="card "
-                id="staff_1"
-                style={{ minWidth: "30rem", lineHeight: "1rem" }}
-              >
-                <h5>Emmanuel Mukumu</h5>
-                <p>Chairman WSK</p>
-              </div>
-            </Col>
-            <Col xs={12} lg={6}>
-              <div
-                classname="card  "
-                id="staff_2"
-                style={{ minWidth: "30rem", lineHeight: "1rem" }}
-              >
-                <h5>Ngwa McDonald</h5>
-                <p>Team Manager</p>
-              </div>
-            </Col>
-          </Row>
-          <Row className="mb-3 no-gutters text-white">
-            <Col xs={12} lg={6}>
-              <div
-                classname="card"
-                id="staff_3"
-                style={{ minWidth: "30rem", lineHeight: "1rem" }}
-              >
-                <h5>Ojong Roland</h5>
-                <p>Head Coach</p>
-              </div>
-            </Col>
-            <Col
-              xs={12}
-              lg={6}
-              classname="card "
-              id="staff_4"
-              style={{ minWidth: "30rem", lineHeight: "1rem" }}
-            >
-              <div classname="align-content-end ">
-                <h5>Sidibe Michael</h5>
-                <p>Assistant Coach</p>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </Container>
+     
       <div className="text-center">
         <i
           className="fa fa-bullseye mb-2 mt-4 bg-danger"
           style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%" }}
         ></i>
-        <h2 className = "sponsors">Our Prospective Sponsors</h2>
+        <h2 className="sponsors">Our Prospective Sponsors</h2>
       </div>
       <Container className="mb-3">
         <div className="sponsor d-flex justify-content-between align-content-lg-center mb-3">
@@ -755,4 +718,8 @@ const Home = ({ setAlert }) => {
   );
 };
 
-export default connect(null, { setAlert })(Home);
+const mapStateToProps = (state) => ({
+  profile: state.profile,
+});
+
+export default connect(mapStateToProps, { setAlert })(Home);

@@ -38,6 +38,7 @@ export const getProfiles = () => async (dispatch) => {
     const res = await axios.get(
       "https://vast-bayou-47622.herokuapp.com/profiles"
     );
+    
     dispatch({
       type: GET_PROFILES,
       payload: res.data,
