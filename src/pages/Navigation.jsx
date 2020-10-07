@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
-import logo from "../../src/wlogo.jpg";
+import logo from "../images/logo.jpg";
 import "../../src/App.css";
 
 const Navigation = ({ auth: { isAuthenticated }, logout }) => {
@@ -18,7 +18,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
               src={logo}
               alt="wakanda logo"
               style={{
-                width: "12%",
+                width: "10%",
               }}
             />
           </Navbar.Brand>

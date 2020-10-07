@@ -5,17 +5,9 @@ import "aos/dist/aos.css";
 import { setAlert } from "../actions/alert";
 import { connect } from "react-redux";
 import Staff from "../components/Staff";
-import { FaAd, FaBiking, FaEdge, FaMedal, ioMdFootball } from "react-icons/fa";
-
-import ica from "../images/ica.png";
-import kommun from "../images/kommun.png";
-import peab from "../images/peab.jpg";
-import bostaden from "../images/bostaden.jpg";
-import UE from "../images/UE.png";
-import coop from "../images/coop.png";
-import activity from "../images/activity.jpg";
-import kids from "../images/kids.jpg";
-import coach from "../images/coach.jpg";
+import Activities from "../components/Activities";
+import Sponsors from "../components/Sponsors";
+import { FaAd, FaBiking, FaEdge, FaMedal } from "react-icons/fa";
 
 import {
   Jumbotron,
@@ -63,12 +55,6 @@ const Home = ({ setAlert }) => {
   const [loading, setLoading] = useState(false);
   const [showModal, setshowModal] = useState(false);
   const [search, setSearch] = useState("text");
-  const [openButton, toggleOpenButton] = useState(false);
-
-  // set time out for button
-  setTimeout(() => {
-    toggleOpenButton();
-  }, 7000);
 
   // get Events
 
@@ -233,7 +219,7 @@ const Home = ({ setAlert }) => {
     <>
       <Container fluid>
         <Row className="">
-          <Col lg={10} xs={12} style={{ paddingLeft: "0" }}>
+          <Col lg={12} xs={12} style={{ paddingLeft: "0" }}>
             <Jumbotron className="jumbo d-flex-inline text-center">
               <div className="wak_intro">
                 <h1 className="text-dark text-center ">
@@ -259,99 +245,10 @@ const Home = ({ setAlert }) => {
               </div>
             </Jumbotron>
           </Col>
-          <Col lg={2}>
-            <div>
-              <SearchForm searchValue={setSearch} />
-              <div>
-                <EventList
-                  events={events}
-                  loading={loading}
-                  deleteEvent={deleteEvent}
-                />
-                <Modal show={showModal}>
-                  <Modal.Header closeButton onClick={() => setshowModal(false)}>
-                    <Modal.Title>Add Event</Modal.Title>
-                  </Modal.Header>
-
-                  <Modal.Body>
-                    <Form onSubmit={addEvent}>
-                      <FormControl
-                        type="text"
-                        value={title}
-                        name="title"
-                        placeholder="Add Title"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-                      <FormControl
-                        type="text"
-                        value={description}
-                        name="description"
-                        placeholder="Add description"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-                      <FormControl
-                        type="text"
-                        value={image}
-                        name="image"
-                        placeholder="Add Image"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                        required
-                      />
-                      <FormControl
-                        type="text"
-                        value={time}
-                        name="time"
-                        placeholder="Add Time"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-                      <FormControl
-                        type="text"
-                        value={location}
-                        name="location"
-                        placeholder="Add Location"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-                      <FormControl
-                        type="date"
-                        value={date}
-                        name="date"
-                        placeholder="Add Date"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-
-                      <FormControl
-                        type="file"
-                        value={image}
-                        name="file"
-                        placeholder="Add file"
-                        onChange={(e) => setnewEvent(e.currentTarget.value)}
-                      />
-                    </Form>
-                  </Modal.Body>
-
-                  <Modal.Footer>
-                    <Button
-                      variant="secondary"
-                      onClick={() => setshowModal(false)}
-                    >
-                      Close
-                    </Button>
-                    <Button variant="primary" onClick={addEvent}>
-                      Add Event
-                    </Button>
-                  </Modal.Footer>
-                </Modal>
-                <button
-                  className="btn-primary"
-                  onClick={() => setshowModal(true)}
-                >
-                  Open Modal
-                </button>
-              </div>
-            </div>
-          </Col>
         </Row>
       </Container>
+      
+       
       <Container className="justify-content-sm-center text-sm-center">
         <div className="text-center">
           <FaAd
@@ -413,6 +310,88 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
       </Container>
+      <Container>
+        <h1 className= "text-center">Upcoming Events</h1>
+      <EventList
+            events={events}
+            loading={loading}
+            deleteEvent={deleteEvent}
+          />
+          <Modal show={showModal} >
+            <Modal.Header closeButton onClick={() => setshowModal(false)}>
+              <Modal.Title>Add Event</Modal.Title>
+            </Modal.Header>
+
+            <Modal.Body>
+              <Form onSubmit={addEvent}>
+                <FormControl
+                  type="text"
+                  value={title}
+                  name="title"
+                  placeholder="Add Title"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+                <FormControl
+                  type="text"
+                  value={description}
+                  name="description"
+                  placeholder="Add description"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+                <FormControl
+                  type="text"
+                  value={image}
+                  name="image"
+                  placeholder="Add Image"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                  required
+                />
+                <FormControl
+                  type="text"
+                  value={time}
+                  name="time"
+                  placeholder="Add Time"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+                <FormControl
+                  type="text"
+                  value={location}
+                  name="location"
+                  placeholder="Add Location"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+                <FormControl
+                  type="date"
+                  value={date}
+                  name="date"
+                  placeholder="Add Date"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+
+                <FormControl
+                  type="file"
+                  value={image}
+                  name="file"
+                  placeholder="Add file"
+                  onChange={(e) => setnewEvent(e.currentTarget.value)}
+                />
+              </Form>
+            </Modal.Body>
+
+            <Modal.Footer>
+              <Button variant="secondary" onClick={() => setshowModal(false)}>
+                Close
+              </Button>
+              <Button variant="primary" onClick={addEvent}>
+                Add Event
+              </Button>
+            </Modal.Footer>
+          </Modal>
+          <button className="btn-primary" onClick={() => setshowModal(true)} style= {{visibility: "hidden"}}>
+            Open Modal
+          </button>
+      </Container>
+      <Activities />
       <div id="values_section" className="">
         <div className="dark_overlay">
           <Container className="values" id="wak_values">
@@ -516,99 +495,9 @@ const Home = ({ setAlert }) => {
           </Container>
         </div>
       </div>
-      <div className="text-center mb-4">
-        <ioMdFootball />
-        <i
-          className=" fa fa-baseball-ball mb-2 mt-5 bg-danger"
-          style={{ fontSize: "6rem", padding: "15px", borderRadius: "50%" }}
-        ></i>
-        <h2>Our Activities</h2>
-      </div>
-      <Container id="activities_section py-5">
-        <Row className="text-dark my-5">
-          <Col className="" xs={12} lg={6}>
-            <div className="kids_profile" data-aos="fade-in">
-              <img src={kids} alt="kidsimage" />
-            </div>
-          </Col>
-          <Col className="mb-3" xs={12} lg={6}>
-            <div data-aos="zoom-in">
-              <h1 className="text-danger activities_heading">Kids Corner</h1>
-              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
-                At WSK, we specialise in the well-being of kids.We have trained
-                coaches that take kids from all ages.We train them to become
-                professionals.All kids are welcome it desn't matter on the
-                skill-level.
-              </p>
-              <Link to="/kids">
-                <button className="read_more">Read More</button>
-              </Link>
-            </div>
-          </Col>
-        </Row>
-        <Row className="mb-4 text-dark my-5 py-5">
-          <Col xs={12} lg={6}>
-            <div>
-              <h1 className="text-danger activities_heading">Football</h1>
-              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
-                Football is our passion. We train twice every week to keep the
-                spirit alive. At WSK, we believe in equality and mutual respect
-              </p>
-              <Link to="/activies">
-                <button className="read_more">Read More</button>
-              </Link>
-            </div>
-          </Col>
-          <Col xs={12} lg={6} data-aos="fade-in">
-            <div className="foot_img">
-              <img src={activity} alt="footimage" />
-            </div>
-          </Col>
-        </Row>
-        <Row className="text-dark">
-          <Col className="mb-5 xs={12}">
-            <div className="basket_img">
-              <img
-                src="https://www.clickorlando.com/resizer/E3jnPkPmr7WH3l_jgOq0y-JdzY8=/1600x1066/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/QNBNH7TXVBFWPEH3SMMV7O25BU.jpg"
-                alt="basketballimage"
-              />
-            </div>
-          </Col>
-          <Col xs={12} lg={6} data-aos="zoom-in">
-            <div>
-              <h1 className="text-danger activities_heading">Basketball</h1>
-              <p style={{ fontSize: "1.3rem" }} className="activities_corner">
-                We recently diversified in to the field of Basketball. During
-                our basketball trainings, we have the opportunity to train a
-                team of 15 to 20 persons.
-              </p>
-              <Link to="/basketball">
-                <button className="read_more">Read More</button>
-              </Link>
-            </div>
-          </Col>
-        </Row>
-      </Container>
-      <Staff/>
-
      
-      <div className="text-center">
-        <i
-          className="fa fa-bullseye mb-2 mt-4 bg-danger"
-          style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%" }}
-        ></i>
-        <h2 className="sponsors">Our Prospective Sponsors</h2>
-      </div>
-      <Container className="mb-3">
-        <div className="sponsor d-flex justify-content-between align-content-lg-center mb-3">
-          <img src={ica} alt="" className="sponsor_img" />
-          <img src={kommun} alt="" className="sponsor_img" />
-          <img src={peab} alt="" className="sponsor_img" />
-          <img src={bostaden} alt="" className="sponsor_img" />
-          <img src={UE} alt="" className="sponsor_img" />
-          <img src={coop} alt="" className="sponsor_img" />
-        </div>
-      </Container>
+      <Staff />
+      <Sponsors />
 
       <div id="contact_img_section" style={{ padding: "150px" }}>
         <div class="img_overlay">
