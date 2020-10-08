@@ -27,6 +27,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
 import store from "./store";
 import Alert from "./components/Alert";
+import Messages from "./components/messages/Messages"
 import PrivateRoute from "./components/routing/PrivateRoute";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -81,6 +82,7 @@ const App = () => {
         ></PrivateRoute>
         <PrivateRoute exact path="/posts" component={Posts}></PrivateRoute>
         <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
+        <PrivateRoute exact path="/messages" component={Messages}></PrivateRoute>
         <Route component={NotFound}></Route>
       </Switch>
       <Footer />

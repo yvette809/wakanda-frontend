@@ -33,10 +33,14 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
           <Link to="/posts" className="nav-link">
             Posts
           </Link>
+          <Link to="/messages" className="nav-link">
+            Messages
+          </Link>
           <Link to="/" onClick={logout} className="nav-link">
             <i className="fa fa-sign-out">Logout</i>
           </Link>
         </Nav>
+        
       </Navbar.Collapse>
     </>
   );

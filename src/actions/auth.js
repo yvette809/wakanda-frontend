@@ -5,6 +5,8 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
+  GET_USERS,
+  GETUSERS_FAIL,
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -26,6 +28,24 @@ export const loadUser = () => async (dispatch) => {
   } catch (error) {
     dispatch({
       type: AUTH_ERROR,
+    });
+  }
+};
+
+// get all users
+
+export const getUsers = () => async (dispatch) => {
+  
+  try {
+    const res = await axios.get("http://localhost:4000/users");
+    console.log("users are", res.data);
+    dispatch({
+      type: GET_USERS,
+      Payload: res.data,
+    });
+  } catch (error) {
+    dispatch({
+      type: GETUSERS_FAIL,
     });
   }
 };

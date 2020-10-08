@@ -2,9 +2,9 @@ import axios from "axios";
 import { FETCH_MESSAGES, ADD_MESSAGES, MESSAGE_ERROR } from "./types";
 
 // Get messages
-export const fetchMessages = () => async (dispatch) => {
+export const fetchMessages = (username) => async (dispatch) => {
   try {
-    const res = await axios.get("http://localhost/4000/profiles/messages");
+    const res = await axios.get("http://localhost:/4000/profiles/messages"); 
     console.log("message res is", res);
     dispatch({
       type: FETCH_MESSAGES,

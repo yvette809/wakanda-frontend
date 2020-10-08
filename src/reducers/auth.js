@@ -2,6 +2,8 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL,
   USER_LOADED,
+  GET_USERS,
+  GETUSERS_FAIL,
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
@@ -14,6 +16,7 @@ const initialState = {
   isAuthenticated: null,
   loading: true,
   user: "null",
+  users:[]
 };
 
 export default function (state = initialState, action) {
@@ -24,6 +27,12 @@ export default function (state = initialState, action) {
         isAuthenticated: true,
         loading: false,
         user: action.payload,
+      };
+      case GET_USERS:
+      return {
+        ...state,
+        loading: false,
+        users: action.payload,
       };
     case REGISTER_SUCCESS:
     case LOGIN_SUCCESS:
@@ -46,6 +55,12 @@ export default function (state = initialState, action) {
         isAuthenticated: false,
         loading: false,
       };
+      case GETUSERS_FAIL:
+        return {
+          ...state,
+          error: action.payload,
+          loading: false
+        };
 
     default:
       return state;
