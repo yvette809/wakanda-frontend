@@ -13,9 +13,9 @@ const Sponsors = () => {
              <div className="text-center">
         <i
           className="fa fa-bullseye mb-2 mt-4 bg-danger"
-          style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%" }}
+          style={{ fontSize: "3rem", padding: "15px", borderRadius: "50%", color:"white" }}
         ></i>
-        <h2 className="sponsors">Our Prospective Sponsors</h2>
+        <h1 className="sponsors">Our Prospective Sponsors</h1>
       </div>
       <Container className="mb-3">
         <div className="sponsor d-flex justify-content-between align-content-lg-center mb-3">

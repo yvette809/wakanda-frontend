@@ -234,7 +234,7 @@ const Home = ({ setAlert }) => {
                 <p>
                   <Link to="/mission">
                     <Button
-                      variant="primary"
+                      variant="danger"
                       className="first_button font-bold text-center"
                       style={{ fontSize: "1.2rem" }}
                     >
@@ -262,7 +262,7 @@ const Home = ({ setAlert }) => {
           />
         </div>
         <div>
-          <h1 className="text-center ">About WSK</h1>
+          <h1 className="text-center  ">About WSK</h1>
         </div>
 
         <Row className="text-center my-5">
@@ -310,8 +310,8 @@ const Home = ({ setAlert }) => {
           </Col>
         </Row>
       </Container>
-      <Container>
-        <h1 className= "text-center">Upcoming Events</h1>
+      <Container fluid>
+        <h1 className= "text-center" >Upcoming Events</h1>
       <EventList
             events={events}
             loading={loading}
@@ -501,7 +501,7 @@ const Home = ({ setAlert }) => {
 
       <div id="contact_img_section" style={{ padding: "150px" }}>
         <div class="img_overlay">
-          <Container>
+          <Container style = {{  filter: "grayscale(50%)"}}>
             <div>
               <i
                 className="fa fa-3x fa-address-card text-center text-white d-block"
@@ -585,7 +585,7 @@ const Home = ({ setAlert }) => {
               </Col>
               <Col lg={3} xs={4}>
                 <div className="mb-2">
-                  <i className="fa fa-map-marker mr-2 fa_icon"></i>
+                  <i className="fa fa-map-marker mr-2 fa_icon" ></i>
                   <span className="text-white">
                     Språkgränd 29,90733 <br /> Umeå, Sweden
                   </span>

@@ -20,31 +20,12 @@ body {
   position: relative;
   border-top-right-radius: 0px;
   margin: 0;
-  
 }
 
-
-.img_div .abtimg {
-  height: auto;
-  width: 100%;
-  object-fit: cover;
+.img_div {
+  height: 60vh;
+  overflow: hidden;
 }
-/* .abtimg img{
-  width: 600px;
-  height: 400px;
-} */
-
-/* .abt-p{
- max-height: 370px;
- overflow: scroll;
- padding-left:50px;
- text-align: left;
-}
-
-.h1ab{
-  font-family: 'Tangerine', cursive;
-  color: var(--primaryColor)
-} */
 
 .first_button {
   position: absolute;
@@ -80,6 +61,9 @@ body {
   color: white;
   font-size: 1.2rem;
 }
+/* h1 {
+  font-family: "Tangerine", cursive;
+} */
 
 hr {
   border: 1px solid white;
@@ -192,9 +176,16 @@ ul li {
 }
 
 .navigation {
-  background-color:black;
+  background-color: black;
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);  */
   border: 1px solid rgba(1, 1, 15, 0.157);
+  font-family: 'Yellowtail', cursive;
+ 
+}
+
+.nav-link{
+  font-size: 1.6rem !important;
+
 }
 
 .img-carousel {
@@ -213,9 +204,18 @@ event_button {
 }
 
 .event_title {
-  color: green;
+  color: rgba(42, 17, 98, 0.692);
   font-weight: 900;
+  font-size: 3rem;
+  font-family: "Tangerine";
+  filter: brightness(100%);
+}
+
+p.event_title:hover {
   text-decoration: none;
+}
+.event_date {
+  font-size: 1.5rem;
 }
 
 div.event_img img {
@@ -310,8 +310,9 @@ div.event_img img {
 
 footer {
   border: 1px solid rgba(1, 1, 15, 0.157);
-  background-color:black;
-  font-size: 1.8 rem;
+  background-color: black;
+  font-size: 1.2 rem;
+  
 }
 
 #contact_img_section {
@@ -321,6 +322,7 @@ footer {
   background-size: cover;
   background-position: right;
   min-height: 700px;
+  /* filter: grayscale(); */
   position: relative;
   transition: 5s;
   animation-direction: alternate-reverse;
@@ -535,7 +537,7 @@ ul li {
   );
 }
 
-.fa_about{
+.fa_about {
   color: white;
 }
 

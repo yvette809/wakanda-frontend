@@ -13,7 +13,7 @@ const Activities = () => {
           className=" fa fa-baseball-ball mb-2 mt-5 bg-danger fa_about"
           style={{ fontSize: "6rem", padding: "15px", borderRadius: "50%" }}
         ></i>
-        <h2>Our Activities</h2>
+        <h1>Our Activities</h1>
       </div>
       <Container id="activities_section py-5">
         <Row className="text-dark my-5">

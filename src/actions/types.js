@@ -21,3 +21,7 @@ export const DELETE_POST = "DELETE_POST";
 export const ADD_POST = "ADD_POST";
 export const ADD_COMMENT = "ADD_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
+export const FETCH_MESSAGES = "FETCH_MESSAGES";
+export const ADD_MESSAGES = "ADD_MESSAGES";
+export const MESSAGE_ERROR = "MESSAGE_ERROR";
+

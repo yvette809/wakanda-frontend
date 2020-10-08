@@ -71,14 +71,12 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
           </Link>
 
           <Link to="/login" className="nav-link">
-            login
+            Login
+          </Link>
+          <Link to="/register" className="nav-link">
+            Register
           </Link>
         </Nav>
-        <Form inline>
-          <Link to="/register">
-            <Button variant="outline-primary">Register</Button>
-          </Link>
-        </Form>
       </Navbar.Collapse>
     </>
   );

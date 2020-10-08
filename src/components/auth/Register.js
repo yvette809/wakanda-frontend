@@ -13,7 +13,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     password2: "",
   });
 
-  const { name, email, password, password2 } = formData;
+  const { name, username, email, password, password2 } = formData;
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -23,7 +23,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     if (password !== password2) {
       setAlert("Passwords do not match", "danger");
     } else {
-      register({ name, email, password });
+      register({ name, username,email, password });
     }
   };
 
@@ -44,6 +44,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           value={name}
           name="name"
           placeholder="Name"
+          onChange={onChange}
+          className="mb-4 py-3 register_input"
+        />
+        <FormControl
+          type="text"
+          value={username}
+          name="username"
+          placeholder="username"
           onChange={onChange}
           className="mb-4 py-3 register_input"
         />
