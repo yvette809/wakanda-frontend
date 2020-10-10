@@ -78,7 +78,6 @@ const Staff = () => {
                   </a>
                 </>
               )}
-
               <button
                 onClick={(e) => toggleOpenButton1(true)}
                 className="ml-3 staff_button bg-danger"
@@ -122,7 +121,6 @@ const Staff = () => {
                   </a>
                 </>
               )}
-
               <button
                 onClick={(e) => toggleOpenButton2(true)}
                 className="ml-3 staff_button bg-danger"
@@ -180,7 +178,6 @@ const Staff = () => {
                   </a>
                 </>
               )}
-
               <button
                 onClick={(e) => toggleOpenButton3(true)}
                 className="ml-3 staff_button bg-danger"
@@ -223,7 +220,6 @@ const Staff = () => {
                   </a>
                 </>
               )}
-
               <button
                 onClick={(e) => toggleOpenButton(true)}
                 className=" staff_button bg-danger"
@@ -243,4 +239,4 @@ const Staff = () => {
   );
 };
 
-export default Staff;
+export default Staff

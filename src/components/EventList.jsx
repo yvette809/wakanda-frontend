@@ -1,7 +1,15 @@
 import React from "react";
 import Event from "./Event";
 import Moment from "react-moment";
-import { Container, Row, Carousel, Col, Spinner, Card,Button } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Carousel,
+  Col,
+  Spinner,
+  Card,
+  Button,
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const EventList = ({ events, loading, deleteEvent }) => {
@@ -16,44 +24,38 @@ const EventList = ({ events, loading, deleteEvent }) => {
   }
 
   return (
-    <Container>
-      <Row className="d-flex justify-content-between mt-3">
-        <Col lg={12}>
-          <Carousel expand={"lg"}>
-            {events &&
-              events.map((evt) => (
-                // <Event key={evt.id} event={evt} />
+    <Container fluid className="">
+      <Carousel pause="hover" expand={"lg"}>
+        {events &&
+          events.map((evt) => (
+            // <Event key={evt.id} event={evt} />
 
-                <Carousel.Item>
-                  
-                  <div className="img_div active "> 
-                    <Link to={`/eventdetails/${evt._id}`}>
-                      <img
-                        className="d-block w-100 abtimg img-fluid"
-                        src={evt.image}
-                        alt="events"
-                      />
-                    </Link>
-                  </div>
+            <Carousel.Item>
+              <div className="img_div active ">
+                <Link to={`/eventdetails/${evt._id}`}>
+                  <img
+                    className="d-block w-100 abtimg img-fluid"
+                    src={evt.image}
+                    alt="events"
+                  />
+                </Link>
+              </div>
 
-                  <Carousel.Caption>
-                    <div>
-                      <Link to={`/eventdetails/${evt._id}`}>
-                        <p className="event_title">{evt.title}</p>
-                      </Link>
-                      <small className="text-left event_date">
-                        {" "}
-                        Date posted:{" "}
-                        <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
-                      </small>
-                     
-                    </div>
-                  </Carousel.Caption>
-                </Carousel.Item>
-              ))}
-          </Carousel>
-        </Col>
-      </Row>
+              <Carousel.Caption className= "carousel-caption">
+                <div>
+                  <Link to={`/eventdetails/${evt._id}`}>
+                    <p className="event_title">{evt.title}</p>
+                  </Link>
+                  <small className="text-left event_date">
+                    {" "}
+                    Date posted:{" "}
+                    <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
+                  </small>
+                </div>
+              </Carousel.Caption>
+            </Carousel.Item>
+          ))}
+      </Carousel>
     </Container>
   );
   // return (

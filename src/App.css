@@ -10,18 +10,35 @@ body {
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
 
-.jumbo {
-  background-image: url("./bg.jpg");
-  background-image: url("./images/front.jpg");
-  background-repeat: no-repeat;
-  /* background-attachment: fixed; */
-  background-size: cover;
-  height: 100vh;
-  position: relative;
-  border-top-right-radius: 0px;
-  margin: 0;
+#cd2{
+  display: none;
 }
 
+#cd1:hover #cd2{
+  display: block;
+}
+/* #cards:hover{
+  overflow: visible!important;
+ 
+} */
+
+#home_sessions {
+  background-image: url("./images/front.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+}
+
+#home_sessions .home_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 150px 0 150px 150px;
+}
 .img_div {
   height: 60vh;
   overflow: hidden;
@@ -31,10 +48,12 @@ body {
   position: absolute;
   bottom: 20px;
   width: 150px;
-  margin-right: 150px;
+  right: 700px;
   padding: 10px 0;
   border-radius: 50px;
+  display: none;
 }
+
 .about_us_img {
   background-image: url("./images/about.jpg");
 }
@@ -74,7 +93,7 @@ hr {
   box-shadow: 0 12px 12px -12px rgba(0, 0, 0, 0);
 }
 
-ul li {
+li {
   list-style-type: none;
 }
 
@@ -176,16 +195,19 @@ ul li {
 }
 
 .navigation {
-  background-color: black;
-  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white);  */
+  background-color: teal;
   border: 1px solid rgba(1, 1, 15, 0.157);
-  font-family: 'Yellowtail', cursive;
- 
+  padding: 4px 16px;
+  /* height: 70px; */
+  min-height: 70px;
 }
 
-.nav-link{
-  font-size: 1.6rem !important;
-
+.nav-link {
+  font-size: 1.4rem !important;
+  color: #ffffff !important;
+}
+Nav.nav-link Link {
+  margin-left: 500px !important;
 }
 
 .img-carousel {
@@ -204,10 +226,9 @@ event_button {
 }
 
 .event_title {
-  color: rgba(42, 17, 98, 0.692);
+  color: white;
   font-weight: 900;
-  font-size: 3rem;
-  font-family: "Tangerine";
+  font-size: 2rem;
   filter: brightness(100%);
 }
 
@@ -276,11 +297,6 @@ div.event_img img {
   }
 }
 
-.nav-link {
-  color: #ffffff !important;
-  font-size: 1.2rem;
-}
-
 #values_section {
   background-image: url("https://i.pinimg.com/originals/51/d8/1f/51d81f3597b1f29fede758245ba87101.jpg");
   background-repeat: no-repeat;
@@ -312,16 +328,30 @@ footer {
   border: 1px solid rgba(1, 1, 15, 0.157);
   background-color: black;
   font-size: 1.2 rem;
-  
+  background-color: teal;
 }
-
+ul li {
+  font-size: 1.4rem;
+}
+/* ul li:hover {
+  color: red;
+} */
+.pics_container {
+  /* background-color: rgb(19, 13, 13) ; */
+  background-color: rgb(117, 0, 0) !important;
+}
 #contact_img_section {
   background-image: url("./images/contact.JPG");
   background-image: url("./images/contact2.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   background-position: right;
-  min-height: 700px;
+  height: 60vh;
+  width: 50vw;
+  justify-content: end;
+  object-fit: cover;
+  /* min-height: 700px; */
   /* filter: grayscale(); */
   position: relative;
   transition: 5s;
@@ -329,7 +359,7 @@ footer {
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
   animation-play-state: running;
-  animation: contact1 20s cubic-bezier(0.645, 0.045, 0.355, 1);
+  animation: contact1 20s infinite;
 }
 @keyframes contact1 {
   0% {
@@ -363,6 +393,9 @@ footer {
   90% {
     background-image: url("./images/training2.jpg");
   }
+  95% {
+    background-image: url("./images/training4.jpg");
+  }
   100% {
     background-image: url("./images/training3.jpg");
   }
@@ -378,12 +411,9 @@ footer {
 }
 
 .fa_icon {
-  font-size: 1.5rem;
   color: #ffffff;
   padding: 10px;
-  background-color: black;
   border-radius: 100%;
-  border: 2px solid red;
 }
 
 .sponsor_img {
@@ -396,9 +426,10 @@ footer {
 .kids_profile,
 .foot_img,
 .basket_img {
-  height: 400px;
+  height: 300px;
   width: 500px;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .kids_profile img,
@@ -425,28 +456,18 @@ footer {
 .staff_section {
   min-height: 1200px;
   overflow: hidden;
-  background-color: rgb(19, 13, 13);
-}
-
-#staff_1,
-#staff_2,
-#staff_3,
-#staff_4 {
-  height: 400px;
-  width: 400px;
-  overflow: hidden;
-  background-color: grey !important;
+  /* background-color: rgb(19, 13, 13); */
+  background-color: teal;
 }
 
 #staff_1 img,
 #staff_2 img,
 #staff_3 img,
 #staff_4 img {
-  cursor: pointer;
-  width: 30rem;
-  height: auto;
-  object-fit: cover;
   border-radius: 50%;
+  object-fit: cover;
+  overflow: hidden;
+  height: 50vh !important;
 }
 
 .staff_row {
@@ -516,9 +537,9 @@ h4 {
   height: 1200px;
 }
 
-ul li {
+/* ul li {
   color: white;
-}
+} */
 
 #post {
   background: rgb(2, 0, 36);
@@ -541,6 +562,41 @@ ul li {
   color: white;
 }
 
+/* kids session */
+#kids_sessions {
+  background-image: url("./images/kids.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 670px;
+  position: relative;
+}
+
+#kids_sessions .img_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 150px 0 150px 150px;
+}
+
+.more_instructions {
+  font-size: 1.1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300px;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+#rules li {
+  list-style-type: square !important;
+}
+Card{
+  border: none;
+}
+
 /* media queries */
 /* smart phones */
 @media (max-width: 500px) {
@@ -558,13 +614,12 @@ ul li {
 
   .jumbo {
     height: 48vh;
-    min-width: 100vw;
+    min-width: 100vw !important;
     object-fit: cover;
   }
 
   .first_button {
-    width: 100px;
-    padding: 0;
+    width: 120px;
     border-radius: 10px;
     background-image: linear-gradient(
       to right,
@@ -574,8 +629,9 @@ ul li {
     bottom: 0;
     border: 0;
     text-align: center;
-    margin-bottom: 40px;
-    margin-right: 90px;
+    margin-bottom: 10px;
+    right: 130px;
+    font-size: 1.4rem;
   }
 
   input.event_form {
@@ -584,19 +640,52 @@ ul li {
   #values_section {
     display: none;
   }
-  div.kids_profile img {
-    min-width: 100%;
-    object-fit: cover;
-    z-index: 10;
-  }
-  div.foot_img img {
-    max-width: 100%;
-    object-fit: cover;
+
+  .kids_profile,
+  .foot_img,
+  .basket_img {
+    height: 300px;
+    width: 320px;
+    overflow: hidden;
   }
 
-  .basket_img {
-    min-width: 100%;
-    object-fit: cover;
+  .kids_profile img,
+  .foot_img img .basket_img img {
+    width: 20rem;
+    height: auto;
+  }
+  #staff_1,
+  #staff_2,
+  #staff_3,
+  #staff_4 {
+    justify-content: center;
+    align-self: center;
+    flex-direction: column;
+    height: 30% !important;
+  }
+
+  .staff_profile p,
+  h4 {
+    font-size: 0.9rem;
+  }
+
+  button.staff_button {
+    font-size: 1.2rem;
+    display: inline-flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    width: 100px;
+    padding: 5px 0;
+  }
+
+  .read_more {
+    width: 100px;
+    font-size: 1.2rem;
+    padding: 5px 0;
+  }
+  .read_more:first-of-type {
+    margin-bottom: -70px;
   }
 
   #activities_section {
@@ -611,13 +700,6 @@ ul li {
     font-size: 1.6rem;
   }
 
-  #staff_1,
-  #staff_2,
-  #staff_3,
-  #staff_4 {
-    margin-bottom: 40px;
-    width: 80%;
-  }
   .sponsors {
     font-size: 1.5rem;
   }
@@ -687,26 +769,35 @@ ul li {
     min-width: 500px !important;
     height: 100%register_input;
   }
+  .abtimg {
+    height: 95%;
+    width: 80%;
+    object-fit: cover;
+    overflow: hidden;
+  }
 }
 
 /* tablets */
 @media (min-width: 501px) and (max-width: 768px) {
   .wak_intro > h1 {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: bold;
     color: green !important;
   }
   div.wak_intro p {
-    font-size: 0.9rem !important;
+    font-size: 1.6rem !important;
   }
-
+  .about_wak h4,
+  p {
+    font-size: 1.8rem;
+  }
   .jumbo {
     height: 48vh;
-    max-width: 80vw;
+    min-width: 100vw;
     object-fit: cover;
   }
 
-  Button.first_button {
+  .first_button {
     width: 250px;
     padding: 20px;
     border-radius: 1px;
@@ -715,22 +806,30 @@ ul li {
       rgba(255, 0, 0, 0),
       rgba(255, 0, 0, 1)
     );
-    bottom: 0;
-    border: 0;
-    text-align: center;
-    margin-bottom: 20px;
+    bottom: 20px;
+    right: 250px;
     border-radius: 10px;
+    font-size: 1.9rem;
   }
-  /* .first_button:hover{
-    background-color: red !important;
-    transform: scaleX(1);
-  } */
+
+  /* carousel */
+
+  .abtimg {
+    height: 95%;
+    width: 80%;
+    object-fit: cover;
+    overflow: hidden;
+  }
 
   .event_title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
   .event_date {
-    font-size: 1.2rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+  .activities_intro {
+    font-size: 3.5rem;
   }
   .fourth_card {
     display: none;
@@ -747,31 +846,23 @@ ul li {
   #values_section {
     display: block;
   }
-  div.kids_profile img {
-    min-width: 100%;
-    object-fit: cover;
-    z-index: 10;
-  }
-  div.foot_img img {
-    max-width: 100%;
-    object-fit: cover;
-  }
-
-  .basket_img {
-    min-width: 100%;
-    object-fit: cover;
-  }
 
   #activities_section {
     /* margin-right: -80px; */
     justify-content: center;
   }
   .activities_corner {
-    font-size: 1rem !important;
+    font-size: 1.8rem !important;
+    color: black;
+  }
+  .kids_profile,
+  .foot_img,
+  .basket_img {
+    border-radius: 10px;
   }
 
   .activities_heading {
-    font-size: 1.6rem;
+    font-size: 2rem !important;
   }
 
   #staff_1,

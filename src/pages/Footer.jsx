@@ -1,40 +1,56 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.jpg";
+import logo from "../images/wlogo.png";
 
 const Footer = () => {
   return (
     <footer>
-      <div className=" container py-3">
+      <div className=" container-fluid py-3">
         <div className="row d-flex-inline text-white footer">
-          <div className="col-sm-3 footer_item">
-            <h3 className="text-white">Contact Us</h3>
-            <p className="contact-link text-white">Tel:(0046) 760726885</p>
-            <div className=" footer-social">
-              <a href="https://www.facebook.com/tanila.yvette">
-                <i className="fa fa-2x fa-facebook text-white mr-3"></i>
-              </a>
+          <div className="col-sm-3 footer_item ">
+            <ul>
+              <li className="contact-link text-white">
+                <i className="fa fa-2x fa-phone-square mr-2 fa_icon py-3"></i>(0046)
+                760726885
+              </li>
 
-              <a href="https://twitter.com/peryline">
-                <i className="fa fa-2x fa-twitter text-white mr-3"></i>
-              </a>
+              <li className="text-white contact-link">
+                <i className="fa fa-2x fa-envelope-square mr-2 fa_icon py-3"></i>
+                info@wsk@gmail.com
+              </li>
+              <div className=" footer-social d-flex justify-content-lg-start py-3">
+                <li className="contact-link">
+                  <a href="https://www.facebook.com/tanila.yvette">
+                    <i className="fa fa-2x fa-facebook text-white mr-3 "></i>
+                  </a>
+                </li>
 
-              <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                <i class="fa fa-2x fa-instagram text-white"></i>
-              </a>
-            </div>
+                <li className="contact-link">
+                  <a href="https://twitter.com/peryline">
+                    <i className="fa fa-2x fa-twitter text-white mr-3"></i>
+                  </a>
+                </li>
+
+                <li className="contact-link">
+                  <a href="https://www.instagram.com/evebabe2006/?hl=en">
+                    <i class="fa fa-2x fa-instagram text-white"></i>
+                  </a>
+                </li>
+              </div>
+            </ul>
           </div>
-          <div className="col-sm-3  footer_item">
+
+          <div className="col-sm-3  footer_item ">
             <div className=" footer-social">
               <ul>
                 <Link to="/">
-                  <li className="py-2">Home</li>
+                  <li className="py-3">Home</li>
                 </Link>
                 <Link to="/mission">
-                  <li className="py-2">About us</li>
+                  <li className="py-3">About us</li>
                 </Link>
                 <Link to="/testimonials">
-                  <li>Testimonials</li>
+                  <li className="py-3">Testimonials</li>
                 </Link>
               </ul>
             </div>
@@ -42,16 +58,14 @@ const Footer = () => {
           <div className="col-sm-3  footer_item">
             <div className=" footer-social">
               <ul>
-                <Link to="/membership">
-                  <li className="py-2">Membership</li>
+                <Link to="/members">
+                  <li className="py-3">Members</li>
                 </Link>
                 <Link to="/register">
-                  <li className="py-2">Register</li>
+                  <li className="py-3">Register</li>
                 </Link>
                 <Link to="/events">
-                  <li className="py-2">
-                    Stay Updated
-                  </li>
+                  <li className="py-3">Stay Updated</li>
                 </Link>
               </ul>
             </div>

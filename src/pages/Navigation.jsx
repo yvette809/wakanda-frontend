@@ -3,7 +3,7 @@ import { Navbar, Nav, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
-import logo from "../images/logo.jpg";
+import logo from "../images/wlogo.png";
 import "../../src/App.css";
 
 const Navigation = ({ auth: { isAuthenticated }, logout }) => {
@@ -17,13 +17,15 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
             <img
               src={logo}
               alt="wakanda logo"
+              className= "img-fluid"
               style={{
-                width: "10%",
+                 height: "10%",
+                 width:"10%"
               }}
             />
           </Navbar.Brand>
         </Link>
-        <Nav className="mr-auto d-flex justify-content-start align-items-start">
+        <Nav className="mr-auto d-flex justify-content-end align-items-end">
           <Link to="/news" className="nav-link">
             News
           </Link>
@@ -60,7 +62,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
             />
           </Navbar.Brand>
         </Link>
-        <Nav className="mr-auto d-flex justify-content-start align-items-start">
+        <Nav className=" d-flex justify-content-lg-end " id= "nav_links">
           <Link to="/" className="nav-link">
             Home
           </Link>

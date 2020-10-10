@@ -9,6 +9,7 @@ import Mission from "../src/pages/Mission";
 import Donate from "../src/pages/Donate";
 import Members from "./pages/Members";
 import News from "../src/pages/News";
+import Kids from "./components/Kids"
 import Testimonials from "../src/pages/Testimonials";
 import NotFound from "./pages/NotFound";
 import EventDetails from "./pages/EventDetails";
@@ -54,6 +55,7 @@ const App = () => {
         <Route path="/members" component={Members}></Route>
         <Route path="/news" component={News}></Route>
         <Route path="/donate" component={Donate}></Route>
+        <Route path="/kids" component={Kids}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
         <Route path="/register" component={Register}></Route>
