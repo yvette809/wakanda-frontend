@@ -5,7 +5,7 @@ import { FaFighterJet } from "react-icons/fa";
 const Mission = () => {
   return (
     <>
-      <div className="container mb-5 team" style={{marginTop:"200px"}}>
+      <div className="container mb-5 team" style={{ marginTop: "200px" }}>
         <div>
           {" "}
           <h2 className="text-center mb-3">About Us</h2>
@@ -48,24 +48,39 @@ const Mission = () => {
 
         <div className="row  ml-4 mb-2">
           <div className="col col-lg-6 vision_1">
-            <i className="fa fa-2x fa-angle-double-right mr-2" style={{color:"pink"}}></i>
+            <i
+              className="fa fa-2x fa-angle-double-right mr-2"
+              style={{ color: "pink" }}
+            ></i>
             <span>Promote Intergration of immigrants through Sports</span>
           </div>
           <div className="col col-lg-6 vision_2">
-          <i class="fa fa-2x fa-fire-extinguisher mr-2" style={{color:"pink"}}></i>
+            <i
+              className="fa fa-2x fa-fire-extinguisher mr-2"
+              style={{ color: "pink" }}
+            ></i>
             <span>Combat Depression amongst Immigrants</span>
           </div>
         </div>
         <div className="row ml-4 mb-2 ">
           <div className="col col-lg-6 vision_3">
-            <FaConfluence  style={{color:"pink", marginRight:"14px",fontSize:"2rem"}}/>
+            <FaConfluence
+              style={{ color: "pink", marginRight: "14px", fontSize: "2rem" }}
+            />
             <span>
               Promote equality through the intergration of both Men and women in
               to WSK
             </span>
           </div>
           <div className="col col-lg-6 vision_4">
-            <FaFighterJet  style={{color:"pink", marginRight:"14px",fontSize:"2rem", color:"pink"}}/>
+            <FaFighterJet
+              style={{
+                color: "pink",
+                marginRight: "14px",
+                fontSize: "2rem",
+                color: "pink",
+              }}
+            />
             <span>
               Fight against Racial prejudice by admitting people of all races
               into WSK
@@ -74,13 +89,19 @@ const Mission = () => {
         </div>
         <div className="row ml-4 mb-2 vision_5">
           <div className="col col-lg-6">
-          <i className="fa fa-2x fa-book-reader mr-2 " style={{color:"pink"}}></i>
+            <i
+              className="fa fa-2x fa-book-reader mr-2 "
+              style={{ color: "pink" }}
+            ></i>
             <span>
               Sensitize our kids on the importance of Physical Exercise
             </span>
           </div>
           <div className="col col-lg-6 vision_6 ">
-            <i className="fa  fa-2x  fa-angle-double-right mr-2 " style={{color:"pink"}}></i>
+            <i
+              className="fa  fa-2x  fa-angle-double-right mr-2 "
+              style={{ color: "pink" }}
+            ></i>
             <span>
               Sensitize our kids on the importance of Physical Exercise
             </span>

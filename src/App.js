@@ -10,6 +10,8 @@ import Donate from "../src/pages/Donate";
 import Members from "./pages/Members";
 import News from "../src/pages/News";
 import Kids from "./components/Kids"
+import Basket from "./components/Basket"
+import Football from "./components/Football"
 import Testimonials from "../src/pages/Testimonials";
 import NotFound from "./pages/NotFound";
 import EventDetails from "./pages/EventDetails";
@@ -56,6 +58,8 @@ const App = () => {
         <Route path="/news" component={News}></Route>
         <Route path="/donate" component={Donate}></Route>
         <Route path="/kids" component={Kids}></Route>
+        <Route path="/basketball" component={Basket}></Route>
+        <Route path="/football" component={Football}></Route>
         <Route path="/testimonials" component={Testimonials}></Route>
         <Route path="/eventdetails/:_id" component={EventDetails}></Route>
         <Route path="/register" component={Register}></Route>

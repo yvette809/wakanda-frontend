@@ -16,25 +16,25 @@ const Dashboard = ({
   auth: { user, isAuthenticated },
   profile: { profile, loading },
 }) => {
-  console.log("the auth is", user);
-
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
+
+  console.log("the auth is", isAuthenticated, profile);
   return loading && profile === null ? (
     <Spinner />
   ) : (
     <Container>
       <div className="large text-primary">
         <h1>
-          Welcome {isAuthenticated && user && user.name} !! You are now an
-          official WSK Member{" "}
+          Welcome {isAuthenticated && profile && profile.user.name} !! You are
+          now an official WSK Member{" "}
         </h1>
       </div>
-     
+
       {profile !== null ? (
         <>
-          <DashboardActions/>
+          <DashboardActions />
           <Experience experience={profile.experience} />
 
           <div className="my-2">

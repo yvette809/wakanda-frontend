@@ -10,8 +10,8 @@ const Footer = () => {
           <div className="col-sm-3 footer_item ">
             <ul>
               <li className="contact-link text-white">
-                <i className="fa fa-2x fa-phone-square mr-2 fa_icon py-3"></i>(0046)
-                760726885
+                <i className="fa fa-2x fa-phone-square mr-2 fa_icon py-3"></i>
+                (0046) 760726885
               </li>
 
               <li className="text-white contact-link">
@@ -33,7 +33,7 @@ const Footer = () => {
 
                 <li className="contact-link">
                   <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                    <i class="fa fa-2x fa-instagram text-white"></i>
+                    <i className="fa fa-2x fa-instagram text-white"></i>
                   </a>
                 </li>
               </div>

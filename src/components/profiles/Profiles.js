@@ -9,7 +9,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
     getProfiles();
   }, [getProfiles]);
 
-  console.log("The profiles are", profiles)
+  console.log("The profiles are", profiles);
 
   return (
     <>
@@ -17,7 +17,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Spinner animation="border" />
       ) : (
         <>
-          <div className= "d-flex-inline text-center mb-4">
+          <div className="d-flex-inline text-center mb-4">
             <h1 className="large text-primary">Players</h1>
             <p className="lead">
               <i className="fa fa-connectdevelop " /> Browse and connect with

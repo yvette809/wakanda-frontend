@@ -12,18 +12,16 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
     <>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Link to="/">
-          <Navbar.Brand href="#home">
-            <img
-              src={logo}
-              alt="wakanda logo"
-              className= "img-fluid"
-              style={{
-                 height: "10%",
-                 width:"10%"
-              }}
-            />
-          </Navbar.Brand>
+        <Link to="/" className="navbar-brand">
+          <img
+            src={logo}
+            alt="wakanda logo"
+            className="img-fluid"
+            style={{
+              height: "10%",
+              width: "10%",
+            }}
+          />
         </Link>
         <Nav className="mr-auto d-flex justify-content-end align-items-end">
           <Link to="/news" className="nav-link">
@@ -42,7 +40,6 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
             <i className="fa fa-sign-out">Logout</i>
           </Link>
         </Nav>
-        
       </Navbar.Collapse>
     </>
   );
@@ -51,18 +48,18 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
     <>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Link to="/">
-          <Navbar.Brand href="#home">
-            <img
-              src={logo}
-              alt="wakanda logo"
-              style={{
-                width: "12%",
-              }}
-            />
-          </Navbar.Brand>
+        <Link to="/" className="navbar-brand">
+          {/* <Navbar.Brand href="#home"> */}
+          <img
+            src={logo}
+            alt="wakanda logo"
+            style={{
+              width: "12%",
+            }}
+          />
+          {/* </Navbar.Brand> */}
         </Link>
-        <Nav className=" d-flex justify-content-lg-end " id= "nav_links">
+        <Nav className=" d-flex justify-content-lg-end " id="nav_links">
           <Link to="/" className="nav-link">
             Home
           </Link>
@@ -89,7 +86,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
 
   console.log("==>", isAuthenticated);
   return (
-    <Navbar bg="" expand="lg" className="navigation ">
+    <Navbar bg="" expand="lg" className="navigation fixed-top">
       <>{isAuthenticated ? authLinks : guestLinks}</>
     </Navbar>
   );

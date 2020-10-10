@@ -40,10 +40,11 @@ const Staff = () => {
       <div style={{ borderRadius: "20px" }}>
         <Row className=" text-white mt-3 staff_row justify-content-sm-center align-content-sm-center d-flex ">
           <Col lg={6}>
-            <Card 
-              style={{ width: "30rem", height: "50%", overflow: "hidden" }} id="cards"
+            <Card
+              style={{ width: "30rem", height: "50%", overflow: "hidden" }}
+              id="cards"
             >
-              <Card.Img 
+              <Card.Img
                 className="img-fluid"
                 variant="top"
                 src="https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/904757_10152024235558996_327888442_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=DIByOw8FMxcAX9Kftul&_nc_ht=scontent.fume1-1.fna&oh=80a1a34a08ca50878a0078a771f2341d&oe=5F8935C2"
@@ -117,7 +118,7 @@ const Staff = () => {
                         </a>
 
                         <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                          <i class="fa fa-3x fa-instagram text-white"></i>
+                          <i className="fa fa-3x fa-instagram text-white"></i>
                         </a>
                       </>
                     )}
@@ -173,7 +174,7 @@ const Staff = () => {
                         </a>
 
                         <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                          <i class="fa fa-3x fa-instagram text-white"></i>
+                          <i className="fa fa-3x fa-instagram text-white"></i>
                         </a>
                       </>
                     )}
@@ -223,7 +224,7 @@ const Staff = () => {
                         </a>
 
                         <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                          <i class="fa fa-3x fa-instagram text-white"></i>
+                          <i className="fa fa-3x fa-instagram text-white"></i>
                         </a>
                       </>
                     )}

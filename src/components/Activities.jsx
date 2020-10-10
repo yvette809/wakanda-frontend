@@ -22,7 +22,7 @@ const Activities = () => {
               <img src={kids} alt="kidsimage" />
             </div>
           </Col>
-          <Col className="mb-3" xs={12} lg={6}>
+          <Col className="mb-3 kids_div" xs={12} lg={6}>
             <div data-aos="zoom-in">
               <h1 className="text-danger activities_heading">Kids Corner</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
@@ -37,15 +37,15 @@ const Activities = () => {
             </div>
           </Col>
         </Row>
-        <Row className="mb-4 text-dark my-5 py-5">
-          <Col xs={12} lg={6}>
+        <Row className="mb-4 text-dark my-5 py-5 ">
+          <Col xs={12} lg={6} className="football_div">
             <div>
               <h1 className="text-danger activities_heading">Football</h1>
               <p style={{ fontSize: "1.3rem" }} className="activities_corner">
                 Football is our passion. We train twice every week to keep the
                 spirit alive. At WSK, we believe in equality and mutual respect
               </p>
-              <Link to="/activies">
+              <Link to="/football">
                 <button className="read_more bg-danger">Read More</button>
               </Link>
             </div>
@@ -74,7 +74,7 @@ const Activities = () => {
                 team of 15 to 20 persons.
               </p>
               <Link to="/basketball">
-                <button className="read_more bg-danger">Read More</button>
+                <button className="read_more last_button bg-danger">Read More</button>
               </Link>
             </div>
           </Col>

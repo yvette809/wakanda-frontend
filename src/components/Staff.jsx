@@ -43,6 +43,7 @@ const Staff = () => {
               <img
                 src="https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/904757_10152024235558996_327888442_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=DIByOw8FMxcAX9Kftul&_nc_ht=scontent.fume1-1.fna&oh=80a1a34a08ca50878a0078a771f2341d&oe=5F8935C2"
                 alt="chairman"
+                className="img-fluid"
               />
             </div>
           </Col>
@@ -74,7 +75,7 @@ const Staff = () => {
                   </a>
 
                   <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                    <i class="fa fa-3x fa-instagram text-white"></i>
+                    <i className="fa fa-3x fa-instagram text-white"></i>
                   </a>
                 </>
               )}
@@ -117,7 +118,7 @@ const Staff = () => {
                   </a>
 
                   <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                    <i class="fa fa-3x fa-instagram text-white"></i>
+                    <i className="fa fa-3x fa-instagram text-white"></i>
                   </a>
                 </>
               )}
@@ -134,6 +135,7 @@ const Staff = () => {
               <img
                 src="https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/920723_286412858160540_1399172526_o.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=wnM_n-uve8MAX8AqN4x&_nc_oc=AQm_1KnSD4g8NyvM15Dm2inIimSCqtmXXYZyaxRh0-qgPE0R7un7JiljsOCVte9Klr4&_nc_ht=scontent.fume1-1.fna&oh=e696a9606927dee5aa300831671db0e4&oe=5F8B233A"
                 alt="team manager"
+                className="img-fluid"
               />
             </div>
           </Col>
@@ -141,7 +143,7 @@ const Staff = () => {
         <Row className="mb-3  text-white staff_row">
           <Col xs={12} lg={4}>
             <div classname="card" id="staff_3">
-              <img src={coach} alt="coach" />
+              <img src={coach} alt="coach"  className="img-fluid"/>
             </div>
           </Col>
           <Col xs={12} lg={6} className="text-dark " data-aos="zoom-in">
@@ -174,7 +176,7 @@ const Staff = () => {
                   </a>
 
                   <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                    <i class="fa fa-3x fa-instagram text-white"></i>
+                    <i className="fa fa-3x fa-instagram text-white"></i>
                   </a>
                 </>
               )}
@@ -216,7 +218,7 @@ const Staff = () => {
                   </a>
 
                   <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                    <i class="fa fa-3x fa-instagram text-white"></i>
+                    <i className="fa fa-3x fa-instagram text-white"></i>
                   </a>
                 </>
               )}
@@ -230,7 +232,7 @@ const Staff = () => {
           </Col>
           <Col xs={12} lg={4}>
             <div classname="card " id="staff_4">
-              <img src={mike} alt="assistant coach" />
+              <img src={mike} alt="assistant coach"  className="img-fluid" />
             </div>
           </Col>
         </Row>

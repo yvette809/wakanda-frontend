@@ -41,16 +41,6 @@ const Home = ({ setAlert }) => {
 
   const [newEvent, setnewEvent] = useState(evenp);
 
-  const [message, setNewMessage] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    text: "",
-  });
-
-  const { name, email, phone, text } = message;
-  const [disabled, setDisabled] = useState(false);
-  const [emailSent, setEmailSent] = useState(null);
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
   const [showModal, setshowModal] = useState(false);
@@ -74,8 +64,9 @@ const Home = ({ setAlert }) => {
         }
       } catch (err) {
         console.log(err);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     };
     getEvents();
   }, []);
@@ -139,9 +130,9 @@ const Home = ({ setAlert }) => {
     setLoading(false);
   };
 
-  useEffect(() => {
-    deleteEvent();
-  }, []);
+  // useEffect(() => {
+  //   deleteEvent();
+  // }, []);
 
   // search Event
   useEffect(() => {
@@ -163,51 +154,29 @@ const Home = ({ setAlert }) => {
       setLoading(false);
     };
     searchEvents();
-  }, []);
+  }, [search]);
 
   return (
     <>
       <div id="home_sessions" className="mb-5">
         <div className="home_overlay">
           <Container className="mb-5 text-center">
-            <h1 className="text-white">Welcome to Wakanda Sports Klub (WSK)</h1>
-            <Button className="text-white" style={{ fontSize: "1.6rem" }}>A Home of Champions</Button>
+            <h1 className="text-white text_info">Welcome to Wakanda Sports Klub (WSK)</h1>
+            <Button
+              className="text-white intro_button"
+              variant="danger"
+              style={{ fontSize: "1.6rem" }}
+            >
+              A Home of Champions
+            </Button>
             <Link to="/mission">
-              <Button className="first_button">About Us</Button>
+              <Button className="first_button ">About Us</Button>
             </Link>
           </Container>
         </div>
       </div>
 
-      {/* <Container fluid>
-        
-            <Jumbotron className="jumbo d-flex-inline text-center">
-              <div className="wak_intro">
-                <h1 className="text-dark text-center ">
-                  Welcome to Wakanda Sports Klub (WSK)
-                </h1>
-                <p
-                  className="text-dark font-weight-bolder text-center"
-                  style={{ fontSize: "1.6rem" }}
-                >
-                  A Home of Champions
-                </p>
-                <p>
-                  <Link to="/mission">
-                    <Button
-                      variant="danger"
-                      className="first_button font-bold text-center"
-                      style={{ fontSize: "1.2rem" }}
-                    >
-                      About Us
-                    </Button>
-                  </Link>
-                </p>
-              </div>
-            </Jumbotron>
-         
-      </Container> */}
-
+     
       <Container className="justify-content-sm-center text-sm-center ">
         <div className="text-center">
           <FaAd
@@ -403,7 +372,7 @@ const Home = ({ setAlert }) => {
                 >
                   <Card.Body>
                     <Card.Title>
-                      <i class="fa fa-map mr-2"></i>
+                      <i className="fa fa-map mr-2"></i>
                       <span>ACHIEVEMENTS</span>
                     </Card.Title>
                     <hr style={{ border: "1px solid red" }} />
@@ -473,7 +442,7 @@ const Home = ({ setAlert }) => {
       <Sponsors />
       <div className=" container-fluid bg-danger pics_container">
         <div id="contact_img_section" style={{ padding: "150px" }}>
-          <div class="img_overlay ">
+          <div className="img_overlay ">
             {/* <Container style = {{  filter: "grayscale(50%)"}}>
             <div>
               <i

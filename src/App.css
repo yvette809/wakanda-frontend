@@ -10,17 +10,33 @@ body {
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
 
-#cd2{
+/* #cd2{
   display: none;
 }
 
 #cd1:hover #cd2{
   display: block;
-}
+} */
 /* #cards:hover{
   overflow: visible!important;
  
 } */
+#members_sessions {
+  background-image: url("./bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+}
+
+#members_sessions .members_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  padding: 150px 0 150px 150px;
+}
 
 #home_sessions {
   background-image: url("./images/front.jpg");
@@ -36,8 +52,58 @@ body {
   left: 0;
   width: 100%;
   min-height: 700px;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
   padding: 150px 0 150px 150px;
+}
+
+#basket_sessions {
+  background-image: url("https://www.clickorlando.com/resizer/E3jnPkPmr7WH3l_jgOq0y-JdzY8=/1600x1066/smart/filters:format(jpeg):strip_exif(true):strip_icc(true):no_upscale(true):quality(65)/cloudfront-us-east-1.images.arcpublishing.com/gmg/QNBNH7TXVBFWPEH3SMMV7O25BU.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+}
+
+#basket_sessions .basket_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  padding: 150px 0 150px 150px;
+}
+
+#football_sessions {
+  background-image: url("./images/team.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 650px;
+  position: relative;
+}
+
+#football_sessions .foot_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 700px;
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  padding: 150px 0 150px 150px;
+}
+
+#members_card {
+  border-left: none;
+  border-bottom: none;
+  border-top: none;
+  border-right: 1px solid gray !important;
+}
+Card#members_card {
+  height: 20%;
+  object-fit: contain;
+}
+.members_button {
+  position: relative;
+  align-content: flex-end;
 }
 .img_div {
   height: 60vh;
@@ -65,13 +131,7 @@ body {
   box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue;
   border-radius: 7%;
 }
-.jumbos {
-  background-image: url("https://images-na.ssl-images-amazon.com/images/I/61JL1J+6btL.jpg");
-  background-image: url("./bg.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-}
+
 .join {
   border: 2px solid white;
   border-radius: 50%;
@@ -577,7 +637,7 @@ h4 {
   left: 0;
   width: 100%;
   min-height: 700px;
-  background-color: rgba(0, 0, 0, 0.7);
+  /* background-color: rgba(0, 0, 0, 0.2); */
   padding: 150px 0 150px 150px;
 }
 
@@ -593,7 +653,7 @@ h4 {
 #rules li {
   list-style-type: square !important;
 }
-Card{
+Card {
   border: none;
 }
 
@@ -604,35 +664,25 @@ Card{
     margin: 0;
     padding: 0;
   }
-  .wak_intro > h1 {
-    font-size: 0.9rem;
+  .text_info {
+    font-size: 1.2rem;
     font-weight: bold;
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
   }
-  div.wak_intro p {
+  .intro_button {
     font-size: 0.7rem !important;
+    display: none;
   }
 
-  .jumbo {
-    height: 48vh;
-    min-width: 100vw !important;
+  #home_sessions {
+    height: 20vh;
+    min-width: 100% !important;
     object-fit: cover;
   }
 
-  .first_button {
-    width: 120px;
-    border-radius: 10px;
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0),
-      rgba(255, 0, 0, 1)
-    );
-    bottom: 0;
-    border: 0;
-    text-align: center;
-    margin-bottom: 10px;
-    right: 130px;
-    font-size: 1.4rem;
-  }
+
 
   input.event_form {
     text-align: center;
@@ -658,10 +708,14 @@ Card{
   #staff_2,
   #staff_3,
   #staff_4 {
-    justify-content: center;
+    /* justify-content: center;
     align-self: center;
     flex-direction: column;
-    height: 30% !important;
+    height: 30% !important; */
+    border-radius: none;
+    overflow: hidden;
+    max-height: 70vh;
+    max-width: 70%!important;
   }
 
   .staff_profile p,
@@ -718,17 +772,20 @@ Card{
   div.footer_item {
     margin-left: 75px;
   }
-  /* .contact-link::after {
-    content: evebabe2006 @yahoo.com;
-  } */
-  body {
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0),
-      rgba(255, 0, 0, 1)
-    );
-  }
-
+ .activities_section{
+   padding-bottom: 0px;
+ }
+ .football_div{
+   padding-top: -48px;
+   margin-top: -48px;
+ }
+ .foot_img{
+   margin-top: 48px;
+ }
+ .last_button{
+   margin-bottom: 48px !important;
+ }
+ 
   .event_description {
     font-size: 0.8rem !important;
     color: black !important;

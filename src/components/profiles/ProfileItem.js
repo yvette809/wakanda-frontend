@@ -1,13 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileItem = ({ profile: { user, location, skills } }) => {
-  const { _id, name, avatar } = user;
-  console.log("the profile userinfo is", _id, name, avatar);
- 
-
+const ProfileItem = ({ profile }) => {
+  console.log("the profile userinfo is", profile);
+  const{skills,location} = profile
+  const user = profile && profile.user
+  console.log("data",skills,location, user)
+   const { _id,name,avatar} = user
+    console.log("user data", _id,name,avatar)
+  
+  
   return (
-    <div className="profile bg-light">
+      <div className="profile bg-light">
       <img
         src={avatar}
         alt=""
@@ -31,6 +35,8 @@ const ProfileItem = ({ profile: { user, location, skills } }) => {
         ))}
       </ul>
     </div>
+   
+   
   );
 };
 
