@@ -667,6 +667,10 @@ h4 {
   padding: 150px 0 150px 150px;
 }
 
+.instructions{
+  font-weight: 700;
+}
+
 .more_instructions {
   font-size: 1.1rem;
   font-family: "Poppins", sans-serif;

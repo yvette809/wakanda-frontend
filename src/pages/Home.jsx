@@ -8,7 +8,7 @@ import Staff from "../components/Staff";
 // import Staff2 from "../components/Staff2";
 import Activities from "../components/Activities";
 import Sponsors from "../components/Sponsors";
-import { FaAd, FaBiking, FaEdge, FaMedal } from "react-icons/fa";
+import { FaAd, FaBiking, FaEdge, FaMedal ,FaDribbble} from "react-icons/fa";
 
 import {
   Jumbotron,
@@ -212,7 +212,7 @@ const Home = ({ setAlert }) => {
           </Col>
 
           <Col lg={3}>
-            <FaBiking
+            <FaDribbble
               className="fa_about bg-danger mb-4"
               style={{ fontSize: "5rem", padding: "15px", borderRadius: "50%" }}
             />

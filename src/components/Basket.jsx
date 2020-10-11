@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
+import { FaTshirt, FaUtensils, FaPray } from "react-icons/fa";
 
 const Basket = () => {
   return (
@@ -26,7 +27,15 @@ const Basket = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
-                  <h2 className="instructions mb-2">Things You Should Know Before Coming for Trainings</h2>
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
+                  <h2 className="instructions mb-2">FIRST THINGS FIRST</h2>
                 </Card.Title>
 
                 <Card.Text>
@@ -46,6 +55,14 @@ const Basket = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaTshirt
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">ATTIRE</h2>
                 </Card.Title>
 
@@ -68,6 +85,14 @@ const Basket = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaUtensils
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">FOOD AND WATER</h2>
                 </Card.Title>
 
@@ -89,6 +114,14 @@ const Basket = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaPray
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">LISTEN TO YOUR BODY</h2>
                 </Card.Title>
 
@@ -108,6 +141,14 @@ const Basket = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
                   <h2 className="instructions mb-2">BASIC RULES</h2>
                 </Card.Title>
 

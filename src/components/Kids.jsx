@@ -1,5 +1,6 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
+import { FaTshirt, FaUtensils ,FaPray} from "react-icons/fa";
 
 const Kids = () => {
   return (
@@ -19,6 +20,7 @@ const Kids = () => {
         <h1 className=" font-weight-bolder mt-5" style={{ color: "teal" }}>
           YOUR FIRST DAY WITH US
         </h1>
+
         <h2 className="mb-3">Things You should Know</h2>
         <Row>
           <Col lg={6} className="mb-2">
@@ -26,6 +28,14 @@ const Kids = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
                   <h2 className="instructions mb-2">FIRST THINGS FIRST</h2>
                 </Card.Title>
 
@@ -46,6 +56,14 @@ const Kids = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaTshirt
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">ATTIRE</h2>
                 </Card.Title>
 
@@ -68,6 +86,14 @@ const Kids = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaUtensils
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">FOOD AND WATER</h2>
                 </Card.Title>
 
@@ -89,6 +115,14 @@ const Kids = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaPray
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">LISTEN TO YOUR BODY</h2>
                 </Card.Title>
 
@@ -110,6 +144,14 @@ const Kids = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
                   <h2 className="instructions mb-2">BASIC RULES</h2>
                 </Card.Title>
 

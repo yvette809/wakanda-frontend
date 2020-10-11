@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import {Link} from "react-router-dom"
+import { FaTshirt, FaUtensils, FaPray } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Football = () => {
   return (
@@ -20,6 +21,7 @@ const Football = () => {
         <h1 className=" font-weight-bolder mt-5" style={{ color: "teal" }}>
           YOUR FIRST DAY WITH US
         </h1>
+
         <h2 className="mb-3">Things You should Know</h2>
         <Row>
           <Col lg={6} className="mb-2">
@@ -27,6 +29,14 @@ const Football = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
                   <h2 className="instructions mb-2">FIRST THINGS FIRST</h2>
                 </Card.Title>
 
@@ -34,9 +44,15 @@ const Football = () => {
                   <p className="more_instructions mb-3">
                     We have football trainings every wednesday from{" "}
                     <strong>19.00-21.00 </strong>and saturdays from{" "}
-                    <strong>10.00-12.00 </strong>. Football Trainings is only for registered members.If you want to be part of the team ,<Link to="/register"> <Button>register</Button></Link>. It is important to come
-                    atleast 15 minutes before time in other for proper game
-                    planning. Football is our main focus so here we lay much emphasis on discipline
+                    <strong>10.00-12.00 </strong>. Football Trainings is only
+                    for registered members.If you want to be part of the team ,
+                    <Link to="/register">
+                      {" "}
+                      <Button>register</Button>
+                    </Link>
+                    . It is important to come atleast 15 minutes before time in
+                    other for proper game planning. Football is our main focus
+                    so here we lay much emphasis on discipline
                   </p>
                 </Card.Text>
               </Card.Body>
@@ -47,16 +63,24 @@ const Football = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaTshirt
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">ATTIRE</h2>
                 </Card.Title>
 
                 <Card.Text>
                   <p className="more_instructions mb-3">
-                    We advice you to dress up appropriately. If it is a very warm
-                    day, remember to put on light clothes and warm sneakers. In
-                    the winter, we train indoors so you are adviced to put on
-                    warm clothes when stepping out. It is very warm indoors so
-                    you change clothes inside.
+                    We advice you to dress up appropriately. If it is a very
+                    warm day, remember to put on light clothes and warm
+                    sneakers. In the winter, we train indoors so you are adviced
+                    to put on warm clothes when stepping out. It is very warm
+                    indoors so you change clothes inside.
                   </p>
                 </Card.Text>
               </Card.Body>
@@ -69,6 +93,14 @@ const Football = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaUtensils
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">FOOD AND WATER</h2>
                 </Card.Title>
 
@@ -90,13 +122,26 @@ const Football = () => {
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <FaPray
+                    className="fa_about bg-danger mb-3"
+                    style={{
+                      fontSize: "5rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  />
                   <h2 className="instructions mb-2">LISTEN TO YOUR BODY</h2>
                 </Card.Title>
 
                 <Card.Text>
                   <p className="more_instructions mb-3">
                     During the trainings, we take as many breaks as we deem
-                    necessary depending on how intense the game is . We are very disciplined and won't tolerate indiscipline. This means you cannot walk out of the session as you want without permission.One of our core values is to uphold good moral and respect.For any act of indiscipline, remember you will be called up by our disciplinary committee.
+                    necessary depending on how intense the game is . We are very
+                    disciplined and won't tolerate indiscipline. This means you
+                    cannot walk out of the session as you want without
+                    permission.One of our core values is to uphold good moral
+                    and respect.For any act of indiscipline, remember you will
+                    be called up by our disciplinary committee.
                   </p>
                 </Card.Text>
               </Card.Body>
@@ -105,10 +150,18 @@ const Football = () => {
         </Row>
         <Row>
           <Col lg={6} className="offset-3">
-            <Card style={{ width: "30rem" }} className="border-0" >
+            <Card style={{ width: "30rem" }} className="border-0">
               <Card.Body>
                 <Card.Title>
                   {" "}
+                  <i
+                    class="fa fa-info-circle bg-danger text-white mb-3"
+                    style={{
+                      fontSize: "3rem",
+                      padding: "15px",
+                      borderRadius: "50%",
+                    }}
+                  ></i>
                   <h2 className="instructions mb-2">BASIC RULES</h2>
                 </Card.Title>
 
@@ -116,7 +169,8 @@ const Football = () => {
                   <ul id="rules" className="more_instructions">
                     <li>Please arrive on time</li>
                     <li>
-                      Avoid strong smells like perfumes, chemicals and cigarettes since many players can be allergic to such.
+                      Avoid strong smells like perfumes, chemicals and
+                      cigarettes since many players can be allergic to such.
                     </li>
                     <li>
                       Do not stop training before time. If you feel like yu
