@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
@@ -10,17 +18,27 @@ body {
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
 
-/* #cd2{
-  display: none;
+/* dashboard */
+.dashboard_container {
+  margin-top: 120px;
+}
+.dashboard {
+  font-size: 2rem;
 }
 
-#cd1:hover #cd2{
-  display: block;
-} */
-/* #cards:hover{
-  overflow: visible!important;
- 
-} */
+.btn {
+  display: inline-block;
+  background: var(--light-color);
+  color: #333;
+  padding: 0.4rem 1.3rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: opacity 0.2s ease-in;
+  outline: none;
+}
+
 #members_sessions {
   background-image: url("./bg.jpg");
   background-repeat: no-repeat;
@@ -44,6 +62,12 @@ body {
   background-size: cover;
   min-height: 650px;
   position: relative;
+  transition: 5s;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation: contact1 50s infinite 4s;
 }
 
 #home_sessions .home_overlay {
@@ -169,14 +193,19 @@ li {
   align-content: space-between;
 }
 
-.update,
 .register,
-.donate,
-.membership {
+.donate {
   background-color: aqua;
   color: #ffffff;
   border-color: #095b92;
   border-radius: 50px;
+}
+.register:hover {
+  background-color: #17a2b8;
+}
+
+.donate:hover {
+  background-color: #17a2b8;
 }
 
 .team {
@@ -260,7 +289,9 @@ li {
   padding: 4px 16px;
   /* height: 70px; */
   min-height: 70px;
+  display: flex;
 }
+
 
 .nav-link {
   font-size: 1.4rem !important;
@@ -274,6 +305,10 @@ Nav.nav-link Link {
   width: 40%;
   height: 500px;
   object-fit: cover;
+}
+
+.event_container {
+  margin-top: 150px !important;
 }
 
 event_div {
@@ -569,9 +604,9 @@ h4 {
 
 #register_section {
   /* margin-top: 300px; */
-  margin-bottom: 150px;
-  width: 50% !important;
-  background-image: linear-gradient(teal, white) !important;
+  margin-bottom: 20px;
+  /* width: 50% !important; */
+  background-image: url(https://www.pngitem.com/pimgs/m/459-4590428_humo-smoke-freetoedit-transparent-background-steam-png-transparent.png);
   border-radius: 5%;
   justify-content: center;
   align-items: center;
@@ -602,20 +637,11 @@ h4 {
 } */
 
 #post {
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 0.6881127450980392) 0%,
-    rgba(9, 9, 121, 1) 35%,
-    rgba(0, 212, 255, 1) 100%
-  );
+  background-image: url("https://s.clipartkey.com/mpngs/s/181-1813814_clipart-cloud-cumulus-cloud-transparent-background-clipart-transparent.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 
-  background: rgb(63, 94, 251);
-  background: radial-gradient(
-    circle,
-    rgba(63, 94, 251, 1) 0%,
-    rgba(252, 70, 107, 1) 100%
-  );
+  margin-top: 150px;
 }
 
 .fa_about {
@@ -664,16 +690,30 @@ Card {
     margin: 0;
     padding: 0;
   }
-  .text_info {
+
+  .register_form {
+    width: 100% important!;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .dashboard {
     font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  .text_info {
+    font-size: 0.9rem;
     font-weight: bold;
     position: absolute;
-    bottom: 60px;
+    bottom: 0px;
     right: 20px;
   }
   .intro_button {
     font-size: 0.7rem !important;
     display: none;
+  }
+  .about_wak {
+    font-size: 1.6rem;
   }
 
   #home_sessions {
@@ -681,8 +721,6 @@ Card {
     min-width: 100% !important;
     object-fit: cover;
   }
-
-
 
   input.event_form {
     text-align: center;
@@ -704,23 +742,30 @@ Card {
     width: 20rem;
     height: auto;
   }
-  #staff_1,
-  #staff_2,
-  #staff_3,
-  #staff_4 {
-    /* justify-content: center;
-    align-self: center;
+  #staff_1 img,
+  #staff_2 img,
+  #staff_3 img,
+  #staff_4 img {
+    display: flex;
     flex-direction: column;
-    height: 30% !important; */
-    border-radius: none;
-    overflow: hidden;
-    max-height: 70vh;
-    max-width: 70%!important;
+    justify-self: center;
+    align-items: center;
+    height: 20vh !important;
+    width: 300px !important;
+    overflow: auto;
+  }
+
+  .read_more {
+    padding: 1.5px !important;
+    font-size: 0.8rem;
   }
 
   .staff_profile p,
   h4 {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
+    overflow: hidden;
+    display: inline;
+    flex-wrap: nowrap;
   }
 
   button.staff_button {
@@ -747,7 +792,7 @@ Card {
     justify-content: center;
   }
   .activities_corner {
-    font-size: 1rem !important;
+    font-size: 1.6rem !important;
   }
 
   .activities_heading {
@@ -772,20 +817,20 @@ Card {
   div.footer_item {
     margin-left: 75px;
   }
- .activities_section{
-   padding-bottom: 0px;
- }
- .football_div{
-   padding-top: -48px;
-   margin-top: -48px;
- }
- .foot_img{
-   margin-top: 48px;
- }
- .last_button{
-   margin-bottom: 48px !important;
- }
- 
+  .activities_section {
+    padding-bottom: 0px;
+  }
+  .football_div {
+    padding-top: -48px;
+    margin-top: -48px;
+  }
+  .foot_img {
+    margin-top: 48px;
+  }
+  .last_button {
+    margin-bottom: 48px !important;
+  }
+
   .event_description {
     font-size: 0.8rem !important;
     color: black !important;
@@ -836,37 +881,36 @@ Card {
 
 /* tablets */
 @media (min-width: 501px) and (max-width: 768px) {
-  .wak_intro > h1 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: green !important;
+  .passion {
+    max-height: 40vh !important;
+    max-width: 10rem !important;
+    /* display: none; */
   }
-  div.wak_intro p {
-    font-size: 1.6rem !important;
+
+  .about_wak,
+  h4,
+  p {
+    font-size: 1.8rem !important;
+    font-weight: 100;
+  }
+
+  .football_div {
+    padding-top: -48px;
+    margin-top: -48px;
+  }
+  .foot_img {
+    margin-top: 48px;
+  }
+  .last_button {
+    margin-bottom: 48px !important;
   }
   .about_wak h4,
   p {
-    font-size: 1.8rem;
-  }
-  .jumbo {
-    height: 48vh;
-    min-width: 100vw;
-    object-fit: cover;
+    font-size: 1.4rem;
   }
 
-  .first_button {
-    width: 250px;
-    padding: 20px;
-    border-radius: 1px;
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0),
-      rgba(255, 0, 0, 1)
-    );
-    bottom: 20px;
-    right: 250px;
-    border-radius: 10px;
-    font-size: 1.9rem;
+  #register_button {
+    display: none !important;
   }
 
   /* carousel */
@@ -902,6 +946,7 @@ Card {
   }
   #values_section {
     display: block;
+    margin-bottom: 90px;
   }
 
   #activities_section {
@@ -929,6 +974,17 @@ Card {
     margin-bottom: 40px;
     width: 80%;
   }
+  .staff_button {
+    margin-bottom: 20px;
+  }
+
+  .staff_profile p,
+  h4 {
+    font-size: 1.7rem !important;
+  }
+  blockquote {
+    font-size: 1.5rem !important;
+  }
   .sponsors {
     font-size: 1.5rem;
   }
@@ -941,17 +997,6 @@ Card {
   }
   .img_overlay {
     height: 10vh;
-  }
-
-  /* .contact-link::after {
-    content: evebabe2006 @yahoo.com;
-  } */
-  body {
-    background-image: linear-gradient(
-      to right,
-      rgba(255, 0, 0, 0),
-      rgba(255, 0, 0, 1)
-    );
   }
 
   .event_description {
@@ -975,16 +1020,6 @@ Card {
     font-size: 1.5rem;
   }
 
-  .enquiry {
-    font-size: 1rem;
-  }
-  /* input[value=textArea]{
-    padding: 0;
-    background-color: black;
-  } */
-  .tel {
-    display: none;
-  }
   .news_img {
     display: block;
     min-width: 100%;

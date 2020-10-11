@@ -15,7 +15,7 @@ const PostItem = ({
   console.log("the id is", _id);
 
   return (
-    <div className=" post container text-white">
+    <div className=" post container text-dark font-weight-bolder">
       <div className="row  ">
         <div className="col-lg-4 text-center mb-2">
           <Link to={`/profile/${user}`}>

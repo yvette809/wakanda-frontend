@@ -13,7 +13,7 @@ const Activities = () => {
           className=" fa fa-baseball-ball mb-2 mt-5 bg-danger fa_about"
           style={{ fontSize: "6rem", padding: "15px", borderRadius: "50%" }}
         ></i>
-        <h1 className= "activities_intro">Our Activities</h1>
+        <h1 className="activities_intro">Our Activities</h1>
       </div>
       <Container id="activities_section py-5">
         <Row className="text-dark my-5">
@@ -74,7 +74,9 @@ const Activities = () => {
                 team of 15 to 20 persons.
               </p>
               <Link to="/basketball">
-                <button className="read_more last_button bg-danger">Read More</button>
+                <button className="read_more last_button bg-danger btn">
+                  Read More
+                </button>
               </Link>
             </div>
           </Col>

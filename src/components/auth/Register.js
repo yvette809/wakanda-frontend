@@ -32,13 +32,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Container id="register_section" className="mt-4">
+    <Container fluid id="register_section" >
       <h1 className=" text-white py-3">Sign Up</h1>
       <p className="lead">
         <i className="fa fa-user" /> Create Your Account
       </p>
 
-      <Form onSubmit={onSubmit} className="register_form">
+      <Form onSubmit={onSubmit} className="register_form w-100">
         <FormControl
           type="text"
           value={name}

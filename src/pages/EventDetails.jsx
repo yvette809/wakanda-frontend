@@ -92,14 +92,9 @@ const EventDetails = ({ setAlert }) => {
     <>
       {event && !loading ? (
         <>
-          <div
-            className="container mt-3 "
-            style={{
-              boxShadow: "5px 5px 5px teal, -5px -5px 5px aliceblue",
-            }}
-          >
+          <div className="container mt-3 event_container">
             <div className="row align-content-center justify-content-center xs-mb-3">
-              <div className="col col-lg-6 col-xs-8">
+              <div className="col col-lg-6 col-xs-12">
                 <h2 className="evt_title font-weight-bolder">{event.title}</h2>
                 <div className="event_img">
                   <img src={event.image} alt="single event" />
@@ -117,7 +112,7 @@ const EventDetails = ({ setAlert }) => {
                   </p>
                 </div>
               </div>
-              <div className="col col-lg-6 col-xs-4">
+              <div className="col col-lg-6 col-xs-12">
                 <p
                   className=" text-success font-weight-bolder event_description"
                   style={{ fontSize: "1.3rem" }}

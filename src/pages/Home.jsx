@@ -5,6 +5,7 @@ import "aos/dist/aos.css";
 import { setAlert } from "../actions/alert";
 import { connect } from "react-redux";
 import Staff from "../components/Staff";
+// import Staff2 from "../components/Staff2";
 import Activities from "../components/Activities";
 import Sponsors from "../components/Sponsors";
 import { FaAd, FaBiking, FaEdge, FaMedal } from "react-icons/fa";
@@ -161,22 +162,27 @@ const Home = ({ setAlert }) => {
       <div id="home_sessions" className="mb-5">
         <div className="home_overlay">
           <Container className="mb-5 text-center">
-            <h1 className="text-white text_info">Welcome to Wakanda Sports Klub (WSK)</h1>
-            <Button
-              className="text-white intro_button"
-              variant="danger"
-              style={{ fontSize: "1.6rem" }}
-            >
-              A Home of Champions
-            </Button>
-            <Link to="/mission">
-              <Button className="first_button ">About Us</Button>
-            </Link>
+            <Row>
+              <Col>
+                <h1 className="text-white text_info">
+                  Welcome to Wakanda Sports Klub (WSK)
+                </h1>
+                <Button
+                  className="text-white intro_button"
+                  variant="danger"
+                  style={{ fontSize: "1.6rem" }}
+                >
+                  A Home of Champions
+                </Button>
+                <Link to="/mission">
+                  <Button className="first_button ">About Us</Button>
+                </Link>
+              </Col>
+            </Row>
           </Container>
         </div>
       </div>
 
-     
       <Container className="justify-content-sm-center text-sm-center ">
         <div className="text-center">
           <FaAd
@@ -340,7 +346,7 @@ const Home = ({ setAlert }) => {
             <Row className="text-center my-4 ">
               <Col className="col col-lg-2 col-xs-3 ">
                 <Card
-                  className="mb-5 first_card bg-outline"
+                  className="mb-5 first_card bg-outline passion"
                   style={{
                     backgroundColor: "transparent",
                     outlineColor: "white",
@@ -353,17 +359,19 @@ const Home = ({ setAlert }) => {
                     </Card.Title>
                     <hr style={{ border: "1px solid white" }} />
                     <Card.Text className="text-danger">
-                      <p>RESPECT</p>
-                      <p>PASSION</p>
-                      <p>COMMITMENT</p>
-                      <p>TEAMWORK</p>
+                      <div className="passion_wak">
+                        <p>RESPECT</p>
+                        <p>PASSION</p>
+                        <p>COMMITMENT</p>
+                        <p>TEAMWORK</p>
+                      </div>
                     </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col className="col col-lg-2 col-xs-3 ">
                 <Card
-                  className="second_card"
+                  className="second_card passion"
                   style={{
                     backgroundColor: "transparent",
                     outlineColor: "white",
@@ -377,17 +385,19 @@ const Home = ({ setAlert }) => {
                     </Card.Title>
                     <hr style={{ border: "1px solid red" }} />
                     <Card.Text>
-                      <p>
-                        We use sports in changing Lives of immigrants all over
-                        Umeå
-                      </p>
+                      <div className="passion_wak">
+                        <p>
+                          We use sports in changing Lives of immigrants all over
+                          Umeå
+                        </p>
+                      </div>
                     </Card.Text>
                   </Card.Body>
                 </Card>
               </Col>
               <Col className="col col-lg-2 col-xs-3">
                 <Card
-                  className="third_card"
+                  className="third_card passion"
                   style={{
                     backgroundColor: "transparent",
                     outlineColor: "white",
@@ -401,9 +411,12 @@ const Home = ({ setAlert }) => {
                     </Card.Title>
                     <hr style={{ border: "1px solid white" }} />
                     <Card.Text className="text-danger">
-                      <p>Come and Experience the magic of WSK aka Wakanda</p>
+                      <div className="passion_wak">
+                        <p>Come and Experience the magic of WSK aka Wakanda</p>
+                      </div>
+
                       <Link to="/register">
-                        <button className="register">Register</button>
+                        <button className="register" id= "register_button">Register</button>
                       </Link>
                     </Card.Text>
                   </Card.Body>
@@ -411,7 +424,7 @@ const Home = ({ setAlert }) => {
               </Col>
               <Col className="col col-lg-2 col-xs-3">
                 <Card
-                  className="fourth_card bg-midnight"
+                  className="fourth_card bg-midnight passion"
                   style={{
                     backgroundColor: "transparent",
                     outlineColor: "white",
@@ -425,7 +438,10 @@ const Home = ({ setAlert }) => {
                     </Card.Title>
                     <hr style={{ border: "1px solid red" }} />
                     <Card.Text>
-                      <p>If you like what we do, please support us</p>
+                      <div className="passion_wak">
+                        <p>If you like what we do, please support us</p>
+                      </div>
+
                       <Link to="/donate">
                         <button className="donate">DONATE</button>
                       </Link>
@@ -440,112 +456,12 @@ const Home = ({ setAlert }) => {
 
       <Staff />
       <Sponsors />
-      <div className=" container-fluid bg-danger pics_container">
+      {/* <Staff2/> */}
+      {/* <div className=" container-fluid bg-danger pics_container">
         <div id="contact_img_section" style={{ padding: "150px" }}>
-          <div className="img_overlay ">
-            {/* <Container style = {{  filter: "grayscale(50%)"}}>
-            <div>
-              <i
-                className="fa fa-3x fa-address-card text-center text-white d-block"
-                style={{
-                  padding: "15px",
-                  borderRadius: "50%",
-                  textAlign: "center",
-                }}
-              ></i>
-            </div>
-            <h1 className="text-center text-white">CONTACT US</h1>
-            <div
-              className="text-center text-white mb-2 enquiry"
-              style={{ fontSize: "1.4rem" }}
-            >
-              For any type of enquiry, send us a message below. We usually
-              respond within 24hours
-            </div>
-            <Row>
-              <Col lg={3} xs={4}>
-                <Form onSubmit={submitMessage}>
-                  <Form.Control
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="YOUR NAME*"
-                    value={name}
-                    onChange={(e) => setNewMessage(e.currentTarget.value)}
-                    className="mb-4"
-                    style={{ padding: "20px" }}
-                    required
-                  />
-
-                  <Form.Control
-                    type="email"
-                    id="email"
-                    placeholder="YOUR EMAIL*"
-                    value={email}
-                    onChange={(e) => setNewMessage(e.currentTarget.value)}
-                    className="mb-4"
-                    style={{ padding: "20px" }}
-                    required
-                  />
-                  <Form.Control
-                    type="tel"
-                    id="phone"
-                    placeholder="YOUR PHONE*"
-                    value={phone}
-                    onChange={(e) => setNewMessage(e.currentTarget.value)}
-                    className="mb-4"
-                    style={{ padding: "20px" }}
-                    required
-                  />
-                </Form>
-              </Col>
-              <Col lg={6} xs={4}>
-                <Form.Group>
-                  <Form.Control
-                    name="textArea"
-                    id="message"
-                    placeholder="YOUR MESSAGE *"
-                    value={text}
-                    as="textarea"
-                    Cols="30"
-                    rows={3}
-                    onChange={(e) => setNewMessage(e.currentTarget.value)}
-                    className="mb-4 h-100"
-                    style={{ padding: "20px" }}
-                    required
-                  />
-                </Form.Group>
-                <Button
-                  variant="danger"
-                  size="lg"
-                  onClick={submitMessage}
-                  style={{ width: "100%" }}
-                >
-                  {" "}
-                  SEND MESSAGE
-                </Button>
-              </Col>
-              <Col lg={3} xs={4}>
-                <div className="mb-2">
-                  <i className="fa fa-map-marker mr-2 fa_icon" ></i>
-                  <span className="text-white">
-                    Språkgränd 29,90733 <br /> Umeå, Sweden
-                  </span>
-                </div>
-                <div className="mb-2">
-                  <i className="fa fa-2x fa-envelope-square mr-2 fa_icon"></i>
-                  <span className="text-white">info@wsk@gmail.com</span>
-                </div>
-                <div className="mb-2  tel">
-                  <i className="fa fa-2x fa-phone-square mr-2 fa_icon"></i>
-                  <span className="text-white">0046760726885</span>
-                </div>
-              </Col>
-            </Row>
-          </Container> */}
-          </div>
+          <div className="img_overlay "></div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 };

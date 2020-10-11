@@ -5,20 +5,20 @@ import logo from "../images/wlogo.png";
 const Footer = () => {
   return (
     <footer>
-      <div className=" container-fluid py-3">
+      <div className=" container-fluid py-3" id ="footer_container">
         <div className="row d-flex-inline text-white footer">
           <div className="col-sm-3 footer_item ">
             <ul>
               <li className="contact-link text-white">
-                <i className="fa fa-2x fa-phone-square mr-2 fa_icon py-3"></i>
+                <i className="fa fa-2x fa-phone-square mr-2 fa_icon "></i>
                 (0046) 760726885
               </li>
 
               <li className="text-white contact-link">
-                <i className="fa fa-2x fa-envelope-square mr-2 fa_icon py-3"></i>
+                <i className="fa fa-2x fa-envelope-square mr-2 fa_icon "></i>
                 info@wsk@gmail.com
               </li>
-              <div className=" footer-social d-flex justify-content-lg-start py-3">
+              <div className=" footer-social d-flex justify-content-lg-start ">
                 <li className="contact-link">
                   <a href="https://www.facebook.com/tanila.yvette">
                     <i className="fa fa-2x fa-facebook text-white mr-3 "></i>
@@ -44,13 +44,13 @@ const Footer = () => {
             <div className=" footer-social">
               <ul>
                 <Link to="/">
-                  <li className="py-3">Home</li>
+                  <li className="">Home</li>
                 </Link>
                 <Link to="/mission">
-                  <li className="py-3">About us</li>
+                  <li className="">About us</li>
                 </Link>
                 <Link to="/testimonials">
-                  <li className="py-3">Testimonials</li>
+                  <li className="">Testimonials</li>
                 </Link>
               </ul>
             </div>
@@ -59,13 +59,13 @@ const Footer = () => {
             <div className=" footer-social">
               <ul>
                 <Link to="/members">
-                  <li className="py-3">Members</li>
+                  <li className="">Members</li>
                 </Link>
                 <Link to="/register">
-                  <li className="py-3">Register</li>
+                  <li className="">Register</li>
                 </Link>
                 <Link to="/events">
-                  <li className="py-3">Stay Updated</li>
+                  <li className="">Stay Updated</li>
                 </Link>
               </ul>
             </div>

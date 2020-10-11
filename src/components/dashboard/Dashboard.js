@@ -24,9 +24,9 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Container>
+    <Container className= "dashboard_container">
       <div className="large text-primary">
-        <h1>
+        <h1 className= "dashboard">
           Welcome {isAuthenticated && profile && profile.user.name} !! You are
           now an official WSK Member{" "}
         </h1>
@@ -38,9 +38,9 @@ const Dashboard = ({
           <Experience experience={profile.experience} />
 
           <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i className="fa fa-user-minus"></i>Delete My Account
-            </button>
+          <button className="btn btn-danger" onClick = {()=> deleteAccount()}>
+           <i className="fas fa-user-minus"></i>Delete My Account
+         </button>
           </div>
         </>
       ) : (
