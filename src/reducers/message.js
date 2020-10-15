@@ -12,7 +12,7 @@ import {
     
   };
   
-  export default function(state = initialState, action) {
+  export const message =(state = initialState, action) =>{
 
     switch (action.type) {
       case FETCH_MESSAGES:

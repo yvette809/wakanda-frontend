@@ -1,30 +1,37 @@
 import React from "react";
 import { Button, Container, Row, Col, Card } from "react-bootstrap";
-import { FaTshirt, FaUtensils ,FaPray} from "react-icons/fa";
+import { FaTshirt, FaUtensils, FaPray } from "react-icons/fa";
 
 const Kids = () => {
   return (
     <>
       <div id="kids_sessions" className="mb-5">
         <div className="img_overlay">
-          <Container className="mb-5 text-center">
-            <h1 className="text-white font-weight-bolder">FAQS</h1>
-            <h1 className="text-white">
-              Things You Should Know Before Sending your kids
-            </h1>
-            <Button>Book A KID SESSION</Button>
+          <Container className="mb-5 text-center kids_container">
+            <div className="intro_header">
+              <h1 className="text-white font-weight-bolder">FAQS</h1>
+              <h1 className="text-white">
+                Things You Should Know Before Sending your kids
+              </h1>
+              <Button>Book A KID SESSION</Button>
+            </div>
           </Container>
         </div>
       </div>
       <Container className=" text-center ">
-        <h1 className=" font-weight-bolder mt-5" style={{ color: "teal" }}>
-          YOUR FIRST DAY WITH US
-        </h1>
+        <div className="first_day">
+          <h1
+            className=" font-weight-bolder mt-5 "
+            style={{ color: "teal" }}
+          >
+            YOUR FIRST DAY WITH US
+          </h1>
+          <h2 className="mb-3">Things You should Know</h2>
+        </div>
 
-        <h2 className="mb-3">Things You should Know</h2>
         <Row>
-          <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+          <Col lg={6} className="mb-2 ">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -52,7 +59,7 @@ const Kids = () => {
             </Card>
           </Col>
           <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -82,7 +89,7 @@ const Kids = () => {
         </Row>
         <Row>
           <Col lg={6} className="mb-2 ">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -111,7 +118,7 @@ const Kids = () => {
             </Card>
           </Col>
           <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -139,8 +146,8 @@ const Kids = () => {
           </Col>
         </Row>
         <Row>
-          <Col className="offset-3">
-            <Card style={{ width: "30rem" }} className="border-0">
+          <Col className="offset-lg-3 rules_col">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}

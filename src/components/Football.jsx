@@ -17,15 +17,18 @@ const Football = () => {
           </Container>
         </div>
       </div>
-      <Container className=" text-center ">
-        <h1 className=" font-weight-bolder mt-5" style={{ color: "teal" }}>
-          YOUR FIRST DAY WITH US
-        </h1>
+      <Container className=" text-center kids_container">
+        <div className="first_day">
+          <h1 className=" font-weight-bolder mt-5" style={{ color: "teal" }}>
+            YOUR FIRST DAY WITH US
+          </h1>
 
-        <h2 className="mb-3">Things You should Know</h2>
+          <h2 className="mb-3">Things You should Know</h2>
+        </div>
+
         <Row>
           <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -59,7 +62,7 @@ const Football = () => {
             </Card>
           </Col>
           <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -89,7 +92,7 @@ const Football = () => {
         </Row>
         <Row>
           <Col lg={6} className="mb-2 ">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -118,7 +121,7 @@ const Football = () => {
             </Card>
           </Col>
           <Col lg={6} className="mb-2">
-            <Card style={{ width: "30rem" }} className="border-0">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -149,8 +152,8 @@ const Football = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6} className="offset-3">
-            <Card style={{ width: "30rem" }} className="border-0">
+          <Col lg={6} className="offset-lg-3 rules_col">
+            <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
                   {" "}

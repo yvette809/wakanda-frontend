@@ -16,7 +16,7 @@ import {
     error: {}
   };
   
-  export default function(state = initialState, action) {
+  export const post =(state = initialState, action) =>{
     // const { type, payload } = action;
   
     switch (action.type) {

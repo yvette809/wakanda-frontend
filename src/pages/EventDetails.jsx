@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Spinner, Modal, Form, FormControl, Button } from "react-bootstrap";
+import { useParams, Link } from "react-router-dom";
+import {
+  Spinner,
+  Modal,
+  Form,
+  FormControl,
+  Button,
+  Row,
+  Col,
+  Image,
+  ListGroup,
+} from "react-bootstrap";
 import { setAlert } from "../actions/alert";
 import { connect } from "react-redux";
 
@@ -93,11 +103,41 @@ const EventDetails = ({ setAlert }) => {
       {event && !loading ? (
         <>
           <div className="container mt-3 event_container">
-            <div className="row align-content-center justify-content-center xs-mb-3">
+            <Link to="/" className="btn btn-light my-3">
+              Go Back
+            </Link>
+            <Row>
+              <Col md={6}>
+                <Image src={event.image} alt={event.name} fluid />
+              </Col>
+              <Col md={6}>
+                <ListGroup variant="flush">
+                  <ListGroup.Item>
+                    <h5>
+                      <strong>{event.title}</strong>
+                    </h5>
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                  <h5>Location:{event.location}</h5>
+                  </ListGroup.Item>
+
+                  <ListGroup.Item>Date:{event.date}</ListGroup.Item>
+                  <ListGroup.Item>Time:{event.time}</ListGroup.Item>
+                  <ListGroup.Item>
+                    Description:{event.description}
+                  </ListGroup.Item>
+                </ListGroup>
+              </Col>
+            </Row>
+            {/* <div className="row align-content-center justify-content-center xs-mb-3">
               <div className="col col-lg-6 col-xs-12">
                 <h2 className="evt_title font-weight-bolder">{event.title}</h2>
                 <div className="event_img">
-                  <img src={event.image} alt="single event" />
+                  <img
+                    src={event.image}
+                    alt="single event"
+                    className="img-fluid"
+                  />
                 </div>
                 <br />
                 <div className="evt_des">
@@ -120,7 +160,7 @@ const EventDetails = ({ setAlert }) => {
                   {event.description}
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </>
       ) : (

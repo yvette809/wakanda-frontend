@@ -44,13 +44,13 @@ const Footer = () => {
             <div className=" footer-social">
               <ul>
                 <Link to="/">
-                  <li className="">Home</li>
+                  <li className="text-white">Home</li>
                 </Link>
                 <Link to="/mission">
-                  <li className="">About us</li>
+                  <li className="text-white">About us</li>
                 </Link>
                 <Link to="/testimonials">
-                  <li className="">Testimonials</li>
+                  <li className="text-white">Testimonials</li>
                 </Link>
               </ul>
             </div>
@@ -59,13 +59,13 @@ const Footer = () => {
             <div className=" footer-social">
               <ul>
                 <Link to="/members">
-                  <li className="">Members</li>
+                  <li className="text-white">Members</li>
                 </Link>
                 <Link to="/register">
-                  <li className="">Register</li>
+                  <li className="text-white">Register</li>
                 </Link>
                 <Link to="/events">
-                  <li className="">Stay Updated</li>
+                  <li className="text-white">Stay Updated</li>
                 </Link>
               </ul>
             </div>

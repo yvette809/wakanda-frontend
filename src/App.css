@@ -17,6 +17,12 @@ body {
   line-height: 1.6;
   /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
 }
+h1,
+.navigation,
+footer,
+p {
+  font-family: "Playfair Display", serif;
+}
 
 /* dashboard */
 .dashboard_container {
@@ -287,19 +293,18 @@ li {
   background-color: teal;
   border: 1px solid rgba(1, 1, 15, 0.157);
   padding: 4px 16px;
-  /* height: 70px; */
   min-height: 70px;
-  display: flex;
+  display: flex-inline;
+  justify-content: space-between;
+  
+  
 }
-
 
 .nav-link {
   font-size: 1.4rem !important;
   color: #ffffff !important;
 }
-Nav.nav-link Link {
-  margin-left: 500px !important;
-}
+
 
 .img-carousel {
   width: 40%;
@@ -667,7 +672,7 @@ h4 {
   padding: 150px 0 150px 150px;
 }
 
-.instructions{
+.instructions {
   font-weight: 700;
 }
 
@@ -881,6 +886,38 @@ Card {
     object-fit: cover;
     overflow: hidden;
   }
+  .more_instructions {
+    font-size: 1.3rem;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+  }
+
+  .kids_card {
+    width: 320px !important;
+  }
+
+  #rules {
+    display: inline;
+    justify-content: center;
+    align-content: center;
+    offset-block-start: 0 !important;
+    margin-right: 50px !important;
+  }
+  .card_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .instructions {
+    font-size: 1.8rem;
+  }
+  .kids_container {
+    display: flex-inline;
+    justify-content: center;
+    align-content: center;
+  }
 }
 
 /* tablets */
@@ -1028,5 +1065,25 @@ Card {
     display: block;
     min-width: 100%;
     min-height: 100%;
+  }
+  .first_day {
+    display: flex-inline;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 400px;
+  }
+
+  .first_day h1 {
+    font-size: 2rem;
+  }
+  .kids_container {
+    display: flex-inline;
+    justify-content: center;
+    align-content: center;
+  }
+  .intro_header h1 {
+    width: 300px !important;
+    font-size: 1.5px !important;
   }
 }
