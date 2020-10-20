@@ -6,18 +6,40 @@ import {
   Form,
   FormControl,
   Button,
+  Container,
   Row,
   Col,
   Image,
   ListGroup,
 } from "react-bootstrap";
 import { setAlert } from "../actions/alert";
-import { connect } from "react-redux";
+import { createEventReview, listEventDetails } from "../actions/eventReviews";
+import { connect, useDispatch } from "react-redux";
+import { EVENTS_CREATE_REVIEW_RESET } from "../actions/types";
 
-const EventDetails = ({ setAlert }) => {
+const EventDetails = ({
+  setAlert,
+  createEventReview,
+  listEventDetails,
+  eventReviewCreate,
+  eventDetails,
+  auth,
+}) => {
+  const dispatch = useDispatch();
+
+  const { isAuthenticated ,user} = auth;
+  const { loading, error, event } = eventDetails;
+  const { reviews } = event;
+
+  const {
+    success: successEventReview,
+    error: errorEventReview,
+  } = eventReviewCreate;
+
+  const [comment, setComment] = useState("");
   const { _id } = useParams();
-  const [event, setEvent] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [event, setEvent] = useState("");
+  // const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const initialEvent = {
@@ -33,31 +55,24 @@ const EventDetails = ({ setAlert }) => {
   const [newEvent, setnewEvent] = useState(initialEvent);
 
   useEffect(() => {
-    setLoading(true);
+    if (successEventReview) {
+      setAlert("Review submitted");
+      setComment("");
+      dispatch({ type: EVENTS_CREATE_REVIEW_RESET });
+    }
+    listEventDetails(_id);
+  }, [dispatch, setAlert, successEventReview, _id, listEventDetails]);
 
-    const getSingleEvent = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `https://vast-bayou-47622.herokuapp.com/events/${_id}`
-        );
-        if (response.ok) {
-          const event = await response.json();
-          setEvent(event);
-        } else {
-          setAlert("no event found", "danger");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-      setLoading(false);
-    };
-    getSingleEvent();
-  }, [_id, setAlert]);
+  //submit review
+  const submitHandler = (e) => {
+    e.preventDefault();
+    createEventReview(_id, comment);
+  };
 
+ 
   // edit event
   const editEvent = async () => {
-    setLoading(true);
+    // setLoading(true);
 
     // const timeStamp = Date.now()
     const response = await fetch(
@@ -79,7 +94,7 @@ const EventDetails = ({ setAlert }) => {
         location: newEvent.location,
         date: newEvent.date,
       });
-      setLoading(false);
+      // setLoading(false);
     } else {
       setAlert("something went wrong");
     }
@@ -98,6 +113,7 @@ const EventDetails = ({ setAlert }) => {
       </div>
     );
   }
+
   return (
     <>
       {event && !loading ? (
@@ -118,7 +134,7 @@ const EventDetails = ({ setAlert }) => {
                     </h5>
                   </ListGroup.Item>
                   <ListGroup.Item>
-                  <h5>Location:{event.location}</h5>
+                    <h5>Location:{event.location}</h5>
                   </ListGroup.Item>
 
                   <ListGroup.Item>Date:{event.date}</ListGroup.Item>
@@ -129,43 +145,56 @@ const EventDetails = ({ setAlert }) => {
                 </ListGroup>
               </Col>
             </Row>
-            {/* <div className="row align-content-center justify-content-center xs-mb-3">
-              <div className="col col-lg-6 col-xs-12">
-                <h2 className="evt_title font-weight-bolder">{event.title}</h2>
-                <div className="event_img">
-                  <img
-                    src={event.image}
-                    alt="single event"
-                    className="img-fluid"
-                  />
-                </div>
-                <br />
-                <div className="evt_des">
-                  <p>
-                    Location: <strong>{event.location}</strong>
-                  </p>
-                  <p>
-                    Date: <strong>{event.date}</strong>
-                  </p>
-                  <p>
-                    Time: <strong>{event.time}</strong>
-                  </p>
-                </div>
-              </div>
-              <div className="col col-lg-6 col-xs-12">
-                <p
-                  className=" text-success font-weight-bolder event_description"
-                  style={{ fontSize: "1.3rem" }}
-                >
-                  {event.description}
-                </p>
-              </div>
-            </div> */}
           </div>
         </>
       ) : (
         <h2 className="text-center">No Event found</h2>
       )}
+      <Container>
+      <Row>
+        <Col md={6}>
+          <h2>Reviews</h2>
+          {reviews && reviews.length === 0 && <setAlert>No Reviews</setAlert>}
+          <ListGroup variant="flush">
+            {reviews &&
+              reviews.map((review) => (
+                <ListGroup.Item key={review._id}>
+                  <strong>{ review.user}</strong>
+
+                  <p>{review.createdAt.substring(0, 10)}</p>
+                  <p>{review.comment}</p>
+                </ListGroup.Item>
+              ))}
+            <ListGroup.Item>
+              <h3>What Do You Think?</h3>
+              {errorEventReview && (
+                <setAlert variant="danger">{errorEventReview}</setAlert>
+              )}
+              {isAuthenticated ? (
+                <Form onSubmit={submitHandler}>
+                  <Form.Group controlId="comment">
+                    <Form.Label>Comment</Form.Label>
+                    <Form.Control
+                      as="textarea"
+                      row="3"
+                      value={comment}
+                      onChange={(e) => setComment(e.target.value)}
+                    ></Form.Control>
+                  </Form.Group>
+                  <Button type="submit" variant="primary">
+                    Submit
+                  </Button>
+                </Form>
+              ) : (
+                <setAlert>
+                  Please <Link to="/login">sign in</Link> to write a review{" "}
+                </setAlert>
+              )}
+            </ListGroup.Item>
+          </ListGroup>
+        </Col>
+      </Row>
+      </Container>
 
       <Modal show={showModal}>
         <Modal.Header closeButton onClick={() => setShowModal(false)}>
@@ -244,4 +273,14 @@ const EventDetails = ({ setAlert }) => {
   );
 };
 
-export default connect(null, { setAlert })(EventDetails);
+const mapStateToProps = (state) => ({
+  auth: state.auth,
+  eventReviewCreate: state.eventReviewCreate,
+  eventDetails: state.eventDetails,
+});
+
+export default connect(mapStateToProps, {
+  setAlert,
+  createEventReview,
+  listEventDetails,
+})(EventDetails);

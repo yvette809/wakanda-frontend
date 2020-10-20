@@ -6,7 +6,7 @@ import { logout } from "../actions/auth";
 import logo from "../images/wlogo.png";
 import "../../src/App.css";
 
-const Navigation = ({ auth: { isAuthenticated }, logout }) => {
+const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
   console.log("is authenticated is", isAuthenticated);
   const authLinks = (
     <>
@@ -18,7 +18,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
             alt="wakanda logo"
             className="img-fluid"
             style={{
-              height: "10%",
+              height: "auto",
               width: "10%",
             }}
           />
@@ -36,6 +36,7 @@ const Navigation = ({ auth: { isAuthenticated }, logout }) => {
           <Link to="/messages" className="nav-link">
             Messages
           </Link>
+          
           <Link to="/" onClick={logout} className="nav-link">
             <i className="fa fa-sign-out">Logout</i>
           </Link>
