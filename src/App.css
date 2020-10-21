@@ -314,7 +314,7 @@ li {
 }
 
 .event_container {
-  margin-top: 150px !important;
+  margin-top: 90px !important;
 }
 
 event_div {
@@ -692,6 +692,7 @@ h4 {
 Card {
   border: none;
 }
+
 
 /* media queries */
 /* smart phones */

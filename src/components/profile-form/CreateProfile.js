@@ -1,14 +1,17 @@
 import React, { useState } from "react";
+import axios from "axios"
 import { Link, withRouter } from "react-router-dom";
 import { Form, FormControl, Container } from "react-bootstrap";
 import { connect } from "react-redux";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
+import {Spinner} from "react-bootstrap"
 
 const initialState = {
   nationality: "",
   gender: "",
   location: "",
   dateOfBirth: "",
+  image:"",
   bio: "",
   skills: "",
   twitter: "",
@@ -19,6 +22,8 @@ const initialState = {
 
 const CreateProfile = ({ createProfile, history }) => {
   const [formData, setFormData] = useState(initialState);
+  // const[image,setImage]= useState("")
+  const [uploading,setUploading] = useState(false)
 
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
@@ -27,6 +32,7 @@ const CreateProfile = ({ createProfile, history }) => {
     gender,
     location,
     dateOfBirth,
+    image,
     bio,
     skills,
     twitter,
@@ -34,6 +40,31 @@ const CreateProfile = ({ createProfile, history }) => {
     youtube,
     instagram,
   } = formData;
+
+  
+
+  const uploadFileHandler = async (e) => {
+    const file = e.target.files[0]
+    const formData = new FormData()
+    formData.append('profile', file)
+    setUploading(true)
+
+    try {
+      const config = {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      }
+
+      const { data } = await axios.post(`http://localhost:4000/profiles/upload`, formData, config)
+
+      setFormData.image(data)
+      setUploading(false)
+    } catch (error) {
+      console.error(error)
+      setUploading(false)
+    }
+  }
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -284,6 +315,25 @@ const CreateProfile = ({ createProfile, history }) => {
           className= "mb-3"
           onChange={onChange}
         />
+      
+              
+              <Form.Control
+                type='text'
+                name ="image"
+                placeholder='Enter image url'
+                value={image}
+                className= "mb-3"
+                onChange={onChange}
+              ></Form.Control>
+              <Form.File
+                id='image-file'
+                label='Choose File'
+                className= 'mb-3'
+                custom
+                onChange={uploadFileHandler}
+              ></Form.File>
+              {uploading && <Spinner />}
+            
 
         <FormControl
           as="textarea"

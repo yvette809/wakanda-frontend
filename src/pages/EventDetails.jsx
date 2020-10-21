@@ -153,16 +153,16 @@ const EventDetails = ({
       <Container>
       <Row>
         <Col md={6}>
-          <h2>Reviews</h2>
+          <h2 className ="text-center font-weight-bolder">Reviews</h2>
           {reviews && reviews.length === 0 && <setAlert>No Reviews</setAlert>}
           <ListGroup variant="flush">
             {reviews &&
               reviews.map((review) => (
                 <ListGroup.Item key={review._id}>
-                  <strong>{ review.user}</strong>
-
-                  <p>{review.createdAt.substring(0, 10)}</p>
+                  <strong>{review.user && review.user.name}</strong>
                   <p>{review.comment}</p>
+                  <p>{review.createdAt.substring(0, 10)}</p>
+                 
                 </ListGroup.Item>
               ))}
             <ListGroup.Item>

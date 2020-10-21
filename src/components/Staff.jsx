@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import coach from "../images/coach.jpg";
 import mike from "../images/mike.jpg";
+import mgr from "../images/mgr.jpg";
+import chm from "../images/chm.jpg"
 import { Container, Row, Col } from "react-bootstrap";
 import { FaResolving } from "react-icons/fa";
 
@@ -41,7 +43,7 @@ const Staff = () => {
         <Col xs={12} lg={4} className="mb-3">
           <div classname="card " id="staff_1 ">
             <img
-              src="https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/904757_10152024235558996_327888442_o.jpg?_nc_cat=100&_nc_sid=174925&_nc_ohc=DIByOw8FMxcAX9Kftul&_nc_ht=scontent.fume1-1.fna&oh=80a1a34a08ca50878a0078a771f2341d&oe=5F8935C2"
+              src={chm}
               alt="chairman"
               className="img-fluid"
               style={{borderRadius: "50%", height:"50vh"}}
@@ -134,7 +136,7 @@ const Staff = () => {
         <Col xs={12} lg={4} className="mb-3">
           <div classname="card" id="staff_2">
             <img
-              src="https://scontent.fume1-1.fna.fbcdn.net/v/t31.0-8/920723_286412858160540_1399172526_o.jpg?_nc_cat=103&_nc_sid=174925&_nc_ohc=wnM_n-uve8MAX8AqN4x&_nc_oc=AQm_1KnSD4g8NyvM15Dm2inIimSCqtmXXYZyaxRh0-qgPE0R7un7JiljsOCVte9Klr4&_nc_ht=scontent.fume1-1.fna&oh=e696a9606927dee5aa300831671db0e4&oe=5F8B233A"
+              src={mgr}
               alt="team manager"
               className="img-fluid"
             />

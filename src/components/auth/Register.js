@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios"
 import { Container, Form, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
@@ -14,7 +15,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   });
 
   const { name, username, email, password, password2 } = formData;
-
+ 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -80,12 +81,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           className="mb-4 py-3 register_input"
           onChange={onChange}
         />
+
         <input
           type="submit"
           className="btn btn-primary"
           value="Register"
           onClick={onSubmit}
         />
+        
       </Form>
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>

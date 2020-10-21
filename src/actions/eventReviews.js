@@ -10,12 +10,12 @@ import {
 export const createEventReview = (eventId, review) => async (dispatch) => {
   try {
     dispatch({
-      type: EVENTS_CREATE_REVIEW_REQUEST,
+      type: EVENTS_CREATE_REVIEW_REQUEST
     });
     const config = {
       headers: {
         "Content-Type": "application/json",
-      },
+      }
     };
     await axios.post(
       `http://localhost:4000/events/${eventId}/reviews`,
@@ -29,37 +29,12 @@ export const createEventReview = (eventId, review) => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: EVENTS_CREATE_REVIEW_FAIL,
-      //   payload: { msg: err.response.statusText, status: err.response.status },
+     
     });
   }
 };
 
-// export const createEventReview = (eventId, review) => async (dispatch) => {
-//     const config = {
-//       headers: {
-//         "Content-Type": "Application/json",
-//       },
-//     };
-//     try {
-//       const res = await axios.post(
-//         `https://localhost:4000/events/reviews/${eventId}`,
-//         review,
-//         config
-//       );
-  
-//       dispatch({
-//         type: ADD_COMMENT,
-//         payload: res.data,
-//       });
-  
-//       dispatch(setAlert("Comment Added", "success"));
-//     } catch (err) {
-//       dispatch({
-//         type: POST_ERROR,
-//         // payload: { msg: err.response.statusText, status: err.response.status },
-//       });
-//     }
-//   };
+
 
 //event details
 export const listEventDetails = (_id) => async (dispatch) => {
