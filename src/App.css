@@ -608,27 +608,7 @@ h4 {
   border-radius: 20px;
 }
 
-#register_section {
-  /* margin-top: 300px; */
-  margin-bottom: 20px;
-  /* width: 50% !important; */
-  background-image: url(https://www.pngitem.com/pimgs/m/459-4590428_humo-smoke-freetoedit-transparent-background-steam-png-transparent.png);
-  border-radius: 5%;
-  justify-content: center;
-  align-items: center;
-  display: block;
-  flex-direction: column;
-  padding: 50px 150px;
-}
 
-.register_form {
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-}
-.register_input {
-  border-radius: 10%;
-}
 
 .not_found {
   background-image: url("https://image.freepik.com/free-vector/blue-smoke-isolated-dark-transparent-background-realistic-blue-magic-mist-cloud-chemical-toxic-gas-steam-waves-realistic-illustration_119445-264.jpg");
@@ -865,7 +845,7 @@ Card {
     font-size: 1.2rem;
   }
 
-  .register_input {
+  /* .register_input {
     width: 100%;
     background-color: transparent;
     border: 2px solid white;
@@ -881,7 +861,7 @@ Card {
     flex-direction: column;
     min-width: 500px !important;
     height: 100%register_input;
-  }
+  } */
   .abtimg {
     height: 95%;
     width: 80%;

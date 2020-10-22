@@ -1,14 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProfileItem = ({ profile }) => {
-  console.log("the profile userinfo is", profile);
-  const{skills,location} = profile
-  const user = profile && profile.user
-  console.log("data",skills,location, user)
-   const { _id,name,avatar} = user
-    console.log("user data", _id,name,avatar)
-  
+const ProfileItem = ({  profile: {
+  user: { _id, name, avatar },
+  location,
+  skills,
+}, }) => {
   
   return (
       <div className="profile bg-light">
@@ -23,7 +20,7 @@ const ProfileItem = ({ profile }) => {
 
         <p className="my-1">{location && <span>{location}</span>}</p>
 
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
+        <Link to={` /profile/${_id}`} className="btn btn-primary">
           View Profile
         </Link>
       </div>

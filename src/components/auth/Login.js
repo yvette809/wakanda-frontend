@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Container, Form, FormControl } from "react-bootstrap";
+import { Container, Row,Col,Form, FormControl } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
@@ -26,10 +26,12 @@ const Login = ({ login, isAuthenticated }) => {
 
   return (
     <Container
-      className="mb-5 d-flex-inline flex-column justify-content-center align-content-center"
+      className="mb-5 "
       style={{ marginTop: "150px" }}
     >
-      <h1 className="large text-primary font-weight-bolder">Sign In</h1>
+       <Row className='justify-content-md-center'>
+        <Col xs={12} md={6}>
+        <h1 className="large text-primary font-weight-bolder">Sign In</h1>
       <p className="lead">
         <i className="fa  fa-user"  style={{fontSize:"24px"}}/> Sign Into Your Account
       </p>
@@ -40,7 +42,6 @@ const Login = ({ login, isAuthenticated }) => {
           value={email}
           name="email"
           onChange={onChange}
-          style={{ width: "50%" }}
           className="mb-4"
         />
         <FormControl
@@ -48,7 +49,6 @@ const Login = ({ login, isAuthenticated }) => {
           value={password}
           name="password"
           onChange={onChange}
-          style={{ width: "50%" }}
           className="mb-4"
         />
         <input type="submit" className="btn btn-primary mb-2" value="Login" />
@@ -57,6 +57,9 @@ const Login = ({ login, isAuthenticated }) => {
         Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
       <button className="btn btn-primary mt-2">Login With Facebook </button>
+        </Col>
+      </Row>
+      
     </Container>
   );
 };

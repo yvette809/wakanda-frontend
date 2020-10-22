@@ -51,13 +51,13 @@ export const getUsers = () => async (dispatch) => {
 };
 
 // Register User
-export const register = ({ name, username, email, password,image }) => async (dispatch) => {
+export const register = ({ name, username, email, password}) => async (dispatch) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  const body = JSON.stringify({ name,username, email, password,image });
+  const body = JSON.stringify({ name,username, email, password});
 
   try {
     const res = await axios.post(
@@ -70,6 +70,10 @@ export const register = ({ name, username, email, password,image }) => async (di
       type: REGISTER_SUCCESS,
       payload: res.data,
     });
+
+    dispatch({
+      type:USER_LOADED
+    })
   } catch (error) {
     console.log(error);
     dispatch({
@@ -99,6 +103,10 @@ export const login = (email, password) => async (dispatch) => {
       type: LOGIN_SUCCESS,
       payload: res.data,
     });
+
+    dispatch({
+      type:USER_LOADED
+    })
   } catch (error) {
     console.log(error);
     dispatch({

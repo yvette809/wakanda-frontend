@@ -38,8 +38,6 @@ const EventDetails = ({
 
   const [comment, setComment] = useState("");
   const { _id } = useParams();
-  // const [event, setEvent] = useState("");
-  // const [loading, setLoading] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const initialEvent = {

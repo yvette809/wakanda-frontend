@@ -17,6 +17,7 @@ export const createEventReview = (eventId, review) => async (dispatch) => {
         "Content-Type": "application/json",
       }
     };
+
     await axios.post(
       `http://localhost:4000/events/${eventId}/reviews`,
       review,

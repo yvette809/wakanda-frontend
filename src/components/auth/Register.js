@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios"
-import { Container, Form, FormControl } from "react-bootstrap";
+import { Container,Row,Col, Form, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
@@ -33,20 +33,24 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   }
 
   return (
-    <Container fluid id="register_section" >
-      <h1 className=" text-white py-3">Sign Up</h1>
+
+    <Container style={{marginTop:"80px"}} className= "text-primary">
+      <Row className='justify-content-md-center'>
+        <Col xs={12} md={6}>
+         
+        <h1 className="  py-3">Sign Up</h1>
       <p className="lead">
         <i className="fa fa-user" /> Create Your Account
       </p>
 
-      <Form onSubmit={onSubmit} className="register_form w-100">
+      <Form onSubmit={onSubmit} >
         <FormControl
           type="text"
           value={name}
           name="name"
           placeholder="Name"
           onChange={onChange}
-          className="mb-4 py-3 register_input"
+          className="mb-4 py-3 "
         />
         <FormControl
           type="text"
@@ -54,7 +58,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           name="username"
           placeholder="username"
           onChange={onChange}
-          className="mb-4 py-3 register_input"
+          className="mb-4 py-3 "
         />
         <FormControl
           type="email"
@@ -62,14 +66,14 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           name="email"
           placeholder="Email Address"
           onChange={onChange}
-          className="mb-4 py-3 register_input"
+          className="mb-4 py-3"
         />
         <FormControl
           type="password"
           value={password}
           name="password"
           placeholder="password"
-          className="mb-4 py-3 register_input"
+          className="mb-4 py-3 "
           onChange={onChange}
           required
         />
@@ -78,7 +82,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           value={password2}
           name="password2"
           placeholder="confirm password"
-          className="mb-4 py-3 register_input"
+          className="mb-4 py-3 "
           onChange={onChange}
         />
 
@@ -93,9 +97,16 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       <p className="my-1">
         Already have an account? <Link to="/login">Sign In</Link>
       </p>
+    
+  
+
+        </Col>
+      </Row>
     </Container>
-  );
-};
+  )
+  }
+  
+     
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.auth.isAuthenticated,
