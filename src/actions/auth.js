@@ -11,6 +11,7 @@ import {
   LOGIN_SUCCESS,
   LOGIN_FAIL,
   LOGOUT,
+  CLEAR_PROFILE
 } from "./types";
 
 // load user
@@ -71,9 +72,8 @@ export const register = ({ name, username, email, password}) => async (dispatch)
       payload: res.data,
     });
 
-    dispatch({
-      type:USER_LOADED
-    })
+    dispatch(loadUser())
+
   } catch (error) {
     console.log(error);
     dispatch({
@@ -104,9 +104,7 @@ export const login = (email, password) => async (dispatch) => {
       payload: res.data,
     });
 
-    dispatch({
-      type:USER_LOADED
-    })
+    dispatch(loadUser())
   } catch (error) {
     console.log(error);
     dispatch({
@@ -118,4 +116,5 @@ export const login = (email, password) => async (dispatch) => {
 // Logout user
 export const logout = () => (dispatch) => {
   dispatch({ type: LOGOUT });
+  dispatch({type:CLEAR_PROFILE})
 };

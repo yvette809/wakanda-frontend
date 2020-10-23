@@ -18,10 +18,10 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
       ) : (
         <>
           <div className="d-flex-inline text-center mb-4">
-            <h1 className="large text-primary">Players</h1>
+            <h1 className=" text-primary">Players</h1>
             <p className="lead">
               <i className="fa fa-connectdevelop " /> Browse and connect with
-              our team members
+              our Team Members
             </p>
           </div>
           <div className="container">

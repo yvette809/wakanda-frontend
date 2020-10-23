@@ -5,10 +5,14 @@ const ProfileItem = ({  profile: {
   user: { _id, name, avatar },
   location,
   skills,
+  
 }, }) => {
+
+  console.log("the profileUser is", _id,name,avatar)
   
   return (
       <div className="profile bg-light">
+        
       <img
         src={avatar}
         alt=""

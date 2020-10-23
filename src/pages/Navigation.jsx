@@ -10,13 +10,13 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
   console.log("is authenticated is", isAuthenticated);
   const authLinks = (
     <>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav"/>
       <Navbar.Collapse id="basic-navbar-nav">
         <Link to="/" className="navbar-brand">
           <img
             src={logo}
             alt="wakanda logo"
-            className="img-fluid"
+            className="img-fluid "
             style={{
               height: "auto",
               width: "10%",

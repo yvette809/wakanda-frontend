@@ -17,7 +17,7 @@ export const profile= (state = initialState, action) =>{
         loading: false,
       };
     case GET_PROFILES:
-      return{
+      return {
         ...state,
         profiles:action.payload,
         loading:false

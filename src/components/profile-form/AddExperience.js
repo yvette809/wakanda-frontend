@@ -28,12 +28,13 @@ const AddExperience = ({ addExperience, history }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
+    const [toDateDisabled,toggleDisabled] = useState(false)
   return (
     <Container>
       <h1 className="large text-primary">Add An Experience</h1>
       <p className="lead">
-        <i className="fas fa-code-branch" /> Add any developer/programming
-        positions that you have had in the past
+        <i className="fas fa-code-branch" /> Add any sports Club you have played for in the past
+        
       </p>
       <small>* = required field</small>
       <Form
@@ -83,8 +84,9 @@ const AddExperience = ({ addExperience, history }) => {
               name="current"
               checked={current}
               value={current}
-              onChange={() => {
+              onChange={(e) => {
                 setFormData({ ...formData, current: !current });
+                toggleDisabled(!toDateDisabled)
               }}
             />{" "}
             Current Job
@@ -97,7 +99,7 @@ const AddExperience = ({ addExperience, history }) => {
             name="to"
             value={to}
             onChange={onChange}
-            disabled={current}
+            disabled={toDateDisabled?'disabled':""}
           />
         </div>
         <div className="form-group">
