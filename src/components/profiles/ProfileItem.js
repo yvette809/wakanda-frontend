@@ -1,12 +1,15 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import { Link } from "react-router-dom";
+import {loadUser} from "../../actions/auth"
 
-const ProfileItem = ({  profile: {
+const ProfileItem = ({ profile: {
   user: { _id, name, avatar },
   location,
   skills,
   
 }, }) => {
+
+ 
 
   console.log("the profileUser is", _id,name,avatar)
   

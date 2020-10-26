@@ -27,6 +27,9 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
           <Link to="/news" className="nav-link">
             News
           </Link>
+          <Link to="/dashboard" className="nav-link">
+            Dashboard
+          </Link>
           <Link to="/profiles" className="nav-link">
             Players
           </Link>

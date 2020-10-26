@@ -13,21 +13,21 @@ const Staff = () => {
   const [openButton3, toggleOpenButton3] = useState(false);
 
   // set time out for button
-  setTimeout(() => {
-    toggleOpenButton();
-  }, 7000);
+  // setTimeout(() => {
+  //   toggleOpenButton();
+  // }, 7000);
 
-  setTimeout(() => {
-    toggleOpenButton1();
-  }, 7000);
+  // setTimeout(() => {
+  //   toggleOpenButton1();
+  // }, 7000);
 
-  setTimeout(() => {
-    toggleOpenButton2();
-  }, 7000);
+  // setTimeout(() => {
+  //   toggleOpenButton2();
+  // }, 7000);
 
-  setTimeout(() => {
-    toggleOpenButton3();
-  }, 7000);
+  // setTimeout(() => {
+  //   toggleOpenButton3();
+  // }, 7000);
 
   return (
     <Container fluid className="mb-4 staff_section ">
@@ -59,26 +59,28 @@ const Staff = () => {
             <p>
               <strong>Title:</strong> Chairman
             </p>
-            <p>
+            <div id="cd1">
+              <div  id="cd2">
+              <p>
               <strong>Profile:</strong> Emmanuel Mukumu is the pioneer of the
               Wakana idea.He is very educated and has great leaership
               experience.As a former referee in Sweden, he thinks the best place
               to serve is at WSK.
-            </p>
+            </p> 
             <blockquote className="text-danger font-weight-bolder">
               "I am committed to make WSK a safe haven"
             </blockquote>
             {openButton1 && (
               <>
                 <a href="https://www.facebook.com/sirmukumu">
-                  <i className="fa fa-3x fa-facebook text-white mr-3"></i>
+                  <i className="fa fa-2x fa-facebook text-white mr-3"></i>
                 </a>
                 <a href="https://twitter.com/peryline">
-                  <i className="fa fa-3x fa-twitter text-white mr-3"></i>
+                  <i className="fa fa-2x fa-twitter text-white mr-3"></i>
                 </a>
 
                 <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                  <i className="fa fa-3x fa-instagram text-white"></i>
+                  <i className="fa fa-2x fa-instagram text-white"></i>
                 </a>
               </>
             )}
@@ -88,12 +90,14 @@ const Staff = () => {
             >
               Connect...
             </button>
+              </div>
+            </div>
           </div>
         </Col>
       </Row>
       <Row className="staff_row">
         <Col xs={12} lg={6} className="text-dark " data-aos="zoom-in">
-          <div className="staff_profile">
+          <div className="staff_profile text-dark">
             <h4>
               {" "}
               <strong>Name:</strong> Ngwa McDonald
@@ -101,8 +105,10 @@ const Staff = () => {
             <p>
               <strong>Title:</strong> Team Manager
             </p>
-            <p>
-              <strong>profile:</strong> Ngwa Mc Donald is an accountant with
+            <div id="cd1">
+              <div id="cd2">
+                  <p >
+              <strong >profile:</strong> Ngwa Mc Donald is an accountant with
               highly exceptional organisational skills. Due to his past record
               of running ASCAMINU(Association of Cameroonians in Umeå), the klub
               entrusted the management of the team in his hands
@@ -114,14 +120,14 @@ const Staff = () => {
             {openButton2 && (
               <>
                 <a href="https://www.facebook.com/ngwa.macdonald.3">
-                  <i className="fa fa-3x fa-facebook text-white mr-3"></i>
+                  <i className="fa fa-2x fa-facebook text-white mr-3"></i>
                 </a>
                 <a href="https://twitter.com/peryline">
-                  <i className="fa fa-3x fa-twitter text-white mr-3"></i>
+                  <i className="fa fa-2x fa-twitter text-white mr-3"></i>
                 </a>
 
                 <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                  <i className="fa fa-3x fa-instagram text-white"></i>
+                  <i className="fa fa-2x fa-instagram text-white"></i>
                 </a>
               </>
             )}
@@ -131,6 +137,10 @@ const Staff = () => {
             >
               Connect...
             </button>
+
+              </div>
+            </div>
+          
           </div>
         </Col>
         <Col xs={12} lg={4} className="mb-3">
@@ -158,7 +168,9 @@ const Staff = () => {
             <p>
               <strong>Title:</strong> Head Coach
             </p>
-            <p>
+            <div id="cd1">
+              <div id="cd2">
+                 <p>
               <strong>Profile:</strong> Ojong Roland has a great football
               career. He played in the national team of Cameroon and some other
               teams in Chin, South Africa, Iran and Cyprus. He is known as the
@@ -172,14 +184,14 @@ const Staff = () => {
             {openButton3 && (
               <>
                 <a href="https://www.facebook.com/ojong.roland">
-                  <i className="fa fa-3x fa-facebook text-white mr-3"></i>
+                  <i className="fa fa-2x fa-facebook text-white mr-3"></i>
                 </a>
                 <a href="https://twitter.com/peryline">
-                  <i className="fa fa-3x fa-twitter text-white mr-3"></i>
+                  <i className="fa fa-2x fa-twitter text-white mr-3"></i>
                 </a>
 
                 <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                  <i className="fa fa-3x fa-instagram text-white"></i>
+                  <i className="fa fa-2x fa-instagram text-white"></i>
                 </a>
               </>
             )}
@@ -189,6 +201,8 @@ const Staff = () => {
             >
               Connect...
             </button>
+          </div>
+          </div>
           </div>
         </Col>
       </Row>
@@ -202,6 +216,8 @@ const Staff = () => {
             <p>
               <strong>Title:</strong> Assistant Coach
             </p>
+            <div id="cd1">
+              <div id="cd2">
             <p>
               <strong>profile:</strong> Sidibe Michael is a very passionate and
               talented player. He playe in the Ivorian national team and in
@@ -214,14 +230,14 @@ const Staff = () => {
             {openButton && (
               <>
                 <a href="https://www.facebook.com/michael.sidibe.94">
-                  <i className="fa fa-3x fa-facebook text-white mr-3"></i>
+                  <i className="fa fa-2x fa-facebook text-white mr-3"></i>
                 </a>
                 <a href="https://twitter.com/peryline">
-                  <i className="fa fa-3x fa-twitter text-white mr-3"></i>
+                  <i className="fa fa-2x fa-twitter text-white mr-3"></i>
                 </a>
 
                 <a href="https://www.instagram.com/evebabe2006/?hl=en">
-                  <i className="fa fa-3x fa-instagram text-white"></i>
+                  <i className="fa fa-2x fa-instagram text-white"></i>
                 </a>
               </>
             )}
@@ -231,6 +247,10 @@ const Staff = () => {
             >
               Connect...
             </button>
+
+              </div>
+            </div>
+           
           </div>
         </Col>
         <Col lg={4}>

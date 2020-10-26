@@ -32,6 +32,17 @@ p {
   font-size: 2rem;
 }
 
+#cd1{
+ 
+}
+
+#cd2{
+ visibility: hidden;
+
+}
+#cd1:hover #cd2{
+  visibility: visible;
+}
 .btn {
   display: inline-block;
   background: var(--light-color);
@@ -558,7 +569,7 @@ ul li {
   min-height: 1200px;
   overflow: hidden;
   /* background-color: rgb(19, 13, 13); */
-  background-color: teal;
+  background-color: lightgrey;
 }
 
 #staff_1 img,
