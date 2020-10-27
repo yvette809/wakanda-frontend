@@ -569,7 +569,7 @@ ul li {
   min-height: 1200px;
   overflow: hidden;
   /* background-color: rgb(19, 13, 13); */
-  background-color: lightgrey;
+  background-color: #ebebeb;
 }
 
 #staff_1 img,
@@ -591,11 +591,12 @@ ul li {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+ 
 }
 .staff_profile p,
 h4 {
   font-size: 1.2rem;
-  color: white;
+  color: black;
 }
 
 .staff_button {

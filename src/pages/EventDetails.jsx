@@ -157,7 +157,7 @@ const EventDetails = ({
             {reviews &&
               reviews.map((review) => (
                 <ListGroup.Item key={review._id}>
-                  <strong>{review.user && review.user.name}</strong>
+                  <strong>{ review.user && review.user.name}</strong>
                   <p>{review.comment}</p>
                   <p>{review.createdAt.substring(0, 10)}</p>
                  

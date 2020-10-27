@@ -98,7 +98,7 @@ const Staff = () => {
       <Row className="staff_row">
         <Col xs={12} lg={6} className="text-dark " data-aos="zoom-in">
           <div className="staff_profile text-dark">
-            <h4>
+            <h4 className= "text-dark">
               {" "}
               <strong>Name:</strong> Ngwa McDonald
             </h4>

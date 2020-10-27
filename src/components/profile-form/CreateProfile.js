@@ -20,7 +20,8 @@ const initialState = {
   instagram: "",
 };
 
-const CreateProfile = ({ createProfile, history }) => {
+const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
+
   const [formData, setFormData] = useState(initialState);
   // const[image,setImage]= useState("")
   const [uploading,setUploading] = useState(false)
@@ -56,7 +57,7 @@ const CreateProfile = ({ createProfile, history }) => {
         },
       }
 
-      const { data } = await axios.post(`http://localhost:4000/profiles/upload`, formData, config)
+      const { data } = await axios.post(`http://localhost:4000/profiles/${user._id}/upload`, formData, config)
 
       setFormData.image(data)
       setUploading(false)
@@ -421,4 +422,9 @@ const CreateProfile = ({ createProfile, history }) => {
   );
 };
 
-export default connect(null, { createProfile })(withRouter(CreateProfile));
+const mapStateToProps = (state)=>({
+  auth: state.auth,
+  profile:state.profile
+})
+
+export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));

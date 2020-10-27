@@ -25,22 +25,21 @@ import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
 import { Link, useParams } from "react-router-dom";
 
-const Home = ({ setAlert }) => {
+const Home = ({ setAlert , isAuthenticated}) => {
   // scroll animations
   useEffect(() => {
     AOS.init();
   });
   const [events, setEvents] = useState([]);
-  const evenp = {
-    title: "",
-    description: "",
-    image: "",
-    time: "",
-    location: "",
-    date: "",
-  };
-
-  const [newEvent, setnewEvent] = useState(evenp);
+ 
+  const [newEvent, setnewEvent] = useState({
+    title:"",
+    description:"",
+    image:"",
+    time:"",
+    location:"",
+    date: ""
+  });
 
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
@@ -70,39 +69,44 @@ const Home = ({ setAlert }) => {
       }
     };
     getEvents();
-  }, []);
+  }, [setAlert]);
 
   //Add Events
   const addEvent = async (e) => {
-    // e.preventDefault();
+     e.preventDefault();
 
-    setLoading(true);
+     if(title === "" || description === "" || image === "" || time === "" || location=== "" || date=== ""){
+       setAlert("fields cannot be empty", "danger")
 
-    const response = await fetch("http://localhost:4000/events", {
-      method: "POST",
-      body: JSON.stringify(evenp),
-      "Content-Type": "application/json",
-    });
+     }else{
+       const newE ={
+         title,
+         description,
+         image,
+         time,
+         location,
+         date
+       }
+       try{
 
-    if (response.ok) {
-      const responseEvent = await response.json();
-      console.log(responseEvent);
-      setnewEvent(responseEvent.data);
+        setLoading(true)
+         const config ={
+           headers:{
+             "Content-Type": "application/json"
+           }
+         }
+         const body = JSON.stringify(newE)
+         const res = await axios.post("http://localhost:4000/events", body, config)
+         console.log(res.data)
+         setLoading(false)
+         setnewEvent(res.data)
+       }catch(error){
+         console.log(error)
+       }
+       
+     }
 
-      alert("event added");
-
-      setLoading(false);
-    } else {
-      alert("something went wrong");
-    }
-    setnewEvent({
-      title: "",
-      description: "",
-      image: "",
-      time: "",
-      location: "",
-      date: "",
-    });
+    
   };
 
   // delete Event
@@ -121,41 +125,17 @@ const Home = ({ setAlert }) => {
         console.log("something went wrong");
       }
 
-      //   this.setState({
-      //  students:this.state.students.filter(x =>x._id !== _id)
-
-      // })
     } catch (err) {
       console.log(err);
     }
     setLoading(false);
   };
 
-  // useEffect(() => {
-  //   deleteEvent();
-  // }, []);
-
-  // search Event
   useEffect(() => {
-    const searchEvents = async (search) => {
-      setLoading(true);
-      try {
-        const response = await fetch(
-          `http://localhost:4000/events?s=${search}`
-        );
-        if (response.ok) {
-          const searchEvents = await response.json();
-          setSearch(searchEvents);
-        } else {
-          console.log("something went wrong");
-        }
-      } catch (err) {
-        console.log(err);
-      }
-      setLoading(false);
-    };
-    searchEvents();
-  }, [search]);
+    deleteEvent();
+  }, []);
+
+ 
 
   return (
     <>
@@ -312,13 +292,13 @@ const Home = ({ setAlert }) => {
                 onChange={(e) => setnewEvent(e.currentTarget.value)}
               />
 
-              <FormControl
+              {/* <FormControl
                 type="file"
                 value={image}
                 name="file"
                 placeholder="Add file"
                 onChange={(e) => setnewEvent(e.currentTarget.value)}
-              />
+              /> */}
             </Form>
           </Modal.Body>
 
@@ -331,13 +311,15 @@ const Home = ({ setAlert }) => {
             </Button>
           </Modal.Footer>
         </Modal>
-        <button
-          className="btn-primary"
+
+        {isAuthenticated &&   <button
+          className="btn-primary mb-4"
           onClick={() => setshowModal(true)}
-          style={{ visibility: "hidden" }}
+          // style={{ visibility: "hidden" }}
         >
-          Open Modal
-        </button>
+          Create Event
+        </button>}
+       
       </Container>
       <Activities />
       <div id="values_section" className="">
@@ -468,6 +450,7 @@ const Home = ({ setAlert }) => {
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  isAuthenticated:state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, { setAlert })(Home);
