@@ -42,6 +42,7 @@ const AddExperience = ({ addExperience, history }) => {
         onSubmit={(e) => {
           e.preventDefault();
           addExperience(formData, history);
+      
         }}
       >
         <div className="form-group">

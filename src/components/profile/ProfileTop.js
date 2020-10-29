@@ -7,12 +7,12 @@ const ProfileTop = ({
     location,
     dateOfBirth,
     social,
-    user: { name, avatar }
+    user: { name, avatar, _id }
   }
 }) => {
   return (
     <div className='profile-top bg-info p-2'>
-      <img className='round-img my-1' src={avatar} alt='' /><hr style={{border:"1px dashed white"}}/>
+      <img className='round-img my-1 img-fluid' src={`http://localhost:4000/profiles/${_id}.png`} style={{width:"50%", height:"0%", borderRadius:"50%"}}alt='' /><hr/>
       <h1 className=''>{name}</h1>
       <p className='lead'>
         {nationality && <span>{nationality}</span>}

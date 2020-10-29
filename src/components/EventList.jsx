@@ -43,15 +43,14 @@ const EventList = ({ events, loading, deleteEvent }) => {
 
               <Carousel.Caption className= "carousel-caption">
                 <div className="d-flex-inline">
-                  <Link to={`/eventdetails/${evt._id}`}>
-                    <p className="event_title">{evt.title}</p>
-                  </Link>
-                  <small className="text-left event_date">
+                     <p className="event_title">{evt.title}</p>
+                 
+                  {/* <small className="text-left event_date">
                     {" "}
                     Date posted:{" "}
                     <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
-                  </small>
-                  <p className= "text-white">{evt.date}</p>
+                  </small> */}
+                  <Link to={`/eventdetails/${evt._id}`}><button>View Details</button></Link>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>

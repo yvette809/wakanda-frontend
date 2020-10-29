@@ -32,14 +32,15 @@ const Home = ({ setAlert , isAuthenticated}) => {
   });
   const [events, setEvents] = useState([]);
  
-  const [newEvent, setnewEvent] = useState({
+  const newE={
     title:"",
     description:"",
     image:"",
     time:"",
     location:"",
     date: ""
-  });
+  }
+  const [newEvent, setnewEvent] = useState(newE)
 
   const { title, description, image, time, location, date } = newEvent;
   const [loading, setLoading] = useState(false);
@@ -78,15 +79,7 @@ const Home = ({ setAlert , isAuthenticated}) => {
      if(title === "" || description === "" || image === "" || time === "" || location=== "" || date=== ""){
        setAlert("fields cannot be empty", "danger")
 
-     }else{
-       const newE ={
-         title,
-         description,
-         image,
-         time,
-         location,
-         date
-       }
+     }
        try{
 
         setLoading(true)
@@ -107,7 +100,7 @@ const Home = ({ setAlert , isAuthenticated}) => {
      }
 
     
-  };
+  
 
   // delete Event
 
@@ -312,13 +305,18 @@ const Home = ({ setAlert , isAuthenticated}) => {
           </Modal.Footer>
         </Modal>
 
-        {isAuthenticated &&   <button
+        {isAuthenticated &&  
+        <>
+        <h3>Share Your Events</h3>
+         <button
           className="btn-primary mb-4"
           onClick={() => setshowModal(true)}
           // style={{ visibility: "hidden" }}
         >
           Create Event
-        </button>}
+        </button>
+        </>
+        }
        
       </Container>
       <Activities />

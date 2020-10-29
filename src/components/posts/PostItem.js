@@ -21,7 +21,8 @@ const PostItem = ({
           <Link to={`/profile/${user}`}>
             <img
               className="round-img"
-              src={avatar}
+              // src={avatar}
+              src={`http://localhost:4000/profiles/${user && user._id}.png`}
               style={{ borderRadius: "50%" }}
               alt="post-img"
             />
@@ -82,6 +83,7 @@ PostItem.defaultProps = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+ 
 });
 
 export default connect(mapStateToProps, { addLike, removeLike, deletePost })(

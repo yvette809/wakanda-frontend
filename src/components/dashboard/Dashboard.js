@@ -26,11 +26,13 @@ return loading && profile === null ? (
 ) : (
 <Container className= "dashboard_container">
   <div className="large text-primary">
-{/* <img
-src={`http://localhost:4000/profiles/${profile.user._id}.png`}
-alt="user picture"
-style={{ width: "100px", height: "100px" }}
-/> */}
+     <img
+    src={`http://localhost:4000/profiles/${profile && profile.user._id}.png`}
+    alt="user picture"
+    style={{ width: "100px", height: "100px" }}
+    className="mb-2"
+     />
+    
      <h1 className= "dashboard">
       Welcome {isAuthenticated && profile && profile.user.name} !! You are
       now an official WSK Member{" "}
@@ -85,6 +87,7 @@ deleteAccount,
 // } from "../../actions/profile";
 // import DashboardActions from "./DashboardActions";
 // import Experience from "./Experience";
+
 // ​
 // const Dashboard = ({
 //   getCurrentProfile,

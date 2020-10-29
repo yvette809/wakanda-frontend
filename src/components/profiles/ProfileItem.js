@@ -17,10 +17,10 @@ const ProfileItem = ({ profile: {
       <div className="profile bg-light">
         
       <img
-        src={avatar}
+        src={`http://localhost:4000/profiles/${ _id}.png`}
         alt=""
-        className="round-img"
-        style={{ borderRadius: "50%" }}
+        className="img-fluid"
+        style={{ width: "200px", height: "200px" ,objectFit:"cover", borderRadius:"50%"}}
       />
       <div>
         <h2>{name}</h2>
