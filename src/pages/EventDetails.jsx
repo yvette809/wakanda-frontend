@@ -64,7 +64,14 @@ const EventDetails = ({
   //submit review
   const submitHandler = (e) => {
     e.preventDefault();
-    createEventReview(_id, comment);
+    console.log('USER', user)
+    createEventReview(_id, {
+      user: {
+        name: user.name,
+        _id: user._id
+      },
+      comment
+    });
   };
 
  
@@ -157,7 +164,7 @@ const EventDetails = ({
             {reviews &&
               reviews.map((review) => (
                 <ListGroup.Item key={review._id}>
-                  <strong>{ review.user && review.user.name}</strong>
+                  <strong>{ review.name}</strong>
                   <p>{review.comment}</p>
                   <p>{review.createdAt.substring(0, 10)}</p>
                  

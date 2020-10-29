@@ -15,6 +15,7 @@ const ProfileItem = ({ profile: {
   
   return (
       <div className="profile bg-light">
+
         
       <img
         src={`http://localhost:4000/profiles/${ _id}.png`}

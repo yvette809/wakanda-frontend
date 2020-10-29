@@ -24,7 +24,7 @@ export const loadUser = () => async (dispatch) => {
     console.log("user response", res.data);
     dispatch({
       type: USER_LOADED,
-      Payload: res.data,
+      payload: res.data,
     });
   } catch (error) {
     dispatch({

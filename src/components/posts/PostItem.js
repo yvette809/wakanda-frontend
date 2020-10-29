@@ -22,7 +22,7 @@ const PostItem = ({
             <img
               className="round-img"
               // src={avatar}
-              src={`http://localhost:4000/profiles/${user && user._id}.png`}
+              src={`http://localhost:4000/profiles/${ user._id}.png`}
               style={{ borderRadius: "50%" }}
               alt="post-img"
             />

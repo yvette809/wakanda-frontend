@@ -32,15 +32,13 @@ p {
   font-size: 2rem;
 }
 
-#cd1{
- 
+#cd1 {
 }
 
-#cd2{
- visibility: hidden;
-
+#cd2 {
+  visibility: hidden;
 }
-#cd1:hover #cd2{
+#cd1:hover #cd2 {
   visibility: visible;
 }
 .btn {
@@ -308,15 +306,12 @@ li {
   min-height: 70px;
   display: flex-inline;
   justify-content: space-between;
-  
-  
 }
 
 .nav-link {
   font-size: 1.4rem !important;
   color: #ffffff !important;
 }
-
 
 .img-carousel {
   width: 40%;
@@ -557,8 +552,9 @@ ul li {
   padding: 10px 20px;
   border-radius: 10px;
   font-size: 1.5rem;
+  color: white;
   background-color: transparent;
-  border: 1px solid blue;
+  border: 1px solid white;
 }
 .read_more:hover {
   background-color: black;
@@ -591,7 +587,6 @@ ul li {
   justify-content: center;
   align-items: center;
   flex-direction: column;
- 
 }
 .staff_profile p,
 h4 {
@@ -604,6 +599,7 @@ h4 {
   border-radius: 10px;
   font-size: 1.5rem;
   background-color: transparent;
+  color: white;
   border: 1px solid blue;
 }
 .staff_button:hover {
@@ -619,8 +615,6 @@ h4 {
   color: black;
   border-radius: 20px;
 }
-
-
 
 .not_found {
   background-image: url("https://image.freepik.com/free-vector/blue-smoke-isolated-dark-transparent-background-realistic-blue-magic-mist-cloud-chemical-toxic-gas-steam-waves-realistic-illustration_119445-264.jpg");
@@ -684,7 +678,6 @@ h4 {
 Card {
   border: none;
 }
-
 
 /* media queries */
 /* smart phones */
@@ -779,6 +772,7 @@ Card {
     margin-right: 20px;
     width: 100px;
     padding: 5px 0;
+    
   }
 
   .read_more {
@@ -912,8 +906,6 @@ Card {
     justify-content: center;
     align-content: center;
   }
-
-  
 }
 
 /* tablets */

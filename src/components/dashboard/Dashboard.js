@@ -34,7 +34,7 @@ return loading && profile === null ? (
      />
     
      <h1 className= "dashboard">
-      Welcome {isAuthenticated && profile && profile.user.name} !! You are
+      Welcome {isAuthenticated && user && user.name} !! You are
       now an official WSK Member{" "}
     </h1>
   </div>

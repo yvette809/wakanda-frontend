@@ -18,6 +18,8 @@ export const createEventReview = (eventId, review) => async (dispatch) => {
       }
     };
 
+    console.log(review)
+
     await axios.post(
       `http://localhost:4000/events/${eventId}/reviews`,
       review,

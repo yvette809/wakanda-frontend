@@ -24,7 +24,7 @@ const EventList = ({ events, loading, deleteEvent }) => {
   }
 
   return (
-    <Container fluid className="">
+    <Container fluid className="mb-2">
       <Carousel pause="hover" expand={"lg"}>
         {events &&
           events.map((evt) => (
@@ -50,7 +50,7 @@ const EventList = ({ events, loading, deleteEvent }) => {
                     Date posted:{" "}
                     <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
                   </small> */}
-                  <Link to={`/eventdetails/${evt._id}`}><button>View Details</button></Link>
+                  <Link to={`/eventdetails/${evt._id}`}><button className= "read_more">View Details</button></Link>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>

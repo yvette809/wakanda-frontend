@@ -76,10 +76,6 @@ const Home = ({ setAlert , isAuthenticated}) => {
   const addEvent = async (e) => {
      e.preventDefault();
 
-     if(title === "" || description === "" || image === "" || time === "" || location=== "" || date=== ""){
-       setAlert("fields cannot be empty", "danger")
-
-     }
        try{
 
         setLoading(true)
@@ -246,21 +242,30 @@ const Home = ({ setAlert , isAuthenticated}) => {
                 value={title}
                 name="title"
                 placeholder="Add Title"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  title: e.currentTarget.value
+                })}
               />
               <FormControl
                 type="text"
                 value={description}
                 name="description"
                 placeholder="Add description"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  description: e.currentTarget.value
+                })}
               />
               <FormControl
                 type="text"
                 value={image}
                 name="image"
                 placeholder="Add Image"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  image: e.currentTarget.value
+                })}
                 required
               />
               <FormControl
@@ -268,21 +273,30 @@ const Home = ({ setAlert , isAuthenticated}) => {
                 value={time}
                 name="time"
                 placeholder="Add Time"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  time: e.currentTarget.value
+                })}
               />
               <FormControl
                 type="text"
                 value={location}
                 name="location"
                 placeholder="Add Location"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  location: e.currentTarget.value
+                })}
               />
               <FormControl
                 type="date"
                 value={date}
                 name="date"
                 placeholder="Add Date"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent({
+                  ...newEvent,
+                  date: e.currentTarget.value
+                })}
               />
 
               {/* <FormControl
