@@ -65,7 +65,7 @@ const App = () => {
         <Route path="/register" component={Register}></Route>
         <Route path="/login" component={Login}></Route>
         <Route path="/profiles" component={Profiles}></Route>
-        <Route path="/profile/:id" exact component={Profile}></Route>
+        <Route path="/profile/:_id" exact component={Profile}></Route>
         <PrivateRoute
           exact
           path="/dashboard"

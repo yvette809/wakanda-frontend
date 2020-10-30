@@ -1,6 +1,7 @@
 import React from "react";
-import { Navbar, Nav, Form, Button } from "react-bootstrap";
+import { Navbar, Nav,NavDropdown, Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { LinkContainer } from 'react-router-bootstrap'
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
 import logo from "../images/wlogo.png";
@@ -36,13 +37,33 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
           <Link to="/posts" className="nav-link">
             Posts
           </Link>
-          <Link to="/messages" className="nav-link">
+          {/* <Link to="/messages" className="nav-link">
             Messages
+          </Link> */}
+          <Link to={`/profile/${user._id}`}>
+             <img
+             src={`http://localhost:4000/profiles/${user && user._id}.png`}
+             alt="user picture"
+             style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+             className="mb-2"
+          />
+    
           </Link>
+          <NavDropdown title={user.name} id='username'>
+      
+                  <LinkContainer to={`/profile/${user._id}`}>
+                    <NavDropdown.Item>Profile</NavDropdown.Item>
+                  </LinkContainer>
+                 <LinkContainer to="/"> 
+                 <NavDropdown.Item  onClick={logout}>
+                 <i className="fa fa-sign-out">Logout</i>
+                  </NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
           
-          <Link to="/" onClick={logout} className="nav-link">
+          {/* <Link to="/" onClick={logout} className="nav-link">
             <i className="fa fa-sign-out">Logout</i>
-          </Link>
+          </Link> */}
         </Nav>
       </Navbar.Collapse>
     </>
