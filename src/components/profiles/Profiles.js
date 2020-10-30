@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
-import { Spinner } from "react-bootstrap";
+import Loader from "../Loader";
 import ProfileItem from "./ProfileItem";
 import { getProfiles } from "../../actions/profile";
 
@@ -14,7 +14,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
   return (
     <>
       {loading ? (
-        <Spinner animation="border" />
+        <Loader />
       ) : (
         <>
           <div className="d-flex-inline text-center mb-4">

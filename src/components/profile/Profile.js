@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { Spinner } from "react-bootstrap";
+import Loader from "../Loader";
 import ProfileTop from "./ProfileTop";
 import ProfileAbout from "./ProfileAbout";
 import ProfileExperience from "./ProfileExperience";
@@ -13,9 +13,9 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   }, [getProfileById, match.params.id]);
 
   return (
-    <div className="container">
+    <div className="container" style= {{marginTop: "150px"}}>
       {profile === null ? (
-        <Spinner animation="border" />
+        <Loader />
       ) : (
         <>
           <Link to="/profiles" className="btn btn-light my-2">

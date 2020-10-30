@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
+import Loader from "../components/Loader"
 import {
-  Spinner,
   Modal,
   Form,
   FormControl,
@@ -111,12 +111,8 @@ const EventDetails = ({
 
   if (loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <Spinner animation="border" variant="danger" role="status">
-          <span className="sr-only ">Loading...</span>
-        </Spinner>
-      </div>
-    );
+    <Loader/> 
+    )
   }
 
   return (

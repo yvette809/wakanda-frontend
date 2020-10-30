@@ -9,6 +9,7 @@ import "../../src/App.css";
 
 const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
   console.log("is authenticated is", isAuthenticated);
+
   const authLinks = (
     <>
       <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -60,10 +61,21 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
                   </NavDropdown.Item>
                   </LinkContainer>
                 </NavDropdown>
+
+                {isAuthenticated && user.isAdmin && (
+                <NavDropdown title='Admin' id='adminmenu'>
+                  <LinkContainer to='/admin/profiles'>
+                    <NavDropdown.Item>Players</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/Events'>
+                    <NavDropdown.Item>Events</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to='/admin/posts'>
+                    <NavDropdown.Item>Posts</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
           
-          {/* <Link to="/" onClick={logout} className="nav-link">
-            <i className="fa fa-sign-out">Logout</i>
-          </Link> */}
         </Nav>
       </Navbar.Collapse>
     </>
@@ -109,7 +121,6 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
     </>
   );
 
-  console.log("==>", isAuthenticated);
   return (
     <Navbar bg="" expand="lg" className="navigation fixed-top">
       <>{isAuthenticated ? authLinks : guestLinks}</>

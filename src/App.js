@@ -33,6 +33,7 @@ import Alert from "./components/Alert";
 import Messages from "./components/messages/Messages"
 import PrivateRoute from "./components/routing/PrivateRoute";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AdminProfiles from "./components/AdminProfiles";
 
 const App = () => {
   if (localStorage.token) {
@@ -88,7 +89,8 @@ const App = () => {
         ></PrivateRoute>
         <PrivateRoute exact path="/posts" component={Posts}></PrivateRoute>
         <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
-        <PrivateRoute exact path="/messages" component={Messages}></PrivateRoute>
+        <PrivateRoute exact path="/admin/profiles" component={AdminProfiles}></PrivateRoute>
+        {/* <PrivateRoute exact path="/messages" component={Messages}></PrivateRoute> */}
         <Route component={NotFound}></Route>
       </Switch>
       <Footer />
