@@ -82,6 +82,27 @@ export const deletePost = (id) => async (dispatch) => {
   }
 };
 
+// delete post admin
+
+export const deletePostAdmin = (id) => async (dispatch) => {
+  try {
+    await axios.delete(`http://localhost:4000/posts/admin/${id}`);
+
+    dispatch({
+      type: DELETE_POST,
+      payload: id,
+    });
+
+    dispatch(setAlert("Post Removed", "success"));
+  } catch (err) {
+    dispatch({
+      type: POST_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+
 // Add post
 export const addPost = (formData) => async (dispatch) => {
   const config = {

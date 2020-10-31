@@ -1,4 +1,4 @@
-import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE,GET_PROFILES, CLEAR_PROFILE } from "../actions/types";
+import { GET_PROFILE, PROFILE_ERROR, UPDATE_PROFILE,GET_PROFILES,DELETE_PROFILE, CLEAR_PROFILE } from "../actions/types";
 
 const initialState = {
   profile: null,
@@ -35,6 +35,13 @@ export const profile= (state = initialState, action) =>{
         ...state,
         profile:null,
         loading:false,
+      };
+
+    case DELETE_PROFILE:
+      return{
+        ... state,
+        profiles: state.profiles.filter(profile => profile.id !== action.payload),
+        loading: false
       }
 
 

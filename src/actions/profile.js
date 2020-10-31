@@ -6,6 +6,7 @@ import {
   GET_PROFILES,
   PROFILE_ERROR,
   UPDATE_PROFILE,
+  DELETE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
 } from "./types";
@@ -155,6 +156,26 @@ export const deleteExperience = (id) => async (dispatch) => {
     dispatch({
       type: PROFILE_ERROR,
       payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// delete profile admin
+
+export const deleteProfile = (_id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`http://localhost:4000/profiles/${_id}`);
+
+    dispatch({
+      type: DELETE_PROFILE,
+      payload: res.data,
+    });
+
+    dispatch(setAlert("Profile Removed", "success"));
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };

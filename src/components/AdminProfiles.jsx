@@ -1,15 +1,25 @@
 import React , {useEffect} from 'react'
 import {connect} from "react-redux"
- import { getProfiles } from "../actions/profile";
+ import { getProfiles,deleteProfile } from "../actions/profile";
 //  import { setAlert} from "../../actions/alert";
  import {Container, Row,Col, Table,Button} from "react-bootstrap"
  import Loader from "./Loader"
 
-const AdminProfiles = ({getProfiles, profile:{profiles,loading,error}}) => {
+
+const AdminProfiles = ({getProfiles, deleteProfile,auth, profile:{profile, profiles,loading,error}}) => {
+
+    const {isAuthenticated, user} = auth
 
     useEffect(()=>{
         getProfiles()
     },[getProfiles])
+
+
+    const deleteHandler = (id) => {
+        if (window.confirm('Are you sure')) {
+          deleteProfile(id)
+        }
+      }
 
     return (
         <Container style={{marginTop:"150px"}}>
@@ -45,14 +55,17 @@ const AdminProfiles = ({getProfiles, profile:{profiles,loading,error}}) => {
                     <td>{profile.dateOfBirth}</td>
                     <td>{profile.location}</td>
                     <td>
-                     
-                      <Button
-                        variant='danger'
-                        className='btn-sm'
-                        // onClick={() => deleteHandler(profile._id)}
-                      >
-                        <i className='fa fa-trash'></i>
-                      </Button>
+
+                    { isAuthenticated && user.isAdmin &&
+                    <Button
+                    variant='danger'
+                    className='btn-sm'
+                    
+                    onClick={() => deleteHandler(profile._id)}
+                  >
+                    <i className='fa fa-trash'></i>
+                  </Button>}
+                      
                     </td>
                   </tr>
                 ))}
@@ -66,7 +79,8 @@ const AdminProfiles = ({getProfiles, profile:{profiles,loading,error}}) => {
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  auth: state.auth
 });
 
 
-export default connect(mapStateToProps, {getProfiles}) (AdminProfiles)
+export default connect(mapStateToProps, {getProfiles,deleteProfile}) (AdminProfiles)
