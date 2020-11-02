@@ -20,7 +20,7 @@ export const loadUser = () => async (dispatch) => {
     setAuthToken(localStorage.token);
   }
   try {
-    const res = await axios.get("http://localhost:4000/auth");
+    const res = await axios.get("https://vast-bayou-47622.herokuapp.com/auth");
     console.log("user response", res.data);
     dispatch({
       type: USER_LOADED,
@@ -38,7 +38,7 @@ export const loadUser = () => async (dispatch) => {
 export const getUsers = () => async (dispatch) => {
   
   try {
-    const res = await axios.get("http://localhost:4000/users");
+    const res = await axios.get("https://vast-bayou-47622.herokuapp.com/users");
     console.log("users are", res.data);
     dispatch({
       type: GET_USERS,
@@ -62,7 +62,7 @@ export const register = ({ name, username, email, password}) => async (dispatch)
 
   try {
     const res = await axios.post(
-      "http://localhost:4000/users/register",
+      "https://vast-bayou-47622.herokuapp.com/register",
       body,
       config
     );
@@ -94,7 +94,7 @@ export const login = (email, password) => async (dispatch) => {
 
   try {
     const res = await axios.post(
-      "http://localhost:4000/auth/login",
+      "https://vast-bayou-47622.herokuapp.com/auth/login",
       body,
       config
     );

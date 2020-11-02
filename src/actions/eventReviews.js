@@ -21,7 +21,7 @@ export const createEventReview = (eventId, review) => async (dispatch) => {
     console.log(review)
 
     await axios.post(
-      `http://localhost:4000/events/${eventId}/reviews`,
+      `https://vast-bayou-47622.herokuapp.com/events/${eventId}/reviews`,
       review,
       config
     );

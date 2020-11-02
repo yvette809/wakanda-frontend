@@ -164,7 +164,7 @@ export const deleteExperience = (id) => async (dispatch) => {
 
 export const deleteProfile = (_id) => async (dispatch) => {
   try {
-    const res = await axios.delete(`http://localhost:4000/profiles/${_id}`);
+    const res = await axios.delete(`https://vast-bayou-47622.herokuapp.com/profiles/${_id}`);
 
     dispatch({
       type: DELETE_PROFILE,

@@ -86,7 +86,7 @@ export const deletePost = (id) => async (dispatch) => {
 
 export const deletePostAdmin = (id) => async (dispatch) => {
   try {
-    await axios.delete(`http://localhost:4000/posts/admin/${id}`);
+    await axios.delete(`https://vast-bayou-47622.herokuapp.com/posts/admin/${id}`);
 
     dispatch({
       type: DELETE_POST,
