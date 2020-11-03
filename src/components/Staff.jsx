@@ -39,25 +39,25 @@ const Staff = () => {
         <h1 className="text-white">The Driving Force</h1>
       </div>
 
-      <Row className=" text-white mt-3 staff_row ">
+      <Row className=" text-white mt-3 staff_row d-flex ">
         <Col xs={12} lg={4} className="mb-3">
           <div classname="card " id="staff_1 ">
             <img
               src={chm}
               alt="chairman"
-              className="img-fluid"
-              style={{borderRadius: "50%", height:"50vh"}}
+              className="img-fluid rounded-circle"
+             
             />
           </div>
         </Col>
         <Col xs={12} lg={6} className="text-dark " data-aos="flip-down">
           <div className="staff_profile">
-            <h4>
+            <h4 >
               {" "}
               <strong>Name:</strong> Emmanuel Mukumu
-            </h4>
-            <p>
-              <strong>Title:</strong> Chairman
+            </h4><br/>
+            <p  className="mb-sm-4">
+              <strong >Title:</strong> Chairman
             </p>
             <div id="cd1">
               <div  id="cd2">
@@ -101,8 +101,8 @@ const Staff = () => {
             <h4 className= "text-dark">
               {" "}
               <strong>Name:</strong> Ngwa McDonald
-            </h4>
-            <p>
+            </h4><br/>
+            <p id = "chairman">
               <strong>Title:</strong> Team Manager
             </p>
             <div id="cd1">
@@ -148,7 +148,7 @@ const Staff = () => {
             <img
               src={mgr}
               alt="team manager"
-              className="img-fluid"
+              className="img-fluid  rounded-circle "
             />
           </div>
         </Col>
@@ -156,7 +156,7 @@ const Staff = () => {
       <Row className="mb-3  text-white staff_row">
         <Col lg={4}>
           <div classname="card" id="staff_3">
-            <img src={coach} alt="coach" className="img-fluid" />
+            <img src={coach} alt="coach" className="img-fluid  rounded-circle" />
           </div>
         </Col>
         <Col lg={6} className="text-dark " data-aos="zoom-in">
@@ -164,7 +164,7 @@ const Staff = () => {
             <h4>
               {" "}
               <strong>Name:</strong>Ojong Roland.O
-            </h4>
+            </h4><br/>
             <p>
               <strong>Title:</strong> Head Coach
             </p>
@@ -212,7 +212,7 @@ const Staff = () => {
             <h4>
               {" "}
               <strong>Name:</strong> Sidibe Michael
-            </h4>
+            </h4><br/>
             <p>
               <strong>Title:</strong> Assistant Coach
             </p>
@@ -243,7 +243,7 @@ const Staff = () => {
             )}
             <button
               onClick={(e) => toggleOpenButton(true)}
-              className=" staff_button bg-danger"
+              className=" staff_button bg-danger  rounded-circle"
             >
               Connect...
             </button>
@@ -255,7 +255,7 @@ const Staff = () => {
         </Col>
         <Col lg={4}>
           <div classname="card " id="staff_4">
-            <img src={mike} alt="assistant coach" className="img-fluid" />
+            <img src={mike} alt="assistant coach" className="img-fluid  rounded-circle" />
           </div>
         </Col>
       </Row>

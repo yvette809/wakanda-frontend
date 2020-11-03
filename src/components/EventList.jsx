@@ -50,7 +50,7 @@ const EventList = ({ events, loading, deleteEvent }) => {
                     Date posted:{" "}
                     <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
                   </small> */}
-                  <Link to={`/eventdetails/${evt._id}`}><button className= "read_more">View Details</button></Link>
+                  <Link to={`/eventdetails/${evt._id}`}><button className= "read_more details">View Details</button></Link>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>

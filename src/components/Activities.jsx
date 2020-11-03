@@ -19,7 +19,7 @@ const Activities = () => {
         <Row className="text-dark my-5">
           <Col className="" xs={12} lg={6}>
             <div className="kids_profile" data-aos="fade-in">
-              <img src={kids} alt="kidsimage" />
+              <img src={kids} alt="kidsimage" className= "img-fluid" />
             </div>
           </Col>
           <Col className="mb-3 kids_div" xs={12} lg={6}>
@@ -52,7 +52,7 @@ const Activities = () => {
           </Col>
           <Col xs={12} lg={6} data-aos="fade-in">
             <div className="foot_img">
-              <img src={activity} alt="footimage" />
+              <img src={activity} alt="footimage" className= "img-fluid" />
             </div>
           </Col>
         </Row>
@@ -62,6 +62,7 @@ const Activities = () => {
               <img
                 src="https://s.abcnews.com/images/Sports/kobe-bryant-lakers-mo_hpEmbed_20200126-233715_4x3_992.jpg"
                 alt="basketballimage"
+                className= "img-fluid"
               />
             </div>
           </Col>

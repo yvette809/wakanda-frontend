@@ -32,8 +32,7 @@ p {
   font-size: 2rem;
 }
 
-#cd1 {
-}
+
 
 #cd2 {
   visibility: hidden;
@@ -565,29 +564,27 @@ ul li {
   min-height: 1200px;
   overflow: hidden;
   /* background-color: rgb(19, 13, 13); */
-  background-color: #ebebeb;
+  background-color: #880c0c;
 }
 
 #staff_1 img,
 #staff_2 img,
 #staff_3 img,
 #staff_4 img {
-  border-radius: 50%;
   object-fit: cover;
   overflow: hidden;
-  height: 50vh !important;
 }
 
-.staff_row {
+/* .staff_row {
   margin-left: 200px;
-}
-
+} */
+/* 
 .staff_profile {
   position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
+} */
 .staff_profile p,
 h4 {
   font-size: 1.2rem;
@@ -733,6 +730,14 @@ Card {
     overflow: hidden;
   }
 
+.basket_img img{
+  height: 300px;
+  width: 320px;
+  overflow: hidden;
+}
+
+
+
   .kids_profile img,
   .foot_img img .basket_img img {
     width: 20rem;
@@ -742,18 +747,31 @@ Card {
   #staff_2 img,
   #staff_3 img,
   #staff_4 img {
-    display: flex;
-    flex-direction: column;
-    justify-self: center;
-    align-items: center;
-    height: 20vh !important;
-    width: 300px !important;
-    overflow: auto;
+    max-height: 300px;
   }
+
+  
+  #cd2 {
+    /* visibility: visible; */
+    display: none;
+  }
+
+  #cd2::before{
+    color: red;
+    content: "Hello";
+  }
+
 
   .read_more {
     padding: 1.5px !important;
     font-size: 0.8rem;
+  }
+   .details{
+    padding: 1px !important;
+    height: 50px!important;
+    width: 150px !important;
+    color:white;
+    font-weight: 800;
   }
 
   .staff_profile p,
@@ -772,7 +790,6 @@ Card {
     margin-right: 20px;
     width: 100px;
     padding: 5px 0;
-    
   }
 
   .read_more {
@@ -851,23 +868,6 @@ Card {
     font-size: 1.2rem;
   }
 
-  /* .register_input {
-    width: 100%;
-    background-color: transparent;
-    border: 2px solid white;
-    font-weight: 100;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #register_section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-width: 500px !important;
-    height: 100%register_input;
-  } */
   .abtimg {
     height: 95%;
     width: 80%;
@@ -935,11 +935,13 @@ Card {
   }
   .about_wak h4,
   p {
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
   }
 
   #register_button {
-    display: none !important;
+   border-radius: 5px !important;
+   justify-content: center;
+   color: blue;
   }
 
   /* carousel */
@@ -969,6 +971,7 @@ Card {
   .third_card {
     max-width: 8rem;
   }
+ 
 
   input.event_form {
     text-align: center;
@@ -1001,7 +1004,8 @@ Card {
   #staff_3,
   #staff_4 {
     margin-bottom: 40px;
-    width: 80%;
+    width: 40%;
+    
   }
   .staff_button {
     margin-bottom: 20px;
