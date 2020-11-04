@@ -41,7 +41,7 @@ const Staff = () => {
       </div>
       <Row>
         <Col xs={12} md={6} lg={3}>
-        <Card style={{ width: '18rem' }} >
+        <Card style={{ width: '18rem' }} className="mb-3" >
   <Card.Img variant="top" src={mgr} style={{height: "35vh"}}/>
   <Card.Body>
     <Card.Title><strong>Emmanuel Mukumu</strong></Card.Title>
@@ -74,7 +74,7 @@ const Staff = () => {
         </Col>
       
         <Col xs={12} md={6} lg={3}>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }}  className="mb-3">
   <Card.Img variant="top" src={mgr} style={{height: "35vh"}}/>
   <Card.Body>
     <Card.Title><strong>Ngwa McDonald</strong></Card.Title>
@@ -106,7 +106,7 @@ const Staff = () => {
 </Card>
         </Col>
         <Col xs={12} md={6} lg={3}>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }}   className="mb-3">
   <Card.Img variant="top" src={coach} style={{height: "35vh"}}/>
   <Card.Body>
     <Card.Title><strong>Ojong Roland</strong></Card.Title>
@@ -138,7 +138,7 @@ const Staff = () => {
        </Card>
         </Col>
         <Col xs={12} md={6} lg={3}>
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '18rem' }}  className="mb-3">
   <Card.Img variant="top" src={mike} style={{height: "35vh"}}/>
   <Card.Body>
     <Card.Title><strong>Sidibe Michael</strong></Card.Title>

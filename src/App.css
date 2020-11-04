@@ -568,7 +568,7 @@ ul li {
   padding: 5px 20px;
   border-radius: 10px;
   font-size: 1.5rem;
-  background-color:#dc3545;
+  background-color: #dc3545;
   color: white;
   border: 1px solid blue;
 }
@@ -727,7 +727,6 @@ Card {
     font-weight: 800;
   }
 
-
   .staff_button {
     font-size: 1.2rem;
     display: inline-flex;
@@ -748,7 +747,6 @@ Card {
   }
 
   #activities_section {
-    
     justify-content: center;
   }
   .activities_corner {
@@ -780,6 +778,7 @@ Card {
   .activities_section {
     padding-bottom: 0px;
   }
+
   .football_div {
     padding-top: -48px;
     margin-top: -48px;
@@ -943,7 +942,6 @@ Card {
   .activities_heading {
     font-size: 2rem !important;
   }
-
 
   .staff_button {
     margin-bottom: 20px;
