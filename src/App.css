@@ -561,47 +561,19 @@ ul li {
   transform: scalez(0.5);
 }
 .staff_section {
-  min-height: 1200px;
-  overflow: hidden;
-  /* background-color: rgb(19, 13, 13); */
-  background-color: #880c0c;
-}
-
-#staff_1 img,
-#staff_2 img,
-#staff_3 img,
-#staff_4 img {
-  height: 50vh !important;
-  object-fit: cover;
-  overflow: hidden;
-}
-
-/* .staff_row {
-  margin-left: 200px;
-} */
-/* 
-.staff_profile {
-  position: relative;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
-.staff_profile p,
-h4 {
-  font-size: 1.2rem;
-  color: black;
+  background-color: rgb(238, 229, 229);
 }
 
 .staff_button {
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 10px;
   font-size: 1.5rem;
-  background-color: transparent;
+  background-color:#dc3545;
   color: white;
   border: 1px solid blue;
 }
 .staff_button:hover {
-  background-color: whitesmoke;
+  background-color: rgb(56, 11, 11);
   opacity: 0.6;
   border: 2px solid rgb(38, 54, 5);
 }
@@ -742,22 +714,6 @@ Card {
     width: 20rem;
     height: auto;
   }
-  #staff_1 img,
-  #staff_2 img,
-  #staff_3 img,
-  #staff_4 img {
-    max-height: 300px;
-  }
-
-  #cd2 {
-    /* visibility: visible; */
-    display: none;
-  }
-
-  #cd2::before {
-    color: red;
-    content: "Hello";
-  }
 
   .read_more {
     padding: 1.5px !important;
@@ -771,15 +727,8 @@ Card {
     font-weight: 800;
   }
 
-  .staff_profile p,
-  h4 {
-    font-size: 1.2rem;
-    overflow: hidden;
-    display: inline;
-    flex-wrap: nowrap;
-  }
 
-  button.staff_button {
+  .staff_button {
     font-size: 1.2rem;
     display: inline-flex;
     justify-content: center;
@@ -799,7 +748,7 @@ Card {
   }
 
   #activities_section {
-    /* margin-right: -80px; */
+    
     justify-content: center;
   }
   .activities_corner {
@@ -995,21 +944,11 @@ Card {
     font-size: 2rem !important;
   }
 
-  #staff_1,
-  #staff_2,
-  #staff_3,
-  #staff_4 {
-    margin-bottom: 40px;
-    width: 40%;
-  }
+
   .staff_button {
     margin-bottom: 20px;
   }
 
-  .staff_profile p,
-  h4 {
-    font-size: 1.7rem !important;
-  }
   blockquote {
     font-size: 1.5rem !important;
   }
