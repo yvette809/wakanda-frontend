@@ -32,8 +32,6 @@ p {
   font-size: 2rem;
 }
 
-
-
 #cd2 {
   visibility: hidden;
 }
@@ -159,14 +157,16 @@ Card#members_card {
 }
 
 .about_us_img {
-  background-image: url("./images/about.jpg");
+  background-image: url("https://assets.stickpng.com/images/580b585b2edbce24c47b2633.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .about_us {
   background-color: rgba(255, 192, 203, 0.068);
   /* opacity: 0.9; */
   font-weight: bold;
   color: teal !important;
-  box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue;
+  /* box-shadow: 10px 10px 20px teal, -10px -10px 20px aliceblue; */
   border-radius: 7%;
 }
 
@@ -361,38 +361,38 @@ div.event_img img {
 
 .vision_1 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 1s;
+  animation: animate2 1s forwards ease-in 6s;
   font-weight: 800;
   color: teal;
 }
 
 .vision_2 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 2s;
+  animation: animate2 1s forwards ease-in 8s;
   font-weight: 800;
   color: teal;
 }
 .vision_3 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 3s;
+  animation: animate2 1s forwards ease-in 10s;
   font-weight: 800;
   color: teal;
 }
 .vision_4 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 4s;
+  animation: animate2 1s forwards ease-in 11s;
   font-weight: 800;
   color: teal;
 }
 .vision_5 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 5s;
+  animation: animate2 1s forwards ease-in 13s;
   font-weight: 800;
   color: teal;
 }
 .vision_6 {
   transform: translateY(-1200px);
-  animation: animate2 1s forwards ease-in 6s;
+  animation: animate2 1s forwards ease-in 15s;
   font-weight: 800;
   color: teal;
 }
@@ -571,6 +571,7 @@ ul li {
 #staff_2 img,
 #staff_3 img,
 #staff_4 img {
+  height: 50vh !important;
   object-fit: cover;
   overflow: hidden;
 }
@@ -730,13 +731,11 @@ Card {
     overflow: hidden;
   }
 
-.basket_img img{
-  height: 300px;
-  width: 320px;
-  overflow: hidden;
-}
-
-
+  .basket_img img {
+    height: 300px;
+    width: 320px;
+    overflow: hidden;
+  }
 
   .kids_profile img,
   .foot_img img .basket_img img {
@@ -750,27 +749,25 @@ Card {
     max-height: 300px;
   }
 
-  
   #cd2 {
     /* visibility: visible; */
     display: none;
   }
 
-  #cd2::before{
+  #cd2::before {
     color: red;
     content: "Hello";
   }
-
 
   .read_more {
     padding: 1.5px !important;
     font-size: 0.8rem;
   }
-   .details{
+  .details {
     padding: 1px !important;
-    height: 50px!important;
+    height: 50px !important;
     width: 150px !important;
-    color:white;
+    color: white;
     font-weight: 800;
   }
 
@@ -939,9 +936,9 @@ Card {
   }
 
   #register_button {
-   border-radius: 5px !important;
-   justify-content: center;
-   color: blue;
+    border-radius: 5px !important;
+    justify-content: center;
+    color: blue;
   }
 
   /* carousel */
@@ -971,7 +968,6 @@ Card {
   .third_card {
     max-width: 8rem;
   }
- 
 
   input.event_form {
     text-align: center;
@@ -1005,7 +1001,6 @@ Card {
   #staff_4 {
     margin-bottom: 40px;
     width: 40%;
-    
   }
   .staff_button {
     margin-bottom: 20px;
