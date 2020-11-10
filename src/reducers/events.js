@@ -5,7 +5,26 @@ import {
   EVENTS_CREATE_REVIEW_RESET,
   EVENT_DETAILS_SUCCESS,
   EVENT_DETAILS_FAIL,
+  EVENTS_SUCCESS,
+  EVENTS_FAIL
 } from "../actions/types";
+
+export const eventListReducer = (
+  state={events:[]},action
+)=>{
+  switch(action.type){
+    case EVENTS_SUCCESS:
+      return{
+        loading:false, events: action.payload
+      };
+    case EVENTS_FAIL:
+      return{
+        loading:false, error:action.payload
+      }
+      default:
+        return state
+  }
+}
 
 export const eventDetailsReducer = (
   state = { event: { reviews: [] } },

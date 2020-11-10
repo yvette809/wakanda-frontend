@@ -3,7 +3,7 @@ import alert from "./alert";
 import {auth} from "./auth";
 import {profile} from "./profile";
 import {post} from "./post";
-import {eventsReviewCreateReducer,eventDetailsReducer} from "./events"
+import {eventsReviewCreateReducer,eventDetailsReducer,eventListReducer} from "./events"
 import {message} from "./message";
 // import EventDetails from "../pages/EventDetails";
 export default combineReducers({
@@ -13,5 +13,6 @@ export default combineReducers({
   post: post,
   message: message,
   eventReviewCreate:eventsReviewCreateReducer,
-  eventDetails:eventDetailsReducer
+  eventDetails:eventDetailsReducer,
+  events:eventListReducer
 });

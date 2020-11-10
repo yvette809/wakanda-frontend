@@ -29,6 +29,8 @@ const EventDetails = ({
 
   const { isAuthenticated ,user} = auth;
   const { loading, error, event } = eventDetails;
+
+  console.log("Event", event.user )
   const { reviews } = event;
 
   const {
@@ -142,6 +144,9 @@ const EventDetails = ({
                   <ListGroup.Item>Time:{event.time}</ListGroup.Item>
                   <ListGroup.Item>
                     Description:{event.description}
+                  </ListGroup.Item>
+                  <ListGroup.Item>
+                    created By:<strong>{user.name}</strong>
                   </ListGroup.Item>
                 </ListGroup>
               </Col>

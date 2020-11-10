@@ -46,7 +46,7 @@ const Staff = () => {
   <Card.Body>
     <Card.Title><strong>Emmanuel Mukumu</strong></Card.Title>
     <Card.Text>
-      Mukumu is an ex-referee and the achitect of WSK.
+      Mukumu is an ex-referee and the chairman of WSK.
     </Card.Text>
     <Card.Text>
     <blockquote className="text-danger font-weight-bolder">

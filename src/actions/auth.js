@@ -62,7 +62,7 @@ export const register = ({ name, username, email, password}) => async (dispatch)
 
   try {
     const res = await axios.post(
-      "https://vast-bayou-47622.herokuapp.com/register",
+      "https://vast-bayou-47622.herokuapp.com/users/register",
       body,
       config
     );

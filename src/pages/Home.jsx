@@ -84,7 +84,8 @@ const Home = ({ setAlert , isAuthenticated}) => {
              "Content-Type": "application/json"
            }
          }
-         const body = JSON.stringify(newE)
+         const body = JSON.stringify(newEvent)
+         console.log('BODY', body)
          const res = await axios.post("http://localhost:4000/events", body, config)
          console.log(res.data)
          setLoading(false)
@@ -447,9 +448,9 @@ const Home = ({ setAlert , isAuthenticated}) => {
           </Container>
         </div>
       </div>
-
-      <Staff />
       <Sponsors />
+      <Staff />
+    
       {/* <Staff2/> */}
       {/* <div className=" container-fluid bg-danger pics_container">
         <div id="contact_img_section" style={{ padding: "150px" }}>

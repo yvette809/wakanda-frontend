@@ -12,10 +12,8 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
 
   const authLinks = (
     <>
-      <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Link to="/" className="navbar-brand">
-          <img
+      <Link to="/" className="navbar-brand">
+      <img
             src={logo}
             alt="wakanda logo"
             className="img-fluid "
@@ -24,7 +22,12 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
               width: "10%",
             }}
           />
-        </Link>
+         
+         </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav"/>
+      <Navbar.Collapse id="basic-navbar-nav">
+    
+      
         <Nav className="ml-auto d-flex justify-content-end align-items-end" id="navi">
           <Link to="/news" className="nav-link">
             News
@@ -83,9 +86,7 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
 
   const guestLinks = (
     <>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Link to="/" className="navbar-brand">
+     <Link to="/" className="navbar-brand">
           {/* <Navbar.Brand href="#home"> */}
           <img
             src={logo}
@@ -96,6 +97,10 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
           />
           {/* </Navbar.Brand> */}
         </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+     
+      <Navbar.Collapse id="basic-navbar-nav">
+        
         <Nav className=" ml-auto d-flex justify-content-lg-end " id="nav_links">
           <Link to="/" className="nav-link">
             Home
