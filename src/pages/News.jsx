@@ -11,7 +11,7 @@ const News= ()=> {
            setLoading(true)
            try{
                
-            const response = await fetch(`http://newsapi.org/v2/top-headlines?country=se&category=sports&apiKey=8e61a71b96ab40f5a70934daa426d498`)
+            const response = await fetch(`https://newsapi.org/v2/top-headlines?country=se&category=sports&apiKey=8e61a71b96ab40f5a70934daa426d498`)
             if (response.ok){
                 const news = await response.json()
                   setNews(news.articles)

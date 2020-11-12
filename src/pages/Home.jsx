@@ -454,8 +454,9 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
           </Container>
         </div>
       </div>
-      <Sponsors />
       <Staff />
+      <Sponsors />
+     
     
       {/* <Staff2/> */}
       {/* <div className=" container-fluid bg-danger pics_container">

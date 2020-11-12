@@ -20,8 +20,8 @@ const Membership = () => {
       </div>
       <Container>
         <Row>
-          <Col lg={4}>
-            <Card style={{ width: "20rem" }} id="members_card" data-aos="flip-down">
+          <Col xs={12}lg={4} md={6}>
+            <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -40,7 +40,7 @@ const Membership = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={4}>
+          <Col xs={12} md={6} lg={4}>
             <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
               <Card.Body>
                 <Card.Title>
@@ -74,7 +74,7 @@ const Membership = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={4}>
+          <Col xs={12} md={6} lg={4}>
             <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
               <Card.Body>
                 <Card.Title>
@@ -108,89 +108,15 @@ const Membership = () => {
             </Card>
           </Col>
         </Row>
-        {/* <p>
-            At WSK, we take things seriously.It is for this reason we welcome
-            only registered members
-      </p> 
-          <p>Annula membership fees : 300kr</p>
-          <h3>The benefits of registration include:</h3>
-          <ul className="d-inline-flex mr-5">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Free Access to The WSK Training facility</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Access to free training sessions</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Opportunity to work with our qualified coaches</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Free Integration advice from our mentors</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Opportunity to meet other sports lovers</li>
-            </span>
-          </ul>  */}
+       
       </Container>
     </>
   );
 
   {
-    /* <p>
-            At WSK, we take things seriously.It is for this reason we welcome
-            only registered members
-      </p> 
-          <p>Annula membership fees : 300kr</p>
-          <h3>The benefits of registration include:</h3>
-          <ul className="d-inline-flex mr-5">
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Free Access to The WSK Training facility</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Access to free training sessions</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Opportunity to work with our qualified coaches</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Free Integration advice from our mentors</li>
-            </span>
-            <span>
-              <i className="fa  fa-2x  fa-angle-double-right mr-2"></i>
-            </span>
-            <span>
-              <li>Opportunity to meet other sports lovers</li>
-            </span>
-          </ul> */
+    
   }
-  // </Container>
+  
 };
 
 export default Membership;

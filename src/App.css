@@ -127,19 +127,19 @@ p {
   padding: 150px 0 150px 150px;
 }
 
-#members_card {
+/* #members_card {
   border-left: none;
   border-bottom: none;
   border-top: none;
   border-right: 1px solid gray !important;
-}
+} */
 Card#members_card {
   height: 20%;
   object-fit: contain;
 }
 .members_button {
-  position: relative;
-  align-content: flex-end;
+  position: absolute;
+  top: 90px;
 }
 .img_div {
   height: 60vh;
@@ -586,6 +586,7 @@ ul li {
   background-size: cover;
   background-attachment: fixed;
   height: 1200px;
+  
 }
 
 /* ul li {
@@ -876,6 +877,12 @@ Card {
     right: 50px;
     margin: auto;
   }
+  .members_button{
+    margin-top: 515px;
+    right: 60px;
+    background-color: #dc3545;
+    color:#ffffff
+  }
 
   /* .nav-link{
     justify-content: end;
@@ -1038,5 +1045,11 @@ Card {
   .intro_header h1 {
     width: 300px !important;
     font-size: 1.5px !important;
+  }
+  .members_button{
+    margin-top: 515px;
+    right: 300px;
+    background-color: #dc3545;
+    color:#ffffff
   }
 }

@@ -10,13 +10,10 @@ const ProfileItem = ({ profile: {
 }, }) => {
 
  
-
-  console.log("the profileUser is", _id,name,avatar)
   
   return (
       <div className="profile bg-light">
 
-        
       <img
         src={`http://localhost:4000/profiles/${ _id}.png`}
         alt=""
@@ -28,7 +25,7 @@ const ProfileItem = ({ profile: {
 
         <p className="my-1">{location && <span>{location}</span>}</p>
 
-        <Link to={` /profile/${_id}`} className="btn btn-primary">
+        <Link to={`/profile/${_id}`} className="btn btn-primary">
           View Profile
         </Link>
       </div>
