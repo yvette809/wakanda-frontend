@@ -86,7 +86,7 @@ const EventDetails = ({
       "http://localhost:4000/events/" + newEvent.id,
       {
         method: "PUT",
-        body: JSON.stringify(initialEvent),
+        body: JSON.stringify(newEvent),
         "Content-Type": "application/json",
       }
     );

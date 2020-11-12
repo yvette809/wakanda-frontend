@@ -633,7 +633,7 @@ ul li {
   font-weight: 300px;
   letter-spacing: 0;
   line-height: 1.5;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 #rules li {
@@ -864,6 +864,17 @@ Card {
   }
   .vision_6 {
     transform: translateY(0px);
+  }
+  .training,.faqs{
+    display: none;
+  }
+
+
+  .training_button{
+    position: absolute;
+    bottom: 60px;
+    right: 50px;
+    margin: auto;
   }
 
   /* .nav-link{

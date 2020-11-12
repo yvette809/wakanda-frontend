@@ -9,11 +9,11 @@ const Football = () => {
       <div id="football_sessions" className="mb-5">
         <div className="foot_overlay">
           <Container className="mb-5 text-center">
-            <h1 className="text-white font-weight-bolder">FAQS</h1>
-            <h1 className="text-white">
+            <h1 className="text-white font-weight-bolder faqs">FAQS</h1>
+            <h1 className="text-white training">
               Things You Should Know Before Coming for Trainings
             </h1>
-            <Button>COME TRAIN WITH US</Button>
+            <Button  className= "training_button">COME TRAIN WITH US</Button>
           </Container>
         </div>
       </div>
@@ -27,7 +27,7 @@ const Football = () => {
         </div>
 
         <Row>
-          <Col lg={6} className="mb-2">
+          <Col lg={6} xs={12} className="mb-2">
             <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
@@ -42,18 +42,13 @@ const Football = () => {
                   ></i>
                   <h2 className="instructions mb-2">FIRST THINGS FIRST</h2>
                 </Card.Title>
-
-                <Card.Text>
+                <Card.Text >
                   <p className="more_instructions mb-3">
                     We have football trainings every wednesday from{" "}
-                    <strong>19.00-21.00 </strong>and saturdays from{" "}
-                    <strong>10.00-12.00 </strong>. Football Trainings is only
-                    for registered members.If you want to be part of the team ,
-                    <Link to="/register">
-                      {" "}
-                      <Button>register</Button>
-                    </Link>
-                    . It is important to come atleast 15 minutes before time in
+                    19.00-21.00 and saturdays from{" "}
+                    10.00-12.00 . Football Trainings is only
+                    for registered members.If you want to be part of the team ,make sure you do well to register.
+                    It is important to come atleast 15 minutes before time in
                     other for proper game planning. Football is our main focus
                     so here we lay much emphasis on discipline
                   </p>
@@ -61,7 +56,7 @@ const Football = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={6} className="mb-2">
+          <Col xs={12} lg={6} className="mb-2">
             <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
@@ -91,7 +86,7 @@ const Football = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6} className="mb-2 ">
+          <Col  xs={12} lg={6} className="mb-2 ">
             <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
@@ -120,7 +115,7 @@ const Football = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Col lg={6} className="mb-2">
+          <Col  xs={12} lg={6} className="mb-2">
             <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>
@@ -152,7 +147,7 @@ const Football = () => {
           </Col>
         </Row>
         <Row>
-          <Col lg={6} className="offset-lg-3 rules_col">
+          <Col  xs={12} lg={6} className="offset-lg-3 rules_col">
             <Card style={{ width: "30rem" }} className="border-0 kids_card">
               <Card.Body>
                 <Card.Title>

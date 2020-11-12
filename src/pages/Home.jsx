@@ -3,6 +3,7 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { setAlert } from "../actions/alert";
+import{getEvents} from "../actions/eventReviews"
 import { connect } from "react-redux";
 import Staff from "../components/Staff";
 // import Staff2 from "../components/Staff2";
@@ -23,14 +24,19 @@ import {
 } from "react-bootstrap";
 import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const Home = ({ setAlert , isAuthenticated}) => {
+const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
+
+  // const {events, loading} = eventList
   // scroll animations
   useEffect(() => {
     AOS.init();
-  });
-  const [events, setEvents] = useState([]);
+    // getEvents()
+  },[getEvents]);
+   const [events, setEvents] = useState([]);
+ 
+  
  
   const newE={
     title:"",
@@ -90,6 +96,7 @@ const Home = ({ setAlert , isAuthenticated}) => {
          console.log(res.data)
          setLoading(false)
          setnewEvent(res.data)
+         setnewEvent(newE)
        }catch(error){
          console.log(error)
        }
@@ -97,33 +104,32 @@ const Home = ({ setAlert , isAuthenticated}) => {
      }
 
     
-  
 
-  // delete Event
+  // // delete Event
 
-  const deleteEvent = async (_id) => {
-    setLoading(true);
-    try {
-      const response = await fetch(`http://localhost:4000/events/${_id}`, {
-        method: "delete",
-      });
-      if (response.ok) {
-        const events = await response.json();
-        const targetedE = events.filter((event) => event._id !== _id);
-        setEvents(targetedE);
-      } else {
-        console.log("something went wrong");
-      }
+  // const deleteEvent = async (_id) => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await fetch(`http://localhost:4000/events/${_id}`, {
+  //       method: "delete",
+  //     });
+  //     if (response.ok) {
+  //       const events = await response.json();
+  //       const targetedE = events.filter((event) => event._id !== _id);
+  //       setEvents(targetedE);
+  //     } else {
+  //       console.log("something went wrong");
+  //     }
 
-    } catch (err) {
-      console.log(err);
-    }
-    setLoading(false);
-  };
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  //   setLoading(false);
+  // };
 
-  useEffect(() => {
-    deleteEvent();
-  }, []);
+  // useEffect(() => {
+  //   deleteEvent();
+  // }, []);
 
  
 
@@ -229,7 +235,7 @@ const Home = ({ setAlert , isAuthenticated}) => {
         <EventList
           events={events}
           loading={loading}
-          deleteEvent={deleteEvent}
+          // deleteEvent={deleteEvent}
         />
         <Modal show={showModal}>
           <Modal.Header closeButton onClick={() => setshowModal(false)}>
@@ -305,7 +311,7 @@ const Home = ({ setAlert , isAuthenticated}) => {
                 value={image}
                 name="file"
                 placeholder="Add file"
-                onChange={(e) => setnewEvent(e.currentTarget.value)}
+                onChange={(e) => setnewEvent(...newEvent, e.currentTarget.value)}
               /> */}
             </Form>
           </Modal.Body>
@@ -462,8 +468,9 @@ const Home = ({ setAlert , isAuthenticated}) => {
 };
 
 const mapStateToProps = (state) => ({
-  profile: state.profile,
-  isAuthenticated:state.auth.isAuthenticated
+  eventsList: state.eventsList,
+  isAuthenticated:state.auth.isAuthenticated,
+ 
 });
 
-export default connect(mapStateToProps, { setAlert })(Home);
+export default connect(mapStateToProps, { setAlert, getEvents })(Home);

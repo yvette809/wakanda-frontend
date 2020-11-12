@@ -5,6 +5,7 @@ import {
   EVENTS_CREATE_REVIEW_FAIL,
   EVENT_DETAILS_SUCCESS,
   EVENT_DETAILS_FAIL,
+  EVENTS_REQUEST,
   EVENTS_SUCCESS,
   EVENTS_FAIL
 } from "../actions/types";
@@ -65,18 +66,22 @@ export const listEventDetails = (_id) => async (dispatch) => {
 
 export const getEvents = () => async (dispatch) => {
   try {
+    dispatch({
+      type: EVENTS_REQUEST
+    });
     const res = await axios.get(
-      `https://vast-bayou-47622.herokuapp.com/events`
+      ` https://vast-bayou-47622.herokuapp.com/events`
     );
-
+      
     dispatch({
       type: EVENTS_SUCCESS,
-      payload: res.data,
+      payload: res.data
     });
   } catch (err) {
+    console.log(err)
     dispatch({
       type: EVENTS_FAIL
-      //   payload: { msg: err.response.statusText, status: err.response.status },
+      // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };

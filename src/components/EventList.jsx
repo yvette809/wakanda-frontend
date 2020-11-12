@@ -1,32 +1,30 @@
 import React from "react";
 import Event from "./Event";
+import Loader from "../components/Loader"
 import Moment from "react-moment";
 import {
   Container,
   Row,
   Carousel,
   Col,
-  Spinner,
   Card,
   Button,
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const EventList = ({ events, loading, deleteEvent }) => {
+
+  console.log("my events", events)
   if (events.length < 0 && loading) {
     return (
-      <div className="d-flex justify-content-center">
-        <Spinner animation="border" variant="danger" role="status">
-          <span className="sr-only ">Loading...</span>
-        </Spinner>
-      </div>
+      <Loader/>
     );
   }
 
   return (
     <Container fluid className="mb-2">
       <Carousel pause="hover" expand={"lg"}>
-        {events &&
+        {events && !loading  && 
           events.map((evt) => (
             // <Event key={evt.id} event={evt} />
 

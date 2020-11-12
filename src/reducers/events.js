@@ -5,24 +5,29 @@ import {
   EVENTS_CREATE_REVIEW_RESET,
   EVENT_DETAILS_SUCCESS,
   EVENT_DETAILS_FAIL,
+  EVENTS_REQUEST,
   EVENTS_SUCCESS,
   EVENTS_FAIL
 } from "../actions/types";
 
-export const eventListReducer = (
-  state={events:[]},action
-)=>{
-  switch(action.type){
-    case EVENTS_SUCCESS:
+
+
+export const eventListReducer = (state = { events: [] }, action) => {
+  switch (action.type) {
+    case EVENTS_REQUEST:
       return{
-        loading:false, events: action.payload
-      };
-    case EVENTS_FAIL:
-      return{
-        loading:false, error:action.payload
+        loading:true,
       }
-      default:
-        return state
+    case EVENTS_SUCCESS:
+      return {
+        loading: false,
+        events: action.payload
+  
+      }
+    case EVENTS_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
   }
 }
 

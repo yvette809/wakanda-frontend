@@ -8,11 +8,11 @@ const Basket = () => {
       <div id="basket_sessions" className="mb-5">
         <div className="basket_overlay">
           <Container className="mb-5 text-center">
-            <h1 className="text-white font-weight-bolder">FAQS</h1>
-            <h1 className="text-white">
+            <h1 className="text-white font-weight-bolder faqs">FAQS</h1>
+            <h1 className="text-white training">
             Things You Should Know Before Coming for Trainings
             </h1>
-            <Button>COME TRAIN WITH US</Button>
+            <Button className= "training_button">COME TRAIN WITH US</Button>
           </Container>
         </div>
       </div>
@@ -45,8 +45,8 @@ const Basket = () => {
                 <Card.Text>
                   <p className="more_instructions mb-3">
                     We have free basketball trainings every wednesday from{" "}
-                    <strong>17.00-19.00 </strong>and saturdays from{" "}
-                    <strong>12.00-14.00 </strong>. It is important to come
+                    17.00-19.00 and saturdays from{" "}
+                    12.00-14.00. It is important to come
                     atleast 15 minutes before time in other for proper game
                     planning
                   </p>
