@@ -92,7 +92,7 @@ const App = () => {
         <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
         <PrivateRoute exact path="/admin/profiles" component={AdminProfiles}></PrivateRoute>
         <PrivateRoute exact path="/admin/posts" component={AdminPosts}></PrivateRoute>
-        {/* <PrivateRoute exact path="/messages" component={Messages}></PrivateRoute> */}
+  
         <Route component={NotFound}></Route>
       </Switch>
       <Footer />
