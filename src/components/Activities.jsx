@@ -32,7 +32,7 @@ const Activities = () => {
                 skill-level.
               </p>
               <Link to="/kids">
-                <button className="read_more bg-danger">Read More</button>
+                <button className="read_more ">Read More</button>
               </Link>
             </div>
           </Col>
@@ -46,7 +46,7 @@ const Activities = () => {
                 spirit alive. At WSK, we believe in equality and mutual respect
               </p>
               <Link to="/football">
-                <button className="read_more bg-danger">Read More</button>
+                <button className="read_more">Read More</button>
               </Link>
             </div>
           </Col>
@@ -75,7 +75,7 @@ const Activities = () => {
                 team of 15 to 20 persons.
               </p>
               <Link to="/basketball">
-                <button className="read_more last_button bg-danger btn">
+                <button className="read_more last_button  btn">
                   Read More
                 </button>
               </Link>

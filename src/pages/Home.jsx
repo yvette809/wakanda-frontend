@@ -330,7 +330,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
         <>
         <h3>Share Your Events</h3>
          <button
-          className="btn-primary mb-4"
+          className="btn-primary mb-4 staff_button"
           onClick={() => setshowModal(true)}
           // style={{ visibility: "hidden" }}
         >

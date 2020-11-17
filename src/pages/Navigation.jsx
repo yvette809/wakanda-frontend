@@ -46,7 +46,7 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
           </Link> */}
           <Link to={`/profile/${user._id}`}>
              <img
-             src={`http://localhost:4000/profiles/${user && user._id}.png`}
+             src={` https://vast-bayou-47622.herokuapp.com/profiles/${user && user._id}.png`}
              alt="user picture"
              style={{ width: "40px", height: "40px", borderRadius: "50%" }}
              className="mb-2"

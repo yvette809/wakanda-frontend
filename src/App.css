@@ -542,17 +542,19 @@ ul li {
 }
 
 .read_more {
-  padding: 10px 20px;
+  padding: 5px 20px;
   border-radius: 10px;
   font-size: 1.5rem;
+  background-color: #073246;
   color: white;
-  background-color: transparent;
-  border: 1px solid white;
+  border: 1px solid blue;
 }
 .read_more:hover {
-  background-color: black;
+  background-color: rgb(56, 11, 11);
+  opacity: 0.6;
   border: 2px solid rgb(38, 54, 5);
   transform: scalez(0.5);
+  color: white;
 }
 .staff_section {
   background-color: rgb(238, 229, 229);
@@ -562,7 +564,7 @@ ul li {
   padding: 5px 20px;
   border-radius: 10px;
   font-size: 1.5rem;
-  background-color: #dc3545;
+  background-color: #073246;
   color: white;
   border: 1px solid blue;
 }
@@ -586,7 +588,6 @@ ul li {
   background-size: cover;
   background-attachment: fixed;
   height: 1200px;
-  
 }
 
 /* ul li {
@@ -866,25 +867,25 @@ Card {
   .vision_6 {
     transform: translateY(0px);
   }
-  .training,.faqs{
+  .training,
+  .faqs {
     display: none;
   }
 
-
-  .training_button{
+  .training_button {
     position: absolute;
     bottom: 60px;
     right: 50px;
     margin: auto;
   }
-  .members_button{
+  .members_button {
     margin-top: 515px;
     right: 60px;
     background-color: #dc3545;
-    color:#ffffff
+    color: #ffffff;
   }
 
-  .primary_logo{
+  .primary_logo {
     display: none;
   }
 
@@ -1050,10 +1051,10 @@ Card {
     width: 300px !important;
     font-size: 1.5px !important;
   }
-  .members_button{
+  .members_button {
     margin-top: 515px;
     right: 300px;
     background-color: #dc3545;
-    color:#ffffff
+    color: #ffffff;
   }
 }

@@ -57,7 +57,7 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
         },
       }
 
-      const { data } = await axios.post(`http://localhost:4000/profiles/upload`, formData, config)
+      const { data } = await axios.post(` https://vast-bayou-47622.herokuapp.com/profiles/upload`, formData, config)
 
       setFormData.image(data)
       setUploading(false)
