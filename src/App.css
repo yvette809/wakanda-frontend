@@ -884,6 +884,10 @@ Card {
     color:#ffffff
   }
 
+  .primary_logo{
+    display: none;
+  }
+
   /* .nav-link{
     justify-content: end;
   } */

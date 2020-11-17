@@ -30,7 +30,6 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./components/utils/setAuthToken";
 import store from "./store";
 import Alert from "./components/Alert";
-import Messages from "./components/messages/Messages"
 import PrivateRoute from "./components/routing/PrivateRoute";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AdminProfiles from "./components/AdminProfiles";

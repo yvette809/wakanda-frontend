@@ -272,9 +272,9 @@ const EventDetails = ({
           </Button>
         </Modal.Footer>
       </Modal>
-      <button className="btn-primary" onClick={() => setShowModal(true)}>
+      {/* <button className="btn-primary" onClick={() => setShowModal(true)}>
         Open Modal
-      </button>
+      </button> */}
     </>
   );
 };

@@ -70,7 +70,7 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-          <div className="col col-sm-3  footer_item">
+          <div className="col col-sm-3 primary_logo footer_item">
             <Link to="/">
               <img
                 src={logo}
