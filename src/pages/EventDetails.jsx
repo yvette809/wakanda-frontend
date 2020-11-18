@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import Loader from "../components/Loader"
+import Loader from "../components/Loader";
 import {
   Modal,
   Form,
@@ -16,6 +16,7 @@ import { setAlert } from "../actions/alert";
 import { createEventReview, listEventDetails } from "../actions/eventReviews";
 import { connect, useDispatch } from "react-redux";
 import { EVENTS_CREATE_REVIEW_RESET } from "../actions/types";
+import Rating from "../components/Rating";
 
 const EventDetails = ({
   setAlert,
@@ -27,10 +28,10 @@ const EventDetails = ({
 }) => {
   const dispatch = useDispatch();
 
-  const { isAuthenticated ,user} = auth;
+  const { isAuthenticated, user } = auth;
   const { loading, error, event } = eventDetails;
 
-  console.log("Event", event.user )
+  console.log("Event", event.user);
   const { reviews } = event;
 
   const {
@@ -39,6 +40,7 @@ const EventDetails = ({
   } = eventReviewCreate;
 
   const [comment, setComment] = useState("");
+  const [rating, setRating] = useState("");
   const { _id } = useParams();
   const [showModal, setShowModal] = useState(false);
 
@@ -66,17 +68,17 @@ const EventDetails = ({
   //submit review
   const submitHandler = (e) => {
     e.preventDefault();
-    console.log('USER', user)
+    console.log("USER", user);
     createEventReview(_id, {
       user: {
         name: user.name,
-        _id: user._id
+        _id: user._id,
       },
-      comment
+      rating,
+      comment,
     });
   };
 
- 
   // edit event
   const editEvent = async () => {
     // setLoading(true);
@@ -112,9 +114,7 @@ const EventDetails = ({
   }, []);
 
   if (loading) {
-    return (
-    <Loader/> 
-    )
+    return <Loader />;
   }
 
   return (
@@ -131,6 +131,12 @@ const EventDetails = ({
               </Col>
               <Col md={6}>
                 <ListGroup variant="flush">
+                <ListGroup.Item>
+                  <Rating
+                    value={event.rating}
+                    text={`${event.numReviews} reviews`}
+                  />
+                </ListGroup.Item>
                   <ListGroup.Item>
                     <h5>
                       <strong>{event.title}</strong>
@@ -157,49 +163,64 @@ const EventDetails = ({
         <h2 className="text-center">No Event found</h2>
       )}
       <Container>
-      <Row>
-        <Col md={6}>
-          <h2 className ="text-center font-weight-bolder">Reviews</h2>
-          {reviews && reviews.length === 0 && <setAlert>No Reviews</setAlert>}
-          <ListGroup variant="flush">
-            {reviews &&
-              reviews.map((review) => (
-                <ListGroup.Item key={review._id}>
-                  <strong>{ review.name}</strong>
-                  <p>{review.comment}</p>
-                  <p>{review.createdAt.substring(0, 10)}</p>
-                 
-                </ListGroup.Item>
-              ))}
-            <ListGroup.Item>
-              <h3>What Do You Think?</h3>
-              {errorEventReview && (
-                <setAlert variant="danger">{errorEventReview}</setAlert>
-              )}
-              {isAuthenticated ? (
-                <Form onSubmit={submitHandler}>
-                  <Form.Group controlId="comment">
-                    <Form.Label>Comment</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      row="3"
-                      value={comment}
-                      onChange={(e) => setComment(e.target.value)}
-                    ></Form.Control>
-                  </Form.Group>
-                  <Button type="submit" variant="primary">
-                    Submit
-                  </Button>
-                </Form>
-              ) : (
-                <setAlert>
-                  Please <Link to="/login">sign in</Link> to write a review{" "}
-                </setAlert>
-              )}
-            </ListGroup.Item>
-          </ListGroup>
-        </Col>
-      </Row>
+        <Row>
+          <Col md={6}>
+            <h2 className="text-center font-weight-bolder">Reviews</h2>
+            {reviews && reviews.length === 0 && <setAlert>No Reviews</setAlert>}
+            <ListGroup variant="flush">
+              {reviews &&
+                reviews.map((review) => (
+                  <ListGroup.Item key={review._id}>
+                    <strong>{review.name}</strong>
+                    <p>{review.comment}</p>
+                    <Rating value={review.rating} />
+                    <p>{review.createdAt.substring(0, 10)}</p>
+                  </ListGroup.Item>
+                ))}
+              <ListGroup.Item>
+                <h3>What Do You Think?</h3>
+                {errorEventReview && (
+                  <setAlert variant="danger">{errorEventReview}</setAlert>
+                )}
+                {isAuthenticated ? (
+                  <Form onSubmit={submitHandler}>
+                    <Form.Group controlId="rating">
+                      <Form.Label className= "font-weight-bold">Rating</Form.Label>
+                      <Form.Control
+                        as="select"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                      >
+                        <option value="">Select...</option>
+                        <option value="1">1 - Poor</option>
+                        <option value="2">2 - Fair</option>
+                        <option value="3">3 - Good</option>
+                        <option value="4">4 - Very Good</option>
+                        <option value="5">5 - Excellent</option>
+                      </Form.Control>
+                    </Form.Group>
+                    <Form.Group controlId="comment">
+                      <Form.Label className= "font-weight-bold">Comment</Form.Label>
+                      <Form.Control
+                        as="textarea"
+                        row="3"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                      ></Form.Control>
+                    </Form.Group>
+                    <Button type="submit" variant="primary">
+                      Submit
+                    </Button>
+                  </Form>
+                ) : (
+                  <setAlert>
+                    Please <Link to="/login">sign in</Link> to write a review{" "}
+                  </setAlert>
+                )}
+              </ListGroup.Item>
+            </ListGroup>
+          </Col>
+        </Row>
       </Container>
 
       <Modal show={showModal}>

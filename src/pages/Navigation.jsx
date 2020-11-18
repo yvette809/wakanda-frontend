@@ -5,6 +5,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
 import logo from "../images/wlogo.png";
+import logo1 from "../images/logo1.png"
 import "../../src/App.css";
 
 const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
@@ -14,12 +15,12 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
     <>
       <Link to="/" className="navbar-brand">
         <img
-          src={logo}
+          src={logo1}
           alt="wakanda logo"
           className="img-fluid logo "
           style={{
             height: "auto",
-            width: "10%",
+            width: "15%",
           }}
         />
       </Link>
@@ -92,12 +93,13 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
       <Link to="/" className="navbar-brand">
         {/* <Navbar.Brand href="#home"> */}
         <img
-          src={logo}
+          src={logo1}
           alt="wakanda logo"
           className="img-fluid logo "
           style={{
             height: "auto",
-            width: "10%",
+            width: "15%",
+            color:"white"
           }}
         />
         {/* </Navbar.Brand> */}

@@ -1,30 +1,21 @@
 import React from "react";
-import Event from "./Event";
-import Loader from "../components/Loader"
+import Loader from "../components/Loader";
 import Moment from "react-moment";
-import {
-  Container,
-  Row,
-  Carousel,
-  Col,
-  Card,
-  Button,
-} from "react-bootstrap";
+import { Container, Row, Carousel, Col, Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Rating from "./Rating";
 
 const EventList = ({ events, loading, deleteEvent }) => {
-
-  console.log("my events", events)
+  console.log("my events", events);
   if (events.length < 0 && loading) {
-    return (
-      <Loader/>
-    );
+    return <Loader />;
   }
 
   return (
     <Container fluid className="mb-2">
       <Carousel pause="hover" expand={"lg"}>
-        {events && !loading  && 
+        {events &&
+          !loading &&
           events.map((evt) => (
             // <Event key={evt.id} event={evt} />
 
@@ -39,17 +30,19 @@ const EventList = ({ events, loading, deleteEvent }) => {
                 </Link>
               </div>
 
-              <Carousel.Caption className= "carousel-caption">
+              <Carousel.Caption className="carousel-caption">
                 <div className="d-flex-inline">
-                     <p className="event_title">{evt.title}</p>
+                  <p className="event_title">{evt.title}</p>
                  
-                  {/* <small className="text-left event_date">
-                    {" "}
-                    Date posted:{" "}
-                    <Moment format="YYYY/MM/DD">{evt.createdAt}</Moment>
-                  </small> */}
-                  <Link to={`/eventdetails/${evt._id}`}><button className= "read_more details">View Details</button></Link>
+                  <Link to={`/eventdetails/${evt._id}`}>
+                    <button className="read_more details mb-2">View Details</button>
+                  </Link>
+                  <Rating
+                    value={evt.rating}
+                    text={`${evt.numReviews} reviews`}
+                  />
                 </div>
+                
               </Carousel.Caption>
             </Carousel.Item>
           ))}

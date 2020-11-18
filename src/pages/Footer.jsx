@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/wlogo.png";
+import logo1 from "../images/logo1.png";
 
 const Footer = () => {
   return (
@@ -73,7 +74,7 @@ const Footer = () => {
           <div className="col col-sm-3 primary_logo footer_item">
             <Link to="/">
               <img
-                src={logo}
+                src={logo1}
                 alt="wsk logo"
                 style={{ width: "50%", padding: "0" }}
               />
