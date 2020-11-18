@@ -15,7 +15,7 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  /* background-image: linear-gradient(-90deg, #2374ab, #ffffff, white); */
+  
 }
 h1,
 .navigation,
@@ -48,7 +48,7 @@ p {
   transition: opacity 0.2s ease-in;
   outline: none;
 }
-.btn:hover{
+.btn:hover {
   background-color: #17a2b8;
 }
 
@@ -128,12 +128,6 @@ p {
   padding: 150px 0 150px 150px;
 }
 
-/* #members_card {
-  border-left: none;
-  border-bottom: none;
-  border-top: none;
-  border-right: 1px solid gray !important;
-} */
 Card#members_card {
   height: 20%;
   object-fit: contain;
@@ -179,10 +173,7 @@ Card#members_card {
   color: white;
   font-size: 1.2rem;
 }
-/* #footer_container{
-  height: 150px;
- 
-} */
+
 
 hr {
   border: 1px solid white;
@@ -551,7 +542,7 @@ ul li {
   border: 1px solid blue;
 }
 .read_more:hover {
-  background-color: rgb(56, 11, 11);
+  background-color: #17a2b8;
   opacity: 0.6;
   border: 2px solid rgb(38, 54, 5);
   transform: scalez(0.5);
@@ -570,7 +561,7 @@ ul li {
   border: 1px solid blue;
 }
 .staff_button:hover {
-  background-color: rgb(56, 11, 11);
+  background-color: #17a2b8;
   opacity: 0.6;
   border: 2px solid rgb(38, 54, 5);
 }
@@ -810,7 +801,6 @@ Card {
     font-size: 1.3rem;
     justify-content: center;
     align-content: center;
-    
   }
 
   .kids_card {
