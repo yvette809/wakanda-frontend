@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { loadUser } from "../../actions/auth";
+import { Card, Button } from "react-bootstrap";
 
 const ProfileItem = ({
   profile: {
@@ -10,8 +11,12 @@ const ProfileItem = ({
   },
 }) => {
   return (
-    <div className="profile bg-light">
-      <img
+    <Card
+      style={{ width: "18rem",  height: "420px" }}
+      className="my-3 bg-light "
+    >
+      <Card.Img
+        variant="top"
         src={`http://localhost:4000/profiles/${_id}.png`}
         onError={(e) =>
           (e.target.src =
@@ -26,23 +31,60 @@ const ProfileItem = ({
           borderRadius: "50%",
         }}
       />
-      <div>
-        <h2>{name}</h2>
-
-        <p className="my-1">{location && <span>{location}</span>}</p>
-
-        <Link to={`/profile/${_id}`} className="btn btn-primary">
-          View Profile
+      <Card.Body>
+        <Card.Title className="font-weight-bold">{name}</Card.Title>
+        <Card.Text>
+          <div>
+            <p className="my-1">
+              Location: {location && <span>{location}</span>}
+            </p>
+            <ul>
+              {skills.slice(0, 4).map((skill, index) => (
+                <li key={index} className="text-primary">
+                  <i className="fa fa-check" /> {skill}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </Card.Text>
+        <Link to={`profile/${_id}`}>
+          <Button variant="primary">View Profile</Button>
         </Link>
-      </div>
-      <ul>
-        {skills.slice(0, 4).map((skill, index) => (
-          <li key={index} className="text-primary">
-            <i className="fa fa-check" /> {skill}
-          </li>
-        ))}
-      </ul>
-    </div>
+      </Card.Body>
+    </Card>
+    // <div className="profile bg-light">
+    //   <img
+    //     src={`http://localhost:4000/profiles/${_id}.png`}
+    //     onError={(e) =>
+    //       (e.target.src =
+    //         "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
+    //     }
+    //     alt=""
+    //     className="img-fluid"
+    //     style={{
+    //       width: "200px",
+    //       height: "200px",
+    //       objectFit: "cover",
+    //       borderRadius: "50%",
+    //     }}
+    //   />
+    //   <div>
+    //     <h2>{name}</h2>
+
+    //     <p className="my-1">{location && <span>{location}</span>}</p>
+
+    //     <Link to={`/profile/${_id}`} className="btn btn-primary ">
+    //       View Profile
+    //     </Link>
+    //   </div>
+    //   <ul>
+    //     {skills.slice(0, 4).map((skill, index) => (
+    //       <li key={index} className="text-primary">
+    //         <i className="fa fa-check" /> {skill}
+    //       </li>
+    //     ))}
+    //   </ul>
+    // </div>
   );
 };
 

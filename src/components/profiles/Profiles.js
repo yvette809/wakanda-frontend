@@ -29,7 +29,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
               {profiles.length > 0 ? (
                 profiles.map((profile) => profile.user && (
                   <>
-                    <div className="col col-sm-2 col-md-3 col-lg-4">
+                    <div className="col col-sm-2 col-md-6 col-lg-4">
                       <ProfileItem key={profile._id} profile={profile} />
                     </div>
                   </>

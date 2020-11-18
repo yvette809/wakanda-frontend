@@ -2,13 +2,13 @@
   box-sizing: border-box;
 }
 
-:root {
+/* :root {
   --primary-color: #17a2b8;
   --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
-}
+} */
 
 body {
   margin: 0;
@@ -40,8 +40,6 @@ p {
 }
 .btn {
   display: inline-block;
-  background: var(--light-color);
-  color: #333;
   padding: 0.4rem 1.3rem;
   font-size: 1rem;
   border: none;
@@ -49,6 +47,9 @@ p {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+}
+.btn:hover{
+  background-color: #17a2b8;
 }
 
 #members_sessions {

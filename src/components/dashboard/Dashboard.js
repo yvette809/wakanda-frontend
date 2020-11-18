@@ -58,8 +58,8 @@ const Dashboard = ({
           <Experience experience={profile.experience} />
 
           <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()}>
-              <i className="fas fa-user-minus"></i>Delete My Account
+            <button className="btn btn-danger" onClick={() => deleteAccount()} >
+              <i className="fa fa-trash mr-2"></i>Delete My Account
             </button>
           </div>
         </>
