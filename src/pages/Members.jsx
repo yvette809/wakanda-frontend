@@ -1,11 +1,10 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Membership = () => {
-
   useEffect(() => {
     AOS.init();
   });
@@ -14,14 +13,19 @@ const Membership = () => {
       <div id="members_sessions" className="mb-5 d-flex ">
         <div className="members_overlay">
           <Container className="mb-5 text-center">
-            <Button className= "members_button">Register With Us</Button>
+            <Button className="members_button">Register With Us</Button>
           </Container>
         </div>
       </div>
       <Container>
         <Row>
-          <Col xs={12}lg={4} md={6}>
-            <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
+          <Col xs={12} lg={4} md={6}>
+            <Card
+              style={{ width: "20rem" }}
+              className="border-0"
+              id="members_card"
+              data-aos="flip-down"
+            >
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -41,7 +45,12 @@ const Membership = () => {
             </Card>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
+            <Card
+              style={{ width: "20rem" }}
+              className="border-0"
+              id="members_card"
+              data-aos="flip-down"
+            >
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -75,7 +84,12 @@ const Membership = () => {
             </Card>
           </Col>
           <Col xs={12} md={6} lg={4}>
-            <Card style={{ width: "20rem" }} className="border-0" id="members_card" data-aos="flip-down">
+            <Card
+              style={{ width: "20rem" }}
+              className="border-0"
+              id="members_card"
+              data-aos="flip-down"
+            >
               <Card.Body>
                 <Card.Title>
                   {" "}
@@ -108,15 +122,12 @@ const Membership = () => {
             </Card>
           </Col>
         </Row>
-       
       </Container>
     </>
   );
 
   {
-    
   }
-  
 };
 
 export default Membership;

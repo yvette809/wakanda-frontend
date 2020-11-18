@@ -15,7 +15,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
   return loading || post === null ? (
     <Spinner />
   ) : (
-    <div className="container">
+    <div className="container" style={{marginTop:"150px"}}>
       <Link to="/posts" className="btn btn-primary" style={{position:"absolute", left: "10px"}}>
         Back To Posts
       </Link>

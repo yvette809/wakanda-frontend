@@ -23,7 +23,11 @@ const PostItem = ({
               className="round-img"
               //  src={avatar}
               src={` https://vast-bayou-47622.herokuapp.com/profiles/${user._id}.png`}
-              style={{ borderRadius: "50%" }}
+              onError={(e) =>
+                (e.target.src =
+                  "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
+              }
+              style={{ width: "100px", height: "100px", borderRadius: "5px" }}
               alt="post-img"
             />
           </Link>

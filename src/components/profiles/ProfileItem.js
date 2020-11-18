@@ -1,24 +1,30 @@
-import React ,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import {loadUser} from "../../actions/auth"
+import { loadUser } from "../../actions/auth";
 
-const ProfileItem = ({ profile: {
-  user: { _id, name, avatar },
-  location,
-  skills,
-  
-}, }) => {
-
- 
-  
+const ProfileItem = ({
+  profile: {
+    user: { _id, name, avatar },
+    location,
+    skills,
+  },
+}) => {
   return (
-      <div className="profile bg-light">
-
+    <div className="profile bg-light">
       <img
-        src={`http://localhost:4000/profiles/${ _id}.png`}
+        src={`http://localhost:4000/profiles/${_id}.png`}
+        onError={(e) =>
+          (e.target.src =
+            "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
+        }
         alt=""
         className="img-fluid"
-        style={{ width: "200px", height: "200px" ,objectFit:"cover", borderRadius:"50%"}}
+        style={{
+          width: "200px",
+          height: "200px",
+          objectFit: "cover",
+          borderRadius: "50%",
+        }}
       />
       <div>
         <h2>{name}</h2>
@@ -37,8 +43,6 @@ const ProfileItem = ({ profile: {
         ))}
       </ul>
     </div>
-   
-   
   );
 };
 

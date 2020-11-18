@@ -30,6 +30,10 @@ const Dashboard = ({
           src={` https://vast-bayou-47622.herokuapp.com/profiles/${
             profile && profile.user._id
           }.png`}
+          onError={(e) =>
+            (e.target.src =
+              "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
+          }
           alt="user picture"
           style={{ width: "100px", height: "100px", borderRadius: "5px" }}
           className="mb-2"

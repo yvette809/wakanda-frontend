@@ -17,7 +17,7 @@ const Profiles = ({ getProfiles, profile: { profiles, loading } }) => {
         <Loader />
       ) : (
         <>
-          <div className="d-flex-inline text-center mb-4">
+          <div className=" container d-flex-inline text-center mb-4" style={{marginTop:"100px"}}>
             <h1 className=" text-primary">Players</h1>
             <p className="lead">
               <i className="fa fa-connectdevelop " /> Browse and connect with
