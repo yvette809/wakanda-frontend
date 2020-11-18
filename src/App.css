@@ -15,7 +15,6 @@ body {
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  
 }
 h1,
 .navigation,
@@ -174,7 +173,6 @@ Card#members_card {
   font-size: 1.2rem;
 }
 
-
 hr {
   border: 1px solid white;
   margin-bottom: 40px;
@@ -308,6 +306,11 @@ li {
   width: 40%;
   height: 500px;
   object-fit: cover;
+  overflow: hidden;
+}
+
+.carousel-caption {
+  font-weight: 800;
 }
 
 .event_container {
@@ -347,8 +350,6 @@ div.event_img img {
 }
 
 .test {
-  color: aqua;
-  text-shadow: 0 12px 12px -12px yellow;
 }
 
 .vision_1 {
@@ -540,6 +541,7 @@ ul li {
   background-color: #073246;
   color: white;
   border: 1px solid blue;
+  transition: all 0.3s ease;
 }
 .read_more:hover {
   background-color: #17a2b8;
@@ -559,6 +561,7 @@ ul li {
   background-color: #073246;
   color: white;
   border: 1px solid blue;
+  transition: all 0.3s ease;
 }
 .staff_button:hover {
   background-color: #17a2b8;
@@ -868,6 +871,11 @@ Card {
 
   .primary_logo {
     display: none;
+  }
+
+  .logo {
+    position: absolute;
+    top: 15px;
   }
 
   /* .nav-link{

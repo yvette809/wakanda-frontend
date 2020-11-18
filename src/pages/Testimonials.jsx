@@ -11,7 +11,7 @@ import pic7 from '../images/pic7.jpg'
 
 const Testimonials = () => {
     return (
- <Container>
+ <Container style= {{marginTop: "120px"}}>
         <div  className= "text center">
         <h2>At WSK, We Make Sports lovers Happy</h2>
         <p>These are some of our exciting stories</p>

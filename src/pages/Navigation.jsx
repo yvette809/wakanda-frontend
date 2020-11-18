@@ -16,7 +16,7 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
         <img
           src={logo}
           alt="wakanda logo"
-          className="img-fluid "
+          className="img-fluid logo "
           style={{
             height: "auto",
             width: "10%",
@@ -94,8 +94,10 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
         <img
           src={logo}
           alt="wakanda logo"
+          className="img-fluid logo "
           style={{
-            width: "12%",
+            height: "auto",
+            width: "10%",
           }}
         />
         {/* </Navbar.Brand> */}

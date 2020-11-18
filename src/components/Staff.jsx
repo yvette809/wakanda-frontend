@@ -40,7 +40,7 @@ const Staff = () => {
       </div>
       <Row>
         <Col xs={12} md={6} lg={3}>
-          <Card style={{ width: "18rem" }} className="mb-3">
+          <Card style={{ width: "18rem" }} className="mb-3 ">
             <Card.Img variant="top" src={mgr} style={{ height: "35vh" }} />
             <Card.Body>
               <Card.Title>
