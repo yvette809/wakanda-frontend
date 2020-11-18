@@ -45,9 +45,9 @@ const Football = () => {
                 <Card.Text >
                   <p className="more_instructions mb-3">
                     We have football trainings every wednesday from{" "}
-                    19.00-21.00 and saturdays from{" "}
-                    10.00-12.00 . Football Trainings is only
-                    for registered members.If you want to be part of the team ,make sure you do well to register.
+                    <strong>19.00-21.00</strong> and saturdays from{" "}
+                    <strong>10.00-12.00</strong> . Football Trainings is only
+                    for registered members.If you want to be part of the team ,please do well to <Link to="/register"><button className= "btn-primary mr-2">Register</button></Link>
                     It is important to come atleast 15 minutes before time in
                     other for proper game planning. Football is our main focus
                     so here we lay much emphasis on discipline

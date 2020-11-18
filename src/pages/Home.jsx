@@ -328,7 +328,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
 
         {isAuthenticated &&  
         <>
-        <h3>Share Your Events</h3>
+        <h3 className="mt-2">Do You have Events?, Please Share Them Here</h3>
          <button
           className="btn-primary mb-4 staff_button"
           onClick={() => setshowModal(true)}

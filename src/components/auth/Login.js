@@ -61,12 +61,15 @@ const Login = ({ login, isAuthenticated }) => {
           </p>
           <a href={"http://localhost:4000/users/auth/facebook"}>
             <button className="btn btn-primary mt-2">
+              <i className="fa fa-facebook mr-2"></i>
               Login With Facebook{" "}
-            </button> 
-          
+            </button>
           </a>
           <a href={"http://localhost:4000/users/auth/google"}>
-            <button className="btn btn-primary mt-2">Login With Google </button>
+            <button className="btn btn-primary mt-2">
+              <i className="fa fa-google mr-2"></i>
+              Login With Google{" "}
+            </button>
           </a>
           {/* <FacebookAuth /> */}
         </Col>

@@ -723,16 +723,6 @@ Card {
     font-weight: 800;
   }
 
-  .staff_button {
-    font-size: 1.2rem;
-    display: inline-flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    margin-right: 20px;
-    width: 100px;
-    padding: 5px 0;
-  }
-
   .read_more {
     width: 100px;
     font-size: 1.2rem;
@@ -819,7 +809,7 @@ Card {
     font-size: 1.3rem;
     justify-content: center;
     align-content: center;
-    display: flex;
+    
   }
 
   .kids_card {

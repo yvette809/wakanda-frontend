@@ -31,12 +31,12 @@ const Dashboard = ({
             profile && profile.user._id
           }.png`}
           alt="user picture"
-          style={{ width: "100px", height: "100px" }}
+          style={{ width: "100px", height: "100px", borderRadius: "5px" }}
           className="mb-2"
         />
 
         {isAuthenticated && user.isAdmin ? (
-          <h3 className= "text-dark">
+          <h3 className="text-dark">
             I am <strong>{user.name}</strong>. I am the Admin, Treasurer and Web
             Master of WSK klub.Direct questions about the website's
             functionality to me

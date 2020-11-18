@@ -112,7 +112,7 @@ const Navigation = ({ auth: { isAuthenticated,user }, logout }) => {
             Mission
           </Link>
           <Link to="/members" className="nav-link">
-            Members
+            Membership
           </Link>
 
           <Link to="/login" className="nav-link">
