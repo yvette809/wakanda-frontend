@@ -40,14 +40,15 @@ const Dashboard = ({
         />
 
         {isAuthenticated && user.isAdmin ? (
-          <h3 className="text-dark">
+          <h4 className="text-muted">
             I am <strong>{user.name}</strong>. I am the Admin, Treasurer and Web
             Master of WSK klub.Direct questions about the website's
             functionality to me
-          </h3>
+          </h4>
         ) : (
-          <h1 className="dashboard">
-            Welcome {user && user.name} !! You are now an official WSK Member{" "}
+          <h1 className="dashboard text-muted ">
+            Welcome <strong>{user && user.name}</strong> !! You are now an
+            official WSK Member{" "}
           </h1>
         )}
       </div>
@@ -58,7 +59,7 @@ const Dashboard = ({
           <Experience experience={profile.experience} />
 
           <div className="my-2">
-            <button className="btn btn-danger" onClick={() => deleteAccount()} >
+            <button className="btn btn-danger" onClick={() => deleteAccount()}>
               <i className="fa fa-trash mr-2"></i>Delete My Account
             </button>
           </div>

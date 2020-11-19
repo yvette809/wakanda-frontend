@@ -640,7 +640,7 @@ Card {
   border: none;
 }
 
-.event_button{
+.event_button {
   position: absolute;
   top: 0;
   right: 5px;
@@ -874,7 +874,7 @@ Card {
     background-color: #dc3545;
     color: #ffffff;
   }
-/* 
+  /* 
   .primary_logo {
     display: none;
   } */
@@ -882,6 +882,14 @@ Card {
   .logo {
     position: absolute;
     top: 15px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+  }
+  
+  .table td, .table th{
+    padding: 0.3rem;
   }
 
   /* .nav-link{

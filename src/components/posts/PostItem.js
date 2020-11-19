@@ -15,9 +15,9 @@ const PostItem = ({
   console.log("the id is", _id);
 
   return (
-    <div className=" post container text-dark font-weight-bolder">
-      <div className="row  ">
-        <div className="col-lg-4 col-sm-12 text-center mb-2">
+    <div className=" post container text-dark font-weight-bolder mb-3">
+      <div className="row">
+        <div className="col-lg-2 col-sm-12 text-center d-flex align-content-center mt-2 ">
           <Link to={`/profile/${user}`}>
             <img
               className="round-img"
@@ -32,9 +32,9 @@ const PostItem = ({
             />
           </Link>
         </div>
-        <div className="col-lg-8 col-sm-12">
+        <div className="col-lg-10 col-sm-12">
           <div>
-            <h4 className="text-primary my-2">{name}</h4>
+            <h4 className="text-primary my-3">{name}</h4>
             <p className="my-1">{text}</p>
             <p className="post-date">
               Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
@@ -57,7 +57,10 @@ const PostItem = ({
                 >
                   <i className="fa fa-thumbs-down" />
                 </button>
-                <Link to={`/posts/${_id}`} className="btn btn-primary">
+                <Link
+                  to={`/posts/${_id}`}
+                  className="btn btn-primary dis_button"
+                >
                   Discussion{" "}
                   {comments.length > 0 && (
                     <span className="comment-count">{comments.length}</span>
