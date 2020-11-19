@@ -640,6 +640,12 @@ Card {
   border: none;
 }
 
+.event_button{
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
 /* media queries */
 /* smart phones */
 @media (max-width: 500px) {

@@ -7,7 +7,9 @@ import {
   EVENT_DETAILS_FAIL,
   EVENTS_REQUEST,
   EVENTS_SUCCESS,
-  EVENTS_FAIL
+  EVENTS_FAIL,
+  DELETE_EVENT,
+  DELETE_EVENT_FAIL
 } from "../actions/types";
 
 
@@ -59,3 +61,21 @@ export const eventsReviewCreateReducer = (state = {}, action) => {
       return state;
   }
 };
+
+
+export const eventDeleteReducer = (state = { events: [] }, action) => {
+  switch (action.type) {
+
+    case DELETE_EVENT:
+      return {
+        ...state,
+        loading: false,
+        events:state.events.filter(evt => evt._id !==action.payload)
+  
+      }
+    case EVENTS_FAIL:
+      return { loading: false, error: action.payload }
+    default:
+      return state
+  }
+}

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {setAlert} from "../actions/alert"
 import {
   EVENTS_CREATE_REVIEW_REQUEST,
   EVENTS_CREATE_REVIEW_SUCCESS,
@@ -7,7 +8,9 @@ import {
   EVENT_DETAILS_FAIL,
   EVENTS_REQUEST,
   EVENTS_SUCCESS,
-  EVENTS_FAIL
+  EVENTS_FAIL,
+  DELETE_EVENT,
+  DELETE_EVENT_FAIL
 } from "../actions/types";
 
 export const createEventReview = (eventId, review) => async (dispatch) => {
@@ -81,6 +84,25 @@ export const getEvents = () => async (dispatch) => {
     console.log(err)
     dispatch({
       type: EVENTS_FAIL
+      // payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+// delete events
+export const deleteEvent = (_id) => async (dispatch) => {
+  try {
+    const res = await axios.delete(`https://vast-bayou-47622.herokuapp.com/events/${_id}`);
+
+    dispatch({
+      type: DELETE_EVENT,
+      payload: res.data,
+    });
+
+    dispatch(setAlert("Event Removed", "success"));
+  } catch (err) {
+    dispatch({
+      type: DELETE_EVENT_FAIL,
       // payload: { msg: err.response.statusText, status: err.response.status },
     });
   }

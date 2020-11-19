@@ -13,25 +13,27 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import { setAlert } from "../actions/alert";
-import { createEventReview, listEventDetails } from "../actions/eventReviews";
+import { createEventReview, listEventDetails,deleteEvent } from "../actions/eventReviews";
 import { connect, useDispatch } from "react-redux";
 import { EVENTS_CREATE_REVIEW_RESET } from "../actions/types";
 import Rating from "../components/Rating";
 
 const EventDetails = ({
   setAlert,
+  deleteEvent,
   createEventReview,
   listEventDetails,
   eventReviewCreate,
   eventDetails,
+  eventDelete,
   auth,
+  
 }) => {
   const dispatch = useDispatch();
 
   const { isAuthenticated, user } = auth;
   const { loading, error, event } = eventDetails;
-
-  console.log("Event", event.user);
+  console.log("EVENT", event && event);
   const { reviews } = event;
 
   const {
@@ -101,6 +103,7 @@ const EventDetails = ({
         image: newEvent.image,
         time: newEvent.time,
         location: newEvent.location,
+        creator: newEvent.creator,
         date: newEvent.date,
       });
       // setLoading(false);
@@ -112,6 +115,38 @@ const EventDetails = ({
   useEffect(() => {
     editEvent();
   }, []);
+
+  // // delete Event
+
+  // const deleteEvent = async (_id) => {
+  //   // setLoading(true);
+  //   try {
+  //     const response = await fetch(`http://localhost:4000/events/${_id}`, {
+  //       method: "delete",
+  //     });
+  //     if (response.ok) {
+  //       const events = await response.json();
+  //       const targetedE = events.filter((event) => event._id !== _id);
+  //       setEvents(targetedE);
+  //       history.push("/")
+  //     } else {
+  //       console.log("something went wrong");
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  //   // setLoading(false);
+  // };
+
+  // useEffect(() => {
+  //   deleteEvent();
+  // }, []);
+
+  const deleteHandler = (id) => {
+    if (window.confirm('Are you sure')) {
+      deleteEvent(id)
+    }
+  }
 
   if (loading) {
     return <Loader />;
@@ -128,15 +163,22 @@ const EventDetails = ({
             <Row>
               <Col md={6}>
                 <Image src={event.image} alt={event.name} fluid />
+                {isAuthenticated  && event.user &&  <button
+                  className="py-0 event_button "
+                  onClick={() => deleteHandler(event._id)}
+                >
+                  x
+                </button>}
+               
               </Col>
               <Col md={6}>
                 <ListGroup variant="flush">
-                <ListGroup.Item>
-                  <Rating
-                    value={event.rating}
-                    text={`${event.numReviews} reviews`}
-                  />
-                </ListGroup.Item>
+                  <ListGroup.Item>
+                    <Rating
+                      value={event.rating}
+                      text={`${event.numReviews} reviews`}
+                    />
+                  </ListGroup.Item>
                   <ListGroup.Item>
                     <h5>
                       <strong>{event.title}</strong>
@@ -152,7 +194,7 @@ const EventDetails = ({
                     Description:{event.description}
                   </ListGroup.Item>
                   <ListGroup.Item>
-                    created By:<strong>{user.name}</strong>
+                    created By:<strong>{event.user && event.user.name}</strong>
                   </ListGroup.Item>
                 </ListGroup>
               </Col>
@@ -185,7 +227,9 @@ const EventDetails = ({
                 {isAuthenticated ? (
                   <Form onSubmit={submitHandler}>
                     <Form.Group controlId="rating">
-                      <Form.Label className= "font-weight-bold">Rating</Form.Label>
+                      <Form.Label className="font-weight-bold">
+                        Rating
+                      </Form.Label>
                       <Form.Control
                         as="select"
                         value={rating}
@@ -200,7 +244,9 @@ const EventDetails = ({
                       </Form.Control>
                     </Form.Group>
                     <Form.Group controlId="comment">
-                      <Form.Label className= "font-weight-bold">Comment</Form.Label>
+                      <Form.Label className="font-weight-bold">
+                        Comment
+                      </Form.Label>
                       <Form.Control
                         as="textarea"
                         row="3"
@@ -304,10 +350,12 @@ const mapStateToProps = (state) => ({
   auth: state.auth,
   eventReviewCreate: state.eventReviewCreate,
   eventDetails: state.eventDetails,
+  eventDelete:state.eventDelete
 });
 
 export default connect(mapStateToProps, {
   setAlert,
+  deleteEvent,
   createEventReview,
   listEventDetails,
 })(EventDetails);

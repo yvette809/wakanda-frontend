@@ -48,10 +48,10 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
   }
   const [newEvent, setnewEvent] = useState(newE)
 
-  const { title, description, image, time, location, date } = newEvent;
+  const { title, description, image, time, location, creator, date } = newEvent;
   const [loading, setLoading] = useState(false);
   const [showModal, setshowModal] = useState(false);
-  const [search, setSearch] = useState("text");
+
 
   // get Events
 
@@ -92,7 +92,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
          }
          const body = JSON.stringify(newEvent)
          console.log('BODY', body)
-         const res = await axios.post("http://localhost:4000/events", body, config)
+         const res = await axios.post("https://vast-bayou-47622.herokuapp.com/events", body, config)
          console.log(res.data)
          setLoading(false)
          setnewEvent(res.data)
@@ -105,33 +105,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
 
     
 
-  // // delete Event
-
-  // const deleteEvent = async (_id) => {
-  //   setLoading(true);
-  //   try {
-  //     const response = await fetch(`http://localhost:4000/events/${_id}`, {
-  //       method: "delete",
-  //     });
-  //     if (response.ok) {
-  //       const events = await response.json();
-  //       const targetedE = events.filter((event) => event._id !== _id);
-  //       setEvents(targetedE);
-  //     } else {
-  //       console.log("something went wrong");
-  //     }
-
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  //   setLoading(false);
-  // };
-
-  // useEffect(() => {
-  //   deleteEvent();
-  // }, []);
-
- 
+  
 
   return (
     <>
@@ -235,7 +209,6 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
         <EventList
           events={events}
           loading={loading}
-          // deleteEvent={deleteEvent}
         />
         <Modal show={showModal}>
           <Modal.Header closeButton onClick={() => setshowModal(false)}>
@@ -295,6 +268,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
                   location: e.currentTarget.value
                 })}
               />
+               
               <FormControl
                 type="date"
                 value={date}
@@ -328,7 +302,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
 
         {isAuthenticated &&  
         <>
-        <h3 className="mt-2">Do You have Events?, Please Share Them Here</h3>
+        <h4 className="mt-2">Do You have Events?, Please Share Them Here</h4>
          <button
           className="btn-primary mb-4 staff_button"
           onClick={() => setshowModal(true)}
