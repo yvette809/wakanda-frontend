@@ -27,6 +27,7 @@ const CommentForm = ({ postId, addComment }) => {
           placeholder="Comment the post"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          className="m-1"
           required
         />
         <input type="submit" className="btn btn-dark my-1" value="Submit" />

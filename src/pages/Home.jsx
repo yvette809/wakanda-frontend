@@ -96,7 +96,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
          setnewEvent(res.data)
          setAlert('Event added', 'success')
          setnewEvent(newE)
-         history.push('/dashboard')
+         history.push('/')
       
        }catch(error){
          console.log(error)
@@ -303,11 +303,11 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
 
         {isAuthenticated &&  
         <>
-        <h4 className="mt-2">Do You have Events?, Please Share Them Here</h4>
+        <h4 className="mt-2 text-muted">Do You have Events?, Please Share Them Here</h4>
          <button
           className="btn-primary mb-4 staff_button"
           onClick={() => setshowModal(true)}
-          // style={{ visibility: "hidden" }}
+           style={{ backgroundColor: "transparent", color:"green", fontWeight:"bold" }}
         >
           Create Event
         </button>

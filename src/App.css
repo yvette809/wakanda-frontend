@@ -646,6 +646,16 @@ Card {
   right: 5px;
 }
 
+.profile_fil {
+  font-size: 1.3rem;
+  text-shadow: 2px 2px 5px rgb(195, 0, 255);
+ 
+}
+.profile-top {
+  background-color: #940b44; 
+}
+
+
 /* media queries */
 /* smart phones */
 @media (max-width: 500px) {
@@ -887,8 +897,9 @@ Card {
   .btn {
     padding: 6px 12px;
   }
-  
-  .table td, .table th{
+
+  .table td,
+  .table th {
     padding: 0.3rem;
   }
 

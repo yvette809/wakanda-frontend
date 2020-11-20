@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, withRouter } from "react-router-dom";
-import axios from "axios"
+import axios from "axios";
 import { Form, FormControl, Container } from "react-bootstrap";
 import { connect } from "react-redux";
-import Loader from "../Loader"
+import Loader from "../Loader";
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 const initialState = {
@@ -26,7 +26,7 @@ const EditProfile = ({
 }) => {
   const [formData, setFormData] = useState(initialState);
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
-  const [uploading,setUploading] = useState(false)
+  const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
     getCurrentProfile();
@@ -59,40 +59,43 @@ const EditProfile = ({
     instagram,
   } = formData;
 
-
   const uploadFileHandler = async (e) => {
-    const file = e.target.files[0]
-    const formData = new FormData()
-    formData.append('profile', file)
-    setUploading(true)
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("profile", file);
+    setUploading(true);
 
     try {
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
-      }
+      };
 
-      const { data } = await axios.post(`http://localhost:4000/profiles/upload`, formData, config)
+      const { data } = await axios.post(
+        `http://localhost:4000/profiles/upload`,
+        formData,
+        config
+      );
 
-      setFormData.image(data)
-      setUploading(false)
+      setFormData.image(data);
+      setUploading(false);
     } catch (error) {
-      console.error(error)
-      setUploading(false)
+      console.error(error);
+      setUploading(false);
     }
-  }
+  };
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history,true);
+    createProfile(formData, history, true);
   };
 
   return (
-    <Container>
+    <Container style={{ marginTop: "120px" }}>
       <h1 className="large text-primary">Edit Your Profile</h1>
       <p className="lead">
         <i className="fa fa-user" /> please create a profile
@@ -333,21 +336,21 @@ const EditProfile = ({
           onChange={onChange}
         />
         <Form.Control
-                type='text'
-                name ="image"
-                placeholder='Enter image url'
-                value={image}
-                className= "mb-3"
-                onChange={onChange}
-              ></Form.Control>
-              <Form.File
-                id='image-file'
-                label='Choose File'
-                className= 'mb-3'
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Loader/>}
+          type="text"
+          name="image"
+          placeholder="Enter image url"
+          value={image}
+          className="mb-3"
+          onChange={onChange}
+        ></Form.Control>
+        <Form.File
+          id="image-file"
+          label="Choose File"
+          className="mb-3"
+          custom
+          onChange={uploadFileHandler}
+        ></Form.File>
+        {uploading && <Loader />}
 
         <FormControl
           as="textarea"

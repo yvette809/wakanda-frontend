@@ -13,7 +13,7 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
   }, [getProfileById, match.params.id]);
 
   return (
-    <div className="container" style= {{marginTop: "150px"}}>
+    <div className="container" style={{ marginTop: "150px" }}>
       {profile === null ? (
         <Loader />
       ) : (
@@ -22,18 +22,19 @@ const Profile = ({ getProfileById, profile: { profile }, auth, match }) => {
             Back To Profiles
           </Link>
           {auth.isAuthenticated &&
-            auth.loading === false && auth.user&&
+            auth.loading === false &&
+            auth.user &&
             auth.user._id === profile.user._id && (
               <Link to="/edit-profile" className="btn btn-dark">
                 Edit Profile
               </Link>
             )}
-            
+
           <div className="profile-grid my-1">
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
             <div className="profile-exp bg-white p-2">
-              <h2 className="text-primary">Experience</h2>
+              <h3 className="text-primary">Experience</h3>
               {profile.experience.length > 0 ? (
                 <>
                   {profile.experience.map((experience) => (
