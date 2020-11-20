@@ -3,7 +3,7 @@ import { Container, Row, Col, Form, FormControl } from "react-bootstrap";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
-import FacebookAuth from "./FacebookAuth";
+// import FacebookAuth from "./FacebookAuth";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({

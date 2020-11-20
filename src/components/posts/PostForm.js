@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Form, FormControl } from "react-bootstrap";
-import Picker,{preload} from "emoji-picker-react";
 import { addPost } from "../../actions/post";
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState("");
-  const [chosenEmoji, setChosenEmoji] = useState(null);
-  const onEmojiClick = (event, emojiObject) => {
-    setChosenEmoji(emojiObject);
-  };
 
   return (
     <div className="post-form ">
@@ -35,15 +30,7 @@ const PostForm = ({ addPost }) => {
           required
         />
 
-        {/* <div>
-          {chosenEmoji && (
-            <span>You chose: {chosenEmoji.emoji} </span>
-            
-          ) 
-          }
-          <Picker onEmojiClick={onEmojiClick} preload={true} />
-        </div> */}
-        <input type="submit" className="btn btn-dark my-1" value="Submit"/>
+        <input type="submit" className="btn btn-dark my-1" value="Submit" />
       </Form>
     </div>
   );

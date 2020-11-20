@@ -39,7 +39,7 @@ export const profile= (state = initialState, action) =>{
 
     case DELETE_PROFILE:
       return{
-        ... state,
+        ...state,
         profiles: state.profiles.filter(profile => profile.id !== action.payload),
         loading: false
       }

@@ -1,11 +1,11 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown, Form, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
 import { logout } from "../actions/auth";
-import logo from "../images/wlogo.png";
-import logo1 from "../images/logo1.png"
+// import logo from "../images/wlogo.png";
+import logo1 from "../images/logo1.png";
 import "../../src/App.css";
 
 const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
@@ -54,7 +54,7 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
                 (e.target.src =
                   "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
               }
-              alt="user picture"
+              alt="user"
               style={{ width: "40px", height: "40px", borderRadius: "50%" }}
               className="mb-2"
             />
@@ -99,7 +99,7 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
           style={{
             height: "auto",
             width: "15%",
-            color:"white"
+            color: "white",
           }}
         />
         {/* </Navbar.Brand> */}

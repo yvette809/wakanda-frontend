@@ -26,7 +26,7 @@ import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
 import { Link } from "react-router-dom";
 
-const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
+const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
 
   // const {events, loading} = eventList
   // scroll animations
@@ -35,8 +35,6 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
     // getEvents()
   },[getEvents]);
    const [events, setEvents] = useState([]);
- 
-  
  
   const newE={
     title:"",
@@ -96,7 +94,10 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents}) => {
          console.log(res.data)
          setLoading(false)
          setnewEvent(res.data)
+         setAlert('Event added', 'success')
          setnewEvent(newE)
+         history.push('/dashboard')
+      
        }catch(error){
          console.log(error)
        }

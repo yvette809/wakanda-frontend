@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import { Container } from "react-bootstrap";
 import Navigation from "../src/pages/Navigation";
 import Home from "../src/pages/Home";
 import Footer from "../src/pages/Footer";
@@ -9,9 +8,9 @@ import Mission from "../src/pages/Mission";
 import Donate from "../src/pages/Donate";
 import Members from "./pages/Members";
 import News from "../src/pages/News";
-import Kids from "./components/Kids"
-import Basket from "./components/Basket"
-import Football from "./components/Football"
+import Kids from "./components/Kids";
+import Basket from "./components/Basket";
+import Football from "./components/Football";
 import Testimonials from "../src/pages/Testimonials";
 import NotFound from "./pages/NotFound";
 import EventDetails from "./pages/EventDetails";
@@ -89,9 +88,17 @@ const App = () => {
         ></PrivateRoute>
         <PrivateRoute exact path="/posts" component={Posts}></PrivateRoute>
         <PrivateRoute exact path="/posts/:id" component={Post}></PrivateRoute>
-        <PrivateRoute exact path="/admin/profiles" component={AdminProfiles}></PrivateRoute>
-        <PrivateRoute exact path="/admin/posts" component={AdminPosts}></PrivateRoute>
-  
+        <PrivateRoute
+          exact
+          path="/admin/profiles"
+          component={AdminProfiles}
+        ></PrivateRoute>
+        <PrivateRoute
+          exact
+          path="/admin/posts"
+          component={AdminPosts}
+        ></PrivateRoute>
+
         <Route component={NotFound}></Route>
       </Switch>
       <Footer />

@@ -3,7 +3,7 @@ import React , {useEffect} from 'react'
 import {connect} from "react-redux"
  import { getPosts,deletePostAdmin } from "../actions/post";
 //  import { setAlert} from "../../actions/alert";
- import {Container, Row,Col, Table,Button, ListGroup, ListGroupItem} from "react-bootstrap"
+ import {Container, Row,Col,Button} from "react-bootstrap"
  import Loader from "./Loader"
 
 

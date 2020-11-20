@@ -9,7 +9,7 @@ function SingleNews({ news, key }) {
     url,
     urlToImage,
     publishedAt,
-    content,
+    
   } = news;
 
   return (

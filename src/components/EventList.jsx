@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "../components/Loader";
-import Moment from "react-moment";
-import { Container, Row, Carousel, Col, Card, Button } from "react-bootstrap";
+// import Moment from "react-moment";
+import { Container,  Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 

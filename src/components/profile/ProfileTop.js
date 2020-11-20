@@ -19,6 +19,7 @@ const ProfileTop = ({
           (e.target.src =
             "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
         }
+        alt="profile-pic"
         style={{ width: "20%", height: "0%", borderRadius: "50%" }}
       />
       {/* <img className='round-img my-1 img-fluid' src={`http://localhost:4000/profiles/${_id}.png`} style={{width:"50%", height:"0%", borderRadius:"50%"}}alt='' /><hr/> */}

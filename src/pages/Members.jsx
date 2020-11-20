@@ -13,7 +13,9 @@ const Membership = () => {
       <div id="members_sessions" className="mb-5 d-flex ">
         <div className="members_overlay">
           <Container className="mb-5 text-center">
-            <Button className="members_button">Register With Us</Button>
+            <Link to="/register">
+              <Button className="members_button">Register With Us</Button>
+            </Link>
           </Container>
         </div>
       </div>

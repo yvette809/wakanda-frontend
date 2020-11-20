@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import axios from "axios"
+import axios from "axios";
 import { Link, withRouter } from "react-router-dom";
 import { Form, FormControl, Container } from "react-bootstrap";
 import { connect } from "react-redux";
-import { createProfile, getCurrentProfile } from "../../actions/profile";
-import {Spinner} from "react-bootstrap"
+import { createProfile } from "../../actions/profile";
+// import {Spinner} from "react-bootstrap"
+import Loader from "../Loader";
 
 const initialState = {
   nationality: "",
   gender: "",
   location: "",
   dateOfBirth: "",
-  image:"",
+  image: "",
   bio: "",
   skills: "",
   twitter: "",
@@ -20,12 +21,9 @@ const initialState = {
   instagram: "",
 };
 
-const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
-
+const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
   const [formData, setFormData] = useState(initialState);
-  // const[image,setImage]= useState("")
-  const [uploading,setUploading] = useState(false)
-
+  const [uploading, setUploading] = useState(false);
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const {
@@ -42,30 +40,32 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
     instagram,
   } = formData;
 
-  
-
   const uploadFileHandler = async (e) => {
-    const file = e.target.files[0]
-    const formData = new FormData()
-    formData.append('profile', file)
-    setUploading(true)
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append("profile", file);
+    setUploading(true);
 
     try {
       const config = {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
-      }
+      };
 
-      const { data } = await axios.post(` https://vast-bayou-47622.herokuapp.com/profiles/upload`, formData, config)
+      const { data } = await axios.post(
+        ` https://vast-bayou-47622.herokuapp.com/profiles/upload`,
+        formData,
+        config
+      );
 
-      setFormData.image(data)
-      setUploading(false)
+      setFormData.image(data);
+      setUploading(false);
     } catch (error) {
-      console.error(error)
-      setUploading(false)
+      console.error(error);
+      setUploading(false);
     }
-  }
+  };
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -88,7 +88,7 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
           name="nationality"
           value={nationality}
           onChange={onChange}
-          className= "mb-3"
+          className="mb-3"
         >
           <option value="">* select nationality </option>
           <option value="afghan">Afghan</option>
@@ -292,7 +292,7 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
           name="gender"
           value={gender}
           onChange={onChange}
-          className= "mb-3"
+          className="mb-3"
         >
           <option>* select gender </option>
           <option>Male</option>
@@ -304,7 +304,7 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
           placeholder="Location e.x city"
           name="location"
           value={location}
-          className= "mb-3"
+          className="mb-3"
           onChange={onChange}
         />
 
@@ -313,46 +313,44 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
           placeholder="Date of Birth"
           name="dateOfBirth"
           value={dateOfBirth}
-          className= "mb-3"
+          className="mb-3"
           onChange={onChange}
         />
-      
-              
-              <Form.Control
-                type='text'
-                name ="image"
-                placeholder='Enter image url'
-                value={image}
-                className= "mb-3"
-                onChange={onChange}
-              ></Form.Control>
-              <Form.File
-                id='image-file'
-                label='Choose File'
-                className= 'mb-3'
-                custom
-                onChange={uploadFileHandler}
-              ></Form.File>
-              {uploading && <Spinner />}
-            
+
+        <Form.Control
+          type="text"
+          name="image"
+          placeholder="Enter image url"
+          value={image}
+          className="mb-3"
+          onChange={onChange}
+        ></Form.Control>
+        <Form.File
+          id="image-file"
+          label="Choose File"
+          className="mb-3"
+          custom
+          onChange={uploadFileHandler}
+        ></Form.File>
+        {uploading && <Loader />}
 
         <FormControl
           as="textarea"
           placeholder="A short bio of yourself"
           name="bio"
           value={bio}
-          className= "mb-3"
+          className="mb-3"
           onChange={onChange}
         />
 
-          <FormControl
-            type="text"
-            placeholder="* Skills.Please use separated commas"
-            name="skills"
-            value={skills}
-            className= "mb-3"
-            onChange={onChange}
-          />
+        <FormControl
+          type="text"
+          placeholder="* Skills.Please use separated commas"
+          name="skills"
+          value={skills}
+          className="mb-3"
+          onChange={onChange}
+        />
 
         <div className="my-2">
           <button
@@ -422,9 +420,11 @@ const CreateProfile = ({ createProfile, history ,auth:{user},profile}) => {
   );
 };
 
-const mapStateToProps = (state)=>({
+const mapStateToProps = (state) => ({
   auth: state.auth,
-  profile:state.profile
-})
+  profile: state.profile,
+});
 
-export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
+export default connect(mapStateToProps, { createProfile })(
+  withRouter(CreateProfile)
+);

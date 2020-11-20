@@ -3,6 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import axios from "axios"
 import { Form, FormControl, Container } from "react-bootstrap";
 import { connect } from "react-redux";
+import Loader from "../Loader"
 import { createProfile, getCurrentProfile } from "../../actions/profile";
 
 const initialState = {
@@ -346,7 +347,7 @@ const EditProfile = ({
                 custom
                 onChange={uploadFileHandler}
               ></Form.File>
-              {/* {uploading && <Spinner />} */}
+              {uploading && <Loader/>}
 
         <FormControl
           as="textarea"

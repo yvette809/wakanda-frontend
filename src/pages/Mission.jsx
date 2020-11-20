@@ -87,7 +87,7 @@ const Mission = () => {
                 color: "pink",
                 marginRight: "14px",
                 fontSize: "2rem",
-                color: "pink",
+                
               }}
             />
             <span>
