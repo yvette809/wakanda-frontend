@@ -29,13 +29,15 @@ export const getPosts = () => async (dispatch) => {
 };
 
 // Add like
-export const addLike = (postId) => async (dispatch) => {
+export const addLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://vast-bayou-47622.herokuapp.com/posts/like/${postId}`);
+    const res = await axios.put(
+      `https://vast-bayou-47622.herokuapp.com/posts/like/${id}`
+    );
 
     dispatch({
       type: UPDATE_LIKES,
-      payload: { postId, likes: res.data },
+      payload: { id, likes: res.data },
     });
   } catch (err) {
     dispatch({
@@ -46,13 +48,15 @@ export const addLike = (postId) => async (dispatch) => {
 };
 
 // Remove like
-export const removeLike = (postId) => async (dispatch) => {
+export const removeLike = (id) => async (dispatch) => {
   try {
-    const res = await axios.put(`https://vast-bayou-47622.herokuapp.com/posts/unlike/${postId}`);
+    const res = await axios.put(
+      `https://vast-bayou-47622.herokuapp.com/posts/unlike/${id}`
+    );
 
     dispatch({
       type: UPDATE_LIKES,
-      payload: { postId, likes: res.data },
+      payload: { id, likes: res.data },
     });
   } catch (err) {
     dispatch({
@@ -86,7 +90,9 @@ export const deletePost = (id) => async (dispatch) => {
 
 export const deletePostAdmin = (id) => async (dispatch) => {
   try {
-    await axios.delete(`https://vast-bayou-47622.herokuapp.com/posts/admin/${id}`);
+    await axios.delete(
+      `https://vast-bayou-47622.herokuapp.com/posts/admin/${id}`
+    );
 
     dispatch({
       type: DELETE_POST,
@@ -102,7 +108,6 @@ export const deletePostAdmin = (id) => async (dispatch) => {
   }
 };
 
-
 // Add post
 export const addPost = (formData) => async (dispatch) => {
   const config = {
@@ -116,19 +121,18 @@ export const addPost = (formData) => async (dispatch) => {
       formData,
       config
     );
-   
-      dispatch({
-        type: ADD_POST,
-        payload: res.data,
-      });
 
-      dispatch(setAlert("Post Created", "success"));
-  
-      dispatch({
-        type: POST_ERROR,
-        // payload: { msg: err.response.statusText, status: err.response.status },
-      });
-    
+    dispatch({
+      type: ADD_POST,
+      payload: res.data,
+    });
+
+    dispatch(setAlert("Post Created", "success"));
+
+    dispatch({
+      type: POST_ERROR,
+      // payload: { msg: err.response.statusText, status: err.response.status },
+    });
   } catch (err) {
     console.log(err);
   }
@@ -137,7 +141,9 @@ export const addPost = (formData) => async (dispatch) => {
 // Get post
 export const getPost = (id) => async (dispatch) => {
   try {
-    const res = await axios.get(`https://vast-bayou-47622.herokuapp.com/posts/${id}`);
+    const res = await axios.get(
+      `https://vast-bayou-47622.herokuapp.com/posts/${id}`
+    );
 
     dispatch({
       type: GET_POST,

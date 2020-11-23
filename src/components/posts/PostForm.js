@@ -65,6 +65,7 @@ const PostForm = ({ addPost, user, post }) => {
               placeholder="Create a post"
               value={text}
               onChange={(e) => setText(e.target.value)}
+              className="mb-2"
               required
             />
 
@@ -74,6 +75,7 @@ const PostForm = ({ addPost, user, post }) => {
               name="image"
               placeholder="Add Image url"
               onChange={(e) => setImage(e.target.value)}
+              className="mb-2"
               required
             />
             <Form.File
@@ -107,18 +109,18 @@ const PostForm = ({ addPost, user, post }) => {
           style={{ width: "50px", height: "50px", borderRadius: "50%" }}
           alt="post-img"
         />
-        <span
+        <h5
           className="bg-light text-muted"
           style={{
             padding: "8px 12px",
-            width: "30vw",
+            width: "50vw",
             borderRadius: "20px 25px",
           }}
           onClick={() => setShowModal(true)}
         >
           {" "}
           What's on your mind {user.name}?...
-        </span>
+        </h5>
       </div>
     </div>
   );

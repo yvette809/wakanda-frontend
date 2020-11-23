@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Spinner } from "react-bootstrap";
-import PostItem from "../posts/PostItem";
+import PostItem2 from "../posts/PostItem2";
 import CommentForm from "../post/CommentForm";
 import CommentItem from "../post/CommentItem";
 import { getPost } from "../../actions/post";
@@ -23,7 +23,7 @@ const Post = ({ getPost, post: { post, loading }, match }) => {
       >
         Back To Posts
       </Link>
-      <PostItem post={post} showActions={false} />
+      <PostItem2 post={post} showActions={false} />
 
       <div className="comments">
         {post.comments.map((comment) => (
