@@ -15,10 +15,10 @@ const NewsList = ({ news, loading }) => {
   return (
     <>
       <h1
-        style={{ fontSize: "1.3rem", textTransform: "uppercase" }}
-        className="text-center mb-4"
+        style={{ fontSize: "1.3rem", textTransform: "uppercase" , marginTop:"120px"}}
+        className="text-center"
       >
-        Headlines
+       Swedish Sports News
       </h1>
       <hr />
       {!news && !loading ? (

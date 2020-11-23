@@ -96,6 +96,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
          setnewEvent(res.data)
          setAlert('Event added', 'success')
          setnewEvent(newE)
+         setshowModal(false)
          history.push('/')
       
        }catch(error){

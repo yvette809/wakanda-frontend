@@ -143,7 +143,7 @@ const EventDetails = ({
             <Row>
               <Col md={6}>
                 <Image src={event.image} alt={event.name} fluid />
-                {event.user && event.user.name=== user && (
+                {event.user && event.user._id === user._id && (
                   <button
                     className="py-0 event_button "
                     onClick={() => deleteHandler(event._id)}

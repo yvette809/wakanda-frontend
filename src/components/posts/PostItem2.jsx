@@ -4,44 +4,51 @@ import Moment from "react-moment";
 import { connect } from "react-redux";
 import { addLike, removeLike, deletePost } from "../../actions/post";
 
-const PostItem = ({
+const PostItem2 = ({
   addLike,
   removeLike,
   deletePost,
   auth,
-  post: { _id, text, name, avatar, user, likes, comments, date },
+  post: { _id, text, name, image, user, likes, comments, date },
   showActions,
 }) => {
-  console.log("the id is", _id);
+  console.log("the image", image && image);
 
   return (
-    <div className=" post container text-dark font-weight-bolder mb-3">
-      <div className="row">
-        <div className="col-lg-2 col-sm-12 text-center d-flex align-content-center mt-2 ">
+    <div className="container ">
+      <div className=" py-1 mb-3 bg-light" style={{ borderRadius: "10px" }}>
+        <div className="d-flex ">
           <Link to={`/profile/${user}`}>
             <img
-              className="round-img"
-              //  src={avatar}
-              src={` https://vast-bayou-47622.herokuapp.com/profiles/${user._id}.png`}
+              className="round-img mr-2"
+              src={` https://vast-bayou-47622.herokuapp.com/profiles/user/${user._id}.png`}
               onError={(e) =>
                 (e.target.src =
                   "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
               }
-              style={{ width: "100px", height: "100px", borderRadius: "50%" }}
+              style={{ width: "50px", height: "50px", borderRadius: "50%" }}
               alt="post-img"
             />
           </Link>
+          <h4 className="text-primary my-3">{name}</h4>
         </div>
-        <div className="col-lg-10 col-sm-12">
-          <div>
-            <h4 className="text-primary my-3">{name}</h4>
-            <p className="my-1">{text}</p>
-            <p className="post-date">
-               <Moment format="YYYY/MM/DD">{date}</Moment>
-            </p>
+        <div>
+          <p className="my-1">{text}</p>
+          {image && (
+            <img
+              src={image}
+              alt="post_img"
+              className= "img-fluid"
+              style={{ width: "400px", height: "400px" ,borderRadius:"10px"}}
+            />
+          )}
+          <p className="post-date">
+            Posted on <Moment format="YYYY/MM/DD">{date}</Moment>
+          </p>
 
-            {showActions && (
-              <>
+          {showActions && (
+            <>
+              <div className="mb-5 ">
                 <button
                   onClick={() => addLike(_id)}
                   type="button"
@@ -73,18 +80,18 @@ const PostItem = ({
                     className="btn btn-danger"
                   >
                     <i className="fa fa-times" />
-                    Delete
+                    
                   </button>
                 )}
-              </>
-            )}
-          </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
   );
 };
-PostItem.defaultProps = {
+PostItem2.defaultProps = {
   showActions: true,
 };
 
@@ -93,5 +100,5 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { addLike, removeLike, deletePost })(
-  PostItem
+  PostItem2
 );

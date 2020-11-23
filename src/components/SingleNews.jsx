@@ -2,28 +2,25 @@ import React from "react";
 import Moment from "react-moment";
 
 function SingleNews({ news, key }) {
-  const {
-    author,
-    title,
-    description,
-    url,
-    urlToImage,
-    publishedAt,
-    
-  } = news;
+  const { author, title, description, url, urlToImage, publishedAt } = news;
 
   return (
     <div className="container">
       <div
         className="row mb-4"
-        style={{ border: "1px solid blue", boxShadow: "5px 5px 5px 5px  grey" }}
+        style={{ border: "1px solid blue", boxShadow: "5px 5px 5px 5px  grey", borderRadius:"10px" }}
       >
         <div className="col  col-lg-4 news_img">
           <img
             src={urlToImage}
             alt="news pics"
             className="py-2"
-            style={{ height: "100%", width: "80%", objectFit: "cover" }}
+            style={{
+              height: "100%",
+              width: "80%",
+              objectFit: "cover",
+              borderRadius: "20px",
+            }}
           />
         </div>
         <div className="col col-lg-6 ">
@@ -40,7 +37,7 @@ function SingleNews({ news, key }) {
             Read More...
           </a>
           <p>
-            Written By:<strong>{author ? author : "authorsWithoutName"}</strong>
+            Written By:<strong>{author && author}</strong>
           </p>
         </div>
       </div>

@@ -54,7 +54,7 @@ const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
       };
 
       const { data } = await axios.post(
-        ` https://vast-bayou-47622.herokuapp.com/profiles/upload`,
+        ` http://vast-bayou-47622.herokuapp.com/profiles/upload`,
         formData,
         config
       );

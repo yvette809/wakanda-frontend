@@ -73,7 +73,7 @@ const EditProfile = ({
       };
 
       const { data } = await axios.post(
-        `http://localhost:4000/profiles/upload`,
+        `http://vast-bayou-47622.herokuapp.com/profiles/upload`,
         formData,
         config
       );

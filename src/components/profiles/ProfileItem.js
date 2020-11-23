@@ -8,6 +8,7 @@ const ProfileItem = ({
     user: { _id, name, avatar },
     location,
     skills,
+    image
   },
 }) => {
   return (

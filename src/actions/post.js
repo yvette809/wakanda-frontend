@@ -116,19 +116,19 @@ export const addPost = (formData) => async (dispatch) => {
       formData,
       config
     );
-    if (res.ok) {
+   
       dispatch({
         type: ADD_POST,
         payload: res.data,
       });
 
       dispatch(setAlert("Post Created", "success"));
-    } else {
+  
       dispatch({
         type: POST_ERROR,
         // payload: { msg: err.response.statusText, status: err.response.status },
       });
-    }
+    
   } catch (err) {
     console.log(err);
   }
