@@ -78,7 +78,7 @@ const EditProfile = ({
         config
       );
 
-      setFormData.image(data);
+      setFormData(data);
       setUploading(false);
     } catch (error) {
       console.error(error);

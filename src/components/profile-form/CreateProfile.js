@@ -12,7 +12,6 @@ const initialState = {
   gender: "",
   location: "",
   dateOfBirth: "",
-  image: "",
   bio: "",
   skills: "",
   twitter: "",
@@ -23,6 +22,7 @@ const initialState = {
 
 const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
   const [formData, setFormData] = useState(initialState);
+  const [image, setImage] = useState("")
   const [uploading, setUploading] = useState(false);
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
@@ -31,7 +31,6 @@ const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
     gender,
     location,
     dateOfBirth,
-    image,
     bio,
     skills,
     twitter,
@@ -59,7 +58,7 @@ const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
         config
       );
 
-      setFormData.image(data);
+      setImage(data);
       setUploading(false);
     } catch (error) {
       console.error(error);
@@ -72,7 +71,7 @@ const CreateProfile = ({ createProfile, history, auth: { user }, profile }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    createProfile(formData, history);
+    createProfile(formData, image,history);
   };
 
   return (
