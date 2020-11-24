@@ -41,7 +41,7 @@ const Staff = () => {
       <Row>
         <Col xs={12} md={6} lg={3}>
           <Card style={{ width: "18rem" }} className="mb-3 ">
-            <Card.Img variant="top" src={mgr} style={{ height: "35vh" }} />
+            <Card.Img variant="top" src={chm} style={{ height: "35vh", padding: "10px", borderRadius: "20px" }} />
             <Card.Body>
               <Card.Title>
                 <strong>Emmanuel Mukumu</strong>
@@ -82,7 +82,7 @@ const Staff = () => {
 
         <Col xs={12} md={6} lg={3}>
           <Card style={{ width: "18rem" }} className="mb-3">
-            <Card.Img variant="top" src={mgr} style={{ height: "35vh" }} />
+            <Card.Img variant="top" src={mgr} style={{ height: "35vh", padding: "10px", borderRadius: "20px" }} />
             <Card.Body>
               <Card.Title>
                 <strong>Ngwa McDonald</strong>
@@ -120,7 +120,7 @@ const Staff = () => {
         </Col>
         <Col xs={12} md={6} lg={3}>
           <Card style={{ width: "18rem" }} className="mb-3">
-            <Card.Img variant="top" src={coach} style={{ height: "35vh" }} />
+            <Card.Img variant="top" src={coach} style={{ height: "35vh" , padding: "10px", borderRadius: "20px"}} />
             <Card.Body>
               <Card.Title>
                 <strong>Ojong Roland</strong>
@@ -160,7 +160,7 @@ const Staff = () => {
         </Col>
         <Col xs={12} md={6} lg={3}>
           <Card style={{ width: "18rem" }} className="mb-3">
-            <Card.Img variant="top" src={mike} style={{ height: "35vh" }} />
+            <Card.Img variant="top" src={mike} style={{ height: "35vh", padding: "10px", borderRadius: "20px" }} />
             <Card.Body>
               <Card.Title>
                 <strong>Sidibe Michael</strong>

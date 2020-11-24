@@ -28,13 +28,12 @@ const AddExperience = ({ addExperience, history }) => {
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
-    const [toDateDisabled,toggleDisabled] = useState(false)
   return (
     <Container>
       <h1 className="large text-primary">Add An Experience</h1>
       <p className="lead">
-        <i className="fas fa-code-branch" /> Add any sports Club you have played for in the past
-        
+        <i className="fas fa-code-branch" /> Add any sports Club you have played
+        for in the past
       </p>
       <small>* = required field</small>
       <Form
@@ -42,7 +41,6 @@ const AddExperience = ({ addExperience, history }) => {
         onSubmit={(e) => {
           e.preventDefault();
           addExperience(formData, history);
-      
         }}
       >
         <div className="form-group">
@@ -76,18 +74,22 @@ const AddExperience = ({ addExperience, history }) => {
         </div>
         <div className="form-group">
           <h4>From Date</h4>
-          <FormControl type="date" name="from" value={from} onChange={onChange} />
+          <FormControl
+            type="date"
+            name="from"
+            value={from}
+            onChange={onChange}
+          />
         </div>
         <div className="form-group">
           <p>
-            <FormControl
+            <input
               type="checkbox"
               name="current"
               checked={current}
               value={current}
               onChange={(e) => {
                 setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled)
               }}
             />{" "}
             Current Job
@@ -100,11 +102,12 @@ const AddExperience = ({ addExperience, history }) => {
             name="to"
             value={to}
             onChange={onChange}
-            disabled={toDateDisabled?'disabled':""}
+            disabled={current}
           />
         </div>
         <div className="form-group">
-          <FormControl as="textarea"
+          <FormControl
+            as="textarea"
             name="description"
             cols="30"
             rows="5"

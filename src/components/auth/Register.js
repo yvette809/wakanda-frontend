@@ -10,7 +10,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
     name: "",
     email: "",
     password: "",
-    password2: "",
+    password2: ""
   });
 
   const { name, username, email, password, password2 } = formData;

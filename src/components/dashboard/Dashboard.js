@@ -28,9 +28,10 @@ const Dashboard = ({
       <div className="large text-primary">
         <Link to={`profile/${profile && profile._id}`}>
           <img
-            src={` https://vast-bayou-47622.herokuapp.com/profiles/${
-              profile && profile.user._id
-            }.png`}
+            // src={` https://vast-bayou-47622.herokuapp.com/profiles/${
+            //   profile && profile.user._id
+            // }.png`}
+            src={ profile && profile.image}
             onError={(e) =>
               (e.target.src =
                 "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")

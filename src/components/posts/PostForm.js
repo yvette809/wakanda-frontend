@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Form, FormControl, Modal, Button } from "react-bootstrap";
 import { addPost } from "../../actions/post";
 import Loader from "../Loader";
+import { MdAddAPhoto } from 'react-icons/md';
 
 const PostForm = ({ addPost, user, post }) => {
   const [text, setText] = useState("");
@@ -85,6 +86,7 @@ const PostForm = ({ addPost, user, post }) => {
               custom
               onChange={() => uploadFileHandler(post._id)}
             ></Form.File>
+            <MdAddAPhoto />
             {uploading && <Loader />}
           </Form>
         </Modal.Body>
@@ -109,18 +111,19 @@ const PostForm = ({ addPost, user, post }) => {
           style={{ width: "50px", height: "50px", borderRadius: "50%" }}
           alt="post-img"
         />
-        <h5
-          className="bg-light text-muted"
+        <button
+          className="bg-info  mb-5"
           style={{
             padding: "8px 12px",
             width: "50vw",
             borderRadius: "20px 25px",
+            fontSize: "1.5rem"
           }}
           onClick={() => setShowModal(true)}
         >
           {" "}
           What's on your mind {user.name}?...
-        </h5>
+        </button>
       </div>
     </div>
   );

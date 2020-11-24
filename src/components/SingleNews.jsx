@@ -37,7 +37,7 @@ function SingleNews({ news, key }) {
             Read More...
           </a>
           <p>
-            Written By:<strong>{author && author}</strong>
+            Written By:<strong>{author ?author : 'unknown'}</strong>
           </p>
         </div>
       </div>

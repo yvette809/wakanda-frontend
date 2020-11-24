@@ -2,19 +2,12 @@
   box-sizing: border-box;
 }
 
-/* :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
-} */
-
 body {
   margin: 0;
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1.6;
+  
 }
 h1,
 .navigation,
@@ -594,7 +587,7 @@ ul li {
   background-size: cover;
   background-repeat: no-repeat;
 
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
 .fa_about {
@@ -659,6 +652,8 @@ Card {
 .profile-top {
   background-color: #940b44;
 }
+
+
 
 /* media queries */
 /* smart phones */
