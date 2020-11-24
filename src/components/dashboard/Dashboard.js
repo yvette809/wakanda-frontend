@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
-import { Spinner, Container } from "react-bootstrap";
+import { Spinner, Container, Image } from "react-bootstrap";
 import {
   getCurrentProfile,
   createProfile,
@@ -27,7 +27,21 @@ const Dashboard = ({
     <Container className="dashboard_container">
       <div className="large text-primary">
         <Link to={`profile/${profile && profile._id}`}>
-          <img
+          {profile ? (
+            <Image
+              src={profile.image}
+              style={{ width: "100px", height: "100px", borderRadius: "5px" }}
+              className="mb-2"
+            />
+          ) : (
+            <Image
+              src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+              alt="user picture"
+              style={{ width: "100px", height: "100px", borderRadius: "5px" }}
+              className="mb-2"
+            />
+          )}
+          {/* <img
             // src={` https://vast-bayou-47622.herokuapp.com/profiles/${
             //   profile && profile.user._id
             // }.png`}
@@ -39,7 +53,7 @@ const Dashboard = ({
             alt="user picture"
             style={{ width: "100px", height: "100px", borderRadius: "5px" }}
             className="mb-2"
-          />
+          /> */}
         </Link>
 
         {isAuthenticated && user.isAdmin ? (
