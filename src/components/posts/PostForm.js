@@ -5,7 +5,7 @@ import { Form, FormControl, Modal, Button } from "react-bootstrap";
 import { addPost } from "../../actions/post";
 import {getCurrentProfile} from "../../actions/profile"
 import Loader from "../Loader";
-import { MdAddAPhoto } from "react-icons/md";
+// import { MdAddAPhoto } from "react-icons/md";
 
 const PostForm = ({ addPost,getCurrentProfile, user, post, profile:{profile} }) => {
 
@@ -56,7 +56,7 @@ const PostForm = ({ addPost,getCurrentProfile, user, post, profile:{profile} }) 
   return (
     <div className="post-form ">
       <div className="bg-white text-center py-1">
-        {/* <h3> What's on your mind ...</h3> */}
+     
       </div>
       <Modal show={showModal}>
         <Modal.Header closeButton onClick={() => setShowModal(false)}>
@@ -92,7 +92,7 @@ const PostForm = ({ addPost,getCurrentProfile, user, post, profile:{profile} }) 
               custom
               onChange={() => uploadFileHandler(post._id)}
             ></Form.File>
-            <MdAddAPhoto />
+            {/* <MdAddAPhoto /> */}
             {uploading && <Loader />}
           </Form>
         </Modal.Body>
