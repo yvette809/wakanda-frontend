@@ -1,5 +1,6 @@
 import React from "react";
 import avat from "../../images/avatar1.png";
+import { Image } from "react-bootstrap";
 
 const ProfileTop = ({
   profile: {
@@ -8,11 +9,29 @@ const ProfileTop = ({
     location,
     dateOfBirth,
     social,
+    image,
     user: { name, avatar, _id },
   },
 }) => {
   return (
     <div className="profile-top p-2">
+      {/* {image ? (
+        <Image
+          src={image}
+          alt="profile-pic"
+          style={{ width: "20%", borderRadius: "50%" }}
+          className="img-fluid"
+          className="mb-2"
+        />
+      ) : (
+        <Image
+          src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+          alt="profile-pic"
+          style={{ width: "15%", borderRadius: "50%" }}
+          className="img-fluid"
+          className="mb-2"
+        />
+      )} */}
       <img
         src={`https://vast-bayou-47622.herokuapp.com/profiles/${_id}.png`}
         onError={(e) =>

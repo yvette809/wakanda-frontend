@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { connect } from "react-redux";
 import { Form, FormControl, Modal, Button } from "react-bootstrap";
 import { addPost } from "../../actions/post";
+import {getCurrentProfile} from "../../actions/profile"
 import Loader from "../Loader";
-import { MdAddAPhoto } from 'react-icons/md';
+import { MdAddAPhoto } from "react-icons/md";
 
-const PostForm = ({ addPost, user, post }) => {
+const PostForm = ({ addPost,getCurrentProfile, user, post, profile:{profile} }) => {
+
+  useEffect(() => {
+    getCurrentProfile();
+  }, [getCurrentProfile]);
+  console.log('PROFILE', profile)
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
   const [uploading, setUploading] = useState(false);
@@ -100,7 +106,22 @@ const PostForm = ({ addPost, user, post }) => {
         </Modal.Footer>
       </Modal>
       <div className="d-flex container mb-4">
-        <img
+        {/* {profile ? (
+          <img
+            src={profile.image}
+            style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+            className="mr-2"
+            
+          />
+        ) : (
+          <img
+            src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+            alt="user picture"
+            style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+            className="mr-2"
+          />
+        )} */}
+         <img
           className="round-img mr-2"
           //  src={avatar}
           src={` https://vast-bayou-47622.herokuapp.com/profiles/${user._id}.png`}
@@ -110,14 +131,14 @@ const PostForm = ({ addPost, user, post }) => {
           }
           style={{ width: "50px", height: "50px", borderRadius: "50%" }}
           alt="post-img"
-        />
+        /> 
         <button
           className="bg-info  mb-5"
           style={{
             padding: "8px 12px",
             width: "50vw",
             borderRadius: "20px 25px",
-            fontSize: "1.5rem"
+            fontSize: "1.5rem",
           }}
           onClick={() => setShowModal(true)}
         >
@@ -132,6 +153,7 @@ const PostForm = ({ addPost, user, post }) => {
 const mapStateToProps = (state) => ({
   user: state.auth.user,
   post: state.post,
+  profile: state.profile,
 });
 
-export default connect(mapStateToProps, { addPost })(PostForm);
+export default connect(mapStateToProps, { addPost,getCurrentProfile })(PostForm);

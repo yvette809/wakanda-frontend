@@ -10,15 +10,30 @@ const PostItem2 = ({
   deletePost,
   auth,
   post: { _id, text, name, image, user, likes, comments, date },
+  profile:{profile},
   showActions,
 }) => {
-  console.log("the image", image && image);
+  console.log("profile2", profile);
 
   return (
     <div className="container ">
       <div className=" py-1 mb-3 bg-light" style={{ borderRadius: "10px" }}>
         <div className="d-flex ">
           <Link to={`/profile/${user}`}>
+          {/* {profile ? (
+            <img
+              src={profile.image}
+              style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+              className="mb-2"
+            />
+          ) : (
+            <img
+              src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+              alt="user picture"
+              style={{ width: "50px", height: "50px", borderRadius: "50%" }}
+              className="mb-2"
+            />
+          )} */}
             <img
               className="round-img mr-2"
               src={` https://vast-bayou-47622.herokuapp.com/profiles/user/${user._id}.png`}
@@ -97,6 +112,7 @@ PostItem2.defaultProps = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile:state.profile
 });
 
 export default connect(mapStateToProps, { addLike, removeLike, deletePost })(

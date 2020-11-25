@@ -1,21 +1,45 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { loadUser } from "../../actions/auth";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Image } from "react-bootstrap";
 
 const ProfileItem = ({
   profile: {
     user: { _id, name, avatar },
     location,
     skills,
-    image
+    image,
   },
 }) => {
   return (
     <Card
-      style={{ width: "18rem", height: "420px" }}
+      style={{ width: "18rem", height: "430px" }}
       className="my-3 bg-light "
     >
+      {/* {image ? (
+        <Image
+          src={image}
+          style={{
+            width: "200px",
+            height: "200px",
+            objectFit: "cover",
+            borderRadius: "50%",
+          }}
+          className="mb-2"
+        />
+      ) : (
+        <Image
+          src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+          alt="user picture"
+          style={{
+            width: "200px",
+            height: "200px",
+            objectFit: "cover",
+            borderRadius: "50%",
+          }}
+          className="mb-2"
+        />
+      )} */}
       <Card.Img
         variant="top"
         src={`https://vast-bayou-47622.herokuapp.com/profiles/${_id}.png`}

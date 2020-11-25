@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 import { connect } from "react-redux";
@@ -8,7 +8,12 @@ import { logout } from "../actions/auth";
 import logo1 from "../images/logo1.png";
 import "../../src/App.css";
 
-const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
+const Navigation = ({
+  auth: { isAuthenticated, user },
+  profile: { profile },
+  logout,
+}) => {
+  console.log("PROFILE", profile);
   console.log("is authenticated is", isAuthenticated);
 
   const authLinks = (
@@ -46,6 +51,20 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
             Messages
           </Link> */}
           <Link to={`/profile/${user._id}`}>
+            {/* {profile ? (
+              <Image
+                src={profile.image}
+                style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                className="mb-2"
+              />
+            ) : (
+              <Image
+                src="https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg"
+                alt="user picture"
+                style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+                className="mb-2"
+              />
+            )} */}
             <img
               src={` https://vast-bayou-47622.herokuapp.com/profiles/${
                 user && user._id
@@ -141,6 +160,7 @@ const Navigation = ({ auth: { isAuthenticated, user }, logout }) => {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile,
 });
 
 export default connect(mapStateToProps, { logout })(Navigation);

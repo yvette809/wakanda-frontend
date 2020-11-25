@@ -27,7 +27,7 @@ const Dashboard = ({
     <Container className="dashboard_container">
       <div className="large text-primary">
         <Link to={`profile/${profile && profile._id}`}>
-          {profile ? (
+          {/* {profile ? (
             <Image
               src={profile.image}
               style={{ width: "100px", height: "100px", borderRadius: "5px" }}
@@ -40,12 +40,12 @@ const Dashboard = ({
               style={{ width: "100px", height: "100px", borderRadius: "5px" }}
               className="mb-2"
             />
-          )}
-          {/* <img
-            // src={` https://vast-bayou-47622.herokuapp.com/profiles/${
-            //   profile && profile.user._id
-            // }.png`}
-            src={ profile && profile.image}
+          )} */}
+          <img
+            src={` https://vast-bayou-47622.herokuapp.com/profiles/${
+              profile && profile.user._id
+            }.png`}
+           
             onError={(e) =>
               (e.target.src =
                 "https://cdn2.vectorstock.com/i/1000x1000/20/91/avatar-man-soccer-player-graphic-vector-9422091.jpg")
@@ -53,7 +53,7 @@ const Dashboard = ({
             alt="user picture"
             style={{ width: "100px", height: "100px", borderRadius: "5px" }}
             className="mb-2"
-          /> */}
+          />
         </Link>
 
         {isAuthenticated && user.isAdmin ? (
