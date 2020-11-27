@@ -21,13 +21,15 @@
 *Admin Post and players moderation
 
 ## Install Dependencies
+```
 npm install
 ## Run
 npm run dev
-
+```
 ## Build and Deploy
+```
 Create frontend prod build
 npm  run build
-
+```
 ### There is a heroku postbuild script, so if you push to Heroku, no need to build manully for deployment to heroku
 
