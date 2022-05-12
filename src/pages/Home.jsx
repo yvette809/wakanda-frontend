@@ -3,13 +3,13 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { setAlert } from "../actions/alert";
-import{getEvents} from "../actions/eventReviews"
+import { getEvents } from "../actions/eventReviews";
 import { connect } from "react-redux";
 import Staff from "../components/Staff";
-// import Staff2 from "../components/Staff2";
+ import Staff2 from "../components/Staff2";
 import Activities from "../components/Activities";
 import Sponsors from "../components/Sponsors";
-import { FaAd, FaBiking, FaEdge, FaMedal ,FaDribbble} from "react-icons/fa";
+import { FaAd, FaBiking, FaEdge, FaMedal, FaDribbble } from "react-icons/fa";
 
 import {
   Jumbotron,
@@ -26,30 +26,34 @@ import EventList from "../components/EventList";
 import SearchForm from "../components/SearchForn";
 import { Link } from "react-router-dom";
 
-const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
-
+const Home = ({
+  eventsList,
+  isAuthenticated,
+  setAlert,
+  getEvents,
+  history,
+}) => {
   // const {events, loading} = eventList
   // scroll animations
   useEffect(() => {
     AOS.init();
     // getEvents()
-  },[getEvents]);
-   const [events, setEvents] = useState([]);
- 
-  const newE={
-    title:"",
-    description:"",
-    image:"",
-    time:"",
-    location:"",
-    date: ""
-  }
-  const [newEvent, setnewEvent] = useState(newE)
+  }, [getEvents]);
+  const [events, setEvents] = useState([]);
+
+  const newE = {
+    title: "",
+    description: "",
+    image: "",
+    time: "",
+    location: "",
+    date: "",
+  };
+  const [newEvent, setnewEvent] = useState(newE);
 
   const { title, description, image, time, location, creator, date } = newEvent;
   const [loading, setLoading] = useState(false);
   const [showModal, setshowModal] = useState(false);
-
 
   // get Events
 
@@ -78,36 +82,33 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
 
   //Add Events
   const addEvent = async (e) => {
-     e.preventDefault();
+    e.preventDefault();
 
-       try{
-
-        setLoading(true)
-         const config ={
-           headers:{
-             "Content-Type": "application/json"
-           }
-         }
-         const body = JSON.stringify(newEvent)
-         console.log('BODY', body)
-         const res = await axios.post("https://vast-bayou-47622.herokuapp.com/events", body, config)
-         console.log(res.data)
-         setLoading(false)
-         setnewEvent(res.data)
-         setAlert('Event added', 'success')
-         setnewEvent(newE)
-         setshowModal(false)
-         history.push('/')
-      
-       }catch(error){
-         console.log(error)
-       }
-       
-     }
-
-    
-
-  
+    try {
+      setLoading(true);
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+      const body = JSON.stringify(newEvent);
+      console.log("BODY", body);
+      const res = await axios.post(
+        "https://vast-bayou-47622.herokuapp.com/events",
+        body,
+        config
+      );
+      console.log(res.data);
+      setLoading(false);
+      setnewEvent(res.data);
+      setAlert("Event added", "success");
+      setnewEvent(newE);
+      setshowModal(false);
+      history.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -122,7 +123,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
                 <Button
                   className="text-white intro_button"
                   variant="danger"
-                  style={{ fontSize: "1.6rem" }}
+                  style={{ fontSize: "1.6rem", letterSpacing: "0.2rem" , transition: "transform 0.2s ease"}}
                 >
                   A Home of Champions
                 </Button>
@@ -208,10 +209,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
       </Container>
       <Container fluid>
         <h1 className="text-center">Upcoming Events</h1>
-        <EventList
-          events={events}
-          loading={loading}
-        />
+        <EventList events={events} loading={loading} />
         <Modal show={showModal}>
           <Modal.Header closeButton onClick={() => setshowModal(false)}>
             <Modal.Title>Add Event</Modal.Title>
@@ -224,30 +222,36 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
                 value={title}
                 name="title"
                 placeholder="Add Title"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  title: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    title: e.currentTarget.value,
+                  })
+                }
               />
               <FormControl
                 type="text"
                 value={description}
                 name="description"
                 placeholder="Add description"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  description: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    description: e.currentTarget.value,
+                  })
+                }
               />
               <FormControl
                 type="text"
                 value={image}
                 name="image"
                 placeholder="Add Image"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  image: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    image: e.currentTarget.value,
+                  })
+                }
                 required
               />
               <FormControl
@@ -255,31 +259,37 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
                 value={time}
                 name="time"
                 placeholder="Add Time"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  time: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    time: e.currentTarget.value,
+                  })
+                }
               />
               <FormControl
                 type="text"
                 value={location}
                 name="location"
                 placeholder="Add Location"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  location: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    location: e.currentTarget.value,
+                  })
+                }
               />
-               
+
               <FormControl
                 type="date"
                 value={date}
                 name="date"
                 placeholder="Add Date"
-                onChange={(e) => setnewEvent({
-                  ...newEvent,
-                  date: e.currentTarget.value
-                })}
+                onChange={(e) =>
+                  setnewEvent({
+                    ...newEvent,
+                    date: e.currentTarget.value,
+                  })
+                }
               />
 
               {/* <FormControl
@@ -302,19 +312,24 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
           </Modal.Footer>
         </Modal>
 
-        {isAuthenticated &&  
-        <>
-        <h4 className="mt-2 text-muted">Do You have Events?, Please Share Them Here</h4>
-         <button
-          className="btn-primary mb-4 staff_button"
-          onClick={() => setshowModal(true)}
-           style={{ backgroundColor: "transparent", color:"green", fontWeight:"bold" }}
-        >
-          Create Event
-        </button>
-        </>
-        }
-       
+        {isAuthenticated && (
+          <>
+            <h4 className="mt-2 text-muted">
+              Do You have Events?, Please Share Them Here
+            </h4>
+            <button
+              className="btn-primary mb-4 staff_button"
+              onClick={() => setshowModal(true)}
+              style={{
+                backgroundColor: "transparent",
+                color: "green",
+                fontWeight: "bold",
+              }}
+            >
+              Create Event
+            </button>
+          </>
+        )}
       </Container>
       <Activities />
       <div id="values_section" className="">
@@ -393,7 +408,9 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
                       </div>
 
                       <Link to="/register">
-                        <button className="register" id= "register_button">Register</button>
+                        <button className="register" id="register_button">
+                          Register
+                        </button>
                       </Link>
                     </Card.Text>
                   </Card.Body>
@@ -431,9 +448,9 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
         </div>
       </div>
       <Staff />
+      
       <Sponsors />
-     
-    
+
       {/* <Staff2/> */}
       {/* <div className=" container-fluid bg-danger pics_container">
         <div id="contact_img_section" style={{ padding: "150px" }}>
@@ -446,8 +463,7 @@ const Home = ({ eventsList ,isAuthenticated,setAlert, getEvents, history}) => {
 
 const mapStateToProps = (state) => ({
   eventsList: state.eventsList,
-  isAuthenticated:state.auth.isAuthenticated,
- 
+  isAuthenticated: state.auth.isAuthenticated,
 });
 
 export default connect(mapStateToProps, { setAlert, getEvents })(Home);

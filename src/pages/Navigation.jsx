@@ -32,7 +32,7 @@ const Navigation = ({
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav
-          className="ml-auto d-flex justify-content-end align-items-end"
+          className="ml-auto d-flex justify-content-end align-items-end "
           id="navi"
         >
           <Link to="/news" className="nav-link">
@@ -126,7 +126,7 @@ const Navigation = ({
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className=" ml-auto d-flex justify-content-lg-end " id="nav_links">
+        <Nav className=" ml-auto d-flex justify-content-lg-end  " id="nav_links">
           <Link to="/" className="nav-link">
             Home
           </Link>
